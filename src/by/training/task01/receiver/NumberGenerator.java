@@ -1,6 +1,6 @@
 package by.training.task01.receiver;
 
-import by.training.task01.Number;
+import by.training.task01.entity.Number;
 
 import java.util.ArrayList;
 import java.util.List;

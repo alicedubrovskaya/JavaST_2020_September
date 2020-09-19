@@ -1,4 +1,6 @@
-package by.training.task01;
+package by.training.task01.service;
+
+import by.training.task01.entity.Number;
 
 import java.util.List;
 
