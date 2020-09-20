@@ -1,16 +1,20 @@
 package by.training.task01.service;
 
 import by.training.task01.entity.Number;
-import by.training.task01.view.FileView;
 
 import java.util.List;
 import java.util.Random;
 
 public class NumberService {
+    private Random random;
+    static final int BOUND_OF_RANDOM = 100;
+
+    public NumberService() {
+        random = new Random();
+    }
 
     public int generateNumber() {
-        Random r = new Random();
-        return r.nextInt(100);
+        return this.random.nextInt(BOUND_OF_RANDOM);
     }
 
     public boolean isEvenNumbered(int value) {
@@ -31,9 +35,7 @@ public class NumberService {
                 countOfEvenNumbers++;
             }
         }
-
         return (countOfEvenNumbers >= 2);
     }
-
 
 }

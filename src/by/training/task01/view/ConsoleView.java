@@ -10,8 +10,11 @@ import java.util.Scanner;
 
 public class ConsoleView {
 
-    private NumberController numberController;
-    private FileView fileView;
+    private final NumberController numberController;
+    private final FileView fileView;
+    static final String OPTION_GENERATE = "1 - generate numbers\n";
+    static final String OPTION_FILE = "2 - from file\n";
+    static final String OPTION_CONSOLE = "3 - from console\n";
 
     public ConsoleView(NumberController numberController, FileView fileView) {
         this.numberController = numberController;
@@ -20,7 +23,7 @@ public class ConsoleView {
         List<Number> numbers = new ArrayList<>();
         Scanner in = new Scanner(System.in);
 
-        System.out.print("1 - generate numbers\n2 - from file\n3 - from console\n");
+        System.out.print(OPTION_GENERATE + OPTION_FILE + OPTION_CONSOLE);
         int option = in.nextInt();
 
         switch (option) {
@@ -39,9 +42,11 @@ public class ConsoleView {
 
         }
 
-        if (numberController.hasAtLeastTwoEvenNumbers(numbers))
+        if (numberController.hasAtLeastTwoEvenNumbers(numbers)) {
             System.out.print("True");
-        else System.out.print("False");
+        } else {
+            System.out.print("False");
+        }
 
         in.close();
     }

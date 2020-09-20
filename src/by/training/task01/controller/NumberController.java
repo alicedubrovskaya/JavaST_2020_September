@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NumberController {
-    private NumberService numberService;
+    private final NumberService numberService;
 
     public NumberController(NumberService numberService) {
-        this.numberService=numberService;
+        this.numberService = numberService;
     }
 
     public List<Number> getGeneratedNumbers() {
