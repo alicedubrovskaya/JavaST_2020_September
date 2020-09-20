@@ -11,14 +11,6 @@ public class Number {
         return value;
     }
 
-    public boolean isEvenNumbered() {
-        boolean isEven;
-        if (value % 2 == 0) {
-            isEven = true;
-        } else {
-            isEven = false;
-        }
-        return isEven;
-    }
+
 
 }
