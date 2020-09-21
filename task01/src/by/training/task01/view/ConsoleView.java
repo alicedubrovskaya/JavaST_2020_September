@@ -62,7 +62,8 @@ public class ConsoleView {
     public List<Number> optionNumbersFromFile() {
         List<Number> numbers;
         try {
-            numbers = fileView.getNumbersFromFile("numbers.txt");
+            numbers = fileView.getNumbersFromFile("C:\\Users\\alice\\OneDrive\\Рабочий стол\\Epam\\" +
+                    "JavaST_2020_September\\task01\\numbers.txt");
             for (Number number : numbers) {
                 System.out.print(number.getValue() + " ");
             }
