@@ -1,4 +1,4 @@
-package by.training.task01.entity;
+package by.training.entity;
 
 public class Number {
     private int value;

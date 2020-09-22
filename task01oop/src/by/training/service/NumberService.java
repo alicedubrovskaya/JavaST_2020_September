@@ -1,6 +1,6 @@
-package by.training.task01.service;
+package by.training.service;
 
-import by.training.task01.entity.Number;
+import by.training.entity.Number;
 
 import java.util.List;
 import java.util.Random;

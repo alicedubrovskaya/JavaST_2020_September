@@ -1,7 +1,7 @@
-package by.training.task01.controller;
+package by.training.controller;
 
-import by.training.task01.entity.Number;
-import by.training.task01.service.NumberService;
+import by.training.entity.Number;
+import by.training.service.NumberService;
 
 import java.util.ArrayList;
 import java.util.List;

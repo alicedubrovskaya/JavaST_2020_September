@@ -1,7 +1,7 @@
-package by.training.task01.view;
+package by.training.view;
 
-import by.training.task01.controller.NumberController;
-import by.training.task01.entity.Number;
+import by.training.controller.NumberController;
+import by.training.entity.Number;
 
 import java.io.IOException;
 import java.util.ArrayList;

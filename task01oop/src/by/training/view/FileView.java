@@ -1,6 +1,6 @@
-package by.training.task01.view;
+package by.training.view;
 
-import by.training.task01.entity.Number;
+import by.training.entity.Number;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
