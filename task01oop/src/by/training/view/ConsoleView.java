@@ -59,6 +59,7 @@ public class ConsoleView {
         return numbers;
     }
 
+    //TODO file path
     public List<Number> optionNumbersFromFile() {
         List<Number> numbers;
         try {

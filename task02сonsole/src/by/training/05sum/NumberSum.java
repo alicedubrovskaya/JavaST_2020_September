@@ -1,10 +1,17 @@
 
 public class NumberSum {
     public static void main(String[] args) {
-        int sum = 0;
+        short sum = 0;
+        boolean overflowing = false;
         for (String string : args) {
-            sum += Integer.parseInt(string);
+            int arg = Integer.parseInt(string);
+            if (sum + arg > 32767 || sum + arg < -32768) {
+                overflowing = true;
+                break;
+            } else {
+                sum += arg;
+            }
         }
-        System.out.println("Sum: " + sum);
+        System.out.println(overflowing ? "Sum exceeds the norm" : "Sum: " + sum);
     }
 }

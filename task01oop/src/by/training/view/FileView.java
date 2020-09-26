@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FileView {
+    //TODO move to DAO
     public List<Number> getNumbersFromFile(String fileName) throws IOException {
         List<Number> numbers = new ArrayList<>();
 
