@@ -72,4 +72,23 @@ public class BasketService {
         }
         return sameColoursInBaskets;
     }
+
+    public int findHashCodeOfColoursInBasket(Object coloursSet){
+        return coloursSet.hashCode();
+    }
+
+    public Map<Integer, Integer> theSameSetsOfBalls(){
+        Map<Integer, Map<String, Integer>> sameColoursInBaskets = findCountOfTheSameBallsInBaskets();
+        Map<Integer, Integer> theSameSets = new HashMap<>();
+        for (Map.Entry entry : sameColoursInBaskets.entrySet()) {
+            Integer hashCode = findHashCodeOfColoursInBasket(entry.getValue());
+            if (theSameSets.containsKey(hashCode)){
+                theSameSets.put(hashCode, theSameSets.get(hashCode) + 1);
+            }
+            else {
+                theSameSets.put(hashCode,1);
+            }
+        }
+        return theSameSets;
+    }
 }

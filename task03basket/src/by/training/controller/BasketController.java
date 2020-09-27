@@ -43,7 +43,16 @@ public class BasketController {
         return basketService.findCountOfBallsByColour(basket, colour);
     }
 
-    public Map<Integer, Map<String, Integer>> findCountOfTheSameBallsInBaskets(){
+    public Map<Integer, Map<String, Integer>> findCountOfTheSameBallsInBaskets() {
         return basketService.findCountOfTheSameBallsInBaskets();
+    }
+
+    public int hashCodeOfColoursInBasket(Object colours) {
+        int hashCodeOfColoursInBasket = basketService.findHashCodeOfColoursInBasket(colours);
+        return hashCodeOfColoursInBasket;
+    }
+
+    public Map<Integer, Integer> theSameSets() {
+        return basketService.theSameSetsOfBalls();
     }
 }
