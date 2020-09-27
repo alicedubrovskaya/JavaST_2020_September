@@ -54,4 +54,8 @@ public class Basket {
     public int getId() {
         return id;
     }
+
+    public List<Ball> getBalls() {
+        return balls;
+    }
 }

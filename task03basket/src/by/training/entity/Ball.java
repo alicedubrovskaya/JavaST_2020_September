@@ -56,4 +56,12 @@ public class Ball {
     public UUID getId() {
         return id;
     }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public Colour getColour() {
+        return colour;
+    }
 }

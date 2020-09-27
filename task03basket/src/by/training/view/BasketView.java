@@ -20,7 +20,8 @@ public class BasketView {
 
         int doOptions = 1;
         while (doOptions == 1) {
-            System.out.print("\n1 - create basket \n2 - create ball \n3 - fill the basket with balls\n");
+            System.out.print("\n1 - create basket \n2 - create ball \n3 - fill the basket with balls\n" +
+                    "4 - find weight and count of balls by colour");
             int option = in.nextInt();
             switch (option) {
                 case 0:
@@ -34,6 +35,9 @@ public class BasketView {
                     break;
                 case 3:
                     optionFillBasket();
+                    break;
+                case 4:
+                    optionFindWeightAndCountInBasket();
                     break;
                 default:
                     System.out.print("Please, enter one of the options");
@@ -67,5 +71,18 @@ public class BasketView {
         } catch (BasketNotFoundException e) {
             System.out.print(e.getMessage());
         }
+    }
+
+    public void optionFindWeightAndCountInBasket() {
+        System.out.print("Enter id of the basket, needed colour: ");
+        try {
+            int basketId = in.nextInt();
+            int weight = basketController.findWeightOfBallsInBasket(basketId);
+            int count = basketController.findCountOfBallsByColourInBasket(basketId, in.next());
+            System.out.print("Total weight: " + weight + ", count with this colour: " + count);
+        } catch (BasketNotFoundException e) {
+            System.out.print(e.getMessage());
+        }
+
     }
 }

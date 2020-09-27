@@ -25,11 +25,20 @@ public class BasketController {
     public void fillBasket(int basketId, int countOfBalls) throws BasketNotFoundException {
         Random random = new Random();
         for (int i = 0; i < countOfBalls; i++) {
-            //TODO id and colour normal
             String randomColour = Colour.values()[random.nextInt(Colour.values().length)].getColour();
             Ball newBall = ballService.createNewBall(random.nextInt(100), random.nextInt(100),
                     randomColour);
             ballService.addToBasket(basketId, newBall);
         }
+    }
+
+    public int findWeightOfBallsInBasket(int baskedId) throws BasketNotFoundException {
+        Basket basket = basketService.findByIdBasket(baskedId);
+        return basketService.findWeightOfBalls(basket);
+    }
+
+    public int findCountOfBallsByColourInBasket(int baskedId, String colour) throws BasketNotFoundException {
+        Basket basket = basketService.findByIdBasket(baskedId);
+        return basketService.findCountOfBallsByColour(basket, colour);
     }
 }

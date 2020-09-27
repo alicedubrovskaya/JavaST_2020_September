@@ -1,8 +1,11 @@
 package by.training.service;
 
+import by.training.entity.Ball;
 import by.training.entity.Basket;
 import by.training.entity.list.BasketList;
 import by.training.exception.BasketNotFoundException;
+
+import java.util.stream.Collectors;
 
 public class BasketService {
     private BasketList basketList;
@@ -26,5 +29,21 @@ public class BasketService {
             }
         }
         throw new BasketNotFoundException(basketId);
+    }
+
+    public int findWeightOfBalls(Basket basket) {
+        int weightSum = 0;
+        for (Ball ball : basket.getBalls()) {
+            weightSum += ball.getWeight();
+        }
+        return weightSum;
+    }
+
+    public int findCountOfBallsByColour(Basket basket, String colour) {
+        int count = 0;
+        for (Ball ball : basket.getBalls()) {
+            count += (colour.equals(ball.getColour().getColour()) ? 1 : 0);
+        }
+        return count;
     }
 }
