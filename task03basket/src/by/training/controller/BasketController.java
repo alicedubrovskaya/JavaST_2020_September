@@ -7,6 +7,7 @@ import by.training.exception.BasketNotFoundException;
 import by.training.service.BallService;
 import by.training.service.BasketService;
 
+import java.util.Map;
 import java.util.Random;
 
 public class BasketController {
@@ -40,5 +41,9 @@ public class BasketController {
     public int findCountOfBallsByColourInBasket(int baskedId, String colour) throws BasketNotFoundException {
         Basket basket = basketService.findByIdBasket(baskedId);
         return basketService.findCountOfBallsByColour(basket, colour);
+    }
+
+    public Map<Integer, Map<String, Integer>> findCountOfTheSameBallsInBaskets(){
+        return basketService.findCountOfTheSameBallsInBaskets();
     }
 }

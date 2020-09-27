@@ -5,6 +5,10 @@ import by.training.entity.Basket;
 import by.training.entity.list.BasketList;
 import by.training.exception.BasketNotFoundException;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class BasketService {
@@ -45,5 +49,27 @@ public class BasketService {
             count += (colour.equals(ball.getColour().getColour()) ? 1 : 0);
         }
         return count;
+    }
+
+    public Map<String, Integer> findCountOfTheSameBalls(Basket basket) {
+        Map<String, Integer> theSameBalls = new HashMap<>();
+        for (Ball ball : basket.getBalls()) {
+            String colour = ball.getColour().getColour();
+            if (theSameBalls.containsKey(colour)) {
+                theSameBalls.put(colour, theSameBalls.get(colour) + 1);
+            }
+            else {
+                theSameBalls.put(colour, 1);
+            }
+        }
+        return theSameBalls;
+    }
+
+    public Map<Integer, Map<String, Integer>> findCountOfTheSameBallsInBaskets() {
+        Map<Integer, Map<String, Integer>> sameColoursInBaskets = new HashMap<>();
+        for (Basket basket : basketList.getBaskets()) {
+            sameColoursInBaskets.put(basket.getId(), findCountOfTheSameBalls(basket));
+        }
+        return sameColoursInBaskets;
     }
 }

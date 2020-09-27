@@ -5,6 +5,8 @@ import by.training.controller.BasketController;
 import by.training.entity.Ball;
 import by.training.exception.BasketNotFoundException;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class BasketView {
@@ -21,7 +23,8 @@ public class BasketView {
         int doOptions = 1;
         while (doOptions == 1) {
             System.out.print("\n1 - create basket \n2 - create ball \n3 - fill the basket with balls\n" +
-                    "4 - find weight and count of balls by colour");
+                    "4 - find weight and count of balls by colour \n5 - number of balls with the same colour in each basket" +
+                    "\n6 - ");
             int option = in.nextInt();
             switch (option) {
                 case 0:
@@ -38,6 +41,9 @@ public class BasketView {
                     break;
                 case 4:
                     optionFindWeightAndCountInBasket();
+                    break;
+                case 5:
+                    optionCountOfTheSameBallsInBaskets();
                     break;
                 default:
                     System.out.print("Please, enter one of the options");
@@ -83,6 +89,13 @@ public class BasketView {
         } catch (BasketNotFoundException e) {
             System.out.print(e.getMessage());
         }
+    }
 
+    public void optionCountOfTheSameBallsInBaskets() {
+        Map<Integer, Map<String, Integer>> sameColoursInBaskets = basketController.findCountOfTheSameBallsInBaskets();
+        for (Map.Entry entry : sameColoursInBaskets.entrySet()) {
+            System.out.println("Basket id: " + entry.getKey());
+            System.out.println("Count of balls with the same colour: "+entry.getValue());
+        }
     }
 }

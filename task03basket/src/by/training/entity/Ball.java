@@ -41,9 +41,11 @@ public class Ball {
         if (colour != comparedObject.colour) {
             return false;
         }
-        if (!id.equals(comparedObject.getId())) {
+      /*  if (!id.equals(comparedObject.getId())) {
             return false;
         }
+
+       */
         if (cost != comparedObject.cost) {
             return false;
         }
