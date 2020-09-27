@@ -50,4 +50,8 @@ public class Basket {
     public void add(Ball ball) {
         balls.add(ball);
     }
+
+    public int getId() {
+        return id;
+    }
 }
