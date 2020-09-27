@@ -20,7 +20,7 @@ public class BasketView {
 
         int doOptions = 1;
         while (doOptions == 1) {
-            System.out.print("\n1 - create basket \n2 - create ball \n");
+            System.out.print("\n1 - create basket \n2 - create ball \n3 - fill the basket with balls\n");
             int option = in.nextInt();
             switch (option) {
                 case 0:
@@ -31,6 +31,9 @@ public class BasketView {
                     break;
                 case 2:
                     optionCreateNewBall();
+                    break;
+                case 3:
+                    optionFillBasket();
                     break;
                 default:
                     System.out.print("Please, enter one of the options");
@@ -46,12 +49,21 @@ public class BasketView {
     }
 
     public void optionCreateNewBall() {
-        System.out.print("Enter of id, weight, cost, colour of new ball: ");
-        Ball ball = ballController.createBall(in.nextInt(), in.nextInt(), in.nextInt(), in.next());
+        System.out.print("Enter weight, cost, colour of new ball: ");
+        Ball ball = ballController.createBall(in.nextInt(), in.nextInt(), in.next());
         System.out.print("To what basket do you want to put this ball? Enter it's id: ");
 
         try {
             ballController.addBallToBasket(in.nextInt(), ball);
+        } catch (BasketNotFoundException e) {
+            System.out.print(e.getMessage());
+        }
+    }
+
+    public void optionFillBasket() {
+        System.out.print("How much balls do you want to add? Enter id of basket, count of balls: ");
+        try {
+            basketController.fillBasket(in.nextInt(), in.nextInt());
         } catch (BasketNotFoundException e) {
             System.out.print(e.getMessage());
         }

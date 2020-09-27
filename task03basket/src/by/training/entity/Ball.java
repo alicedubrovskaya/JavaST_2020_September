@@ -1,13 +1,15 @@
 package by.training.entity;
 
+import java.util.UUID;
+
 public class Ball {
-    private int id;
+    private UUID id;
     private int weight;
     private int cost;
     private Colour colour;
 
-    public Ball(int id, int weight, int cost, Colour colour) {
-        this.id = id;
+    public Ball(int weight, int cost, Colour colour) {
+        this.id = UUID.randomUUID();
         this.weight = weight;
         this.cost = cost;
         this.colour = colour;
@@ -15,12 +17,13 @@ public class Ball {
 
     @Override
     public int hashCode() {
-        return id * 31 + weight * 12 + cost * 3 + colour.hashCode();
+        return id.hashCode() + weight * 12 + cost * 3 + colour.hashCode();
     }
 
     @Override
     public String toString() {
-        return getClass().getName() + "@id " + id + " weight: " + weight + " cost: " + cost + " colour:" + colour;
+        return getClass().getName() + "@id " + id.toString() + " weight: " + weight
+                + " cost: " + cost + " colour:" + colour;
     }
 
     @Override
@@ -38,7 +41,7 @@ public class Ball {
         if (colour != comparedObject.colour) {
             return false;
         }
-        if (id != comparedObject.id) {
+        if (!id.equals(comparedObject.getId())) {
             return false;
         }
         if (cost != comparedObject.cost) {
@@ -50,7 +53,7 @@ public class Ball {
         return true;
     }
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 }

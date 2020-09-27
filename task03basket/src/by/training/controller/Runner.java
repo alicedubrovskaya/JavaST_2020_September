@@ -11,12 +11,13 @@ import by.training.view.BasketView;
 public class Runner {
     public static void main(String[] args) {
         BasketList basketList = new BasketList();
-        BallService ballService = new BallService(basketList);
-        BasketService basketService  = new BasketService(basketList);
 
-        BasketController basketController=new BasketController(basketService);
+        BasketService basketService = new BasketService(basketList);
+        BallService ballService = new BallService(basketService);
+
+        BasketController basketController = new BasketController(basketService, ballService);
         BallController ballController = new BallController(ballService);
 
-        BasketView basketView = new BasketView(basketController, ballController);
+        new BasketView(basketController, ballController);
     }
 }

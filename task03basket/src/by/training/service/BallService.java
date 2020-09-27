@@ -7,26 +7,17 @@ import by.training.entity.list.BasketList;
 import by.training.exception.BasketNotFoundException;
 
 public class BallService {
-    private BasketList basketList;
+    private BasketService basketService;
 
-    public BallService(BasketList basketList) {
-        this.basketList=basketList;
+    public BallService(BasketService basketService) {
+        this.basketService = basketService;
     }
 
-    public Ball createNewBall(int id, int weight, int cost, String colour){
-        return new Ball(id,weight,cost, Colour.getEnumByColour(colour));
+    public Ball createNewBall(int weight, int cost, String colour) {
+        return new Ball(weight, cost, Colour.getEnumByColour(colour));
     }
 
-    public void addToBasketList(int basketId, Ball ball) throws BasketNotFoundException {
-        (findByIdBasket(basketId)).add(ball);
-    }
-
-    public Basket findByIdBasket(int basketId) throws BasketNotFoundException {
-        for (Basket basket: basketList.getBaskets()){
-            if (basketId==basket.getId()){
-                return basket;
-            }
-        }
-        throw new BasketNotFoundException(basketId);
+    public void addToBasket(int basketId, Ball ball) throws BasketNotFoundException {
+        (basketService.findByIdBasket(basketId)).add(ball);
     }
 }
