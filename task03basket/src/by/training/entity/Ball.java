@@ -18,7 +18,7 @@ public class Ball {
     @Override
     public int hashCode() {
         //id.hashCode()
-        return  weight * 12 + cost * 3 + colour.hashCode();
+        return weight * 12 + cost * 3 + colour.hashCode();
     }
 
     @Override
@@ -66,5 +66,9 @@ public class Ball {
 
     public Colour getColour() {
         return colour;
+    }
+
+    public int getCost() {
+        return cost;
     }
 }

@@ -7,6 +7,7 @@ import by.training.exception.BasketNotFoundException;
 import by.training.service.BallService;
 import by.training.service.BasketService;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -54,5 +55,10 @@ public class BasketController {
 
     public Map<Integer, Integer> theSameSets() {
         return basketService.theSameSetsOfBalls();
+    }
+
+    public List<Ball> sortByCostInformationAboutBalls(int basketId) throws BasketNotFoundException {
+        Basket basket = basketService.findByIdBasket(basketId);
+        return ballService.sortBalls(basket.getBalls());
     }
 }

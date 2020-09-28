@@ -5,6 +5,7 @@ import by.training.controller.BasketController;
 import by.training.entity.Ball;
 import by.training.exception.BasketNotFoundException;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -23,7 +24,8 @@ public class BasketView {
         while (doOptions == 1) {
             System.out.print("\n1 - create basket \n2 - create ball \n3 - fill the basket with balls\n" +
                     "4 - find weight and count of balls by colour \n5 - number of balls with the same colour in each basket" +
-                    "\n6 - count of baskets with the same sets of balls\n");
+                    "\n6 - count of baskets with the same sets of balls\n" +
+                    "7- get sorted by cost information about balls from certain basket\n");
             int option = in.nextInt();
             switch (option) {
                 case 0:
@@ -46,6 +48,9 @@ public class BasketView {
                     break;
                 case 6:
                     optionCountOfBasketsWithTheSameSets();
+                    break;
+                case 7:
+                    optionSortedByCostInformationAboutBalls();
                     break;
                 default:
                     System.out.print("Please, enter one of the options");
@@ -106,7 +111,20 @@ public class BasketView {
         Map<Integer, Integer> theSameSets = basketController.theSameSets();
         for (Map.Entry entry : theSameSets.entrySet()) {
             numberOfSet++;
-            System.out.println("Set " + numberOfSet + ", count of baskets: "+entry.getValue());
+            System.out.println("Set " + numberOfSet + ", count of baskets: " + entry.getValue());
+        }
+    }
+
+    public void optionSortedByCostInformationAboutBalls() {
+        System.out.print("Enter basket id: ");
+        try {
+            List<Ball> balls = basketController.sortByCostInformationAboutBalls(in.nextInt());
+            for (Ball ball : balls) {
+                System.out.println("cost: " + ball.getCost() + "; colour: " + ball.getColour().getColour()
+                        + "; weight: " + ball.getWeight());
+            }
+        } catch (BasketNotFoundException e) {
+            System.out.print(e.getMessage());
         }
     }
 }
