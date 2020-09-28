@@ -1,5 +1,8 @@
 package by.training.entity;
 
+/**
+ * @author Alisa Dubrovskaya
+ */
 public enum Colour {
     RED("red"),
     GREEN("green"),

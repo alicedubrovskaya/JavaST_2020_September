@@ -7,6 +7,7 @@ import by.training.entity.list.BasketList;
 import by.training.service.BallService;
 import by.training.service.BasketService;
 import by.training.view.BasketView;
+import by.training.view.OptionView;
 
 public class Runner {
     public static void main(String[] args) {
@@ -18,6 +19,7 @@ public class Runner {
         BasketController basketController = new BasketController(basketService, ballService);
         BallController ballController = new BallController(ballService);
 
-        new BasketView(basketController, ballController);
+        OptionView optionView = new OptionView(basketController,ballController);
+        new BasketView(optionView);
     }
 }

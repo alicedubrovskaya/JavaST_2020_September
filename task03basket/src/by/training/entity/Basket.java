@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
+/**
+ * Class describes basket entity
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class Basket {
     private int id;
     private List<Ball> balls = new ArrayList<>();

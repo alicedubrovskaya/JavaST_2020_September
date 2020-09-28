@@ -1,23 +1,18 @@
 package by.training.view;
 
-import by.training.controller.BallController;
-import by.training.controller.BasketController;
-import by.training.entity.Ball;
-import by.training.exception.BasketNotFoundException;
-
-import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * Class lets to display the main menu to the user
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class BasketView {
     private Scanner in;
-    private BasketController basketController;
-    private BallController ballController;
+    private OptionView optionView;
 
-    public BasketView(BasketController basketController, BallController ballController) {
-        this.basketController = basketController;
-        this.ballController = ballController;
-
+    public BasketView(OptionView optionView) {
+        this.optionView = optionView;
         in = new Scanner(System.in);
 
         int doOptions = 1;
@@ -32,99 +27,30 @@ public class BasketView {
                     doOptions = 0;
                     break;
                 case 1:
-                    optionCreateNewBasket();
+                    optionView.optionCreateNewBasket();
                     break;
                 case 2:
-                    optionCreateNewBall();
+                    optionView.optionCreateNewBall();
                     break;
                 case 3:
-                    optionFillBasket();
+                    optionView.optionFillBasket();
                     break;
                 case 4:
-                    optionFindWeightAndCountInBasket();
+                    optionView.optionFindWeightAndCountInBasket();
                     break;
                 case 5:
-                    optionCountOfTheSameBallsInBaskets();
+                    optionView.optionCountOfTheSameBallsInBaskets();
                     break;
                 case 6:
-                    optionCountOfBasketsWithTheSameSets();
+                    optionView.optionCountOfBasketsWithTheSameSets();
                     break;
                 case 7:
-                    optionSortedByCostInformationAboutBalls();
+                    optionView.optionSortedByCostInformationAboutBalls();
                     break;
                 default:
                     System.out.print("Please, enter one of the options");
             }
         }
 
-    }
-
-    public void optionCreateNewBasket() {
-        System.out.print("Enter id of new basket: ");
-        int id = in.nextInt();
-        basketController.createBasket(id);
-    }
-
-    public void optionCreateNewBall() {
-        System.out.print("Enter weight, cost, colour of new ball: ");
-        Ball ball = ballController.createBall(in.nextInt(), in.nextInt(), in.next());
-        System.out.print("To what basket do you want to put this ball? Enter it's id: ");
-
-        try {
-            ballController.addBallToBasket(in.nextInt(), ball);
-        } catch (BasketNotFoundException e) {
-            System.out.print(e.getMessage());
-        }
-    }
-
-    public void optionFillBasket() {
-        System.out.print("How much balls do you want to add? Enter id of basket, count of balls: ");
-        try {
-            basketController.fillBasket(in.nextInt(), in.nextInt());
-        } catch (BasketNotFoundException e) {
-            System.out.print(e.getMessage());
-        }
-    }
-
-    public void optionFindWeightAndCountInBasket() {
-        System.out.print("Enter id of the basket, needed colour: ");
-        try {
-            int basketId = in.nextInt();
-            int weight = basketController.findWeightOfBallsInBasket(basketId);
-            int count = basketController.findCountOfBallsByColourInBasket(basketId, in.next());
-            System.out.print("Total weight: " + weight + ", count with this colour: " + count);
-        } catch (BasketNotFoundException e) {
-            System.out.print(e.getMessage());
-        }
-    }
-
-    public void optionCountOfTheSameBallsInBaskets() {
-        Map<Integer, Map<String, Integer>> sameColoursInBaskets = basketController.findCountOfTheSameBallsInBaskets();
-        for (Map.Entry<Integer, Map<String, Integer>> entry : sameColoursInBaskets.entrySet()) {
-            System.out.println("Basket id: " + entry.getKey());
-            System.out.println("Count of balls with the same colour: " + entry.getValue());
-        }
-    }
-
-    public void optionCountOfBasketsWithTheSameSets() {
-        int numberOfSet = 0;
-        Map<Integer, Integer> theSameSets = basketController.theSameSets();
-        for (Map.Entry<Integer, Integer> entry : theSameSets.entrySet()) {
-            numberOfSet++;
-            System.out.println("Set " + numberOfSet + ", count of baskets: " + entry.getValue());
-        }
-    }
-
-    public void optionSortedByCostInformationAboutBalls() {
-        System.out.print("Enter basket id: ");
-        try {
-            List<Ball> balls = basketController.sortByCostInformationAboutBalls(in.nextInt());
-            for (Ball ball : balls) {
-                System.out.println("cost: " + ball.getCost() + "; colour: " + ball.getColour().getColourInformation()
-                        + "; weight: " + ball.getWeight());
-            }
-        } catch (BasketNotFoundException e) {
-            System.out.print(e.getMessage());
-        }
     }
 }

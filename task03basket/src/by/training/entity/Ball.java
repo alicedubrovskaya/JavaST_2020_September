@@ -2,6 +2,11 @@ package by.training.entity;
 
 import java.util.UUID;
 
+/**
+ * Class describes ball entity
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class Ball {
     private UUID id;
     private int weight;
