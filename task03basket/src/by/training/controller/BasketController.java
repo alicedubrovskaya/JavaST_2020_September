@@ -14,10 +14,12 @@ import java.util.Random;
 public class BasketController {
     private BasketService basketService;
     private BallService ballService;
+    private Random random;
 
     public BasketController(BasketService basketService, BallService ballService) {
         this.basketService = basketService;
         this.ballService = ballService;
+        this.random=new Random();
     }
 
     public void createBasket(int id) {
@@ -25,9 +27,8 @@ public class BasketController {
     }
 
     public void fillBasket(int basketId, int countOfBalls) throws BasketNotFoundException {
-        Random random = new Random();
         for (int i = 0; i < countOfBalls; i++) {
-            String randomColour = Colour.values()[random.nextInt(Colour.values().length)].getColour();
+            String randomColour = Colour.values()[random.nextInt(Colour.values().length)].getColourInformation();
             Ball newBall = ballService.createNewBall(random.nextInt(100), random.nextInt(100),
                     randomColour);
             ballService.addToBasket(basketId, newBall);
@@ -46,11 +47,6 @@ public class BasketController {
 
     public Map<Integer, Map<String, Integer>> findCountOfTheSameBallsInBaskets() {
         return basketService.findCountOfTheSameBallsInBaskets();
-    }
-
-    public int hashCodeOfColoursInBasket(Object colours) {
-        int hashCodeOfColoursInBasket = basketService.findHashCodeOfColoursInBasket(colours);
-        return hashCodeOfColoursInBasket;
     }
 
     public Map<Integer, Integer> theSameSets() {

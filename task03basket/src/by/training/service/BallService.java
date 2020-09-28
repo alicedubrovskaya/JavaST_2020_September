@@ -1,12 +1,9 @@
 package by.training.service;
 
 import by.training.entity.Ball;
-import by.training.entity.Basket;
 import by.training.entity.Colour;
-import by.training.entity.list.BasketList;
 import by.training.exception.BasketNotFoundException;
 
-import java.util.Comparator;
 import java.util.List;
 
 public class BallService {
@@ -25,12 +22,7 @@ public class BallService {
     }
 
     public List<Ball> sortBalls(List<Ball> balls) {
-        balls.sort(new Comparator<Ball>() {
-            @Override
-            public int compare(Ball ball, Ball t1) {
-                return Integer.compare(ball.getCost(), t1.getCost());
-            }
-        });
+        balls.sort((ball, t1) -> Integer.compare(ball.getCost(), t1.getCost()));
         return balls;
     }
 }

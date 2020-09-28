@@ -5,11 +5,8 @@ import by.training.entity.Basket;
 import by.training.entity.list.BasketList;
 import by.training.exception.BasketNotFoundException;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class BasketService {
     private BasketList basketList;
@@ -46,7 +43,7 @@ public class BasketService {
     public int findCountOfBallsByColour(Basket basket, String colour) {
         int count = 0;
         for (Ball ball : basket.getBalls()) {
-            count += (colour.equals(ball.getColour().getColour()) ? 1 : 0);
+            count += (colour.equals(ball.getColour().getColourInformation()) ? 1 : 0);
         }
         return count;
     }
@@ -54,7 +51,7 @@ public class BasketService {
     public Map<String, Integer> findCountOfTheSameBalls(Basket basket) {
         Map<String, Integer> theSameBalls = new HashMap<>();
         for (Ball ball : basket.getBalls()) {
-            String colour = ball.getColour().getColour();
+            String colour = ball.getColour().getColourInformation();
             if (theSameBalls.containsKey(colour)) {
                 theSameBalls.put(colour, theSameBalls.get(colour) + 1);
             } else {
@@ -79,7 +76,7 @@ public class BasketService {
     public Map<Integer, Integer> theSameSetsOfBalls() {
         Map<Integer, Map<String, Integer>> sameColoursInBaskets = findCountOfTheSameBallsInBaskets();
         Map<Integer, Integer> theSameSets = new HashMap<>();
-        for (Map.Entry entry : sameColoursInBaskets.entrySet()) {
+        for (Map.Entry<Integer, Map<String, Integer>> entry : sameColoursInBaskets.entrySet()) {
             Integer hashCode = findHashCodeOfColoursInBasket(entry.getValue());
             if (theSameSets.containsKey(hashCode)) {
                 theSameSets.put(hashCode, theSameSets.get(hashCode) + 1);

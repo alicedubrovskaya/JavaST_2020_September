@@ -100,7 +100,7 @@ public class BasketView {
 
     public void optionCountOfTheSameBallsInBaskets() {
         Map<Integer, Map<String, Integer>> sameColoursInBaskets = basketController.findCountOfTheSameBallsInBaskets();
-        for (Map.Entry entry : sameColoursInBaskets.entrySet()) {
+        for (Map.Entry<Integer, Map<String, Integer>> entry : sameColoursInBaskets.entrySet()) {
             System.out.println("Basket id: " + entry.getKey());
             System.out.println("Count of balls with the same colour: " + entry.getValue());
         }
@@ -109,7 +109,7 @@ public class BasketView {
     public void optionCountOfBasketsWithTheSameSets() {
         int numberOfSet = 0;
         Map<Integer, Integer> theSameSets = basketController.theSameSets();
-        for (Map.Entry entry : theSameSets.entrySet()) {
+        for (Map.Entry<Integer, Integer> entry : theSameSets.entrySet()) {
             numberOfSet++;
             System.out.println("Set " + numberOfSet + ", count of baskets: " + entry.getValue());
         }
@@ -120,7 +120,7 @@ public class BasketView {
         try {
             List<Ball> balls = basketController.sortByCostInformationAboutBalls(in.nextInt());
             for (Ball ball : balls) {
-                System.out.println("cost: " + ball.getCost() + "; colour: " + ball.getColour().getColour()
+                System.out.println("cost: " + ball.getCost() + "; colour: " + ball.getColour().getColourInformation()
                         + "; weight: " + ball.getWeight());
             }
         } catch (BasketNotFoundException e) {

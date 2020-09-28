@@ -5,19 +5,19 @@ public enum Colour {
     GREEN("green"),
     BLUE("blue");
 
-    private final String colour;
+    private final String colourInformation;
 
-    Colour(String colour) {
-        this.colour=colour;
+    Colour(String colourInformation) {
+        this.colourInformation = colourInformation;
     }
 
-    public String getColour() {
-        return colour;
+    public String getColourInformation() {
+        return colourInformation;
     }
 
     public static Colour getEnumByColour(String colour) {
         for (Colour col : values()) {
-            if (col.getColour().equals(colour)) {
+            if (col.getColourInformation().equals(colour)) {
                 return col;
             }
         }

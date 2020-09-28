@@ -18,7 +18,7 @@ public class Ball {
     @Override
     public int hashCode() {
         //id.hashCode()
-        return weight * 12 + cost * 3 + colour.hashCode();
+        return id.hashCode() + weight * 12 + cost * 3 + colour.hashCode();
     }
 
     @Override
@@ -42,11 +42,10 @@ public class Ball {
         if (colour != comparedObject.colour) {
             return false;
         }
-      /*  if (!id.equals(comparedObject.getId())) {
+        if (!id.equals(comparedObject.getId())) {
             return false;
         }
 
-       */
         if (cost != comparedObject.cost) {
             return false;
         }
