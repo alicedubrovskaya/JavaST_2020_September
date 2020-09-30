@@ -13,10 +13,9 @@ public class NumberController {
         this.numberService = numberService;
     }
 
-    //TODO count
-    public List<Number> getGeneratedNumbers() {
+    public List<Number> getGeneratedNumbers(int countOfNumbers) {
         List<Number> numbers = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < countOfNumbers; i++) {
             numbers.add(new Number(numberService.generateNumber()));
         }
         return numbers;
