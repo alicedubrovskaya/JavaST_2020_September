@@ -2,6 +2,7 @@ package by.training.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 
@@ -20,7 +21,7 @@ public class Basket {
 
     @Override
     public int hashCode() {
-        return id + balls.hashCode();
+        return Objects.hash(id, balls.hashCode());
     }
 
     @Override
@@ -50,7 +51,7 @@ public class Basket {
         String ballsString = balls.stream()
                 .map(ball -> String.valueOf(ball.getId()))
                 .collect(Collectors.joining(","));
-        return getClass().getName() + "@basket id:" + id + " balls' in basket ids: " + ballsString;
+        return getClass().getName() + "[id=" + id + ",balls' in basket ids=" + ballsString;
     }
 
     public void add(Ball ball) {

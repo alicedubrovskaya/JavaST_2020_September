@@ -4,6 +4,8 @@ import by.training.entity.Ball;
 import by.training.exception.BasketNotFoundException;
 import by.training.service.BallService;
 
+import java.math.BigDecimal;
+
 /**
  * Class is controller of balls
  *
@@ -23,7 +25,7 @@ public class BallController {
      * @param colour
      * @return new exemplar of class Ball
      */
-    public Ball createBall(int weight, int cost, String colour) {
+    public Ball createBall(Double weight, BigDecimal cost, String colour) {
         return ballService.createNewBall(weight, cost, colour);
     }
 

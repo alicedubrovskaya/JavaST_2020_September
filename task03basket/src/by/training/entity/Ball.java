@@ -1,5 +1,7 @@
 package by.training.entity;
 
+import java.math.BigDecimal;
+import java.util.Objects;
 import java.util.UUID;
 
 /**
@@ -9,11 +11,11 @@ import java.util.UUID;
  */
 public class Ball {
     private UUID id;
-    private int weight;
-    private int cost;
+    private Double weight;
+    private BigDecimal cost;
     private Colour colour;
 
-    public Ball(int weight, int cost, Colour colour) {
+    public Ball(Double weight, BigDecimal cost, Colour colour) {
         this.id = UUID.randomUUID();
         this.weight = weight;
         this.cost = cost;
@@ -23,13 +25,13 @@ public class Ball {
     @Override
     public int hashCode() {
         //id.hashCode()
-        return id.hashCode() + weight * 12 + cost * 3 + colour.hashCode();
+        return Objects.hash(weight, cost, colour);
     }
 
     @Override
     public String toString() {
-        return getClass().getName() + "@id " + id.toString() + " weight: " + weight
-                + " cost: " + cost + " colour:" + colour;
+        return getClass().getName() + "[id=" + id.toString() + ",weight=" + weight
+                + ",cost=" + cost + ",colour=" + colour + "]";
     }
 
     @Override
@@ -47,10 +49,11 @@ public class Ball {
         if (colour != comparedObject.colour) {
             return false;
         }
-        if (!id.equals(comparedObject.getId())) {
+    /*    if (!id.equals(comparedObject.getId())) {
             return false;
         }
 
+     */
         if (cost != comparedObject.cost) {
             return false;
         }
@@ -64,7 +67,7 @@ public class Ball {
         return id;
     }
 
-    public int getWeight() {
+    public Double getWeight() {
         return weight;
     }
 
@@ -72,7 +75,7 @@ public class Ball {
         return colour;
     }
 
-    public int getCost() {
+    public BigDecimal getCost() {
         return cost;
     }
 }

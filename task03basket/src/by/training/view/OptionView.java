@@ -40,7 +40,7 @@ public class OptionView {
      */
     public void optionCreateNewBall() {
         System.out.print("Enter weight, cost, colour of new ball: ");
-        Ball ball = ballController.createBall(in.nextInt(), in.nextInt(), in.next());
+        Ball ball = ballController.createBall(in.nextDouble(), in.nextBigDecimal(), in.next());
         System.out.print("To what basket do you want to put this ball? Enter it's id: ");
 
         try {
@@ -69,7 +69,7 @@ public class OptionView {
         System.out.print("Enter id of the basket, needed colour: ");
         try {
             int basketId = in.nextInt();
-            int weight = basketController.findWeightOfBallsInBasket(basketId);
+            Double weight = basketController.findWeightOfBallsInBasket(basketId);
             int count = basketController.findCountOfBallsByColourInBasket(basketId, in.next());
             System.out.print("Total weight: " + weight + ", count with this colour: " + count);
         } catch (BasketNotFoundException e) {

@@ -61,8 +61,8 @@ public class BasketService {
      * @param basket
      * @return total weight
      */
-    public int findWeightOfBalls(Basket basket) {
-        int weightSum = 0;
+    public Double findWeightOfBalls(Basket basket) {
+        Double weightSum = (double) 0;
         for (Ball ball : basket.getBalls()) {
             weightSum += ball.getWeight();
         }

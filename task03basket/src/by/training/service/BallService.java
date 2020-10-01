@@ -4,6 +4,8 @@ import by.training.entity.Ball;
 import by.training.entity.Colour;
 import by.training.exception.BasketNotFoundException;
 
+import java.math.BigDecimal;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -25,7 +27,7 @@ public class BallService {
      * @param colour
      * @return new exemplar fo class Ball
      */
-    public Ball createNewBall(int weight, int cost, String colour) {
+    public Ball createNewBall(Double weight, BigDecimal cost, String colour) {
         return new Ball(weight, cost, Colour.getEnumByColour(colour));
     }
 
@@ -45,7 +47,7 @@ public class BallService {
      * @return sorted list of balls
      */
     public List<Ball> sortBalls(List<Ball> balls) {
-        balls.sort((ball, t1) -> Integer.compare(ball.getCost(), t1.getCost()));
+        balls.sort(Comparator.comparing(Ball::getCost));
         return balls;
     }
 }

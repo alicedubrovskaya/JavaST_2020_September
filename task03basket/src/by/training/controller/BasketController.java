@@ -7,6 +7,7 @@ import by.training.exception.BasketNotFoundException;
 import by.training.service.BallService;
 import by.training.service.BasketService;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -46,7 +47,7 @@ public class BasketController {
     public void fillBasket(int basketId, int countOfBalls) throws BasketNotFoundException {
         for (int i = 0; i < countOfBalls; i++) {
             String randomColour = Colour.values()[random.nextInt(Colour.values().length)].getColourInformation();
-            Ball newBall = ballService.createNewBall(random.nextInt(100), random.nextInt(100),
+            Ball newBall = ballService.createNewBall(100*random.nextDouble(), new BigDecimal(100*random.nextDouble()),
                     randomColour);
             ballService.addToBasket(basketId, newBall);
         }
@@ -59,7 +60,7 @@ public class BasketController {
      * @return total weight
      * @throws BasketNotFoundException
      */
-    public int findWeightOfBallsInBasket(int baskedId) throws BasketNotFoundException {
+    public Double findWeightOfBallsInBasket(int baskedId) throws BasketNotFoundException {
         Basket basket = basketService.findByIdBasket(baskedId);
         return basketService.findWeightOfBalls(basket);
     }
