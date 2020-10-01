@@ -1,4 +1,4 @@
-package by.training.view;
+package by.training.command;
 
 import by.training.controller.BallController;
 import by.training.controller.BasketController;
@@ -10,21 +10,58 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * Class lets user interact with operations from main menu
+ * Class is responsible for executing requests sent with the command
  *
  * @author Alisa Dubrovskaya
+ * @since 01.10.20
  */
-public class OptionView {
+public class Receiver {
     private Scanner in;
     private BasketController basketController;
     private BallController ballController;
 
-    public OptionView(BasketController basketController, BallController ballController) {
+    public Receiver(BasketController basketController, BallController ballController) {
         this.basketController = basketController;
         this.ballController = ballController;
-
         in = new Scanner(System.in);
     }
+
+
+    /**
+     * Executes the request sent with the command
+     *
+     * @param option
+     */
+    public void action(int option) {
+
+        switch (option) {
+            case 1:
+                optionCreateNewBasket();
+                break;
+            case 2:
+                optionCreateNewBall();
+                break;
+            case 3:
+                optionFillBasket();
+                break;
+            case 4:
+                optionFindWeightAndCountInBasket();
+                break;
+            case 5:
+                optionCountOfTheSameBallsInBaskets();
+                break;
+            case 6:
+                optionCountOfBasketsWithTheSameSets();
+                break;
+            case 7:
+                optionSortedByCostInformationAboutBalls();
+                break;
+            case 8:
+                optionPrintInformation();
+                break;
+        }
+    }
+
 
     /**
      * Creates new basket with specified id
@@ -114,5 +151,15 @@ public class OptionView {
         } catch (BasketNotFoundException e) {
             System.out.print(e.getMessage());
         }
+    }
+
+    /**
+     * Prints information about available operations
+     */
+    public void optionPrintInformation() {
+        System.out.print("\n1 - create basket \n2 - create ball \n3 - fill the basket with balls\n" +
+                "4 - find weight and count of balls by colour \n5 - number of balls with the same colour in each basket" +
+                "\n6 - count of baskets with the same sets of balls\n" +
+                "7- get sorted by cost information about balls from certain basket\n");
     }
 }
