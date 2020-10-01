@@ -5,6 +5,7 @@ import by.training.controller.BasketController;
 import by.training.entity.Ball;
 import by.training.exception.BasketNotFoundException;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -66,23 +67,28 @@ public class Receiver {
     /**
      * Creates new basket with specified id
      */
-    public void optionCreateNewBasket() {
+    private void optionCreateNewBasket() {
         System.out.print("Enter id of new basket: ");
-        int id = in.nextInt();
-        basketController.createBasket(id);
+        try {
+            int id = in.nextInt();
+            basketController.createBasket(id);
+        } catch (InputMismatchException e) {
+            System.out.println("Incorrect type of id");
+        }
     }
 
     /**
      * Creates new ball
      */
-    public void optionCreateNewBall() {
+    private void optionCreateNewBall() {
         System.out.print("Enter weight, cost, colour of new ball: ");
-        Ball ball = ballController.createBall(in.nextDouble(), in.nextBigDecimal(), in.next());
-        System.out.print("To what basket do you want to put this ball? Enter it's id: ");
-
         try {
+            Ball ball = ballController.createBall(in.nextDouble(), in.nextBigDecimal(), in.next());
+            System.out.print("To what basket do you want to put this ball? Enter it's id: ");
             ballController.addBallToBasket(in.nextInt(), ball);
-        } catch (BasketNotFoundException e) {
+        } catch (InputMismatchException e) {
+            System.out.print("Incorrect type of entered data");
+        } catch (BasketNotFoundException|IllegalArgumentException e) {
             System.out.print(e.getMessage());
         }
     }
@@ -90,10 +96,12 @@ public class Receiver {
     /**
      * Fills in basket
      */
-    public void optionFillBasket() {
+    private void optionFillBasket() {
         System.out.print("How much balls do you want to add? Enter id of basket, count of balls: ");
         try {
             basketController.fillBasket(in.nextInt(), in.nextInt());
+        } catch (InputMismatchException e) {
+            System.out.print("Incorrect type of entered data");
         } catch (BasketNotFoundException e) {
             System.out.print(e.getMessage());
         }
@@ -102,13 +110,15 @@ public class Receiver {
     /**
      * Calculates total weight of balls with needed colour in basket
      */
-    public void optionFindWeightAndCountInBasket() {
+    private void optionFindWeightAndCountInBasket() {
         System.out.print("Enter id of the basket, needed colour: ");
         try {
             int basketId = in.nextInt();
             Double weight = basketController.findWeightOfBallsInBasket(basketId);
             int count = basketController.findCountOfBallsByColourInBasket(basketId, in.next());
             System.out.print("Total weight: " + weight + ", count with this colour: " + count);
+        } catch (InputMismatchException e) {
+            System.out.print("Incorrect type of entered data");
         } catch (BasketNotFoundException e) {
             System.out.print(e.getMessage());
         }
@@ -117,7 +127,7 @@ public class Receiver {
     /**
      * Calculates count of the same balls (identical colour) in all baskets
      */
-    public void optionCountOfTheSameBallsInBaskets() {
+    private void optionCountOfTheSameBallsInBaskets() {
         Map<Integer, Map<String, Integer>> sameColoursInBaskets = basketController.findCountOfTheSameBallsInBaskets();
         for (Map.Entry<Integer, Map<String, Integer>> entry : sameColoursInBaskets.entrySet()) {
             System.out.println("Basket id: " + entry.getKey());
@@ -128,7 +138,7 @@ public class Receiver {
     /**
      * Calculates count of baskets with the same sets of balls
      */
-    public void optionCountOfBasketsWithTheSameSets() {
+    private void optionCountOfBasketsWithTheSameSets() {
         int numberOfSet = 0;
         Map<Integer, Integer> theSameSets = basketController.theSameSets();
         for (Map.Entry<Integer, Integer> entry : theSameSets.entrySet()) {
@@ -140,7 +150,7 @@ public class Receiver {
     /**
      * Prints sorted by colour information about balls from certain basket
      */
-    public void optionSortedByCostInformationAboutBalls() {
+    private void optionSortedByCostInformationAboutBalls() {
         System.out.print("Enter basket id: ");
         try {
             List<Ball> balls = basketController.sortByCostInformationAboutBalls(in.nextInt());
@@ -148,6 +158,8 @@ public class Receiver {
                 System.out.println("cost: " + ball.getCost() + "; colour: " + ball.getColour().getColourInformation()
                         + "; weight: " + ball.getWeight());
             }
+        } catch (InputMismatchException e) {
+            System.out.print("Incorrect type of entered data");
         } catch (BasketNotFoundException e) {
             System.out.print(e.getMessage());
         }
@@ -156,7 +168,7 @@ public class Receiver {
     /**
      * Prints information about available operations
      */
-    public void optionPrintInformation() {
+    private void optionPrintInformation() {
         System.out.print("\n1 - create basket \n2 - create ball \n3 - fill the basket with balls\n" +
                 "4 - find weight and count of balls by colour \n5 - number of balls with the same colour in each basket" +
                 "\n6 - count of baskets with the same sets of balls\n" +
