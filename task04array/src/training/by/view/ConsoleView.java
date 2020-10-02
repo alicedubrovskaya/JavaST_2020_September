@@ -1,6 +1,7 @@
 package training.by.view;
 
 import training.by.controller.ArrayController;
+import training.by.exception.ElementNotFoundException;
 
 import java.util.Scanner;
 
@@ -13,7 +14,9 @@ public class ConsoleView {
         this.arrayController = arrayController;
         in = new Scanner(System.in);
 
-        System.out.println("1-generate elements of array\n 2-enter elements of array \n3-create array with elements from file");
+        System.out.println("How do you want to initialize array? \n1 - generate elements \n2-enter elements from console" +
+                "\n3-get elements from file");
+
         int option = in.nextInt();
         switch (option) {
             case 1:
@@ -25,7 +28,16 @@ public class ConsoleView {
             case 3:
                 optionGetElementsFromFile();
                 break;
+        }
 
+        while (option != 0) {
+            System.out.println("\n1- find element in array");
+            option = in.nextInt();
+            switch (option) {
+                case 1:
+                    optionFindElementInArray();
+                    break;
+            }
         }
 
     }
@@ -41,5 +53,14 @@ public class ConsoleView {
 
     protected void optionGetElementsFromFile() {
         arrayController.createNewArrayFromFile();
+    }
+
+    protected void optionFindElementInArray() {
+        System.out.print("Enter value of element: ");
+        try {
+            System.out.print("Element found in position: " + arrayController.findElementInArray(in.nextInt()));
+        } catch (ElementNotFoundException e) {
+            System.out.print(e.getMessage());
+        }
     }
 }

@@ -1,5 +1,6 @@
 package training.by.controller;
 
+import training.by.exception.ElementNotFoundException;
 import training.by.service.ArrayService;
 
 /**
@@ -28,7 +29,7 @@ public class ArrayController {
      * Creates new exemplar of class Array with automatically generated elements
      */
     public void createNewArray() {
-        arrayService.generateArray();
+        arrayService.createGeneratedArray();
     }
 
     /**
@@ -36,5 +37,15 @@ public class ArrayController {
      */
     public void createNewArrayFromFile() {
         arrayService.createArray();
+    }
+
+    /**
+     * Finds element with needed value
+     * @param value
+     * @return
+     * @throws ElementNotFoundException
+     */
+    public int findElementInArray(int value) throws ElementNotFoundException {
+        return arrayService.findElement(value);
     }
 }

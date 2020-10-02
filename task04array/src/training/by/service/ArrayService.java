@@ -2,6 +2,7 @@ package training.by.service;
 
 import training.by.dao.ArrayDao;
 import training.by.entity.Array;
+import training.by.exception.ElementNotFoundException;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,6 +15,7 @@ import java.io.IOException;
  */
 public class ArrayService {
     private ArrayDao arrayDao;
+    private Array array;
 
     public ArrayService(ArrayDao arrayDao) {
         this.arrayDao = arrayDao;
@@ -25,7 +27,7 @@ public class ArrayService {
      * @param elements
      */
     public void createArray(Integer... elements) {
-        new Array(elements);
+        this.array = new Array(elements);
     }
 
     /**
@@ -42,14 +44,35 @@ public class ArrayService {
         } catch (IOException e) {
             arrayInt = null;
         }
-        new Array(arrayInt);
+        this.array = new Array(arrayInt);
     }
 
     /**
      * Creates new exemplar of class Array with automatically generated elements
      */
-    public void generateArray() {
-        new Array();
+    public void createGeneratedArray() {
+        this.array = new Array();
     }
 
+    /**
+     * Finds element with specified value. If there are more than one elements with that value, finds position of last
+     * @param value
+     * @return
+     * @throws ElementNotFoundException
+     */
+    public int findElement(int value) throws ElementNotFoundException {
+        int position = 100;
+        boolean isFound = false;
+        int arrayInt[] = array.getArrayInt();
+        for (int i = 0; i < arrayInt.length; i++) {
+            if (arrayInt[i] == value) {
+                position = i;
+                isFound = true;
+            }
+        }
+        if (isFound == false) {
+            throw new ElementNotFoundException(value);
+        }
+        return position;
+    }
 }
