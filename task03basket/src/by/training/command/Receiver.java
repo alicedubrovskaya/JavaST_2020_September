@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * Class is responsible for executing requests sent with the command
+ * Class is responsible for executing requests sent with the comman d
  *
  * @author Alisa Dubrovskaya
  * @since 01.10.20

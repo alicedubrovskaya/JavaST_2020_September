@@ -54,10 +54,10 @@ public class Ball {
         }
 
      */
-        if (cost != comparedObject.cost) {
+        if (cost.compareTo(comparedObject.cost) != 0) {
             return false;
         }
-        if (weight != comparedObject.weight) {
+        if (Double.compare(weight, comparedObject.weight) != 0) {
             return false;
         }
         return true;
