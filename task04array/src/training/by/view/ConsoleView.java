@@ -1,7 +1,6 @@
 package training.by.view;
 
 import training.by.controller.ArrayController;
-import training.by.entity.Array;
 
 import java.util.Scanner;
 
@@ -14,7 +13,7 @@ public class ConsoleView {
         this.arrayController = arrayController;
         in = new Scanner(System.in);
 
-        System.out.println("1-generate elements of array\n 2-enter elements of array");
+        System.out.println("1-generate elements of array\n 2-enter elements of array \n3-create array with elements from file");
         int option = in.nextInt();
         switch (option) {
             case 1:
@@ -23,20 +22,24 @@ public class ConsoleView {
             case 2:
                 optionGetElementsFromConsole();
                 break;
+            case 3:
+                optionGetElementsFromFile();
+                break;
+
         }
 
     }
 
     protected void optionGenerateElements() {
-        Array array = new Array();
-        int[] arrayInt = array.getArrayInt();
-        for (int i = 0; i < arrayInt.length; i++) {
-            System.out.print(arrayInt[i] + " ");
-        }
+        arrayController.createNewArray();
     }
 
     protected void optionGetElementsFromConsole() {
         System.out.print("Enter 5 elements: ");
         arrayController.createNewArray(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt());
+    }
+
+    protected void optionGetElementsFromFile() {
+        arrayController.createNewArrayFromFile();
     }
 }
