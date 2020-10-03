@@ -2,6 +2,8 @@ package training.by.controller;
 
 import training.by.exception.ElementNotFoundException;
 import training.by.service.ArrayService;
+import training.by.service.ArrayServiceImpl;
+import training.by.service.ServiceFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,8 +17,9 @@ import java.util.Map;
 public class ArrayController {
     private ArrayService arrayService;
 
-    public ArrayController(ArrayService arrayService) {
-        this.arrayService = arrayService;
+    public ArrayController() {
+        ServiceFactory serviceFactory = ServiceFactory.getInstance();
+        this.arrayService = serviceFactory.getArrayService();
     }
 
     /**

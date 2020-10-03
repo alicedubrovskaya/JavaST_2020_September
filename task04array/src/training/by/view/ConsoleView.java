@@ -70,8 +70,8 @@ public class ConsoleView {
 
     protected void optionFindMinAndMaxElement() {
         Map<String, Integer> values = arrayController.findMinAndMaxValue();
-        for (Map.Entry<String, Integer> entry :values.entrySet()){
-            System.out.println(entry.getKey()+" = " +entry.getValue());
+        for (Map.Entry<String, Integer> entry : values.entrySet()) {
+            System.out.println(entry.getKey() + " = " + entry.getValue());
         }
     }
 }
