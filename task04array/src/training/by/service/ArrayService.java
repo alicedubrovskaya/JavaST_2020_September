@@ -57,7 +57,7 @@ public class ArrayService {
     /**
      * Finds element with specified value. If there are more than one elements with that value, finds position of last
      * @param value
-     * @return
+     * @return position of element with specified value
      * @throws ElementNotFoundException
      */
     public int findElement(int value) throws ElementNotFoundException {
@@ -74,5 +74,36 @@ public class ArrayService {
             throw new ElementNotFoundException(value);
         }
         return position;
+    }
+
+    /**
+     * Finds max element in array. By default max element is the first element in array. The array is assumed to be nonzero
+     * @return max element
+     */
+    public int findMaxValue() {
+        int arrayInt[]=array.getArrayInt();
+        int maxValue=arrayInt[0];
+        for (int i=0;i<arrayInt.length;i++){
+            if (arrayInt[i]>maxValue){
+                maxValue=arrayInt[i];
+            }
+        }
+        return maxValue;
+    }
+
+    /**
+     * Finds min element in array. By default min element is the first element in array. The array is assumed to be nonzero
+     * @return min element
+     */
+    public int findMinValue(){
+        int arrayInt[]=array.getArrayInt();
+        int minValue=arrayInt[0];
+
+        for (int i=0;i<arrayInt.length;i++){
+            if (arrayInt[i]<minValue){
+                minValue=arrayInt[i];
+            }
+        }
+        return minValue;
     }
 }
