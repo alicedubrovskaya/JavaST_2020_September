@@ -205,6 +205,35 @@ public class ArrayServiceImpl implements ArrayService {
     }
 
     /**
+     * Sorts array with insertion sort.
+     * <p>
+     * With each new iteration the sorted part of the array expands with one element.
+     * After expansion the new element places into the sorted part of array. It goes by shifting all elements to the right
+     * until will be found an element that doesn't need to be shifted.
+     * <p/>
+     *
+     * @return
+     */
+    @Override
+    public int[] insertionSort() {
+        int[] arrayInt = array.getArrayInt();
+
+        for (int left = 0; left < arrayInt.length; left++) {
+            int value = arrayInt[left];
+            int i = left - 1;
+            for (; i >= 0; i--) {
+                if (value < arrayInt[i]) {
+                    arrayInt[i + 1] = arrayInt[i];
+                } else {
+                    break;
+                }
+            }
+            arrayInt[i + 1] = value;
+        }
+        return arrayInt;
+    }
+
+    /**
      * Swaps two elements of array
      *
      * @param arrayInt

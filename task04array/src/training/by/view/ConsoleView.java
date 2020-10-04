@@ -35,7 +35,7 @@ public class ConsoleView {
 
         while (option != 0) {
             System.out.println("\n1- find element in array \n2- find min and max element \n3- bubble sort" +
-                    "\n4- selection sort");
+                    "\n4- selection sort \n5- insertion sort");
             option = in.nextInt();
             switch (option) {
                 case 1:
@@ -49,6 +49,9 @@ public class ConsoleView {
                     break;
                 case 4:
                     optionSortWithSelectionSort();
+                    break;
+                case 5:
+                    optionSortWithInsertionSort();
                     break;
             }
         }
@@ -94,5 +97,9 @@ public class ConsoleView {
 
     protected void optionSortWithSelectionSort() {
         System.out.println(Arrays.toString(arrayController.sortArrayWithSelectionSort()));
+    }
+
+    protected void optionSortWithInsertionSort() {
+        System.out.println(Arrays.toString(arrayController.sortArrayWithInsertionSort()));
     }
 }

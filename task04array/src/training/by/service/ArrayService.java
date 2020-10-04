@@ -28,6 +28,8 @@ public interface ArrayService {
 
     int[] selectionSort();
 
+    int[] insertionSort();
+
     void swap(int[] arrayInt, int positionOne, int positionTwo);
 
 }

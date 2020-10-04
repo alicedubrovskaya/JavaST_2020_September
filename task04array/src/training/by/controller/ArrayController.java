@@ -76,8 +76,21 @@ public class ArrayController {
         return arrayService.bubbleSort();
     }
 
-    public int[] sortArrayWithSelectionSort(){
+    /**
+     * Selection sort of array
+     *
+     * @return sorted array (ascending)
+     */
+    public int[] sortArrayWithSelectionSort() {
         return arrayService.selectionSort();
     }
 
+    /**
+     * Insertion sort of array
+     *
+     * @return sorted array (ascending)
+     */
+    public int[] sortArrayWithInsertionSort() {
+        return arrayService.insertionSort();
+    }
 }
