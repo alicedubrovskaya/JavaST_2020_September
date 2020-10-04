@@ -168,20 +168,53 @@ public class ArrayServiceImpl implements ArrayService {
     @Override
     public int[] bubbleSort() {
         int[] arrayInt = array.getArrayInt();
-        int temporal;
         boolean isSorted = false;
 
         while (!isSorted) {
             isSorted = true;
             for (int i = 0; i < arrayInt.length - 1; i++) {
                 if (arrayInt[i] > arrayInt[i + 1]) {
-                    temporal = arrayInt[i];
-                    arrayInt[i] = arrayInt[i + 1];
-                    arrayInt[i + 1] = temporal;
+                    swap(arrayInt, i, i + 1);
                     isSorted = false;
                 }
             }
         }
         return arrayInt;
+    }
+
+    /**
+     * Sorts array with selection sort. Each iteration selects the smallest element and moves to the beginning
+     *
+     * @return sorted array(ascending)
+     */
+    @Override
+    public int[] selectionSort() {
+        int[] arrayInt = array.getArrayInt();
+
+        for (int left = 0; left < arrayInt.length; left++) {
+            int minElementPosition = left;
+            for (int i = left; i < arrayInt.length; i++) {
+                if (arrayInt[i] < arrayInt[minElementPosition]) {
+                    minElementPosition = i;
+                }
+            }
+            swap(arrayInt, left, minElementPosition);
+        }
+
+        return arrayInt;
+    }
+
+    /**
+     * Swaps two elements of array
+     *
+     * @param arrayInt
+     * @param positionOne
+     * @param positionTwo
+     */
+    @Override
+    public void swap(int[] arrayInt, int positionOne, int positionTwo) {
+        int temporal = arrayInt[positionOne];
+        arrayInt[positionOne] = arrayInt[positionTwo];
+        arrayInt[positionTwo] = temporal;
     }
 }

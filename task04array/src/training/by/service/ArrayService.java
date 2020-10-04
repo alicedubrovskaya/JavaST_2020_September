@@ -24,6 +24,10 @@ public interface ArrayService {
 
     void validateElements(int[] elements) throws IncorrectTypeOfElementsException;
 
-    int [] bubbleSort();
+    int[] bubbleSort();
+
+    int[] selectionSort();
+
+    void swap(int[] arrayInt, int positionOne, int positionTwo);
 
 }
