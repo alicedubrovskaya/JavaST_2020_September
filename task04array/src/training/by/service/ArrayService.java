@@ -32,4 +32,8 @@ public interface ArrayService {
 
     void swap(int[] arrayInt, int positionOne, int positionTwo);
 
+    int binarySearch(int[] arrayInt, int value, int left, int right);
+
+    int[] getArrayInt();
+
 }

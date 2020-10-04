@@ -93,4 +93,16 @@ public class ArrayController {
     public int[] sortArrayWithInsertionSort() {
         return arrayService.insertionSort();
     }
+
+    /**
+     * Search of element with binary search.
+     * By default left bound is 0, right is position of last element in array
+     *
+     * @param value
+     * @return
+     */
+    //TODO array storage, not fixed arguments
+    public int searchElementWithBinarySearch(int value) {
+        return arrayService.binarySearch(arrayService.bubbleSort(), value, 0, 4);
+    }
 }

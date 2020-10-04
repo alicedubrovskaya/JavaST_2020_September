@@ -23,6 +23,10 @@ public class ArrayServiceImpl implements ArrayService {
         this.arrayDAO = daoFactory.getArrayDAO();
     }
 
+    @Override
+    public int[] getArrayInt() {
+        return array.getArrayInt();
+    }
 
     /**
      * Creates new exemplar of class Array with specified elements
@@ -245,5 +249,33 @@ public class ArrayServiceImpl implements ArrayService {
         int temporal = arrayInt[positionOne];
         arrayInt[positionOne] = arrayInt[positionTwo];
         arrayInt[positionTwo] = temporal;
+    }
+
+    /**
+     * Binary search of element.
+     * Gets sorted array. There are left and right bounds of search that narrow. How they narrow: it depends on
+     * whether required element is less or more than element in the middle.
+     * @param value
+     * @param left
+     * @param right
+     * @return position of required element
+     */
+    @Override
+    public int binarySearch(int []arrayInt, int value, int left, int right) {
+        int position=-1;
+        while (left<=right){
+            int middle=(left+right)/2;
+            if (arrayInt[middle]==value){
+                position=middle;
+                break;
+            }
+            if (value<arrayInt[middle]){
+                right=middle-1;
+            }
+            else {
+                left=middle+1;
+            }
+        }
+        return position;
     }
 }
