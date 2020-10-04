@@ -114,4 +114,10 @@ public class ArrayController {
     public List<Integer> findPrimeNumbersInArray(){
         return arrayService.findPrimeNumbers();
     }
+
+    public List<Integer> findFibonacciNumbersInArray(){
+        int[] arrayInt=arrayService.bubbleSort();
+        int maxValue=arrayInt[arrayInt.length-1];
+        return arrayService.findFibonacciNumbers(arrayInt,maxValue);
+    }
 }

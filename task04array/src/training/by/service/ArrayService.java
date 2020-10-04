@@ -40,4 +40,8 @@ public interface ArrayService {
 
     boolean isPrime(int number);
 
+    int[] getFibonacciNumbers(int count);
+
+    List<Integer> findFibonacciNumbers(int[] arrayInt, int maxNumber);
+
 }

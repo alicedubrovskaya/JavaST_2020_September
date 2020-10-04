@@ -36,7 +36,7 @@ public class ConsoleView {
         while (option != 0) {
             System.out.println("\n1- find element in array \n2- find min and max element \n3- bubble sort" +
                     "\n4- selection sort \n5- insertion sort \n6-binary search" +
-                    "\n7- find prime numbers");
+                    "\n7- find prime numbers \n8- find fibonacci");
             option = in.nextInt();
             switch (option) {
                 case 1:
@@ -59,6 +59,9 @@ public class ConsoleView {
                     break;
                 case 7:
                     optionFindPrimeNumbers();
+                    break;
+                case 8:
+                    findFibonacciNumbers();
                     break;
             }
         }
@@ -115,7 +118,11 @@ public class ConsoleView {
         System.out.println(arrayController.searchElementWithBinarySearch(in.nextInt()));
     }
 
-    protected void optionFindPrimeNumbers(){
+    protected void optionFindPrimeNumbers() {
         System.out.println(arrayController.findPrimeNumbersInArray().toString());
+    }
+
+    protected void findFibonacciNumbers() {
+        System.out.println(arrayController.findFibonacciNumbersInArray().toString());
     }
 }

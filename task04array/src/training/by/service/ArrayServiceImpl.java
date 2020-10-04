@@ -311,4 +311,44 @@ public class ArrayServiceImpl implements ArrayService {
         }
         return isPrime;
     }
+
+    /**
+     * Finds sequence of fibonacci numbers
+     *
+     * @param count
+     * @return fibonacci sequence
+     */
+    @Override
+    public int[] getFibonacciNumbers(int count) {
+        int[] fibonacciNumbers = new int[count + 2];
+        fibonacciNumbers[0] = fibonacciNumbers[1] = 1;
+        for (int i = 2; i < count + 2; i++) {
+            fibonacciNumbers[i] = fibonacciNumbers[i - 1] + fibonacciNumbers[i - 2];
+        }
+        return fibonacciNumbers;
+    }
+
+    /**
+     * Finds fibonacci numbers in specified array.
+     *
+     * @param arrayInt  - sorted array of numbers
+     * @param maxNumber - maxNumber in arrayInt
+     * @return fibonacci list
+     */
+    @Override
+    public List<Integer> findFibonacciNumbers(int[] arrayInt, int maxNumber) {
+        List<Integer> fibonacciFromArray = new ArrayList<>();
+        int[] fibonacciNumbers = getFibonacciNumbers(maxNumber);
+        int position = 0;
+
+        for (int i = 0; i < arrayInt.length; i++) {
+            while (fibonacciNumbers[position] <= arrayInt[i]) {
+                if (arrayInt[i] == fibonacciNumbers[position]) {
+                    fibonacciFromArray.add(arrayInt[i]);
+                }
+                position++;
+            }
+        }
+        return fibonacciFromArray;
+    }
 }
