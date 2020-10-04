@@ -44,4 +44,8 @@ public interface ArrayService {
 
     List<Integer> findFibonacciNumbers(int[] arrayInt, int maxNumber);
 
+    boolean isNDigitWithoutIdenticalNumerals(int countOfDigits, int number);
+
+    List<Integer> findNumbersWithoutTHeSameDigitsInArray();
+
 }

@@ -8,9 +8,7 @@ import training.by.exception.IncorrectTypeOfElementsException;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * @author Alisa Dubrovskaya
@@ -350,5 +348,54 @@ public class ArrayServiceImpl implements ArrayService {
             }
         }
         return fibonacciFromArray;
+    }
+
+    /**
+     * Checks number for the same digits and needed length
+     * @param countOfDigits
+     * @param number
+     * @return
+     */
+    @Override
+    public boolean isNDigitWithoutIdenticalNumerals(int countOfDigits, int number) {
+        boolean isWithoutIdentical = true;
+        Map<Integer, Integer> digits = new HashMap<>();
+        for (int i = 0; i < 10; i++) {
+            digits.put(i, 0);
+        }
+        String expression = Integer.toString(number);
+
+        if (expression.length() == countOfDigits) {
+            for (int i = 0; i < expression.length(); i++) {
+                int digitFromString = Character.getNumericValue(expression.charAt(i));
+                digits.put(digitFromString, digits.get(digitFromString)+1);
+            }
+
+            for (Map.Entry<Integer, Integer> entry: digits.entrySet()){
+                if (entry.getValue()>1){
+                    isWithoutIdentical=false;
+                }
+            }
+        } else {
+            isWithoutIdentical = false;
+        }
+        return isWithoutIdentical;
+    }
+
+    /**
+     * Finds numbers in array without the same digits with needed length
+     * @return list of found numbers
+     */
+    //TODO change fixed length of number
+    @Override
+    public List<Integer> findNumbersWithoutTHeSameDigitsInArray() {
+        List<Integer> numbers= new ArrayList<>();
+        int arrayInt[] = array.getArrayInt();
+        for (int i=0;i<arrayInt.length;i++){
+            if(isNDigitWithoutIdenticalNumerals(3, arrayInt[i])){
+                numbers.add(arrayInt[i]);
+            }
+        }
+        return numbers;
     }
 }

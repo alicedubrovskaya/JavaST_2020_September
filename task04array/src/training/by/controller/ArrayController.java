@@ -109,15 +109,21 @@ public class ArrayController {
 
     /**
      * Finds prime numbers in array
+     *
      * @return list of prime numbers from array
      */
-    public List<Integer> findPrimeNumbersInArray(){
+    public List<Integer> findPrimeNumbersInArray() {
         return arrayService.findPrimeNumbers();
     }
 
-    public List<Integer> findFibonacciNumbersInArray(){
-        int[] arrayInt=arrayService.bubbleSort();
-        int maxValue=arrayInt[arrayInt.length-1];
-        return arrayService.findFibonacciNumbers(arrayInt,maxValue);
+
+    public List<Integer> findFibonacciNumbersInArray() {
+        int[] arrayInt = arrayService.bubbleSort();
+        int maxValue = arrayInt[arrayInt.length - 1];
+        return arrayService.findFibonacciNumbers(arrayInt, maxValue);
+    }
+
+    public List<Integer> findNumbersWithoutSameDigits() {
+        return arrayService.findNumbersWithoutTHeSameDigitsInArray();
     }
 }
