@@ -8,6 +8,8 @@ import training.by.exception.IncorrectTypeOfElementsException;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -21,11 +23,6 @@ public class ArrayServiceImpl implements ArrayService {
     public ArrayServiceImpl() {
         DAOFactory daoFactory = DAOFactory.getInstance();
         this.arrayDAO = daoFactory.getArrayDAO();
-    }
-
-    @Override
-    public int[] getArrayInt() {
-        return array.getArrayInt();
     }
 
     /**
@@ -255,27 +252,63 @@ public class ArrayServiceImpl implements ArrayService {
      * Binary search of element.
      * Gets sorted array. There are left and right bounds of search that narrow. How they narrow: it depends on
      * whether required element is less or more than element in the middle.
+     *
      * @param value
      * @param left
      * @param right
      * @return position of required element
      */
     @Override
-    public int binarySearch(int []arrayInt, int value, int left, int right) {
-        int position=-1;
-        while (left<=right){
-            int middle=(left+right)/2;
-            if (arrayInt[middle]==value){
-                position=middle;
+    public int binarySearch(int[] arrayInt, int value, int left, int right) {
+        int position = -1;
+        while (left <= right) {
+            int middle = (left + right) / 2;
+            if (arrayInt[middle] == value) {
+                position = middle;
                 break;
             }
-            if (value<arrayInt[middle]){
-                right=middle-1;
-            }
-            else {
-                left=middle+1;
+            if (value < arrayInt[middle]) {
+                right = middle - 1;
+            } else {
+                left = middle + 1;
             }
         }
         return position;
+    }
+
+    /**
+     * Finds prime numbers in array
+     *
+     * @return list of found prime numbers
+     */
+    @Override
+    public List<Integer> findPrimeNumbers() {
+        List<Integer> primeNumbers = new ArrayList<>();
+        int[] arrayInt = array.getArrayInt();
+        for (int i = 0; i < arrayInt.length; i++) {
+            if (isPrime(arrayInt[i])) {
+                primeNumbers.add(arrayInt[i]);
+            }
+        }
+        return primeNumbers;
+    }
+
+    /**
+     * Checks is number prime or not.
+     * Prime number is a number having exactly two different natural divisors - one and itself
+     *
+     * @param number
+     * @return boolean variable is number prime or not
+     */
+    @Override
+    public boolean isPrime(int number) {
+        boolean isPrime = true;
+        for (int i = 2; i <= number / 2; i++) {
+            if (number % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        return isPrime;
     }
 }

@@ -3,6 +3,8 @@ package training.by.service;
 import training.by.exception.ElementNotFoundException;
 import training.by.exception.IncorrectTypeOfElementsException;
 
+import java.util.List;
+
 /**
  * @author Alisa Dubrovskaya
  * @since 03/10/20
@@ -34,6 +36,8 @@ public interface ArrayService {
 
     int binarySearch(int[] arrayInt, int value, int left, int right);
 
-    int[] getArrayInt();
+    List<Integer> findPrimeNumbers();
+
+    boolean isPrime(int number);
 
 }

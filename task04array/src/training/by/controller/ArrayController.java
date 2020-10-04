@@ -5,6 +5,7 @@ import training.by.service.ArrayService;
 import training.by.service.ServiceFactory;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -104,5 +105,13 @@ public class ArrayController {
     //TODO array storage, not fixed arguments
     public int searchElementWithBinarySearch(int value) {
         return arrayService.binarySearch(arrayService.bubbleSort(), value, 0, 4);
+    }
+
+    /**
+     * Finds prime numbers in array
+     * @return list of prime numbers from array
+     */
+    public List<Integer> findPrimeNumbersInArray(){
+        return arrayService.findPrimeNumbers();
     }
 }
