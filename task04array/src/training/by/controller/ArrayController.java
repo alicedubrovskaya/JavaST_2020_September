@@ -2,7 +2,6 @@ package training.by.controller;
 
 import training.by.exception.ElementNotFoundException;
 import training.by.service.ArrayService;
-import training.by.service.ArrayServiceImpl;
 import training.by.service.ServiceFactory;
 
 import java.util.HashMap;
@@ -67,4 +66,14 @@ public class ArrayController {
         values.put("max", arrayService.findMaxValue());
         return values;
     }
+
+    /**
+     * Bubble sort of array
+     *
+     * @return sorted array (ascending)
+     */
+    public int[] sortArrayWithBubbleSort() {
+        return arrayService.bubbleSort();
+    }
+
 }

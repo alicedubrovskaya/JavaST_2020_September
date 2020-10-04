@@ -3,6 +3,8 @@ package training.by.view;
 import training.by.controller.ArrayController;
 import training.by.exception.ElementNotFoundException;
 
+import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -32,7 +34,7 @@ public class ConsoleView {
         }
 
         while (option != 0) {
-            System.out.println("\n1- find element in array \n2- find min and max element");
+            System.out.println("\n1- find element in array \n2- find min and max element \n3- bubble sort");
             option = in.nextInt();
             switch (option) {
                 case 1:
@@ -40,6 +42,9 @@ public class ConsoleView {
                     break;
                 case 2:
                     optionFindMinAndMaxElement();
+                    break;
+                case 3:
+                    optionSortWithBubbleSort();
                     break;
             }
         }
@@ -52,7 +57,11 @@ public class ConsoleView {
 
     protected void optionGetElementsFromConsole() {
         System.out.print("Enter 5 elements: ");
-        arrayController.createNewArray(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt());
+        try {
+            arrayController.createNewArray(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt());
+        } catch (InputMismatchException e) {
+            System.out.println("Incorrect type of entered elements");
+        }
     }
 
     protected void optionGetElementsFromFile() {
@@ -73,5 +82,10 @@ public class ConsoleView {
         for (Map.Entry<String, Integer> entry : values.entrySet()) {
             System.out.println(entry.getKey() + " = " + entry.getValue());
         }
+    }
+
+    protected void optionSortWithBubbleSort() {
+        int[] arrayInt = arrayController.sortArrayWithBubbleSort();
+        System.out.println(Arrays.toString(arrayInt));
     }
 }

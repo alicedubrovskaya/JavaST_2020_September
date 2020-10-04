@@ -12,14 +12,6 @@ import java.util.Random;
  */
 public class Array {
     private int arrayInt[];
-    private Random random = new Random();
-
-    public Array() {
-        arrayInt = new int[5];
-        for (int i = 0; i < 5; i++) {
-            arrayInt[i] = generateNumber();
-        }
-    }
 
     public Array(Integer... elements) {
         arrayInt = new int[5];
@@ -30,10 +22,6 @@ public class Array {
 
     public Array(int array[]) {
         arrayInt = array;
-    }
-
-    protected int generateNumber() {
-        return random.nextInt(100);
     }
 
     public int[] getArrayInt() {

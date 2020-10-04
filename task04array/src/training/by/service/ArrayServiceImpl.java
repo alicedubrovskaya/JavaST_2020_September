@@ -4,20 +4,22 @@ import training.by.dao.ArrayDAO;
 import training.by.dao.DAOFactory;
 import training.by.entity.Array;
 import training.by.exception.ElementNotFoundException;
+import training.by.exception.IncorrectTypeOfElementsException;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 
 /**
  * @author Alisa Dubrovskaya
- * @since 03/10/20
  */
 public class ArrayServiceImpl implements ArrayService {
     private ArrayDAO arrayDAO;
     private Array array;
+    private Random random = new Random();
 
     public ArrayServiceImpl() {
-        DAOFactory daoFactory=DAOFactory.getInstance();
+        DAOFactory daoFactory = DAOFactory.getInstance();
         this.arrayDAO = daoFactory.getArrayDAO();
     }
 
@@ -37,17 +39,21 @@ public class ArrayServiceImpl implements ArrayService {
      */
     @Override
     public void createArray() {
-        int arrayInt[];
+        int[] arrayInt;
         String filePath = new File("task04array/data/elements.txt").getAbsolutePath();
         try {
             arrayInt = arrayDAO.getElementsFromFile(filePath);
+            validateElements(arrayInt);
             for (Integer element : arrayInt) {
                 System.out.print(element + " ");
             }
+            this.array = new Array(arrayInt);
         } catch (IOException e) {
-            arrayInt = null;
+            System.out.println("Array wasn't created");
+        } catch (IncorrectTypeOfElementsException e) {
+            System.out.println(e.getMessage());
         }
-        this.array = new Array(arrayInt);
+
     }
 
     /**
@@ -55,8 +61,43 @@ public class ArrayServiceImpl implements ArrayService {
      */
     @Override
     public void createGeneratedArray() {
-        this.array = new Array();
+        int[] arrayInt = new int[5];
+        for (int i = 0; i < 5; i++) {
+            arrayInt[i] = generateNumber();
+        }
+        this.array = new Array(arrayInt);
     }
+
+    /**
+     * Generates number from 0 to 100
+     *
+     * @return generated number
+     */
+    @Override
+    public int generateNumber() {
+        return random.nextInt(100);
+    }
+
+    /**
+     * Validates elements of array
+     *
+     * @param elements
+     * @throws IncorrectTypeOfElementsException
+     */
+    @Override
+    public void validateElements(int[] elements) throws IncorrectTypeOfElementsException {
+        boolean isCorrectData = true;
+        for (Integer element : elements) {
+            if (!(element instanceof Integer)) {
+                isCorrectData = false;
+            }
+        }
+
+        if (!isCorrectData) {
+            throw new IncorrectTypeOfElementsException();
+        }
+    }
+
 
     /**
      * Finds element with specified value. If there are more than one elements with that value, finds position of last
@@ -69,14 +110,14 @@ public class ArrayServiceImpl implements ArrayService {
     public int findElement(int value) throws ElementNotFoundException {
         int position = 100;
         boolean isFound = false;
-        int arrayInt[] = array.getArrayInt();
+        int[] arrayInt = array.getArrayInt();
         for (int i = 0; i < arrayInt.length; i++) {
             if (arrayInt[i] == value) {
                 position = i;
                 isFound = true;
             }
         }
-        if (isFound == false) {
+        if (!isFound) {
             throw new ElementNotFoundException(value);
         }
         return position;
@@ -89,7 +130,7 @@ public class ArrayServiceImpl implements ArrayService {
      */
     @Override
     public int findMaxValue() {
-        int arrayInt[] = array.getArrayInt();
+        int[] arrayInt = array.getArrayInt();
         int maxValue = arrayInt[0];
         for (int i = 0; i < arrayInt.length; i++) {
             if (arrayInt[i] > maxValue) {
@@ -116,5 +157,31 @@ public class ArrayServiceImpl implements ArrayService {
             }
         }
         return minValue;
+    }
+
+    /**
+     * Sorts array with bubble sort.
+     * Boolean variable isSorted is responsible for cycle work.
+     *
+     * @return sorted array (ascending)
+     */
+    @Override
+    public int[] bubbleSort() {
+        int[] arrayInt = array.getArrayInt();
+        int temporal;
+        boolean isSorted = false;
+
+        while (!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < arrayInt.length - 1; i++) {
+                if (arrayInt[i] > arrayInt[i + 1]) {
+                    temporal = arrayInt[i];
+                    arrayInt[i] = arrayInt[i + 1];
+                    arrayInt[i + 1] = temporal;
+                    isSorted = false;
+                }
+            }
+        }
+        return arrayInt;
     }
 }

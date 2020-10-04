@@ -1,5 +1,9 @@
 package training.by.dao;
 
+/**
+ * @author Alisa Dubrovskaya
+ * @since 03/10/20
+ */
 public class DAOFactory {
     private static final DAOFactory instance=new DAOFactory();
 

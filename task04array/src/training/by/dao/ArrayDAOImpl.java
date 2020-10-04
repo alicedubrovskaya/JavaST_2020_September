@@ -1,10 +1,15 @@
 package training.by.dao;
 
+import training.by.exception.IncorrectTypeOfElementsException;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * @author Alisa Dubrovskaya
+ */
 public class ArrayDAOImpl implements ArrayDAO {
     @Override
     public int[] getElementsFromFile(String fileName) throws IOException {
@@ -14,9 +19,14 @@ public class ArrayDAOImpl implements ArrayDAO {
         try (FileReader fr = new FileReader(fileName);
              Scanner scan = new Scanner(fr);
         ) {
+
             while (scan.hasNext()) {
-                arrayInt[i] = scan.nextInt();
-                i++;
+                try {
+                    arrayInt[i] = scan.nextInt();
+                    i++;
+                } catch (IncorrectTypeOfElementsException e) {
+                    System.out.println(e.getMessage());
+                }
             }
 
         } catch (FileNotFoundException e) {
