@@ -2,12 +2,9 @@ package training.by.service;
 
 import training.by.dao.ArrayDAO;
 import training.by.dao.DAOFactory;
-import training.by.entity.Array;
 import training.by.exception.ElementNotFoundException;
 import training.by.exception.IncorrectTypeOfElementsException;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.*;
 
 /**
@@ -15,7 +12,6 @@ import java.util.*;
  */
 public class ArrayServiceImpl implements ArrayService {
     private ArrayDAO arrayDAO;
-    private Array array;
     private Random random = new Random();
 
     public ArrayServiceImpl() {
@@ -30,7 +26,7 @@ public class ArrayServiceImpl implements ArrayService {
      */
     @Override
     public void createArray(Integer... elements) {
-        this.array = new Array(elements);
+        arrayDAO.createArray(elements);
     }
 
     /**
@@ -38,21 +34,7 @@ public class ArrayServiceImpl implements ArrayService {
      */
     @Override
     public void createArray() {
-        int[] arrayInt;
-        String filePath = new File("task04array/data/elements.txt").getAbsolutePath();
-        try {
-            arrayInt = arrayDAO.getElementsFromFile(filePath);
-            validateElements(arrayInt);
-            for (Integer element : arrayInt) {
-                System.out.print(element + " ");
-            }
-            this.array = new Array(arrayInt);
-        } catch (IOException e) {
-            System.out.println("Array wasn't created");
-        } catch (IncorrectTypeOfElementsException e) {
-            System.out.println(e.getMessage());
-        }
-
+        arrayDAO.createArrayWithElementsFromFile();
     }
 
     /**
@@ -64,7 +46,7 @@ public class ArrayServiceImpl implements ArrayService {
         for (int i = 0; i < 5; i++) {
             arrayInt[i] = generateNumber();
         }
-        this.array = new Array(arrayInt);
+        arrayDAO.createArray(arrayInt);
     }
 
     /**
@@ -109,7 +91,7 @@ public class ArrayServiceImpl implements ArrayService {
     public int findElement(int value) throws ElementNotFoundException {
         int position = 100;
         boolean isFound = false;
-        int[] arrayInt = array.getArrayInt();
+        int[] arrayInt = arrayDAO.getArray().getArrayInt();
         for (int i = 0; i < arrayInt.length; i++) {
             if (arrayInt[i] == value) {
                 position = i;
@@ -129,7 +111,7 @@ public class ArrayServiceImpl implements ArrayService {
      */
     @Override
     public int findMaxValue() {
-        int[] arrayInt = array.getArrayInt();
+        int[] arrayInt = arrayDAO.getArray().getArrayInt();
         int maxValue = arrayInt[0];
         for (int i = 0; i < arrayInt.length; i++) {
             if (arrayInt[i] > maxValue) {
@@ -147,7 +129,7 @@ public class ArrayServiceImpl implements ArrayService {
      */
     @Override
     public int findMinValue() {
-        int arrayInt[] = array.getArrayInt();
+        int arrayInt[] = arrayDAO.getArray().getArrayInt();
         int minValue = arrayInt[0];
 
         for (int i = 0; i < arrayInt.length; i++) {
@@ -166,7 +148,7 @@ public class ArrayServiceImpl implements ArrayService {
      */
     @Override
     public int[] bubbleSort() {
-        int[] arrayInt = array.getArrayInt();
+        int[] arrayInt = arrayDAO.getArray().getArrayInt();
         boolean isSorted = false;
 
         while (!isSorted) {
@@ -188,7 +170,7 @@ public class ArrayServiceImpl implements ArrayService {
      */
     @Override
     public int[] selectionSort() {
-        int[] arrayInt = array.getArrayInt();
+        int[] arrayInt = arrayDAO.getArray().getArrayInt();
 
         for (int left = 0; left < arrayInt.length; left++) {
             int minElementPosition = left;
@@ -215,7 +197,7 @@ public class ArrayServiceImpl implements ArrayService {
      */
     @Override
     public int[] insertionSort() {
-        int[] arrayInt = array.getArrayInt();
+        int[] arrayInt = arrayDAO.getArray().getArrayInt();
 
         for (int left = 0; left < arrayInt.length; left++) {
             int value = arrayInt[left];
@@ -282,7 +264,7 @@ public class ArrayServiceImpl implements ArrayService {
     @Override
     public List<Integer> findPrimeNumbers() {
         List<Integer> primeNumbers = new ArrayList<>();
-        int[] arrayInt = array.getArrayInt();
+        int[] arrayInt = arrayDAO.getArray().getArrayInt();
         for (int i = 0; i < arrayInt.length; i++) {
             if (isPrime(arrayInt[i])) {
                 primeNumbers.add(arrayInt[i]);
@@ -352,6 +334,7 @@ public class ArrayServiceImpl implements ArrayService {
 
     /**
      * Checks number for the same digits and needed length
+     *
      * @param countOfDigits
      * @param number
      * @return
@@ -368,12 +351,12 @@ public class ArrayServiceImpl implements ArrayService {
         if (expression.length() == countOfDigits) {
             for (int i = 0; i < expression.length(); i++) {
                 int digitFromString = Character.getNumericValue(expression.charAt(i));
-                digits.put(digitFromString, digits.get(digitFromString)+1);
+                digits.put(digitFromString, digits.get(digitFromString) + 1);
             }
 
-            for (Map.Entry<Integer, Integer> entry: digits.entrySet()){
-                if (entry.getValue()>1){
-                    isWithoutIdentical=false;
+            for (Map.Entry<Integer, Integer> entry : digits.entrySet()) {
+                if (entry.getValue() > 1) {
+                    isWithoutIdentical = false;
                 }
             }
         } else {
@@ -384,15 +367,16 @@ public class ArrayServiceImpl implements ArrayService {
 
     /**
      * Finds numbers in array without the same digits with needed length
+     *
      * @return list of found numbers
      */
     //TODO change fixed length of number
     @Override
     public List<Integer> findNumbersWithoutTHeSameDigitsInArray() {
-        List<Integer> numbers= new ArrayList<>();
-        int arrayInt[] = array.getArrayInt();
-        for (int i=0;i<arrayInt.length;i++){
-            if(isNDigitWithoutIdenticalNumerals(3, arrayInt[i])){
+        List<Integer> numbers = new ArrayList<>();
+        int arrayInt[] = arrayDAO.getArray().getArrayInt();
+        for (int i = 0; i < arrayInt.length; i++) {
+            if (isNDigitWithoutIdenticalNumerals(3, arrayInt[i])) {
                 numbers.add(arrayInt[i]);
             }
         }
