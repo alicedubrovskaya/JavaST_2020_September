@@ -34,7 +34,7 @@ public class JaggedArrayController {
      * Creates new exemplar of class JaggedArray with elements from console
      */
     public int createNewArray(int[][] jaggedArrayInt) {
-       return baseOperationsService.createArray(jaggedArrayInt);
+        return baseOperationsService.createArray(jaggedArrayInt);
     }
 
     /**
@@ -96,15 +96,20 @@ public class JaggedArrayController {
         return values;
     }
 
-    public int[][] additionOfTwoMatrices(int firstId, int secondId) {
-        return jaggedArrayService.addition(firstId, secondId);
-    }
-
-    public int[][] subtractionOfTwoMatrices(int firstId, int secondId) {
-        return jaggedArrayService.subtraction(firstId, secondId);
-    }
-
-    public JaggedArray printMatrix(int id){
+    public JaggedArray printMatrix(int id) {
         return jaggedArrayService.findJaggedArray(id);
     }
+
+    public int additionOfTwoMatrices(int firstId, int secondId) {
+        return createNewArray(jaggedArrayService.addition(firstId, secondId));
+    }
+
+    public int subtractionOfTwoMatrices(int firstId, int secondId) {
+        return createNewArray(jaggedArrayService.subtraction(firstId, secondId));
+    }
+
+    public int multiplyByConstant(int id, int constant) {
+        return createNewArray(jaggedArrayService.multiplyByConstant(id, constant));
+    }
+
 }

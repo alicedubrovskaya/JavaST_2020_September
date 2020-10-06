@@ -1,7 +1,6 @@
 package training.by.view;
 
 import training.by.controller.JaggedArrayController;
-import training.by.entity.JaggedArray;
 import training.by.exception.ElementNotFoundException;
 
 import java.util.InputMismatchException;
@@ -15,15 +14,13 @@ public class JaggedArrayView {
     public JaggedArrayView(JaggedArrayController jaggedArrayController) {
         this.jaggedArrayController = jaggedArrayController;
         in = new Scanner(System.in);
-        System.out.println("How do you want to initialize array? \n1 - generate elements \n2 - enter elements from console" +
-                "\n3 - get elements from file");
 
         int option = -1;
         while (option != 0) {
             System.out.println("\n1 - generate elements \n2 - enter elements from console \n3 - get elements from file" +
                     "\n4 - print matrix" +
                     "\n5- find element in array \n6- find min and max elements" +
-                    "\n7- addition \n8- subtraction");
+                    "\n7- addition \n8- subtraction \n9- multiplyByConstant");
             option = in.nextInt();
             switch (option) {
                 case 1:
@@ -50,6 +47,9 @@ public class JaggedArrayView {
                     break;
                 case 8:
                     optionSubtraction();
+                    break;
+                case 9:
+                    optionMultiplyByConstant();
                     break;
             }
         }
@@ -100,19 +100,24 @@ public class JaggedArrayView {
 
     protected void optionAddition() {
         System.out.println("Enter id of matrices: ");
-        int id = jaggedArrayController.createNewArray(jaggedArrayController.additionOfTwoMatrices(in.nextInt(), in.nextInt()));
+        int id = jaggedArrayController.additionOfTwoMatrices(in.nextInt(), in.nextInt());
         System.out.println("id: " + id);
     }
 
     protected void optionSubtraction() {
         System.out.println("Enter id of matrices: ");
-        int id = jaggedArrayController.createNewArray(jaggedArrayController.subtractionOfTwoMatrices(in.nextInt(), in.nextInt()));
+        int id = jaggedArrayController.subtractionOfTwoMatrices(in.nextInt(), in.nextInt());
         System.out.println("id: " + id);
     }
 
     protected void optionPrintMatrix() {
         System.out.println("Enter id of matrix: ");
         System.out.println(jaggedArrayController.printMatrix(in.nextInt()).toString());
+    }
+
+    protected void optionMultiplyByConstant(){
+        System.out.println("Enter id of matrix, constant: ");
+        System.out.println(jaggedArrayController.multiplyByConstant(in.nextInt(),in.nextInt()));
     }
 
 /*

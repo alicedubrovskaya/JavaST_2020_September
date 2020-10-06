@@ -41,19 +41,19 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
     @Override
     public boolean squareMatrix(int id) {
         int[][] array = findJaggedArray(id).getJaggedArrayInt();
-        return (array.length==array[0].length);
+        return (array.length == array[0].length);
     }
 
     @Override
     public int[][] addition(int idFirstMatrix, int idSecondMatrix) {
-        int [][] firstMatrix=findJaggedArray(idFirstMatrix).getJaggedArrayInt();
-        int [][] secondMatrix = findJaggedArray(idSecondMatrix).getJaggedArrayInt();
+        int[][] firstMatrix = findJaggedArray(idFirstMatrix).getJaggedArrayInt();
+        int[][] secondMatrix = findJaggedArray(idSecondMatrix).getJaggedArrayInt();
         //TODO normal finding of size jagged array
-        int [][] resultingMatrix =new int[firstMatrix.length][firstMatrix[0].length];
+        int[][] resultingMatrix = new int[firstMatrix.length][firstMatrix[0].length];
 
-        for (int i=0;i<firstMatrix.length;i++){
-            for (int j=0;j<firstMatrix[i].length;j++){
-                resultingMatrix[i][j]=firstMatrix[i][j]+secondMatrix[i][j];
+        for (int i = 0; i < firstMatrix.length; i++) {
+            for (int j = 0; j < firstMatrix[i].length; j++) {
+                resultingMatrix[i][j] = firstMatrix[i][j] + secondMatrix[i][j];
             }
         }
         return resultingMatrix;
@@ -61,14 +61,27 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
 
     @Override
     public int[][] subtraction(int idFirstMatrix, int idSecondMatrix) {
-        int [][] firstMatrix=findJaggedArray(idFirstMatrix).getJaggedArrayInt();
-        int [][] secondMatrix = findJaggedArray(idSecondMatrix).getJaggedArrayInt();
+        int[][] firstMatrix = findJaggedArray(idFirstMatrix).getJaggedArrayInt();
+        int[][] secondMatrix = findJaggedArray(idSecondMatrix).getJaggedArrayInt();
         //TODO normal finding of size jagged array
-        int [][] resultingMatrix =new int[firstMatrix.length][firstMatrix[0].length];
+        int[][] resultingMatrix = new int[firstMatrix.length][firstMatrix[0].length];
 
-        for (int i=0;i<firstMatrix.length;i++){
-            for (int j=0;j<firstMatrix[i].length;j++){
-                resultingMatrix[i][j]=firstMatrix[i][j]-secondMatrix[i][j];
+        for (int i = 0; i < firstMatrix.length; i++) {
+            for (int j = 0; j < firstMatrix[i].length; j++) {
+                resultingMatrix[i][j] = firstMatrix[i][j] - secondMatrix[i][j];
+            }
+        }
+        return resultingMatrix;
+    }
+
+    @Override
+    public int[][] multiplyByConstant(int id, int constant) {
+        int[][] matrix = findJaggedArray(id).getJaggedArrayInt();
+        //TODO
+        int[][] resultingMatrix = new int[matrix.length][matrix[0].length];
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0; column < matrix[row].length; column++) {
+                resultingMatrix[row][column] = matrix[row][column] * constant;
             }
         }
         return resultingMatrix;
