@@ -72,6 +72,97 @@ public class BaseOperationsServiceImpl implements BaseOperationsService {
     }
 
     /**
+     * Sorts array with bubble sort.
+     * Boolean variable isSorted is responsible for cycle work.
+     *
+     * @return sorted array (ascending)
+     */
+    @Override
+    public int[] bubbleSort(int[] array) {
+        int[] arrayInt = new int[array.length];
+        System.arraycopy(array, 0, arrayInt, 0, array.length);
+        boolean isSorted = false;
+
+        while (!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < arrayInt.length - 1; i++) {
+                if (arrayInt[i] > arrayInt[i + 1]) {
+                    swap(arrayInt, i, i + 1);
+                    isSorted = false;
+                }
+            }
+        }
+        return arrayInt;
+    }
+
+    /**
+     * Sorts array with selection sort. Each iteration selects the smallest element and moves to the beginning
+     *
+     * @return sorted array(ascending)
+     */
+    @Override
+    public int[] selectionSort(int[] array) {
+        int[] arrayInt = new int[array.length];
+        System.arraycopy(array, 0, arrayInt, 0, array.length);
+
+        for (int left = 0; left < arrayInt.length; left++) {
+            int minElementPosition = left;
+            for (int i = left; i < arrayInt.length; i++) {
+                if (arrayInt[i] < arrayInt[minElementPosition]) {
+                    minElementPosition = i;
+                }
+            }
+            swap(arrayInt, left, minElementPosition);
+        }
+
+        return arrayInt;
+    }
+
+    /**
+     * Sorts array with insertion sort.
+     * <p>
+     * With each new iteration the sorted part of the array expands with one element.
+     * After expansion the new element places into the sorted part of array. It goes by shifting all elements to the right
+     * until will be found an element that doesn't need to be shifted.
+     * <p/>
+     *
+     * @return
+     */
+    @Override
+    public int[] insertionSort(int[] array) {
+        int[] arrayInt = new int[array.length];
+        System.arraycopy(array, 0, arrayInt, 0, array.length);
+
+        for (int left = 0; left < arrayInt.length; left++) {
+            int value = arrayInt[left];
+            int i = left - 1;
+            for (; i >= 0; i--) {
+                if (value < arrayInt[i]) {
+                    arrayInt[i + 1] = arrayInt[i];
+                } else {
+                    break;
+                }
+            }
+            arrayInt[i + 1] = value;
+        }
+        return arrayInt;
+    }
+
+    /**
+     * Swaps two elements of array
+     *
+     * @param arrayInt
+     * @param positionOne
+     * @param positionTwo
+     */
+    @Override
+    public void swap(int[] arrayInt, int positionOne, int positionTwo) {
+        int temporal = arrayInt[positionOne];
+        arrayInt[positionOne] = arrayInt[positionTwo];
+        arrayInt[positionTwo] = temporal;
+    }
+
+    /**
      * Validates elements of array
      *
      * @param elements
@@ -100,7 +191,7 @@ public class BaseOperationsServiceImpl implements BaseOperationsService {
      * @throws ElementNotFoundException
      */
     @Override
-    public int findElement(int value, int [] arrayInt) {
+    public int findElement(int value, int[] arrayInt) {
         int position = -1;
         for (int i = 0; i < arrayInt.length; i++) {
             if (arrayInt[i] == value) {
@@ -145,4 +236,12 @@ public class BaseOperationsServiceImpl implements BaseOperationsService {
         return minValue;
     }
 
+    @Override
+    public int sumOfElements(int[] arrayInt) {
+        int sum = 0;
+        for (int i = 0; i < arrayInt.length; i++) {
+            sum += arrayInt[i];
+        }
+        return sum;
+    }
 }

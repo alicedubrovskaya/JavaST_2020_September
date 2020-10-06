@@ -13,14 +13,6 @@ import java.util.List;
 public interface ArrayService {
     Array getArray();
 
-    int[] bubbleSort();
-
-    int[] selectionSort();
-
-    int[] insertionSort();
-
-    void swap(int[] arrayInt, int positionOne, int positionTwo);
-
     int binarySearch(int[] arrayInt, int value, int left, int right);
 
     List<Integer> findPrimeNumbers();

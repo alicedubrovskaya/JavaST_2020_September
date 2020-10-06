@@ -100,4 +100,14 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
         }
         return resultingMatrix;
     }
+
+    @Override
+    public int[] sumOfElementsInRows(int[][] array) {
+        int[] sums = new int[array.length];
+
+        for (int i = 0; i < array.length; i++) {
+            sums[i]=baseOperationsService.sumOfElements(array[i]);
+        }
+        return sums;
+    }
 }

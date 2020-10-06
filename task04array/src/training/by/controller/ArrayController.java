@@ -78,7 +78,8 @@ public class ArrayController {
      * @return sorted array (ascending)
      */
     public int[] sortArrayWithBubbleSort() {
-        return arrayService.bubbleSort();
+        int[] arrayInt = arrayService.getArray().getArrayInt();
+        return baseOperationsService.bubbleSort(arrayInt);
     }
 
     /**
@@ -87,7 +88,8 @@ public class ArrayController {
      * @return sorted array (ascending)
      */
     public int[] sortArrayWithSelectionSort() {
-        return arrayService.selectionSort();
+        int[] arrayInt = arrayService.getArray().getArrayInt();
+        return baseOperationsService.selectionSort(arrayInt);
     }
 
     /**
@@ -96,7 +98,8 @@ public class ArrayController {
      * @return sorted array (ascending)
      */
     public int[] sortArrayWithInsertionSort() {
-        return arrayService.insertionSort();
+        int[] arrayInt = arrayService.getArray().getArrayInt();
+        return baseOperationsService.insertionSort(arrayInt);
     }
 
     /**
@@ -108,7 +111,8 @@ public class ArrayController {
      */
     //TODO array storage, not fixed arguments
     public int searchElementWithBinarySearch(int value) {
-        return arrayService.binarySearch(arrayService.bubbleSort(), value, 0, 4);
+        return arrayService.binarySearch(baseOperationsService.bubbleSort(arrayService.getArray().getArrayInt()),
+                value, 0, 4);
     }
 
     /**
@@ -122,7 +126,7 @@ public class ArrayController {
 
 
     public List<Integer> findFibonacciNumbersInArray() {
-        int[] arrayInt = arrayService.bubbleSort();
+        int[] arrayInt = baseOperationsService.bubbleSort(arrayService.getArray().getArrayInt());
         int maxValue = arrayInt[arrayInt.length - 1];
         return arrayService.findFibonacciNumbers(arrayInt, maxValue);
     }

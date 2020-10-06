@@ -10,11 +10,14 @@ public interface JaggedArrayService {
     //TODO for jagged array
     boolean sameDimensionOfJaggedArrays(int idFirstArray, int idSecondArray);
 
-    int [][] addition(int idFirstMatrix, int idSecondMatrix);
+    int[][] addition(int idFirstMatrix, int idSecondMatrix);
 
-    int [][] subtraction(int idFirstMatrix, int idSecondMatrix);
+    int[][] subtraction(int idFirstMatrix, int idSecondMatrix);
 
-    int [][] multiplyByConstant(int id, int constant);
+    int[][] multiplyByConstant(int id, int constant);
 
-    int [][] transpose(int id);
+    int[][] transpose(int id);
+
+    int[] sumOfElementsInRows(int[][] array);
+
 }

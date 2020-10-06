@@ -112,7 +112,27 @@ public class JaggedArrayController {
         return createNewArray(jaggedArrayService.multiplyByConstant(id, constant));
     }
 
-    public int transposeMatrix(int id){
+    public int transposeMatrix(int id) {
         return createNewArray(jaggedArrayService.transpose(id));
+    }
+
+    public int sortBySumsOfElementsInRows(int id) {
+        int array[][] = jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
+        int resultingArray[][]=new int [array.length][];
+
+        int sums[]=jaggedArrayService.sumOfElementsInRows(array);
+        int sortedSums[] = baseOperationsService.bubbleSort(sums);
+
+        Map<Integer, Integer> indexOfSumRows = new HashMap<>();
+        for (int i = 0; i < sums.length; i++) {
+            indexOfSumRows.put(sums[i], i);
+        }
+
+        for (int i = 0; i < sortedSums.length; i++) {
+            int rowOfArray = indexOfSumRows.get(sortedSums[i]);
+            resultingArray[i]=array[rowOfArray];
+        }
+
+        return createNewArray(resultingArray);
     }
 }

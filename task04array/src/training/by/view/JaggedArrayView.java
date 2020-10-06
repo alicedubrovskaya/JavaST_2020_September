@@ -20,7 +20,8 @@ public class JaggedArrayView {
             System.out.println("\n1 - generate elements \n2 - enter elements from console \n3 - get elements from file" +
                     "\n4 - print matrix" +
                     "\n5- find element in array \n6- find min and max elements" +
-                    "\n7- addition \n8- subtraction \n9- multiplyByConstant \n10- transposeMatrix");
+                    "\n7- addition \n8- subtraction \n9- multiplyByConstant \n10- transposeMatrix" +
+                    "\n11- sort by sums of elements in rows");
             option = in.nextInt();
             switch (option) {
                 case 1:
@@ -53,6 +54,9 @@ public class JaggedArrayView {
                     break;
                 case 10:
                     optionTransposeMatrix();
+                    break;
+                case 11:
+                    optionSortBySumsOfElementsInRows();
                     break;
             }
         }
@@ -128,6 +132,12 @@ public class JaggedArrayView {
         System.out.println("Enter id of matrix: ");
         int id = jaggedArrayController.transposeMatrix(in.nextInt());
         System.out.println("id: " + id);
+    }
+
+    protected void optionSortBySumsOfElementsInRows(){
+        System.out.println("Enter id of matrix: ");
+        int id=jaggedArrayController.sortBySumsOfElementsInRows(in.nextInt());
+        System.out.println("id: "+id);
     }
 
 /*

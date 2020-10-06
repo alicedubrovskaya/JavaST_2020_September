@@ -13,11 +13,22 @@ public interface BaseOperationsService {
 
     int generateNumber();
 
-    int findElement(int value, int[] arrayInt) ;
+    //TODO descending
+    int[] bubbleSort(int[] array);
+
+    int[] selectionSort(int[] array);
+
+    int[] insertionSort(int[] array);
+
+    void swap(int[] arrayInt, int positionOne, int positionTwo);
+
+    int findElement(int value, int[] arrayInt);
 
     int findMaxValue(int[] arrayInt);
 
     int findMinValue(int[] arrayInt);
+
+    int sumOfElements(int[] arrayInt);
 
     void validateElements(int[] elements) throws IncorrectTypeOfElementsException;
 }
