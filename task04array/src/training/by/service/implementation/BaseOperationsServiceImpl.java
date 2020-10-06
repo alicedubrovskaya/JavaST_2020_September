@@ -42,8 +42,8 @@ public class BaseOperationsServiceImpl implements BaseOperationsService {
      * @param jaggedArrayInt
      */
     @Override
-    public void createArray(int[][] jaggedArrayInt) {
-        arrayDAO.createArray(jaggedArrayInt);
+    public int createArray(int[][] jaggedArrayInt) {
+        return arrayDAO.createArray(jaggedArrayInt);
     }
 
     /**

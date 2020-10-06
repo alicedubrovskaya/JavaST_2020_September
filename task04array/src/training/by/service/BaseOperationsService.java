@@ -7,7 +7,7 @@ public interface BaseOperationsService {
 
     void createArray();
 
-    void createArray(int[][] jaggedArrayInt);
+    int createArray(int[][] jaggedArrayInt);
 
     int[] generateOneDimensionalArray(int countOfElements);
 

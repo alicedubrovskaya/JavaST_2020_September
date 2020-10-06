@@ -1,5 +1,6 @@
 package training.by.controller;
 
+import training.by.entity.JaggedArray;
 import training.by.exception.ElementNotFoundException;
 import training.by.service.BaseOperationsService;
 import training.by.service.JaggedArrayService;
@@ -21,19 +22,19 @@ public class JaggedArrayController {
     /**
      * Creates new exemplar of class JaggedArray with automatically generated elements
      */
-    public void createNewArray(int rowCount, int columnCount) {
+    public int createNewArray(int rowCount, int columnCount) {
         int[][] arrayInt = new int[rowCount][columnCount];
         for (int i = 0; i < rowCount; i++) {
             arrayInt[i] = baseOperationsService.generateOneDimensionalArray(columnCount);
         }
-        baseOperationsService.createArray(arrayInt);
+        return baseOperationsService.createArray(arrayInt);
     }
 
     /**
      * Creates new exemplar of class JaggedArray with elements from console
      */
-    public void createNewArray(int[][] jaggedArrayInt) {
-        baseOperationsService.createArray(jaggedArrayInt);
+    public int createNewArray(int[][] jaggedArrayInt) {
+       return baseOperationsService.createArray(jaggedArrayInt);
     }
 
     /**
@@ -95,5 +96,15 @@ public class JaggedArrayController {
         return values;
     }
 
+    public int[][] additionOfTwoMatrices(int firstId, int secondId) {
+        return jaggedArrayService.addition(firstId, secondId);
+    }
 
+    public int[][] subtractionOfTwoMatrices(int firstId, int secondId) {
+        return jaggedArrayService.subtraction(firstId, secondId);
+    }
+
+    public JaggedArray printMatrix(int id){
+        return jaggedArrayService.findJaggedArray(id);
+    }
 }

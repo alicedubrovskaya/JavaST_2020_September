@@ -89,9 +89,11 @@ public class ArrayDAOImpl implements ArrayDAO {
     }
 
     @Override
-    public void createArray(int[][] arrayInt){
+    public int createArray(int[][] arrayInt){
         idJaggedArray++;
-        this.jaggedArrayList.add(new JaggedArray(arrayInt, idJaggedArray));
+        JaggedArray jaggedArray=new JaggedArray(arrayInt, idJaggedArray);
+        this.jaggedArrayList.add(jaggedArray);
+        return jaggedArray.getId();
     }
 
 }

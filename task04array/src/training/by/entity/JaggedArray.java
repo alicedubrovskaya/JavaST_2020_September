@@ -14,7 +14,7 @@ public class JaggedArray {
     private int id;
 
     public JaggedArray(int[][] jaggedArrayInt, int id) {
-        this.id=id;
+        this.id = id;
         this.jaggedArrayInt = jaggedArrayInt;
     }
 
@@ -34,7 +34,11 @@ public class JaggedArray {
 
     @Override
     public String toString() {
-        return "JaggedArray[jaggedArrayInt=" + Arrays.toString(jaggedArrayInt) + "]";
+        String array = "";
+        for (int row = 0; row < jaggedArrayInt.length; row++) {
+            array +=Arrays.toString(jaggedArrayInt[row])+"\n";
+        }
+        return "JaggedArray[jaggedArrayInt=\n" + array + "]";
     }
 
     public int[][] getJaggedArrayInt() {
