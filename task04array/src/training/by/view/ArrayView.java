@@ -72,7 +72,8 @@ public class ArrayView {
     }
 
     protected void optionGenerateElements() {
-        arrayController.createNewArray();
+        System.out.print("Enter count of elements: ");
+        arrayController.createNewArray(in.nextInt());
     }
 
     protected void optionGetElementsFromConsole() {

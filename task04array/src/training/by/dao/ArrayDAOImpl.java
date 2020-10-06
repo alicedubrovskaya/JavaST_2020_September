@@ -1,6 +1,8 @@
 package training.by.dao;
 
 import training.by.entity.Array;
+import training.by.entity.JaggedArray;
+import training.by.entity.JaggedArrayList;
 import training.by.exception.IncorrectTypeOfElementsException;
 
 import java.io.File;
@@ -14,6 +16,11 @@ import java.util.Scanner;
  */
 public class ArrayDAOImpl implements ArrayDAO {
     private Array array;
+    private JaggedArrayList jaggedArrayList;
+
+    public ArrayDAOImpl() {
+        this.jaggedArrayList=new JaggedArrayList();
+    }
 
     @Override
     public int[] getElementsFromFile(String fileName) throws IOException {
@@ -70,4 +77,10 @@ public class ArrayDAOImpl implements ArrayDAO {
     public void createArray(int[] arrayInt) {
         this.array = new Array(arrayInt);
     }
+
+    @Override
+    public void createArray(int[][] arrayInt){
+        this.jaggedArrayList.add(new JaggedArray(arrayInt));
+    }
+
 }

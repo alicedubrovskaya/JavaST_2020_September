@@ -18,4 +18,6 @@ public interface ArrayDAO {
     void createArray(Integer... elements);
 
     void createArray(int[] arrayInt);
+
+    void createArray(int[][] arrayInt);
 }

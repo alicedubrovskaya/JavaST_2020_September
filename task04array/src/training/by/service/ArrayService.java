@@ -10,21 +10,6 @@ import java.util.List;
  * @since 03/10/20
  */
 public interface ArrayService {
-    void createArray(Integer... elements);
-
-    void createArray();
-
-    void createGeneratedArray();
-
-    int generateNumber();
-
-    int findElement(int value) throws ElementNotFoundException;
-
-    int findMaxValue();
-
-    int findMinValue();
-
-    void validateElements(int[] elements) throws IncorrectTypeOfElementsException;
 
     int[] bubbleSort();
 

@@ -2,6 +2,7 @@ package training.by.controller;
 
 import training.by.exception.ElementNotFoundException;
 import training.by.service.ArrayService;
+import training.by.service.BaseOperationsService;
 import training.by.service.ServiceFactory;
 
 import java.util.HashMap;
@@ -16,10 +17,12 @@ import java.util.Map;
  */
 public class ArrayController {
     private ArrayService arrayService;
+    private BaseOperationsService baseOperationsService;
 
     public ArrayController() {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         this.arrayService = serviceFactory.getArrayService();
+        this.baseOperationsService = serviceFactory.getBaseOperationsService();
     }
 
     /**
@@ -28,21 +31,21 @@ public class ArrayController {
      * @param elements
      */
     public void createNewArray(Integer... elements) {
-        arrayService.createArray(elements);
+        baseOperationsService.createArray(elements);
     }
 
     /**
      * Creates new exemplar of class Array with automatically generated elements
      */
-    public void createNewArray() {
-        arrayService.createGeneratedArray();
+    public void createNewArray(int countOfElements) {
+        baseOperationsService.createGeneratedArray(1,countOfElements);
     }
 
     /**
      * Creates new exemplar of class Array with elements from file
      */
     public void createNewArrayFromFile() {
-        arrayService.createArray();
+        baseOperationsService.createArray();
     }
 
     /**
@@ -53,7 +56,7 @@ public class ArrayController {
      * @throws ElementNotFoundException
      */
     public int findElementInArray(int value) throws ElementNotFoundException {
-        return arrayService.findElement(value);
+        return baseOperationsService.findElement(value);
     }
 
     /**
@@ -63,8 +66,8 @@ public class ArrayController {
      */
     public Map<String, Integer> findMinAndMaxValue() {
         Map<String, Integer> values = new HashMap<>();
-        values.put("min", arrayService.findMinValue());
-        values.put("max", arrayService.findMaxValue());
+        values.put("min", baseOperationsService.findMinValue());
+        values.put("max", baseOperationsService.findMaxValue());
         return values;
     }
 

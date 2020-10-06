@@ -1,6 +1,5 @@
 package training.by.controller;
 
-import training.by.view.ArrayView;
 import training.by.view.ConsoleView;
 
 public class Main {
