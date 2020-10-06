@@ -11,8 +11,10 @@ import java.util.Objects;
  */
 public class JaggedArray {
     private int[][] jaggedArrayInt;
+    private int id;
 
-    public JaggedArray(int[][] jaggedArrayInt) {
+    public JaggedArray(int[][] jaggedArrayInt, int id) {
+        this.id=id;
         this.jaggedArrayInt = jaggedArrayInt;
     }
 
@@ -37,5 +39,9 @@ public class JaggedArray {
 
     public int[][] getJaggedArrayInt() {
         return jaggedArrayInt;
+    }
+
+    public int getId() {
+        return id;
     }
 }

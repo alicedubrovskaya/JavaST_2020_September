@@ -9,6 +9,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -17,9 +19,11 @@ import java.util.Scanner;
 public class ArrayDAOImpl implements ArrayDAO {
     private Array array;
     private JaggedArrayList jaggedArrayList;
+    private int idJaggedArray;
 
     public ArrayDAOImpl() {
         this.jaggedArrayList=new JaggedArrayList();
+        this.idJaggedArray=0;
     }
 
     @Override
@@ -51,6 +55,12 @@ public class ArrayDAOImpl implements ArrayDAO {
         return array;
     }
 
+    @Override
+    public List<JaggedArray> getJaggedArrayList() {
+        return jaggedArrayList.getJaggedArrays();
+    }
+
+    @Override
     public void createArrayWithElementsFromFile() {
         int[] arrayInt;
         String filePath = new File("task04array/data/elements.txt").getAbsolutePath();
@@ -69,18 +79,19 @@ public class ArrayDAOImpl implements ArrayDAO {
     }
 
     @Override
+    public void createJaggedArrayWithElementsFromFile() {
+
+    }
+
+    @Override
     public void createArray(Integer... elements) {
         this.array = new Array(elements);
     }
 
     @Override
-    public void createArray(int[] arrayInt) {
-        this.array = new Array(arrayInt);
-    }
-
-    @Override
     public void createArray(int[][] arrayInt){
-        this.jaggedArrayList.add(new JaggedArray(arrayInt));
+        idJaggedArray++;
+        this.jaggedArrayList.add(new JaggedArray(arrayInt, idJaggedArray));
     }
 
 }

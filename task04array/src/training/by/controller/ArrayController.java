@@ -35,10 +35,10 @@ public class ArrayController {
     }
 
     /**
-     * Creates new exemplar of class Array with automatically generated elements
+     * Generates array
      */
     public void createNewArray(int countOfElements) {
-        baseOperationsService.createGeneratedArray(1,countOfElements);
+        baseOperationsService.generateOneDimensionalArray(countOfElements);
     }
 
     /**
@@ -56,7 +56,8 @@ public class ArrayController {
      * @throws ElementNotFoundException
      */
     public int findElementInArray(int value) throws ElementNotFoundException {
-        return baseOperationsService.findElement(value);
+        //TODO check was found position or not
+        return baseOperationsService.findElement(value, arrayService.getArray().getArrayInt());
     }
 
     /**
@@ -66,8 +67,8 @@ public class ArrayController {
      */
     public Map<String, Integer> findMinAndMaxValue() {
         Map<String, Integer> values = new HashMap<>();
-        values.put("min", baseOperationsService.findMinValue());
-        values.put("max", baseOperationsService.findMaxValue());
+        values.put("min", baseOperationsService.findMinValue(arrayService.getArray().getArrayInt()));
+        values.put("max", baseOperationsService.findMaxValue(arrayService.getArray().getArrayInt()));
         return values;
     }
 

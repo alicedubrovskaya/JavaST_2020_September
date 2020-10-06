@@ -2,6 +2,7 @@ package training.by.service.implementation;
 
 import training.by.dao.ArrayDAO;
 import training.by.dao.DAOFactory;
+import training.by.entity.Array;
 import training.by.service.ArrayService;
 
 import java.util.*;
@@ -16,6 +17,11 @@ public class ArrayServiceImpl implements ArrayService {
     public ArrayServiceImpl() {
         DAOFactory daoFactory = DAOFactory.getInstance();
         this.arrayDAO = daoFactory.getArrayDAO();
+    }
+
+    @Override
+    public Array getArray() {
+        return arrayDAO.getArray();
     }
 
     /**

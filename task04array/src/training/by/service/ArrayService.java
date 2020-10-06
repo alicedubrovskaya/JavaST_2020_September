@@ -1,5 +1,6 @@
 package training.by.service;
 
+import training.by.entity.Array;
 import training.by.exception.ElementNotFoundException;
 import training.by.exception.IncorrectTypeOfElementsException;
 
@@ -10,6 +11,7 @@ import java.util.List;
  * @since 03/10/20
  */
 public interface ArrayService {
+    Array getArray();
 
     int[] bubbleSort();
 

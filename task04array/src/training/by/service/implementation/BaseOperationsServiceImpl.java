@@ -37,25 +37,28 @@ public class BaseOperationsServiceImpl implements BaseOperationsService {
     }
 
     /**
-     * Creates new exemplar of class Array with automatically generated elements
+     * Creates new exemplar of class JaggedArray with elements from console
+     *
+     * @param jaggedArrayInt
      */
     @Override
-    public void createGeneratedArray(int rowCount, int columnCount) {
-        if (rowCount == 1) {
-            int[] arrayInt = new int[columnCount];
-            for (int i = 0; i < columnCount; i++) {
-                arrayInt[i] = generateNumber();
-            }
-            arrayDAO.createArray(arrayInt);
-        } else {
-            int[][] arrayInt = new int[rowCount][columnCount];
-            for (int i = 0; i < rowCount; i++) {
-                for (int j = 0; j < columnCount; j++) {
-                    arrayInt[i][j] = generateNumber();
-                }
-            }
-            arrayDAO.createArray(arrayInt);
+    public void createArray(int[][] jaggedArrayInt) {
+        arrayDAO.createArray(jaggedArrayInt);
+    }
+
+    /**
+     * Generates one dimensional array
+     *
+     * @param countOfElements
+     * @return generated array
+     */
+    @Override
+    public int[] generateOneDimensionalArray(int countOfElements) {
+        int[] arrayInt = new int[countOfElements];
+        for (int i = 0; i < countOfElements; i++) {
+            arrayInt[i] = generateNumber();
         }
+        return arrayInt;
     }
 
     /**
@@ -97,19 +100,14 @@ public class BaseOperationsServiceImpl implements BaseOperationsService {
      * @throws ElementNotFoundException
      */
     @Override
-    public int findElement(int value) throws ElementNotFoundException {
-        int position = 100;
-        boolean isFound = false;
-        int[] arrayInt = arrayDAO.getArray().getArrayInt();
+    public int findElement(int value, int [] arrayInt) {
+        int position = -1;
         for (int i = 0; i < arrayInt.length; i++) {
             if (arrayInt[i] == value) {
                 position = i;
-                isFound = true;
             }
         }
-        if (!isFound) {
-            throw new ElementNotFoundException(value);
-        }
+
         return position;
     }
 
@@ -119,8 +117,7 @@ public class BaseOperationsServiceImpl implements BaseOperationsService {
      * @return max element
      */
     @Override
-    public int findMaxValue() {
-        int[] arrayInt = arrayDAO.getArray().getArrayInt();
+    public int findMaxValue(int[] arrayInt) {
         int maxValue = arrayInt[0];
         for (int i = 0; i < arrayInt.length; i++) {
             if (arrayInt[i] > maxValue) {
@@ -137,8 +134,7 @@ public class BaseOperationsServiceImpl implements BaseOperationsService {
      * @return min element
      */
     @Override
-    public int findMinValue() {
-        int arrayInt[] = arrayDAO.getArray().getArrayInt();
+    public int findMinValue(int[] arrayInt) {
         int minValue = arrayInt[0];
 
         for (int i = 0; i < arrayInt.length; i++) {

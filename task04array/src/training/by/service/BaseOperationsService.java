@@ -1,6 +1,5 @@
 package training.by.service;
 
-import training.by.exception.ElementNotFoundException;
 import training.by.exception.IncorrectTypeOfElementsException;
 
 public interface BaseOperationsService {
@@ -8,15 +7,17 @@ public interface BaseOperationsService {
 
     void createArray();
 
-    void createGeneratedArray(int rowCount, int columnCount);
+    void createArray(int[][] jaggedArrayInt);
+
+    int[] generateOneDimensionalArray(int countOfElements);
 
     int generateNumber();
 
-    int findElement(int value) throws ElementNotFoundException;
+    int findElement(int value, int[] arrayInt) ;
 
-    int findMaxValue();
+    int findMaxValue(int[] arrayInt);
 
-    int findMinValue();
+    int findMinValue(int[] arrayInt);
 
     void validateElements(int[] elements) throws IncorrectTypeOfElementsException;
 }
