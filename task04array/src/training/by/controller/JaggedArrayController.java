@@ -112,4 +112,7 @@ public class JaggedArrayController {
         return createNewArray(jaggedArrayService.multiplyByConstant(id, constant));
     }
 
+    public int transposeMatrix(int id){
+        return createNewArray(jaggedArrayService.transpose(id));
+    }
 }

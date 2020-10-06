@@ -15,4 +15,6 @@ public interface JaggedArrayService {
     int [][] subtraction(int idFirstMatrix, int idSecondMatrix);
 
     int [][] multiplyByConstant(int id, int constant);
+
+    int [][] transpose(int id);
 }

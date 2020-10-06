@@ -86,4 +86,18 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
         }
         return resultingMatrix;
     }
+
+    @Override
+    public int[][] transpose(int id) {
+        int[][] matrix = findJaggedArray(id).getJaggedArrayInt();
+        //TODO
+        int[][] resultingMatrix = new int[matrix[0].length][matrix.length];
+
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0; column < matrix[row].length; column++) {
+                resultingMatrix[column][row] = matrix[row][column];
+            }
+        }
+        return resultingMatrix;
+    }
 }
