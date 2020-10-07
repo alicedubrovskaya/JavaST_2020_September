@@ -38,6 +38,13 @@ public class JaggedArrayController {
     }
 
     /**
+     * Creates new exemplar of class JaggedArray with elements from file
+     */
+    public void createNewArrayFromFile() {
+        baseOperationsService.createJaggedArray();
+    }
+
+    /**
      * Finds position of element
      *
      * @param id
@@ -192,5 +199,9 @@ public class JaggedArrayController {
         }
 
         return createNewArray(resultingArray);
+    }
+
+    public int[] parseStringToIntegerElements(String line){
+        return baseOperationsService.parseStringToElements(line);
     }
 }

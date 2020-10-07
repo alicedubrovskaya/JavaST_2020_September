@@ -9,7 +9,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -22,8 +21,8 @@ public class ArrayDAOImpl implements ArrayDAO {
     private int idJaggedArray;
 
     public ArrayDAOImpl() {
-        this.jaggedArrayList=new JaggedArrayList();
-        this.idJaggedArray=0;
+        this.jaggedArrayList = new JaggedArrayList();
+        this.idJaggedArray = 0;
     }
 
     @Override
@@ -48,6 +47,29 @@ public class ArrayDAOImpl implements ArrayDAO {
             System.err.println(e);
         }
         return arrayInt;
+    }
+
+    @Override
+    public int[][] getElementsOfJaggedArrayFromFile(String fileName) throws IOException {
+        try (FileReader fr = new FileReader(fileName);
+             Scanner scan = new Scanner(fr);
+        ) {
+            int countOfRows = scan.nextInt();
+            int[][] array = new int[countOfRows][];
+
+            for (int currentRow = 0; currentRow < countOfRows; currentRow++) {
+                if (currentRow != countOfRows - 1) {
+                    scan.nextLine(); //for correct input
+                }
+                array[currentRow] = parseStringToIntegerElements(scan.nextLine());
+            }
+            return array;
+
+        } catch (FileNotFoundException e) {
+            System.err.println(e);
+        }
+        //TODO
+        return null;
     }
 
     @Override
@@ -80,7 +102,16 @@ public class ArrayDAOImpl implements ArrayDAO {
 
     @Override
     public void createJaggedArrayWithElementsFromFile() {
-
+        int[][] arrayInt;
+        String filePath = new File("task04array/data/elements.txt").getAbsolutePath();
+        try {
+            arrayInt = getElementsOfJaggedArrayFromFile(filePath);
+            createArray(arrayInt);
+        } catch (IOException e) {
+            System.out.println("Array wasn't created");
+        } catch (IncorrectTypeOfElementsException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
@@ -89,11 +120,23 @@ public class ArrayDAOImpl implements ArrayDAO {
     }
 
     @Override
-    public int createArray(int[][] arrayInt){
+    public int createArray(int[][] arrayInt) {
         idJaggedArray++;
-        JaggedArray jaggedArray=new JaggedArray(arrayInt, idJaggedArray);
+        JaggedArray jaggedArray = new JaggedArray(arrayInt, idJaggedArray);
         this.jaggedArrayList.add(jaggedArray);
         return jaggedArray.getId();
     }
 
+    @Override
+    public int[] parseStringToIntegerElements(String line) {
+        String[] elementsInRow = line.split(" ");
+        int row[] = new int[elementsInRow.length];
+
+        int currentColumn = 0;
+        for (String element : elementsInRow) {
+            row[currentColumn] = Integer.valueOf(element);
+            currentColumn++;
+        }
+        return row;
+    }
 }

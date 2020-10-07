@@ -7,13 +7,14 @@ public interface BaseOperationsService {
 
     void createArray();
 
+    void createJaggedArray();
+
     int createArray(int[][] jaggedArrayInt);
 
     int[] generateOneDimensionalArray(int countOfElements);
 
     int generateNumber();
 
-    //TODO descending
     int[] bubbleSort(int[] array);
 
     int[] bubbleSortDescending(int[] array);
@@ -33,4 +34,6 @@ public interface BaseOperationsService {
     int sumOfElements(int[] arrayInt);
 
     void validateElements(int[] elements) throws IncorrectTypeOfElementsException;
+
+    int[] parseStringToElements(String line);
 }

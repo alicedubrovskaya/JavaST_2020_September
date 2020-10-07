@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class JaggedArrayView {
     private JaggedArrayController jaggedArrayController;
     private Scanner in;
+    private final static int MAX_VALUE_OF_ROWS = 200;
 
     public JaggedArrayView(JaggedArrayController jaggedArrayController) {
         this.jaggedArrayController = jaggedArrayController;
@@ -32,7 +33,7 @@ public class JaggedArrayView {
                     optionGetElementsFromConsole();
                     break;
                 case 3:
-                    //    optionGetElementsFromFile();
+                    optionGetElementsFromFile();
                     break;
                 case 4:
                     optionPrintMatrix();
@@ -75,17 +76,15 @@ public class JaggedArrayView {
     }
 
     protected void optionGetElementsFromConsole() {
-        //TODO jagged, not constant size
-        System.out.print("Enter count of rows and columns: ");
-        int rowCount = in.nextInt();
-        int columnCount = in.nextInt();
+        System.out.print("Enter number of rows and array: ");
+        int countOfRows = in.nextInt();
+        int array[][] = new int[countOfRows][];
 
-        int[][] array = new int[rowCount][];
-        for (int i = 0; i < rowCount; i++) {
-            array[i] = new int[columnCount];
-            for (int j = 0; j < columnCount; j++) {
-                array[i][j] = in.nextInt();
+        for (int currentRow = 0; currentRow < countOfRows; currentRow++) {
+            if (currentRow != countOfRows - 1) {
+                in.nextLine(); //for correct input
             }
+            array[currentRow] = jaggedArrayController.parseStringToIntegerElements(in.nextLine());
         }
         try {
             jaggedArrayController.createNewArray(array);
@@ -93,6 +92,12 @@ public class JaggedArrayView {
             System.out.println("Incorrect type of entered elements");
         }
     }
+
+    //TODO to add filepath from console
+    protected void optionGetElementsFromFile() {
+        jaggedArrayController.createNewArrayFromFile();
+    }
+
 
     protected void optionFindElementInArray() {
         System.out.print("Enter id, value of element: ");
@@ -143,28 +148,19 @@ public class JaggedArrayView {
 
     protected void optionSortBySumsOfElementsInRows() {
         System.out.println("Enter id of matrix, ascending (1) or descending(2): ");
-        int id = jaggedArrayController.sortBySumsOfElementsInRows(in.nextInt(),in.nextInt()==1);
+        int id = jaggedArrayController.sortBySumsOfElementsInRows(in.nextInt(), in.nextInt() == 1);
         System.out.println("id: " + id);
     }
 
     protected void optionSortByMaxElementsInRows() {
         System.out.println("Enter id of matrix, ascending (1) or descending(2): ");
-        int id = jaggedArrayController.sortByMaxElementsInRows(in.nextInt(),in.nextInt()==1);
+        int id = jaggedArrayController.sortByMaxElementsInRows(in.nextInt(), in.nextInt() == 1);
         System.out.println("id: " + id);
     }
 
     protected void optionSortByMinElementsInRows() {
         System.out.println("Enter id of matrix, ascending (1) or descending(2): ");
-        int id = jaggedArrayController.sortByMinElementsInRows(in.nextInt(),in.nextInt()==1);
+        int id = jaggedArrayController.sortByMinElementsInRows(in.nextInt(), in.nextInt() == 1);
         System.out.println("id: " + id);
     }
-
-
-/*
-    protected void optionGetElementsFromFile() {
-        arrayController.createNewArrayFromFile();
-    }
- */
-
-
 }

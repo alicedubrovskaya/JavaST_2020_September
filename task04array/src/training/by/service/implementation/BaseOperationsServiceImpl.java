@@ -37,6 +37,14 @@ public class BaseOperationsServiceImpl implements BaseOperationsService {
     }
 
     /**
+     * Creates new exemplar of class JaggedArray with elements from file
+     */
+    @Override
+    public void createJaggedArray() {
+        arrayDAO.createJaggedArrayWithElementsFromFile();
+    }
+
+    /**
      * Creates new exemplar of class JaggedArray with elements from console
      *
      * @param jaggedArrayInt
@@ -267,5 +275,10 @@ public class BaseOperationsServiceImpl implements BaseOperationsService {
             sum += arrayInt[i];
         }
         return sum;
+    }
+
+    @Override
+    public int[] parseStringToElements(String line) {
+        return arrayDAO.parseStringToIntegerElements(line);
     }
 }

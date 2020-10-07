@@ -14,16 +14,19 @@ import java.util.List;
 public interface ArrayDAO {
     int[] getElementsFromFile(String fileName) throws IOException;
 
+    int[][] getElementsOfJaggedArrayFromFile(String fileName) throws IOException;
+
     Array getArray();
 
     List<JaggedArray> getJaggedArrayList();
 
     void createArrayWithElementsFromFile();
 
+    void createJaggedArrayWithElementsFromFile();
+
     void createArray(Integer... elements);
 
     int createArray(int[][] arrayInt);
 
-    //TODO
-    void createJaggedArrayWithElementsFromFile();
+    int[] parseStringToIntegerElements(String line);
 }
