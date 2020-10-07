@@ -12,7 +12,7 @@ public interface BaseOperationsService {
 
     void createArray();
 
-    void createJaggedArray();
+    void createJaggedArray(String filePath);
 
     int createArray(int[][] jaggedArrayInt);
 

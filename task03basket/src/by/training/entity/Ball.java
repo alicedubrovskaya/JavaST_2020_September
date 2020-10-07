@@ -57,10 +57,7 @@ public class Ball {
         if (cost.compareTo(comparedObject.cost) != 0) {
             return false;
         }
-        if (Double.compare(weight, comparedObject.weight) != 0) {
-            return false;
-        }
-        return true;
+        return Double.compare(weight, comparedObject.weight) == 0;
     }
 
     public UUID getId() {

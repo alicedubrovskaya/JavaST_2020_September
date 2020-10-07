@@ -25,6 +25,6 @@ public interface ArrayService {
 
     boolean isNDigitWithoutIdenticalNumerals(int countOfDigits, int number);
 
-    List<Integer> findNumbersWithoutTHeSameDigitsInArray();
+    List<Integer> findNumbersWithoutTHeSameDigitsInArray(int countOfDigits);
 
 }

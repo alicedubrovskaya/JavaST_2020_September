@@ -84,10 +84,9 @@ public class JaggedArrayView {
         }
     }
 
-    //TODO to add filepath from console
     protected void optionGetElementsFromFile() {
         System.out.println(rb.getString("jaggedArray.fromFile"));
-        jaggedArrayController.createNewArrayFromFile();
+        jaggedArrayController.createNewArrayFromFile(in.next());
     }
 
 
@@ -140,14 +139,12 @@ public class JaggedArrayView {
 
     protected void optionSortByMaxElementsInRows() {
         System.out.println(rb.getString("jaggedArray.id") + ", " + rb.getString("jaggedArray.sort"));
-        int id = jaggedArrayController.sortByMaxElementsInRows(in.nextInt(), in.nextInt() == 1);
-        System.out.println("id: " + id);
+        optionPrintMatrix(jaggedArrayController.sortByMaxElementsInRows(in.nextInt(), in.nextInt() == 1));
     }
 
     protected void optionSortByMinElementsInRows() {
         System.out.println(rb.getString("jaggedArray.id") + ", " + rb.getString("jaggedArray.sort"));
-        int id = jaggedArrayController.sortByMinElementsInRows(in.nextInt(), in.nextInt() == 1);
-        System.out.println("id: " + id);
+        optionPrintMatrix(jaggedArrayController.sortByMinElementsInRows(in.nextInt(), in.nextInt() == 1));
     }
 
     protected void optionPrintMatrix(int[][] matrix) {

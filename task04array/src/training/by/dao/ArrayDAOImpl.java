@@ -81,11 +81,9 @@ public class ArrayDAOImpl implements ArrayDAO {
 
             }
             return array;
-
         } catch (FileNotFoundException e) {
             System.err.println(e);
         }
-        //TODO
         return null;
     }
 
@@ -123,11 +121,12 @@ public class ArrayDAOImpl implements ArrayDAO {
 
     /**
      * Creates jagged array with elements from file
+     * Example of path: "task04array/data/elements.txt"
      */
     @Override
-    public void createJaggedArrayWithElementsFromFile() {
+    public void createJaggedArrayWithElementsFromFile(String path) {
         int[][] arrayInt;
-        String filePath = new File("task04array/data/elements.txt").getAbsolutePath();
+        String filePath = new File(path).getAbsolutePath();
         try {
             arrayInt = getElementsOfJaggedArrayFromFile(filePath);
             createArray(arrayInt);
@@ -160,7 +159,7 @@ public class ArrayDAOImpl implements ArrayDAO {
     @Override
     public int[] parseStringToIntegerElements(String line) {
         String[] elementsInRow = line.split(" ");
-        int row[] = new int[elementsInRow.length];
+        int[] row = new int[elementsInRow.length];
 
         int currentColumn = 0;
         for (String element : elementsInRow) {

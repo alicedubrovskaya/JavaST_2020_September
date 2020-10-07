@@ -45,8 +45,8 @@ public class BaseOperationsServiceImpl implements BaseOperationsService {
      * Creates new exemplar of class JaggedArray with elements from file
      */
     @Override
-    public void createJaggedArray() {
-        arrayDAO.createJaggedArrayWithElementsFromFile();
+    public void createJaggedArray(String filePath) {
+        arrayDAO.createJaggedArrayWithElementsFromFile(filePath);
     }
 
     /**

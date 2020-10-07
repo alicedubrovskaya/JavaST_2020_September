@@ -29,6 +29,7 @@ public class ArrayView {
             case 3:
                 optionGetElementsFromFile();
                 break;
+            default:
         }
 
         while (option != 0) {
@@ -62,6 +63,7 @@ public class ArrayView {
                 case 9:
                     optionFindNumbersWithoutSameDigits();
                     break;
+                default:
             }
         }
 
@@ -127,6 +129,6 @@ public class ArrayView {
     }
 
     protected void optionFindNumbersWithoutSameDigits() {
-        System.out.println(arrayController.findNumbersWithoutSameDigits().toString());
+        System.out.println(arrayController.findNumbersWithoutSameDigits(in.nextInt()).toString());
     }
 }

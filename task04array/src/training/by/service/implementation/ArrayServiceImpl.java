@@ -169,18 +169,15 @@ public class ArrayServiceImpl implements ArrayService {
      *
      * @return list of found numbers
      */
-    //TODO change fixed length of number
     @Override
-    public List<Integer> findNumbersWithoutTHeSameDigitsInArray() {
+    public List<Integer> findNumbersWithoutTHeSameDigitsInArray(int countOfDigits) {
         List<Integer> numbers = new ArrayList<>();
-        int arrayInt[] = arrayDAO.getArray().getArrayInt();
+        int[] arrayInt = arrayDAO.getArray().getArrayInt();
         for (int i = 0; i < arrayInt.length; i++) {
-            if (isNDigitWithoutIdenticalNumerals(3, arrayInt[i])) {
+            if (isNDigitWithoutIdenticalNumerals(countOfDigits, arrayInt[i])) {
                 numbers.add(arrayInt[i]);
             }
         }
         return numbers;
     }
-
-
 }

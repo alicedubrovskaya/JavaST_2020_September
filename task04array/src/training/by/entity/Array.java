@@ -2,7 +2,6 @@ package training.by.entity;
 
 import java.util.Arrays;
 import java.util.Objects;
-import java.util.Random;
 
 /**
  * CLass describes entity Array. Has overridden methods from the class Object
@@ -20,7 +19,7 @@ public class Array {
         }
     }
 
-    public Array(int array[]) {
+    public Array(int[] array) {
         arrayInt = array;
     }
 

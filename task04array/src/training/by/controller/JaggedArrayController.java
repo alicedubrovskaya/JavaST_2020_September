@@ -47,8 +47,8 @@ public class JaggedArrayController {
     /**
      * Creates new exemplar of class JaggedArray with elements from file
      */
-    public void createNewArrayFromFile() {
-        baseOperationsService.createJaggedArray();
+    public void createNewArrayFromFile(String filePath) {
+        baseOperationsService.createJaggedArray(filePath);
     }
 
     /**
@@ -223,7 +223,7 @@ public class JaggedArrayController {
      * @param ascending
      * @return sorted result
      */
-    public int sortByMaxElementsInRows(int id, boolean ascending) {
+    public int[][] sortByMaxElementsInRows(int id, boolean ascending) {
         int array[][] = jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
         int resultingArray[][] = new int[array.length][];
 
@@ -245,7 +245,7 @@ public class JaggedArrayController {
             resultingArray[i] = array[rowOfArray];
         }
 
-        return createNewArray(resultingArray);
+        return resultingArray;
     }
 
     /**
@@ -256,7 +256,7 @@ public class JaggedArrayController {
      * @param ascending
      * @return
      */
-    public int sortByMinElementsInRows(int id, boolean ascending) {
+    public int[][] sortByMinElementsInRows(int id, boolean ascending) {
         int array[][] = jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
         int resultingArray[][] = new int[array.length][];
 
@@ -278,7 +278,7 @@ public class JaggedArrayController {
             resultingArray[i] = array[rowOfArray];
         }
 
-        return createNewArray(resultingArray);
+        return resultingArray;
     }
 
     /**

@@ -56,8 +56,11 @@ public class ArrayController {
      * @throws ElementNotFoundException
      */
     public int findElementInArray(int value) throws ElementNotFoundException {
-        //TODO check was found position or not
-        return baseOperationsService.findElement(value, arrayService.getArray().getArrayInt());
+        int positionOfElement = baseOperationsService.findElement(value, arrayService.getArray().getArrayInt());
+        if (positionOfElement == -1) {
+            throw new ElementNotFoundException(value);
+        }
+        return positionOfElement;
     }
 
     /**
@@ -109,10 +112,9 @@ public class ArrayController {
      * @param value
      * @return
      */
-    //TODO array storage, not fixed arguments
     public int searchElementWithBinarySearch(int value) {
-        return arrayService.binarySearch(baseOperationsService.bubbleSort(arrayService.getArray().getArrayInt()),
-                value, 0, 4);
+        int[] array = arrayService.getArray().getArrayInt();
+        return arrayService.binarySearch(baseOperationsService.bubbleSort(array), value, 0, array.length - 1);
     }
 
     /**
@@ -141,7 +143,7 @@ public class ArrayController {
      *
      * @return list of numbers without same digits and with fixed length
      */
-    public List<Integer> findNumbersWithoutSameDigits() {
-        return arrayService.findNumbersWithoutTHeSameDigitsInArray();
+    public List<Integer> findNumbersWithoutSameDigits(int countOfDigits) {
+        return arrayService.findNumbersWithoutTHeSameDigitsInArray(countOfDigits);
     }
 }

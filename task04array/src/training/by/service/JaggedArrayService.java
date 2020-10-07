@@ -18,7 +18,6 @@ public interface JaggedArrayService {
 
     boolean sameDimensionOfJaggedArrays(int idFirstArray, int idSecondArray);
 
-    //TODO сleverer
     int[][] arithmeticOperationOnMatrices(int idFirstMatrix, int idSecondMatrix, boolean addition) throws MatricesAreIncompatibleException;
 
     int[][] multiplyByConstant(int id, int constant);

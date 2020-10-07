@@ -4,7 +4,6 @@ import training.by.entity.Array;
 import training.by.entity.JaggedArray;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,7 +23,7 @@ public interface ArrayDAO {
 
     void createArrayWithElementsFromFile();
 
-    void createJaggedArrayWithElementsFromFile();
+    void createJaggedArrayWithElementsFromFile(String path);
 
     void createArray(Integer... elements);
 
