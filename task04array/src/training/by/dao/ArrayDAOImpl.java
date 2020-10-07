@@ -13,6 +13,8 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
+ * Class that is an implementation of interface ArrayDAO
+ *
  * @author Alisa Dubrovskaya
  */
 public class ArrayDAOImpl implements ArrayDAO {
@@ -25,6 +27,13 @@ public class ArrayDAOImpl implements ArrayDAO {
         this.idJaggedArray = 0;
     }
 
+    /**
+     * Receives elements from file with specified file name
+     *
+     * @param fileName
+     * @return
+     * @throws IOException
+     */
     @Override
     public int[] getElementsFromFile(String fileName) throws IOException {
         int[] arrayInt = new int[5];
@@ -49,6 +58,13 @@ public class ArrayDAOImpl implements ArrayDAO {
         return arrayInt;
     }
 
+    /**
+     * Receives elements of jagged array from file with specified file name
+     *
+     * @param fileName
+     * @return
+     * @throws IOException
+     */
     @Override
     public int[][] getElementsOfJaggedArrayFromFile(String fileName) throws IOException {
         try (FileReader fr = new FileReader(fileName);
@@ -73,6 +89,7 @@ public class ArrayDAOImpl implements ArrayDAO {
         return null;
     }
 
+
     @Override
     public Array getArray() {
         return array;
@@ -83,6 +100,9 @@ public class ArrayDAOImpl implements ArrayDAO {
         return jaggedArrayList.getJaggedArrays();
     }
 
+    /**
+     * Creates array with elements from file
+     */
     @Override
     public void createArrayWithElementsFromFile() {
         int[] arrayInt;
@@ -101,6 +121,9 @@ public class ArrayDAOImpl implements ArrayDAO {
         }
     }
 
+    /**
+     * Creates jagged array with elements from file
+     */
     @Override
     public void createJaggedArrayWithElementsFromFile() {
         int[][] arrayInt;
@@ -128,6 +151,12 @@ public class ArrayDAOImpl implements ArrayDAO {
         return jaggedArray.getId();
     }
 
+    /**
+     * Parsers string of elements to array
+     *
+     * @param line
+     * @return
+     */
     @Override
     public int[] parseStringToIntegerElements(String line) {
         String[] elementsInRow = line.split(" ");

@@ -5,6 +5,8 @@ import training.by.service.implementation.BaseOperationsServiceImpl;
 import training.by.service.implementation.JaggedArrayServiceImpl;
 
 /**
+ * Class represents service factory. Realized factory pattern
+ *
  * @author Alisa Dubrovskaya
  * @since 03/10/20
  */

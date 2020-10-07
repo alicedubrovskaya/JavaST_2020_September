@@ -1,20 +1,24 @@
 package training.by.dao;
 
 /**
+ * Class represents DAO factory. Realized factory pattern
+ *
  * @author Alisa Dubrovskaya
  * @since 03/10/20
  */
 public class DAOFactory {
-    private static final DAOFactory instance=new DAOFactory();
+    private static final DAOFactory instance = new DAOFactory();
 
-    private final ArrayDAO arrayDAO=new ArrayDAOImpl();
-    private DAOFactory(){}
+    private final ArrayDAO arrayDAO = new ArrayDAOImpl();
 
-    public static DAOFactory getInstance(){
+    private DAOFactory() {
+    }
+
+    public static DAOFactory getInstance() {
         return instance;
     }
 
-    public ArrayDAO getArrayDAO(){
+    public ArrayDAO getArrayDAO() {
         return arrayDAO;
     }
 }

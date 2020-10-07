@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Interface that works with data
+ *
  * @author Alisa Dubrovskaya
  * @since 03/10/20
  */

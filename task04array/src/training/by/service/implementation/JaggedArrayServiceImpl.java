@@ -10,6 +10,11 @@ import training.by.service.JaggedArrayService;
 
 import java.util.List;
 
+/**
+ * Class is an implementation of interface JaggedArrayService
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class JaggedArrayServiceImpl implements JaggedArrayService {
     private BaseOperationsService baseOperationsService;
     private ArrayDAO arrayDAO;
@@ -20,6 +25,12 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
         this.arrayDAO = daoFactory.getArrayDAO();
     }
 
+    /**
+     * Finds jagged array by id
+     *
+     * @param id
+     * @return
+     */
     @Override
     public JaggedArray findJaggedArray(int id) {
         JaggedArray jaggedArray = null;
@@ -33,6 +44,13 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
         return jaggedArray;
     }
 
+    /**
+     * Compares dimension of jagged arrays
+     *
+     * @param idFirstArray
+     * @param idSecondArray
+     * @return
+     */
     @Override
     public boolean sameDimensionOfJaggedArrays(int idFirstArray, int idSecondArray) {
         boolean isEqualDimension = true;
@@ -53,7 +71,12 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
         return isEqualDimension;
     }
 
-
+    /**
+     * Check id matrix square or not
+     *
+     * @param id
+     * @return
+     */
     @Override
     public boolean squareMatrix(int id) {
         boolean isSquare = true;
@@ -69,6 +92,12 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
         return isSquare;
     }
 
+    /**
+     * Checks is matrix rectangular or not
+     *
+     * @param id
+     * @return
+     */
     @Override
     public boolean rectangularMatrix(int id) {
         boolean isSquare = true;
@@ -85,6 +114,15 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
     }
 
 
+    /**
+     * Does arithmetic operation on matrices: addition or subtraction, depending on needed.
+     *
+     * @param idFirstMatrix
+     * @param idSecondMatrix
+     * @param addition
+     * @return new resulting matrix
+     * @throws MatricesAreIncompatibleException
+     */
     @Override
     public int[][] arithmeticOperationOnMatrices(int idFirstMatrix, int idSecondMatrix, boolean addition)
             throws MatricesAreIncompatibleException {
@@ -112,7 +150,13 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
         return resultingMatrix;
     }
 
-
+    /**
+     * Multiplies matrix by a constant
+     *
+     * @param id
+     * @param constant
+     * @return new resulting matrix
+     */
     @Override
     public int[][] multiplyByConstant(int id, int constant) {
         int[][] matrix = findJaggedArray(id).getJaggedArrayInt();
@@ -127,6 +171,14 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
         return resultingMatrix;
     }
 
+    /**
+     * Transposes matrix with specified id. If there is rectangular matrix creates new matrix(resulting).
+     * If there is square matrix transposition does on this matrix without creation of new matrix
+     *
+     * @param id
+     * @return transposed matrix
+     * @throws MatrixCannotBeTransposedException
+     */
     @Override
     public int[][] transpose(int id) throws MatrixCannotBeTransposedException {
         int[][] matrix = findJaggedArray(id).getJaggedArrayInt();
@@ -152,6 +204,12 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
         return matrix;
     }
 
+    /**
+     * Finds sum of elements in rows of jagged array
+     *
+     * @param array
+     * @return sum
+     */
     @Override
     public int[] sumOfElementsInRows(int[][] array) {
         int[] sums = new int[array.length];
@@ -162,6 +220,12 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
         return sums;
     }
 
+    /**
+     * Finds max element in each row of jagged array
+     *
+     * @param array
+     * @return max elements
+     */
     @Override
     public int[] maxElementsInRows(int[][] array) {
         int[] maxElements = new int[array.length];
@@ -172,6 +236,12 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
         return maxElements;
     }
 
+    /**
+     * Finds min element in each row of jagged array
+     *
+     * @param array
+     * @return min elements
+     */
     @Override
     public int[] minElementsInRows(int[][] array) {
         int[] minElements = new int[array.length];

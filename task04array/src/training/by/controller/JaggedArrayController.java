@@ -11,6 +11,11 @@ import training.by.service.ServiceFactory;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Class is a controller of class JaggedArray
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class JaggedArrayController {
     private JaggedArrayService jaggedArrayService;
     private BaseOperationsService baseOperationsService;
@@ -105,34 +110,67 @@ public class JaggedArrayController {
         return values;
     }
 
+    /**
+     * Prints matrix with specified id
+     *
+     * @param id
+     * @return needed jagged array
+     */
     public JaggedArray printMatrix(int id) {
         return jaggedArrayService.findJaggedArray(id);
     }
 
+    /**
+     * Does addition on matrices with specified ids
+     *
+     * @param firstId
+     * @param secondId
+     * @return result of addition
+     */
     public int[][] additionOfTwoMatrices(int firstId, int secondId) {
         int[][] resultingMatrix = null;
         try {
-            resultingMatrix = jaggedArrayService.arithmeticOperationOnMatrices(firstId, secondId,true);
+            resultingMatrix = jaggedArrayService.arithmeticOperationOnMatrices(firstId, secondId, true);
         } catch (MatricesAreIncompatibleException e) {
             System.out.println(e.getMessage());
         }
         return resultingMatrix;
     }
 
+    /**
+     * Does subtraction on matrices with specified ids
+     *
+     * @param firstId
+     * @param secondId
+     * @return result of subtraction
+     */
     public int[][] subtractionOfTwoMatrices(int firstId, int secondId) {
         int[][] resultingMatrix = null;
         try {
-            resultingMatrix = jaggedArrayService.arithmeticOperationOnMatrices(firstId, secondId,false);
+            resultingMatrix = jaggedArrayService.arithmeticOperationOnMatrices(firstId, secondId, false);
         } catch (MatricesAreIncompatibleException e) {
             System.out.println(e.getMessage());
         }
         return resultingMatrix;
     }
 
-    public int multiplyByConstant(int id, int constant) {
-        return createNewArray(jaggedArrayService.multiplyByConstant(id, constant));
+    /**
+     * Multiplies matrix with specified if by a constant
+     *
+     * @param id
+     * @param constant
+     * @return result of multiplying
+     */
+    public int[][] multiplyByConstant(int id, int constant) {
+        return jaggedArrayService.multiplyByConstant(id, constant);
     }
 
+    /**
+     * Transposes matrix with specified id
+     *
+     * @param id
+     * @return result of transposition
+     */
     public int[][] transposeMatrix(int id) {
         int[][] transposedMatrix = null;
         try {
@@ -143,7 +181,15 @@ public class JaggedArrayController {
         return transposedMatrix;
     }
 
-    public int sortBySumsOfElementsInRows(int id, boolean ascending) {
+    /**
+     * Sorts by sums of elements in rows (ascending or descending depends on specified parameter)
+     * Map<K,V>: K- sum of elements in row, V - index of its row (after sort it will be another)
+     *
+     * @param id
+     * @param ascending
+     * @return result of sort
+     */
+    public int[][] sortBySumsOfElementsInRows(int id, boolean ascending) {
         int array[][] = jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
         int resultingArray[][] = new int[array.length][];
 
@@ -166,9 +212,17 @@ public class JaggedArrayController {
             resultingArray[i] = array[rowOfArray];
         }
 
-        return createNewArray(resultingArray);
+        return resultingArray;
     }
 
+    /**
+     * Sorts by max elements in rows (ascending or descending depends on specified parameter)
+     * Map<K,V>: K- sum of elements in row, V - index of its row (after sort it will be another)
+     *
+     * @param id
+     * @param ascending
+     * @return sorted result
+     */
     public int sortByMaxElementsInRows(int id, boolean ascending) {
         int array[][] = jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
         int resultingArray[][] = new int[array.length][];
@@ -194,6 +248,14 @@ public class JaggedArrayController {
         return createNewArray(resultingArray);
     }
 
+    /**
+     * Sorts by min elements in rows (ascending or descending depends on specified parameter)
+     * Map<K,V>: K- sum of elements in row, V - index of its row (after sort it will be another)
+     *
+     * @param id
+     * @param ascending
+     * @return
+     */
     public int sortByMinElementsInRows(int id, boolean ascending) {
         int array[][] = jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
         int resultingArray[][] = new int[array.length][];
@@ -219,6 +281,12 @@ public class JaggedArrayController {
         return createNewArray(resultingArray);
     }
 
+    /**
+     * Parsers string of elements to array
+     *
+     * @param line
+     * @return
+     */
     public int[] parseStringToIntegerElements(String line) {
         return baseOperationsService.parseStringToElements(line);
     }

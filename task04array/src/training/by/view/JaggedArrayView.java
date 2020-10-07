@@ -125,8 +125,7 @@ public class JaggedArrayView {
 
     protected void optionMultiplyByConstant() {
         System.out.println(rb.getString("jaggedArray.id") + ", " + rb.getString("jaggedArray.constant"));
-        int id = jaggedArrayController.multiplyByConstant(in.nextInt(), in.nextInt());
-        System.out.println("id: " + id);
+        optionPrintMatrix(jaggedArrayController.multiplyByConstant(in.nextInt(), in.nextInt()));
     }
 
     protected void optionTransposeMatrix() {
@@ -136,8 +135,7 @@ public class JaggedArrayView {
 
     protected void optionSortBySumsOfElementsInRows() {
         System.out.println(rb.getString("jaggedArray.id") + ", " + rb.getString("jaggedArray.sort"));
-        int id = jaggedArrayController.sortBySumsOfElementsInRows(in.nextInt(), in.nextInt() == 1);
-        System.out.println("id: " + id);
+        optionPrintMatrix(jaggedArrayController.sortBySumsOfElementsInRows(in.nextInt(), in.nextInt() == 1));
     }
 
     protected void optionSortByMaxElementsInRows() {

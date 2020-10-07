@@ -8,6 +8,8 @@ import training.by.service.ArrayService;
 import java.util.*;
 
 /**
+ * Class is an implementation of interface ArrayService
+ *
  * @author Alisa Dubrovskaya
  */
 public class ArrayServiceImpl implements ArrayService {

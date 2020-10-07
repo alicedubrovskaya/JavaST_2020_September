@@ -8,6 +8,11 @@ import training.by.service.BaseOperationsService;
 
 import java.util.Random;
 
+/**
+ * Class is an implementation of interface BaseOperationService
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class BaseOperationsServiceImpl implements BaseOperationsService {
     private ArrayDAO arrayDAO;
     private Random random = new Random();
@@ -208,11 +213,23 @@ public class BaseOperationsServiceImpl implements BaseOperationsService {
         arrayInt[column][row] = temporal;
     }
 
+    /**
+     * Does addition of two numbers
+     * @param firstValue
+     * @param secondValue
+     * @return sum
+     */
     @Override
     public int addition(int firstValue, int secondValue) {
         return firstValue+secondValue;
     }
 
+    /**
+     * Does subtraction of two numbers
+     * @param firstValue
+     * @param secondValue
+     * @return
+     */
     @Override
     public int subtraction(int firstValue, int secondValue) {
         return firstValue-secondValue;
@@ -292,6 +309,11 @@ public class BaseOperationsServiceImpl implements BaseOperationsService {
         return minValue;
     }
 
+    /**
+     * Finds sum of all elements in array
+     * @param arrayInt
+     * @return
+     */
     @Override
     public int sumOfElements(int[] arrayInt) {
         int sum = 0;
@@ -301,6 +323,11 @@ public class BaseOperationsServiceImpl implements BaseOperationsService {
         return sum;
     }
 
+    /**
+     * Parsers string of elements to array
+     * @param line
+     * @return
+     */
     @Override
     public int[] parseStringToElements(String line) {
         return arrayDAO.parseStringToIntegerElements(line);

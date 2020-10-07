@@ -2,6 +2,11 @@ package training.by.service;
 
 import training.by.exception.IncorrectTypeOfElementsException;
 
+/**
+ * Interface with base methods for work with arrays
+ *
+ * @author Alisa Dubrovskaya
+ */
 public interface BaseOperationsService {
     void createArray(Integer... elements);
 

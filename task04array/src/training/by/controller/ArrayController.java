@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Class is controller of class Array
+ * Class is a controller of class Array
  *
  * @author Alisa Dubrovskaya
  * @since 02/10/20
@@ -125,12 +125,22 @@ public class ArrayController {
     }
 
 
+    /**
+     * Finds fibonacci numbers in array
+     *
+     * @return list of fibonacci numbers
+     */
     public List<Integer> findFibonacciNumbersInArray() {
         int[] arrayInt = baseOperationsService.bubbleSort(arrayService.getArray().getArrayInt());
         int maxValue = arrayInt[arrayInt.length - 1];
         return arrayService.findFibonacciNumbers(arrayInt, maxValue);
     }
 
+    /**
+     * Finds numbers without the same digits and with fixed length
+     *
+     * @return list of numbers without same digits and with fixed length
+     */
     public List<Integer> findNumbersWithoutSameDigits() {
         return arrayService.findNumbersWithoutTHeSameDigitsInArray();
     }

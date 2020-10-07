@@ -1,12 +1,12 @@
 package training.by.service;
 
 import training.by.entity.Array;
-import training.by.exception.ElementNotFoundException;
-import training.by.exception.IncorrectTypeOfElementsException;
 
 import java.util.List;
 
 /**
+ * Interface for work with array
+ *
  * @author Alisa Dubrovskaya
  * @since 03/10/20
  */

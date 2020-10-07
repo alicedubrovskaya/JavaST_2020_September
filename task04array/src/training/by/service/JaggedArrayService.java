@@ -4,6 +4,11 @@ import training.by.entity.JaggedArray;
 import training.by.exception.MatricesAreIncompatibleException;
 import training.by.exception.MatrixCannotBeTransposedException;
 
+/**
+ * Interface for work with jagged array
+ *
+ * @author Alisa Dubrovskaya
+ */
 public interface JaggedArrayService {
     JaggedArray findJaggedArray(int id);
 
