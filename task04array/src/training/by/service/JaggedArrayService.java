@@ -7,7 +7,6 @@ public interface JaggedArrayService {
 
     boolean squareMatrix(int id);
 
-    //TODO for jagged array
     boolean sameDimensionOfJaggedArrays(int idFirstArray, int idSecondArray);
 
     int[][] addition(int idFirstMatrix, int idSecondMatrix);
@@ -20,8 +19,8 @@ public interface JaggedArrayService {
 
     int[] sumOfElementsInRows(int[][] array);
 
-    int[] maxElementsInRows(int [][] array);
+    int[] maxElementsInRows(int[][] array);
 
-    int[] minElementsInRows(int [][] array);
+    int[] minElementsInRows(int[][] array);
 
 }

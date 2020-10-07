@@ -33,15 +33,36 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
 
     @Override
     public boolean sameDimensionOfJaggedArrays(int idFirstArray, int idSecondArray) {
+        boolean isEqualDimension = true;
         int[][] firstArray = findJaggedArray(idFirstArray).getJaggedArrayInt();
         int[][] secondArray = findJaggedArray(idSecondArray).getJaggedArrayInt();
-        return (firstArray.length == secondArray.length && firstArray[0].length == secondArray[0].length);
+
+        if (firstArray.length != secondArray.length) {
+            isEqualDimension = false;
+        } else {
+            for (int row = 0; row < firstArray.length; row++) {
+                if (firstArray[row].length != secondArray[row].length) {
+                    isEqualDimension = false;
+                }
+            }
+        }
+
+        return isEqualDimension;
     }
+
 
     @Override
     public boolean squareMatrix(int id) {
+        boolean isSquare = true;
         int[][] array = findJaggedArray(id).getJaggedArrayInt();
-        return (array.length == array[0].length);
+        int countOfRows = array.length;
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].length != countOfRows) {
+                isSquare = false;
+            }
+        }
+        return isSquare;
     }
 
     @Override
@@ -77,9 +98,10 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
     @Override
     public int[][] multiplyByConstant(int id, int constant) {
         int[][] matrix = findJaggedArray(id).getJaggedArrayInt();
-        //TODO
-        int[][] resultingMatrix = new int[matrix.length][matrix[0].length];
+        int[][] resultingMatrix = new int[matrix.length][];
+
         for (int row = 0; row < matrix.length; row++) {
+            resultingMatrix[row] = new int[matrix[row].length];
             for (int column = 0; column < matrix[row].length; column++) {
                 resultingMatrix[row][column] = matrix[row][column] * constant;
             }
