@@ -3,28 +3,21 @@ package training.by.view;
 import training.by.controller.JaggedArrayController;
 import training.by.exception.ElementNotFoundException;
 
-import java.util.Arrays;
-import java.util.InputMismatchException;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class JaggedArrayView {
     private JaggedArrayController jaggedArrayController;
     private Scanner in;
-    private final static int MAX_VALUE_OF_ROWS = 200;
+    private ResourceBundle rb;
 
-    public JaggedArrayView(JaggedArrayController jaggedArrayController) {
+    public JaggedArrayView(JaggedArrayController jaggedArrayController, ResourceBundle rb) {
         this.jaggedArrayController = jaggedArrayController;
         in = new Scanner(System.in);
+        this.rb = rb;
 
         int option = -1;
         while (option != 0) {
-            System.out.println("\n1 - generate elements \n2 - enter elements from console \n3 - get elements from file" +
-                    "\n4 - print matrix" +
-                    "\n5- find element in array \n6- find min and max elements" +
-                    "\n7- addition \n8- subtraction \n9- multiplyByConstant \n10- transposeMatrix" +
-                    "\n11- sort by sums of elements in rows" +
-                    "\n12- sort by max elements in rows \n13-sort by min elements in rows");
+            System.out.println(rb.getString("jaggedArray.menu"));
             option = in.nextInt();
             switch (option) {
                 case 1:
@@ -39,7 +32,6 @@ public class JaggedArrayView {
                 case 4:
                     optionPrintMatrixById();
                     break;
-
                 case 5:
                     optionFindElementInArray();
                     break;
@@ -72,14 +64,14 @@ public class JaggedArrayView {
     }
 
     protected void optionGenerateElements() {
-        System.out.println("Enter row and column size");
+        System.out.println(rb.getString("jaggedArray.generate"));
         jaggedArrayController.createNewArray(in.nextInt(), in.nextInt());
     }
 
     protected void optionGetElementsFromConsole() {
-        System.out.print("Enter number of rows and array: ");
+        System.out.print(rb.getString("jaggedArray.fromConsole"));
         int countOfRows = in.nextInt();
-        int array[][] = new int[countOfRows][];
+        int[][] array = new int[countOfRows][];
         in.nextLine();
 
         for (int currentRow = 0; currentRow < countOfRows; currentRow++) {
@@ -88,28 +80,28 @@ public class JaggedArrayView {
         try {
             jaggedArrayController.createNewArray(array);
         } catch (InputMismatchException e) {
-            System.out.println("Incorrect type of entered elements");
+            System.out.println(rb.getString("data.incorrectType"));
         }
     }
 
     //TODO to add filepath from console
     protected void optionGetElementsFromFile() {
+        System.out.println(rb.getString("jaggedArray.fromFile"));
         jaggedArrayController.createNewArrayFromFile();
     }
 
 
     protected void optionFindElementInArray() {
-        System.out.print("Enter id, value of element: ");
+        System.out.print(rb.getString("jaggedArray.findElement"));
         try {
-            System.out.print("Element found in position: "
-                    + jaggedArrayController.findPositionOfElement(in.nextInt(), in.nextInt()).toString());
+            System.out.print(jaggedArrayController.findPositionOfElement(in.nextInt(), in.nextInt()).toString());
         } catch (ElementNotFoundException e) {
             System.out.print(e.getMessage());
         }
     }
 
     protected void optionFindMinAndMaxElement() {
-        System.out.println("Enter id of array");
+        System.out.println(rb.getString("jaggedArray.id"));
         Map<String, Integer> values = jaggedArrayController.findMinAndMaxValue(in.nextInt());
         for (Map.Entry<String, Integer> entry : values.entrySet()) {
             System.out.println(entry.getKey() + " = " + entry.getValue());
@@ -117,56 +109,54 @@ public class JaggedArrayView {
     }
 
     protected void optionAddition() {
-        System.out.println("Enter id of matrices: ");
+        System.out.println(rb.getString("jaggedArray.ids"));
         optionPrintMatrix(jaggedArrayController.additionOfTwoMatrices(in.nextInt(), in.nextInt()));
     }
 
     protected void optionSubtraction() {
-        System.out.println("Enter id of matrices: ");
+        System.out.println(rb.getString("jaggedArray.ids"));
         optionPrintMatrix(jaggedArrayController.subtractionOfTwoMatrices(in.nextInt(), in.nextInt()));
     }
 
     protected void optionPrintMatrixById() {
-        System.out.println("Enter id of matrix: ");
+        System.out.println(rb.getString("jaggedArray.id"));
         System.out.println(jaggedArrayController.printMatrix(in.nextInt()).toString());
     }
 
-    protected void optionPrintMatrix(int matrix[][]) {
-        String array = "";
-        for (int row = 0; row < matrix.length; row++) {
-            array += Arrays.toString(matrix[row]) + "\n";
-        }
-        System.out.println(array);
-    }
-
-
     protected void optionMultiplyByConstant() {
-        System.out.println("Enter id of matrix, constant: ");
+        System.out.println(rb.getString("jaggedArray.id") + ", " + rb.getString("jaggedArray.constant"));
         int id = jaggedArrayController.multiplyByConstant(in.nextInt(), in.nextInt());
         System.out.println("id: " + id);
     }
 
     protected void optionTransposeMatrix() {
-        System.out.println("Enter id of matrix: ");
+        System.out.println(rb.getString("jaggedArray.id"));
         optionPrintMatrix(jaggedArrayController.transposeMatrix(in.nextInt()));
     }
 
     protected void optionSortBySumsOfElementsInRows() {
-        System.out.println("Enter id of matrix, ascending (1) or descending(2): ");
+        System.out.println(rb.getString("jaggedArray.id") + ", " + rb.getString("jaggedArray.sort"));
         int id = jaggedArrayController.sortBySumsOfElementsInRows(in.nextInt(), in.nextInt() == 1);
         System.out.println("id: " + id);
     }
 
     protected void optionSortByMaxElementsInRows() {
-        System.out.println("Enter id of matrix, ascending (1) or descending(2): ");
+        System.out.println(rb.getString("jaggedArray.id") + ", " + rb.getString("jaggedArray.sort"));
         int id = jaggedArrayController.sortByMaxElementsInRows(in.nextInt(), in.nextInt() == 1);
         System.out.println("id: " + id);
     }
 
     protected void optionSortByMinElementsInRows() {
-        System.out.println("Enter id of matrix, ascending (1) or descending(2): ");
+        System.out.println(rb.getString("jaggedArray.id") + ", " + rb.getString("jaggedArray.sort"));
         int id = jaggedArrayController.sortByMinElementsInRows(in.nextInt(), in.nextInt() == 1);
         System.out.println("id: " + id);
     }
 
+    protected void optionPrintMatrix(int[][] matrix) {
+        String array = "";
+        for (int[] ints : matrix) {
+            array += Arrays.toString(ints) + "\n";
+        }
+        System.out.println(array);
+    }
 }

@@ -3,22 +3,20 @@ package training.by.view;
 import training.by.controller.ArrayController;
 import training.by.exception.ElementNotFoundException;
 
-import java.util.Arrays;
-import java.util.InputMismatchException;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class ArrayView {
     private ArrayController arrayController;
     private Scanner in;
+    private ResourceBundle rb;
 
-    public ArrayView(ArrayController arrayController) {
+    public ArrayView(ArrayController arrayController, ResourceBundle rb) {
         this.arrayController = arrayController;
         in = new Scanner(System.in);
+        this.rb = rb;
 
-        System.out.println("How do you want to initialize array? \n1 - generate elements \n2 - enter elements from console" +
-                "\n3 - get elements from file");
+        System.out.println(rb.getString("console.initialization"));
 
         int option = in.nextInt();
         switch (option) {
@@ -34,9 +32,7 @@ public class ArrayView {
         }
 
         while (option != 0) {
-            System.out.println("\n1- find element in array \n2- find min and max element \n3- bubble sort" +
-                    "\n4- selection sort \n5- insertion sort \n6-binary search" +
-                    "\n7- find prime numbers \n8- find fibonacci \n9- find numbers without the same digits");
+            System.out.println(rb.getString("array.menu"));
             option = in.nextInt();
             switch (option) {
                 case 1:
@@ -72,16 +68,16 @@ public class ArrayView {
     }
 
     protected void optionGenerateElements() {
-        System.out.print("Enter count of elements: ");
+        System.out.print(rb.getString("array.size"));
         arrayController.createNewArray(in.nextInt());
     }
 
     protected void optionGetElementsFromConsole() {
-        System.out.print("Enter 5 elements: ");
+        System.out.print(rb.getString("array.elements"));
         try {
             arrayController.createNewArray(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt());
         } catch (InputMismatchException e) {
-            System.out.println("Incorrect type of entered elements");
+            System.out.println(rb.getString("data.incorrectType"));
         }
     }
 
@@ -90,9 +86,9 @@ public class ArrayView {
     }
 
     protected void optionFindElementInArray() {
-        System.out.print("Enter value of element: ");
+        System.out.print(rb.getString("array.value"));
         try {
-            System.out.print("Element found in position: " + arrayController.findElementInArray(in.nextInt()));
+            System.out.print(arrayController.findElementInArray(in.nextInt()));
         } catch (ElementNotFoundException e) {
             System.out.print(e.getMessage());
         }
@@ -118,7 +114,7 @@ public class ArrayView {
     }
 
     protected void optionFindElement() {
-        System.out.print("Enter value: ");
+        System.out.print(rb.getString("array.value"));
         System.out.println(arrayController.searchElementWithBinarySearch(in.nextInt()));
     }
 
@@ -130,7 +126,7 @@ public class ArrayView {
         System.out.println(arrayController.findFibonacciNumbersInArray().toString());
     }
 
-    protected void optionFindNumbersWithoutSameDigits(){
+    protected void optionFindNumbersWithoutSameDigits() {
         System.out.println(arrayController.findNumbersWithoutSameDigits().toString());
     }
 }
