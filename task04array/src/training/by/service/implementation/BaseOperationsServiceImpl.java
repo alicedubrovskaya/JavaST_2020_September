@@ -96,6 +96,30 @@ public class BaseOperationsServiceImpl implements BaseOperationsService {
     }
 
     /**
+     * Sorts array with bubble sort. Descending
+     * Boolean variable isSorted is responsible for cycle work.
+     *
+     * @return sorted array (descending)
+     */
+    @Override
+    public int[] bubbleSortDescending(int[] array) {
+        int[] arrayInt = new int[array.length];
+        System.arraycopy(array, 0, arrayInt, 0, array.length);
+        boolean isSorted = false;
+
+        while (!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < arrayInt.length - 1; i++) {
+                if (arrayInt[i] < arrayInt[i + 1]) {
+                    swap(arrayInt, i, i + 1);
+                    isSorted = false;
+                }
+            }
+        }
+        return arrayInt;
+    }
+
+    /**
      * Sorts array with selection sort. Each iteration selects the smallest element and moves to the beginning
      *
      * @return sorted array(ascending)

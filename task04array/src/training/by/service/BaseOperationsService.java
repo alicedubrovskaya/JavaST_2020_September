@@ -16,6 +16,8 @@ public interface BaseOperationsService {
     //TODO descending
     int[] bubbleSort(int[] array);
 
+    int[] bubbleSortDescending(int[] array);
+
     int[] selectionSort(int[] array);
 
     int[] insertionSort(int[] array);

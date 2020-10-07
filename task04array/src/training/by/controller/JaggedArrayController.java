@@ -116,12 +116,18 @@ public class JaggedArrayController {
         return createNewArray(jaggedArrayService.transpose(id));
     }
 
-    public int sortBySumsOfElementsInRows(int id) {
+    public int sortBySumsOfElementsInRows(int id, boolean ascending) {
         int array[][] = jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
-        int resultingArray[][]=new int [array.length][];
+        int resultingArray[][] = new int[array.length][];
 
-        int sums[]=jaggedArrayService.sumOfElementsInRows(array);
-        int sortedSums[] = baseOperationsService.bubbleSort(sums);
+        int sums[] = jaggedArrayService.sumOfElementsInRows(array);
+        int sortedSums[];
+        if (ascending) {
+            sortedSums = baseOperationsService.bubbleSort(sums);
+        } else {
+            sortedSums = baseOperationsService.bubbleSortDescending(sums);
+        }
+
 
         Map<Integer, Integer> indexOfSumRows = new HashMap<>();
         for (int i = 0; i < sums.length; i++) {
@@ -130,47 +136,59 @@ public class JaggedArrayController {
 
         for (int i = 0; i < sortedSums.length; i++) {
             int rowOfArray = indexOfSumRows.get(sortedSums[i]);
-            resultingArray[i]=array[rowOfArray];
+            resultingArray[i] = array[rowOfArray];
         }
 
         return createNewArray(resultingArray);
     }
 
-    public int sortByMaxElementsInRows(int id){
-        int array[][]=jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
-        int resultingArray[][]=new int [array.length][];
+    public int sortByMaxElementsInRows(int id, boolean ascending) {
+        int array[][] = jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
+        int resultingArray[][] = new int[array.length][];
 
         int maxElements[] = jaggedArrayService.maxElementsInRows(array);
-        int sortedMaxElements[]=baseOperationsService.bubbleSort(maxElements);
-
-        Map<Integer, Integer> indexOfMaxElementsRows=new HashMap<>();
-        for (int i=0;i<maxElements.length;i++){
-            indexOfMaxElementsRows.put(maxElements[i],i);
+        int sortedMaxElements[];
+        if (ascending) {
+            sortedMaxElements = baseOperationsService.bubbleSort(maxElements);
+        }
+        else {
+            sortedMaxElements=baseOperationsService.bubbleSortDescending(maxElements);
         }
 
-        for (int i=0;i<sortedMaxElements.length;i++){
+        Map<Integer, Integer> indexOfMaxElementsRows = new HashMap<>();
+        for (int i = 0; i < maxElements.length; i++) {
+            indexOfMaxElementsRows.put(maxElements[i], i);
+        }
+
+        for (int i = 0; i < sortedMaxElements.length; i++) {
             int rowOfArray = indexOfMaxElementsRows.get(sortedMaxElements[i]);
-            resultingArray[i]=array[rowOfArray];
+            resultingArray[i] = array[rowOfArray];
         }
 
         return createNewArray(resultingArray);
     }
 
-    public int sortByMinElementsInRows(int id){
-        int array[][]=jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
-        int resultingArray[][]=new int [array.length][];
+    public int sortByMinElementsInRows(int id, boolean ascending) {
+        int array[][] = jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
+        int resultingArray[][] = new int[array.length][];
 
         int minElements[] = jaggedArrayService.minElementsInRows(array);
-        int sortedMinElements[]=baseOperationsService.bubbleSort(minElements);
-
-        Map<Integer, Integer> indexOfMaxElementsRows=new HashMap<>();
-        for (int i=0;i<minElements.length;i++){
-            indexOfMaxElementsRows.put(minElements[i],i);
+        int sortedMinElements[];
+        if (ascending){
+            sortedMinElements=baseOperationsService.bubbleSort(minElements);
+        }
+        else {
+            sortedMinElements=baseOperationsService.bubbleSortDescending(minElements);
         }
 
-        for (int i=0;i<sortedMinElements.length;i++){
+        Map<Integer, Integer> indexOfMaxElementsRows = new HashMap<>();
+        for (int i = 0; i < minElements.length; i++) {
+            indexOfMaxElementsRows.put(minElements[i], i);
+        }
+
+        for (int i = 0; i < sortedMinElements.length; i++) {
             int rowOfArray = indexOfMaxElementsRows.get(sortedMinElements[i]);
-            resultingArray[i]=array[rowOfArray];
+            resultingArray[i] = array[rowOfArray];
         }
 
         return createNewArray(resultingArray);

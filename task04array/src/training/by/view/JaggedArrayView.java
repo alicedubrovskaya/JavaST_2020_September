@@ -142,20 +142,20 @@ public class JaggedArrayView {
     }
 
     protected void optionSortBySumsOfElementsInRows() {
-        System.out.println("Enter id of matrix: ");
-        int id = jaggedArrayController.sortBySumsOfElementsInRows(in.nextInt());
+        System.out.println("Enter id of matrix, ascending (1) or descending(2): ");
+        int id = jaggedArrayController.sortBySumsOfElementsInRows(in.nextInt(),in.nextInt()==1);
         System.out.println("id: " + id);
     }
 
     protected void optionSortByMaxElementsInRows() {
-        System.out.println("Enter id of matrix: ");
-        int id = jaggedArrayController.sortByMaxElementsInRows(in.nextInt());
+        System.out.println("Enter id of matrix, ascending (1) or descending(2): ");
+        int id = jaggedArrayController.sortByMaxElementsInRows(in.nextInt(),in.nextInt()==1);
         System.out.println("id: " + id);
     }
 
     protected void optionSortByMinElementsInRows() {
-        System.out.println("Enter id of matrix: ");
-        int id = jaggedArrayController.sortByMinElementsInRows(in.nextInt());
+        System.out.println("Enter id of matrix, ascending (1) or descending(2): ");
+        int id = jaggedArrayController.sortByMinElementsInRows(in.nextInt(),in.nextInt()==1);
         System.out.println("id: " + id);
     }
 
