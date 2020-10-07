@@ -3,6 +3,8 @@ package training.by.service.implementation;
 import training.by.dao.ArrayDAO;
 import training.by.dao.DAOFactory;
 import training.by.entity.JaggedArray;
+import training.by.exception.MatricesAreIncompatibleException;
+import training.by.exception.MatrixCannotBeTransposedException;
 import training.by.service.BaseOperationsService;
 import training.by.service.JaggedArrayService;
 
@@ -43,6 +45,7 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
             for (int row = 0; row < firstArray.length; row++) {
                 if (firstArray[row].length != secondArray[row].length) {
                     isEqualDimension = false;
+                    break;
                 }
             }
         }
@@ -57,43 +60,58 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
         int[][] array = findJaggedArray(id).getJaggedArrayInt();
         int countOfRows = array.length;
 
-        for (int i = 0; i < array.length; i++) {
-            if (array[i].length != countOfRows) {
+        for (int[] ints : array) {
+            if (ints.length != countOfRows) {
                 isSquare = false;
+                break;
             }
         }
         return isSquare;
     }
 
     @Override
-    public int[][] addition(int idFirstMatrix, int idSecondMatrix) {
-        int[][] firstMatrix = findJaggedArray(idFirstMatrix).getJaggedArrayInt();
-        int[][] secondMatrix = findJaggedArray(idSecondMatrix).getJaggedArrayInt();
-        //TODO normal finding of size jagged array
-        int[][] resultingMatrix = new int[firstMatrix.length][firstMatrix[0].length];
+    public boolean rectangularMatrix(int id) {
+        boolean isSquare = true;
+        int[][] array = findJaggedArray(id).getJaggedArrayInt();
+        int countOfColumns = array[0].length;
 
-        for (int i = 0; i < firstMatrix.length; i++) {
-            for (int j = 0; j < firstMatrix[i].length; j++) {
-                resultingMatrix[i][j] = firstMatrix[i][j] + secondMatrix[i][j];
+        for (int[] ints : array) {
+            if (ints.length != countOfColumns) {
+                isSquare = false;
+                break;
             }
         }
-        return resultingMatrix;
+        return isSquare;
     }
+
 
     @Override
-    public int[][] subtraction(int idFirstMatrix, int idSecondMatrix) {
-        int[][] firstMatrix = findJaggedArray(idFirstMatrix).getJaggedArrayInt();
-        int[][] secondMatrix = findJaggedArray(idSecondMatrix).getJaggedArrayInt();
-        //TODO normal finding of size jagged array
-        int[][] resultingMatrix = new int[firstMatrix.length][firstMatrix[0].length];
+    public int[][] arithmeticOperationOnMatrices(int idFirstMatrix, int idSecondMatrix, boolean addition)
+            throws MatricesAreIncompatibleException {
 
-        for (int i = 0; i < firstMatrix.length; i++) {
-            for (int j = 0; j < firstMatrix[i].length; j++) {
-                resultingMatrix[i][j] = firstMatrix[i][j] - secondMatrix[i][j];
+        int[][] resultingMatrix;
+        if (sameDimensionOfJaggedArrays(idFirstMatrix, idSecondMatrix)) {
+            int[][] firstMatrix = findJaggedArray(idFirstMatrix).getJaggedArrayInt();
+            int[][] secondMatrix = findJaggedArray(idSecondMatrix).getJaggedArrayInt();
+            resultingMatrix = new int[firstMatrix.length][];
+
+            for (int i = 0; i < firstMatrix.length; i++) {
+                resultingMatrix[i] = new int[firstMatrix[i].length];
+
+                for (int j = 0; j < firstMatrix[i].length; j++) {
+                    if (addition) {
+                        resultingMatrix[i][j] = baseOperationsService.addition(firstMatrix[i][j], secondMatrix[i][j]);
+                    } else {
+                        resultingMatrix[i][j] = baseOperationsService.subtraction(firstMatrix[i][j], secondMatrix[i][j]);
+                    }
+                }
             }
+        } else {
+            throw new MatricesAreIncompatibleException();
         }
         return resultingMatrix;
     }
+
 
     @Override
     public int[][] multiplyByConstant(int id, int constant) {
@@ -110,17 +128,28 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
     }
 
     @Override
-    public int[][] transpose(int id) {
+    public int[][] transpose(int id) throws MatrixCannotBeTransposedException {
         int[][] matrix = findJaggedArray(id).getJaggedArrayInt();
-        //TODO
-        int[][] resultingMatrix = new int[matrix[0].length][matrix.length];
 
-        for (int row = 0; row < matrix.length; row++) {
-            for (int column = 0; column < matrix[row].length; column++) {
-                resultingMatrix[column][row] = matrix[row][column];
+        if (rectangularMatrix(id)) {
+            int[][] resultingMatrix = new int[matrix[0].length][matrix.length];
+
+            for (int row = 0; row < matrix.length; row++) {
+                for (int column = 0; column < matrix[row].length; column++) {
+                    resultingMatrix[column][row] = matrix[row][column];
+                }
             }
+            return resultingMatrix;
+        } else if (squareMatrix(id)) {
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    baseOperationsService.swap(matrix, i, j);
+                }
+            }
+        } else {
+            throw new MatrixCannotBeTransposedException(id);
         }
-        return resultingMatrix;
+        return matrix;
     }
 
     @Override

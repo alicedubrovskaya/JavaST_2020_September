@@ -195,6 +195,30 @@ public class BaseOperationsServiceImpl implements BaseOperationsService {
     }
 
     /**
+     * Swaps two elements of two dimensional array
+     *
+     * @param arrayInt
+     * @param row
+     * @param column
+     */
+    @Override
+    public void swap(int[][] arrayInt, int row, int column) {
+        int temporal = arrayInt[row][column];
+        arrayInt[row][column] = arrayInt[column][row];
+        arrayInt[column][row] = temporal;
+    }
+
+    @Override
+    public int addition(int firstValue, int secondValue) {
+        return firstValue+secondValue;
+    }
+
+    @Override
+    public int subtraction(int firstValue, int secondValue) {
+        return firstValue-secondValue;
+    }
+
+    /**
      * Validates elements of array
      *
      * @param elements

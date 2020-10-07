@@ -62,6 +62,7 @@ public class ArrayDAOImpl implements ArrayDAO {
                     scan.nextLine(); //for correct input
                 }
                 array[currentRow] = parseStringToIntegerElements(scan.nextLine());
+
             }
             return array;
 

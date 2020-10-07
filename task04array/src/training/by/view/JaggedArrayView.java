@@ -3,6 +3,7 @@ package training.by.view;
 import training.by.controller.JaggedArrayController;
 import training.by.exception.ElementNotFoundException;
 
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
@@ -36,7 +37,7 @@ public class JaggedArrayView {
                     optionGetElementsFromFile();
                     break;
                 case 4:
-                    optionPrintMatrix();
+                    optionPrintMatrixById();
                     break;
 
                 case 5:
@@ -79,11 +80,9 @@ public class JaggedArrayView {
         System.out.print("Enter number of rows and array: ");
         int countOfRows = in.nextInt();
         int array[][] = new int[countOfRows][];
+        in.nextLine();
 
         for (int currentRow = 0; currentRow < countOfRows; currentRow++) {
-            if (currentRow != countOfRows - 1) {
-                in.nextLine(); //for correct input
-            }
             array[currentRow] = jaggedArrayController.parseStringToIntegerElements(in.nextLine());
         }
         try {
@@ -119,20 +118,27 @@ public class JaggedArrayView {
 
     protected void optionAddition() {
         System.out.println("Enter id of matrices: ");
-        int id = jaggedArrayController.additionOfTwoMatrices(in.nextInt(), in.nextInt());
-        System.out.println("id: " + id);
+        optionPrintMatrix(jaggedArrayController.additionOfTwoMatrices(in.nextInt(), in.nextInt()));
     }
 
     protected void optionSubtraction() {
         System.out.println("Enter id of matrices: ");
-        int id = jaggedArrayController.subtractionOfTwoMatrices(in.nextInt(), in.nextInt());
-        System.out.println("id: " + id);
+        optionPrintMatrix(jaggedArrayController.subtractionOfTwoMatrices(in.nextInt(), in.nextInt()));
     }
 
-    protected void optionPrintMatrix() {
+    protected void optionPrintMatrixById() {
         System.out.println("Enter id of matrix: ");
         System.out.println(jaggedArrayController.printMatrix(in.nextInt()).toString());
     }
+
+    protected void optionPrintMatrix(int matrix[][]) {
+        String array = "";
+        for (int row = 0; row < matrix.length; row++) {
+            array += Arrays.toString(matrix[row]) + "\n";
+        }
+        System.out.println(array);
+    }
+
 
     protected void optionMultiplyByConstant() {
         System.out.println("Enter id of matrix, constant: ");
@@ -142,8 +148,7 @@ public class JaggedArrayView {
 
     protected void optionTransposeMatrix() {
         System.out.println("Enter id of matrix: ");
-        int id = jaggedArrayController.transposeMatrix(in.nextInt());
-        System.out.println("id: " + id);
+        optionPrintMatrix(jaggedArrayController.transposeMatrix(in.nextInt()));
     }
 
     protected void optionSortBySumsOfElementsInRows() {
@@ -163,4 +168,5 @@ public class JaggedArrayView {
         int id = jaggedArrayController.sortByMinElementsInRows(in.nextInt(), in.nextInt() == 1);
         System.out.println("id: " + id);
     }
+
 }

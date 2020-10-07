@@ -25,6 +25,12 @@ public interface BaseOperationsService {
 
     void swap(int[] arrayInt, int positionOne, int positionTwo);
 
+    void swap(int[][] arrayInt, int row, int column);
+
+    int addition(int firstValue, int secondValue);
+
+    int subtraction(int firstValue, int secondValue);
+
     int findElement(int value, int[] arrayInt);
 
     int findMaxValue(int[] arrayInt);

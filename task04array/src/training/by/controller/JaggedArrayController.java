@@ -2,6 +2,8 @@ package training.by.controller;
 
 import training.by.entity.JaggedArray;
 import training.by.exception.ElementNotFoundException;
+import training.by.exception.MatricesAreIncompatibleException;
+import training.by.exception.MatrixCannotBeTransposedException;
 import training.by.service.BaseOperationsService;
 import training.by.service.JaggedArrayService;
 import training.by.service.ServiceFactory;
@@ -107,20 +109,38 @@ public class JaggedArrayController {
         return jaggedArrayService.findJaggedArray(id);
     }
 
-    public int additionOfTwoMatrices(int firstId, int secondId) {
-        return createNewArray(jaggedArrayService.addition(firstId, secondId));
+    public int[][] additionOfTwoMatrices(int firstId, int secondId) {
+        int[][] resultingMatrix = null;
+        try {
+            resultingMatrix = jaggedArrayService.arithmeticOperationOnMatrices(firstId, secondId,true);
+        } catch (MatricesAreIncompatibleException e) {
+            System.out.println(e.getMessage());
+        }
+        return resultingMatrix;
     }
 
-    public int subtractionOfTwoMatrices(int firstId, int secondId) {
-        return createNewArray(jaggedArrayService.subtraction(firstId, secondId));
+    public int[][] subtractionOfTwoMatrices(int firstId, int secondId) {
+        int[][] resultingMatrix = null;
+        try {
+            resultingMatrix = jaggedArrayService.arithmeticOperationOnMatrices(firstId, secondId,false);
+        } catch (MatricesAreIncompatibleException e) {
+            System.out.println(e.getMessage());
+        }
+        return resultingMatrix;
     }
 
     public int multiplyByConstant(int id, int constant) {
         return createNewArray(jaggedArrayService.multiplyByConstant(id, constant));
     }
 
-    public int transposeMatrix(int id) {
-        return createNewArray(jaggedArrayService.transpose(id));
+    public int[][] transposeMatrix(int id) {
+        int[][] transposedMatrix = null;
+        try {
+            transposedMatrix = jaggedArrayService.transpose(id);
+        } catch (MatrixCannotBeTransposedException e) {
+            System.out.println(e.getMessage());
+        }
+        return transposedMatrix;
     }
 
     public int sortBySumsOfElementsInRows(int id, boolean ascending) {
@@ -157,9 +177,8 @@ public class JaggedArrayController {
         int sortedMaxElements[];
         if (ascending) {
             sortedMaxElements = baseOperationsService.bubbleSort(maxElements);
-        }
-        else {
-            sortedMaxElements=baseOperationsService.bubbleSortDescending(maxElements);
+        } else {
+            sortedMaxElements = baseOperationsService.bubbleSortDescending(maxElements);
         }
 
         Map<Integer, Integer> indexOfMaxElementsRows = new HashMap<>();
@@ -181,11 +200,10 @@ public class JaggedArrayController {
 
         int minElements[] = jaggedArrayService.minElementsInRows(array);
         int sortedMinElements[];
-        if (ascending){
-            sortedMinElements=baseOperationsService.bubbleSort(minElements);
-        }
-        else {
-            sortedMinElements=baseOperationsService.bubbleSortDescending(minElements);
+        if (ascending) {
+            sortedMinElements = baseOperationsService.bubbleSort(minElements);
+        } else {
+            sortedMinElements = baseOperationsService.bubbleSortDescending(minElements);
         }
 
         Map<Integer, Integer> indexOfMaxElementsRows = new HashMap<>();
@@ -201,7 +219,7 @@ public class JaggedArrayController {
         return createNewArray(resultingArray);
     }
 
-    public int[] parseStringToIntegerElements(String line){
+    public int[] parseStringToIntegerElements(String line) {
         return baseOperationsService.parseStringToElements(line);
     }
 }
