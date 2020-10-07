@@ -20,4 +20,8 @@ public interface JaggedArrayService {
 
     int[] sumOfElementsInRows(int[][] array);
 
+    int[] maxElementsInRows(int [][] array);
+
+    int[] minElementsInRows(int [][] array);
+
 }

@@ -135,4 +135,44 @@ public class JaggedArrayController {
 
         return createNewArray(resultingArray);
     }
+
+    public int sortByMaxElementsInRows(int id){
+        int array[][]=jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
+        int resultingArray[][]=new int [array.length][];
+
+        int maxElements[] = jaggedArrayService.maxElementsInRows(array);
+        int sortedMaxElements[]=baseOperationsService.bubbleSort(maxElements);
+
+        Map<Integer, Integer> indexOfMaxElementsRows=new HashMap<>();
+        for (int i=0;i<maxElements.length;i++){
+            indexOfMaxElementsRows.put(maxElements[i],i);
+        }
+
+        for (int i=0;i<sortedMaxElements.length;i++){
+            int rowOfArray = indexOfMaxElementsRows.get(sortedMaxElements[i]);
+            resultingArray[i]=array[rowOfArray];
+        }
+
+        return createNewArray(resultingArray);
+    }
+
+    public int sortByMinElementsInRows(int id){
+        int array[][]=jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
+        int resultingArray[][]=new int [array.length][];
+
+        int minElements[] = jaggedArrayService.minElementsInRows(array);
+        int sortedMinElements[]=baseOperationsService.bubbleSort(minElements);
+
+        Map<Integer, Integer> indexOfMaxElementsRows=new HashMap<>();
+        for (int i=0;i<minElements.length;i++){
+            indexOfMaxElementsRows.put(minElements[i],i);
+        }
+
+        for (int i=0;i<sortedMinElements.length;i++){
+            int rowOfArray = indexOfMaxElementsRows.get(sortedMinElements[i]);
+            resultingArray[i]=array[rowOfArray];
+        }
+
+        return createNewArray(resultingArray);
+    }
 }

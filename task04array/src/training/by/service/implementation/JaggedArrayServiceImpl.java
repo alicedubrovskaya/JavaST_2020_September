@@ -110,4 +110,24 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
         }
         return sums;
     }
+
+    @Override
+    public int[] maxElementsInRows(int[][] array) {
+        int [] maxElements=new int [array.length];
+
+        for (int i=0;i<array.length;i++){
+            maxElements[i]=baseOperationsService.findMaxValue(array[i]);
+        }
+        return maxElements;
+    }
+
+    @Override
+    public int[] minElementsInRows(int[][] array) {
+        int [] minElements=new int[array.length];
+
+        for (int i=0;i<array.length;i++){
+            minElements[i]=baseOperationsService.findMinValue(array[i]);
+        }
+        return minElements;
+    }
 }

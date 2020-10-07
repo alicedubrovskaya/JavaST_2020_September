@@ -21,7 +21,8 @@ public class JaggedArrayView {
                     "\n4 - print matrix" +
                     "\n5- find element in array \n6- find min and max elements" +
                     "\n7- addition \n8- subtraction \n9- multiplyByConstant \n10- transposeMatrix" +
-                    "\n11- sort by sums of elements in rows");
+                    "\n11- sort by sums of elements in rows" +
+                    "\n12- sort by max elements in rows \n13-sort by min elements in rows");
             option = in.nextInt();
             switch (option) {
                 case 1:
@@ -57,6 +58,12 @@ public class JaggedArrayView {
                     break;
                 case 11:
                     optionSortBySumsOfElementsInRows();
+                    break;
+                case 12:
+                    optionSortByMaxElementsInRows();
+                    break;
+                case 13:
+                    optionSortByMinElementsInRows();
                     break;
             }
         }
@@ -134,11 +141,24 @@ public class JaggedArrayView {
         System.out.println("id: " + id);
     }
 
-    protected void optionSortBySumsOfElementsInRows(){
+    protected void optionSortBySumsOfElementsInRows() {
         System.out.println("Enter id of matrix: ");
-        int id=jaggedArrayController.sortBySumsOfElementsInRows(in.nextInt());
-        System.out.println("id: "+id);
+        int id = jaggedArrayController.sortBySumsOfElementsInRows(in.nextInt());
+        System.out.println("id: " + id);
     }
+
+    protected void optionSortByMaxElementsInRows() {
+        System.out.println("Enter id of matrix: ");
+        int id = jaggedArrayController.sortByMaxElementsInRows(in.nextInt());
+        System.out.println("id: " + id);
+    }
+
+    protected void optionSortByMinElementsInRows() {
+        System.out.println("Enter id of matrix: ");
+        int id = jaggedArrayController.sortByMinElementsInRows(in.nextInt());
+        System.out.println("id: " + id);
+    }
+
 
 /*
     protected void optionGetElementsFromFile() {
