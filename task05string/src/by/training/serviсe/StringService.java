@@ -11,7 +11,7 @@ public interface StringService {
 
     char[] changeIncorrectCharacters(char preceding, char incorrect, char needed, char[] string);
 
-    char[] replaceWordOfSpecifiedLength(int length, char [] word, char[] wordToWrite);
+    char[] replaceWordOfSpecifiedLength(int length, char[] word, char[] wordToWrite);
 
     char[][] parseStringToArrayOfWords(char[] string);
 
@@ -21,4 +21,5 @@ public interface StringService {
 
     boolean isRussianLetter(char letter);
 
+    boolean startsWithConsonant(char[] word);
 }

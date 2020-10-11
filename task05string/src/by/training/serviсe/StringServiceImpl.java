@@ -1,6 +1,7 @@
 package by.training.serviсe;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Class is an implementation of interface StringService
@@ -9,6 +10,11 @@ import java.util.Arrays;
  * @since 11/10/20
  */
 public class StringServiceImpl implements StringService {
+    //TODO upperCase
+    private static final char[] englishConsonants = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q',
+            'r', 's', 't', 'v', 'w', 'x', 'y', 'z'};
+    private static final char[] russianConsonants = {'б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р',
+            'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ'};
 
     @Override
     public char[] replaceLetterWithAGivenCharacter(char character, int k, char[] string) {
@@ -42,10 +48,10 @@ public class StringServiceImpl implements StringService {
     }
 
     @Override
-    public char[] replaceWordOfSpecifiedLength(int length, char [] word, char[] wordToWrite) {
-        char [] result=null;
-        if (length==word.length){
-            result=wordToWrite;
+    public char[] replaceWordOfSpecifiedLength(int length, char[] word, char[] wordToWrite) {
+        char[] result = null;
+        if (length == word.length) {
+            result = wordToWrite;
         }
         return result;
     }
@@ -115,5 +121,25 @@ public class StringServiceImpl implements StringService {
     public boolean isRussianLetter(char letter) {
         int code = (int) letter; //UTF-8
         return (code > 1040 && code < 1104);
+    }
+
+    @Override
+    public boolean startsWithConsonant(char[] word) {
+        boolean isConsonant = false;
+        char firstCharacter = word[0];
+        if (isEnglishLetter(firstCharacter)) {
+            for (int i = 0; i < englishConsonants.length; i++) {
+                if (englishConsonants[i] == firstCharacter) {
+                    isConsonant = true;
+                }
+            }
+        } else if (isRussianLetter(firstCharacter)) {
+            for (int i = 0; i < russianConsonants.length; i++) {
+                if (russianConsonants[i] == firstCharacter) {
+                    isConsonant = true;
+                }
+            }
+        }
+        return isConsonant;
     }
 }

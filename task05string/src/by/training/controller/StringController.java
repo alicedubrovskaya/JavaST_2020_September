@@ -55,6 +55,24 @@ public class StringController {
         return result;
     }
 
+    public char[][] wordsWithoutConsonantsAtTheBeginning(char [][] words){
+        //TODO remove fixed length
+        char[][] result=new char[words.length][];
+        int currentWordInResult=-1;
+        for (int i=0;i< words.length;i++){
+            if (words[i]!=null) {
+                if (!stringService.startsWithConsonant(words[i])) {
+                    currentWordInResult++;
+                    result[currentWordInResult] = words[i];
+                }
+            }
+            else {
+                break;
+            }
+        }
+        return result;
+    }
+
     public char[][] parseStringToArrayOfWords(char[] string) {
         char[] stringWithoutExtraCharacters = stringService.removeExtraCharacters(string);
         return stringService.parseStringToArrayOfWords(stringWithoutExtraCharacters);

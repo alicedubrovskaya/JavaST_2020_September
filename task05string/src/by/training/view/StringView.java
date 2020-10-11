@@ -15,7 +15,8 @@ public class StringView {
         in.useDelimiter("\n");
 
         System.out.println("1 - replace needed letters with character \n2 - fix incorrect letters" +
-                "\n3 - replace words of specified length");
+                "\n3 - replace words of specified length" +
+                "\n4 - get words without consonants at the beginning");
 
         switch (in.nextInt()) {
             case 1:
@@ -26,6 +27,9 @@ public class StringView {
                 break;
             case 3:
                 optionReplaceWordsOfSpecifiedLength();
+                break;
+            case 4:
+                optionWordsWithoutConsonantsAtTheBeginning();
                 break;
         }
     }
@@ -74,6 +78,14 @@ public class StringView {
 
         char[][] result = stringController.replaceWordsOfSpecifiedLength(length, word,
                 stringController.parseStringToArrayOfWords(string));
+        printWords(result);
+    }
+
+    protected void optionWordsWithoutConsonantsAtTheBeginning() {
+        System.out.println("Enter string:");
+        in.nextLine();
+        char[][] result = stringController.wordsWithoutConsonantsAtTheBeginning(
+                stringController.parseStringToArrayOfWords(in.nextLine().toCharArray()));
         printWords(result);
     }
 }
