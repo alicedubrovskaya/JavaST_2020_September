@@ -14,7 +14,19 @@ public class StringView {
         this.in = new Scanner(System.in);
         in.useDelimiter("\n");
 
-        System.out.println("1 - replace needed letters with character \n2 - fix incorrect letters" +
+        System.out.println("\n1 - text from console, 2 - text from file");
+
+        switch (in.nextInt()) {
+            case 1:
+                textFromConsole();
+                break;
+            case 2:
+                textFromFile();
+                break;
+            default:
+        }
+
+        System.out.println("\n1 - replace needed letters with character \n2 - fix incorrect letters" +
                 "\n3 - replace words of specified length" +
                 "\n4 - get words without consonants at the beginning");
 
@@ -31,6 +43,7 @@ public class StringView {
             case 4:
                 optionWordsWithoutConsonantsAtTheBeginning();
                 break;
+            default:
         }
     }
 
@@ -47,45 +60,43 @@ public class StringView {
         }
     }
 
+    protected void textFromConsole() {
+        //TODO
+        System.out.println("Enter string:");
+        in.nextLine();
+        stringController.saveText(in.nextLine().toCharArray());
+    }
+
+    /**
+     * Example of file path: task05string/data/text.txt
+     */
+    protected  void textFromFile(){
+        System.out.println("Enter filePath: ");
+        in.nextLine();
+        stringController.saveText(in.nextLine());
+    }
+
 
     protected void optionReplaceWithCharacter() {
         System.out.println("Enter character, k");
-        char character = in.next().charAt(0);
-        int k = in.nextInt();
-        in.nextLine();
-        char[][] result = stringController.replaceNeededLettersWithAGivenCharacter(character, k,
-                stringController.parseStringToArrayOfWords(in.nextLine().toCharArray()));
+        char[][] result = stringController.replaceNeededLettersWithAGivenCharacter(in.next().charAt(0), in.nextInt());
         printWords(result);
     }
 
     protected void optionFixIncorrectLetters() {
-        System.out.println("Enter preceding, incorrect, needed, string");
-        char preceding = in.next().charAt(0);
-        char incorrect = in.next().charAt(0);
-        char needed = in.next().charAt(0);
-        in.nextLine();
-        char[][] result = stringController.fixIncorrectLetters(preceding, incorrect, needed,
-                stringController.parseStringToArrayOfWords(in.nextLine().toCharArray()));
+        System.out.println("Enter preceding, incorrect, needed");
+        char[][] result = stringController.fixIncorrectLetters(in.next().charAt(0), in.next().charAt(0), in.next().charAt(0));
         printWords(result);
     }
 
     protected void optionReplaceWordsOfSpecifiedLength() {
         System.out.println("Enter length of replacing words, word to be replaced, string");
-        int length = in.nextInt();
-        in.nextLine();
-        char[] word = in.nextLine().toCharArray();
-        char[] string = in.nextLine().toCharArray();
-
-        char[][] result = stringController.replaceWordsOfSpecifiedLength(length, word,
-                stringController.parseStringToArrayOfWords(string));
+        char[][] result = stringController.replaceWordsOfSpecifiedLength(in.nextInt(), in.nextLine().toCharArray());
         printWords(result);
     }
 
     protected void optionWordsWithoutConsonantsAtTheBeginning() {
-        System.out.println("Enter string:");
-        in.nextLine();
-        char[][] result = stringController.wordsWithoutConsonantsAtTheBeginning(
-                stringController.parseStringToArrayOfWords(in.nextLine().toCharArray()));
+        char[][] result = stringController.wordsWithoutConsonantsAtTheBeginning();
         printWords(result);
     }
 }

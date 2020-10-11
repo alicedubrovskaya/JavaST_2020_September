@@ -3,6 +3,8 @@ package by.training.controller;
 import by.training.serviсe.ServiceFactory;
 import by.training.serviсe.StringService;
 
+import java.io.IOException;
+
 public class StringController {
     private StringService stringService;
 
@@ -11,7 +13,21 @@ public class StringController {
         this.stringService = serviceFactory.getStringService();
     }
 
-    public char[][] replaceNeededLettersWithAGivenCharacter(char character, int k, char[][] words) {
+    public void saveText(char[] string) {
+        stringService.saveText(parseStringToArrayOfWords(string));
+    }
+
+    public void saveText(String fileName) {
+        try {
+            char[][] words = parseStringToArrayOfWords(stringService.getFromFile(fileName));
+            stringService.saveText(words);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public char[][] replaceNeededLettersWithAGivenCharacter(char character, int k) {
+        char[][] words = stringService.getWords();
         char[][] result = new char[words.length][];
 
         for (int i = 0; i < words.length; i++) {
@@ -24,7 +40,8 @@ public class StringController {
         return result;
     }
 
-    public char[][] fixIncorrectLetters(char preceding, char incorrect, char needed, char[][] words) {
+    public char[][] fixIncorrectLetters(char preceding, char incorrect, char needed) {
+        char[][] words = stringService.getWords();
         char[][] result = new char[words.length][];
 
         for (int i = 0; i < words.length; i++) {
@@ -37,7 +54,8 @@ public class StringController {
         return result;
     }
 
-    public char[][] replaceWordsOfSpecifiedLength(int lengthOfWordsToReplace, char[] wordToWrite, char[][] words) {
+    public char[][] replaceWordsOfSpecifiedLength(int lengthOfWordsToReplace, char[] wordToWrite) {
+        char[][] words = stringService.getWords();
         char[][] result = new char[words.length][];
 
         for (int i = 0; i < words.length; i++) {
@@ -55,18 +73,18 @@ public class StringController {
         return result;
     }
 
-    public char[][] wordsWithoutConsonantsAtTheBeginning(char [][] words){
+    public char[][] wordsWithoutConsonantsAtTheBeginning() {
+        char[][] words = stringService.getWords();
         //TODO remove fixed length
-        char[][] result=new char[words.length][];
-        int currentWordInResult=-1;
-        for (int i=0;i< words.length;i++){
-            if (words[i]!=null) {
+        char[][] result = new char[words.length][];
+        int currentWordInResult = -1;
+        for (int i = 0; i < words.length; i++) {
+            if (words[i] != null) {
                 if (!stringService.startsWithConsonant(words[i])) {
                     currentWordInResult++;
                     result[currentWordInResult] = words[i];
                 }
-            }
-            else {
+            } else {
                 break;
             }
         }

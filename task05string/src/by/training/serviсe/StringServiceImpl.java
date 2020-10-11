@@ -1,7 +1,9 @@
 package by.training.serviсe;
 
-import java.util.ArrayList;
-import java.util.List;
+import by.training.dao.DAOFactory;
+import by.training.dao.StringDAO;
+
+import java.io.IOException;
 
 /**
  * Class is an implementation of interface StringService
@@ -10,11 +12,32 @@ import java.util.List;
  * @since 11/10/20
  */
 public class StringServiceImpl implements StringService {
+    private StringDAO stringDAO;
     //TODO upperCase
     private static final char[] englishConsonants = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q',
             'r', 's', 't', 'v', 'w', 'x', 'y', 'z'};
     private static final char[] russianConsonants = {'б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р',
             'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ'};
+
+    public StringServiceImpl() {
+        DAOFactory daoFactory = DAOFactory.getInstance();
+        this.stringDAO = daoFactory.getStringDAO();
+    }
+
+    @Override
+    public void saveText(char[][] words) {
+        stringDAO.createText(words);
+    }
+
+    @Override
+    public char[][] getWords() {
+        return stringDAO.getText().getWords();
+    }
+
+    @Override
+    public char[] getFromFile(String fileName) throws IOException {
+        return stringDAO.getTextFromFile(fileName);
+    }
 
     @Override
     public char[] replaceLetterWithAGivenCharacter(char character, int k, char[] string) {
