@@ -24,7 +24,7 @@ public class ServiceFactory {
     }
 
     public static ServiceFactory getInstance() {
-        return instance;
+            return instance;
     }
 
     public ArrayService getArrayService() {
