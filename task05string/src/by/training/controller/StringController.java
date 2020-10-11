@@ -34,6 +34,7 @@ public class StringController {
     }
 
     public char[][] parseStringToArrayOfWords(char[] string) {
-        return stringService.parseStringToArrayOfWords(string);
+        char[] stringWithoutExtraCharacters = stringService.removeExtraCharacters(string);
+        return stringService.parseStringToArrayOfWords(stringWithoutExtraCharacters);
     }
 }

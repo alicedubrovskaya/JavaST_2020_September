@@ -12,4 +12,11 @@ public interface StringService {
     char[] changeIncorrectCharacters(char preceding, char incorrect, char needed, char[] string);
 
     char[][] parseStringToArrayOfWords(char[] string);
+
+    char[] removeExtraCharacters(char[] string);
+
+    boolean isEnglishLetter(char letter);
+
+    boolean isRussianLetter(char letter);
+
 }

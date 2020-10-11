@@ -70,4 +70,48 @@ public class StringServiceImpl implements StringService {
         System.arraycopy(string, startOfWord, result[currentWordInResult], 0, currentCharacterInWord);
         return result;
     }
+
+    @Override
+    public char[] removeExtraCharacters(char[] string) {
+        char[] result;
+        char[] correctDuplicate = new char[string.length];
+        int currentCharacterInDuplicate = -1;
+
+        for (int i = 0; i < string.length; i++) {
+            isEnglishLetter(string[i]);
+            isRussianLetter(string[i]);
+            //space verification
+            if (string[i] == ' ') {
+                if (currentCharacterInDuplicate > 0) {
+                    if (correctDuplicate[currentCharacterInDuplicate] != ' ') {
+                        currentCharacterInDuplicate++;
+                        correctDuplicate[currentCharacterInDuplicate] = ' ';
+                    }
+                }
+            } else if (isEnglishLetter(string[i]) || isRussianLetter(string[i])) {
+                currentCharacterInDuplicate++;
+                correctDuplicate[currentCharacterInDuplicate] = string[i];
+            }
+        }
+        if (correctDuplicate[currentCharacterInDuplicate] != ' ') {
+            currentCharacterInDuplicate++;
+        }
+
+        result = new char[currentCharacterInDuplicate];
+        System.arraycopy(correctDuplicate, 0, result, 0, currentCharacterInDuplicate);
+
+        return result;
+    }
+
+    @Override
+    public boolean isEnglishLetter(char letter) {
+        int code = (int) letter;
+        return ((code > 96 && code < 123) || (code > 64 && code < 91));
+    }
+
+    @Override
+    public boolean isRussianLetter(char letter) {
+        int code = (int) letter; //UTF-8
+        return (code > 1040 && code < 1104);
+    }
 }
