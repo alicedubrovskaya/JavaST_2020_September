@@ -17,6 +17,8 @@ public class StringController {
         for (int i = 0; i < words.length; i++) {
             if (words[i] != null) {
                 result[i] = stringService.replaceLetterWithAGivenCharacter(character, k, words[i]);
+            } else {
+                break;
             }
         }
         return result;
@@ -28,6 +30,26 @@ public class StringController {
         for (int i = 0; i < words.length; i++) {
             if (words[i] != null) {
                 result[i] = stringService.changeIncorrectCharacters(preceding, incorrect, needed, words[i]);
+            } else {
+                break;
+            }
+        }
+        return result;
+    }
+
+    public char[][] replaceWordsOfSpecifiedLength(int lengthOfWordsToReplace, char[] wordToWrite, char[][] words) {
+        char[][] result = new char[words.length][];
+
+        for (int i = 0; i < words.length; i++) {
+            if (words[i] != null) {
+                char[] wordNew = stringService.replaceWordOfSpecifiedLength(lengthOfWordsToReplace, words[i], wordToWrite);
+                if (wordNew != null) {
+                    result[i] = wordNew;
+                } else {
+                    result[i] = words[i];
+                }
+            } else {
+                break;
             }
         }
         return result;

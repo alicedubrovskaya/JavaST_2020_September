@@ -11,6 +11,8 @@ public interface StringService {
 
     char[] changeIncorrectCharacters(char preceding, char incorrect, char needed, char[] string);
 
+    char[] replaceWordOfSpecifiedLength(int length, char [] word, char[] wordToWrite);
+
     char[][] parseStringToArrayOfWords(char[] string);
 
     char[] removeExtraCharacters(char[] string);

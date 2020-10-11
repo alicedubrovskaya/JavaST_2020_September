@@ -41,6 +41,15 @@ public class StringServiceImpl implements StringService {
         return resultingString;
     }
 
+    @Override
+    public char[] replaceWordOfSpecifiedLength(int length, char [] word, char[] wordToWrite) {
+        char [] result=null;
+        if (length==word.length){
+            result=wordToWrite;
+        }
+        return result;
+    }
+
     /**
      * Parsers string of chars to array of words.
      * The string is assumed to contain only words and spaces (single) between words
@@ -80,15 +89,8 @@ public class StringServiceImpl implements StringService {
         for (int i = 0; i < string.length; i++) {
             isEnglishLetter(string[i]);
             isRussianLetter(string[i]);
-            //space verification
-            if (string[i] == ' ') {
-                if (currentCharacterInDuplicate > 0) {
-                    if (correctDuplicate[currentCharacterInDuplicate] != ' ') {
-                        currentCharacterInDuplicate++;
-                        correctDuplicate[currentCharacterInDuplicate] = ' ';
-                    }
-                }
-            } else if (isEnglishLetter(string[i]) || isRussianLetter(string[i])) {
+            if ((string[i] == ' ' && currentCharacterInDuplicate > 0 && correctDuplicate[currentCharacterInDuplicate] != ' ')
+                    || (isEnglishLetter(string[i]) || isRussianLetter(string[i]))) {
                 currentCharacterInDuplicate++;
                 correctDuplicate[currentCharacterInDuplicate] = string[i];
             }

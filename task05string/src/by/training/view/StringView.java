@@ -12,9 +12,10 @@ public class StringView {
     public StringView(StringController stringController) {
         this.stringController = stringController;
         this.in = new Scanner(System.in);
+        in.useDelimiter("\n");
 
         System.out.println("1 - replace needed letters with character \n2 - fix incorrect letters" +
-                "\n3 - parse string to array of words");
+                "\n3 - replace words of specified length");
 
         switch (in.nextInt()) {
             case 1:
@@ -24,7 +25,7 @@ public class StringView {
                 optionFixIncorrectLetters();
                 break;
             case 3:
-                optionParseStringToArrayOfWords();
+                optionReplaceWordsOfSpecifiedLength();
                 break;
         }
     }
@@ -42,12 +43,6 @@ public class StringView {
         }
     }
 
-    protected void optionParseStringToArrayOfWords() {
-        System.out.println("Enter string");
-        in.useDelimiter("\n");
-        in.nextLine();
-        printWords(stringController.parseStringToArrayOfWords(in.nextLine().toCharArray()));
-    }
 
     protected void optionReplaceWithCharacter() {
         System.out.println("Enter character, k");
@@ -70,4 +65,15 @@ public class StringView {
         printWords(result);
     }
 
+    protected void optionReplaceWordsOfSpecifiedLength() {
+        System.out.println("Enter length of replacing words, word to be replaced, string");
+        int length = in.nextInt();
+        in.nextLine();
+        char[] word = in.nextLine().toCharArray();
+        char[] string = in.nextLine().toCharArray();
+
+        char[][] result = stringController.replaceWordsOfSpecifiedLength(length, word,
+                stringController.parseStringToArrayOfWords(string));
+        printWords(result);
+    }
 }
