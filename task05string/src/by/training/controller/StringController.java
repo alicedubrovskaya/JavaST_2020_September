@@ -11,15 +11,29 @@ public class StringController {
         this.stringService = serviceFactory.getStringService();
     }
 
-    public char[] replaceNeededLettersWithAGivenCharacter(char character, int k, char[] string) {
-        return stringService.replaceLetterWithAGivenCharacter(character, k, string);
+    public char[][] replaceNeededLettersWithAGivenCharacter(char character, int k, char[][] words) {
+        char[][] result = new char[words.length][];
+
+        for (int i = 0; i < words.length; i++) {
+            if (words[i] != null) {
+                result[i] = stringService.replaceLetterWithAGivenCharacter(character, k, words[i]);
+            }
+        }
+        return result;
     }
 
-    public char[] fixIncorrectLetters(char preceding, char incorrect, char needed, char[] string){
-        return stringService.changeIncorrectCharacters(preceding,incorrect,needed,string);
+    public char[][] fixIncorrectLetters(char preceding, char incorrect, char needed, char[][] words) {
+        char[][] result = new char[words.length][];
+
+        for (int i = 0; i < words.length; i++) {
+            if (words[i] != null) {
+                result[i] = stringService.changeIncorrectCharacters(preceding, incorrect, needed, words[i]);
+            }
+        }
+        return result;
     }
 
-    public char[][] parseStringToArrayOfWords(char[] string){
+    public char[][] parseStringToArrayOfWords(char[] string) {
         return stringService.parseStringToArrayOfWords(string);
     }
 }

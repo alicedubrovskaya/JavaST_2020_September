@@ -51,22 +51,23 @@ public class StringServiceImpl implements StringService {
     @Override
     public char[][] parseStringToArrayOfWords(char[] string) {
         char[][] result = new char[string.length][];
-        char[] word = new char[string.length];
         int currentCharacterInWord = 0;
+        int startOfWord = 0;
         int currentWordInResult = 0;
 
         for (int i = 0; i < string.length; i++) {
             if (string[i] == ' ') {
-                result[currentWordInResult] = word;
+                result[currentWordInResult] = new char[currentCharacterInWord];
+                System.arraycopy(string, startOfWord, result[currentWordInResult], 0, currentCharacterInWord);
+                startOfWord = i + 1;
                 currentWordInResult++;
                 currentCharacterInWord = 0;
-                word = new char[string.length];
             } else {
-                word[currentCharacterInWord] = string[i];
                 currentCharacterInWord++;
             }
         }
-        result[currentWordInResult]=word;
+        result[currentWordInResult] = new char[currentCharacterInWord];
+        System.arraycopy(string, startOfWord, result[currentWordInResult], 0, currentCharacterInWord);
         return result;
     }
 }

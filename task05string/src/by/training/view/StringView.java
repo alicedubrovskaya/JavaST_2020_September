@@ -29,35 +29,11 @@ public class StringView {
         }
     }
 
-
-    protected void optionReplaceWithCharacter() {
-        System.out.println("Enter character, k, string");
-        char[] result = stringController.replaceNeededLettersWithAGivenCharacter(in.next().charAt(0),
-                in.nextInt(), in.next().toCharArray());
-        for (Character element : result) {
-            System.out.print(element);
-        }
-    }
-
-    protected void optionFixIncorrectLetters() {
-        System.out.println("Enter preceding, incorrect, needed, string");
-        char[] result = stringController.fixIncorrectLetters(in.next().charAt(0), in.next().charAt(0), in.next().charAt(0),
-                in.next().toCharArray());
-        for (Character element : result) {
-            System.out.print(element);
-        }
-    }
-
-    protected void optionParseStringToArrayOfWords() {
-        System.out.println("Enter string");
-        in.useDelimiter("\n");
-        char[] line = in.nextLine().toCharArray();
-
-        char[][] result = stringController.parseStringToArrayOfWords(in.nextLine().toCharArray());
-        for (int i = 0; i < result.length; i++) {
-            if (result[i] != null) {
-                for (int j = 0; j < result[i].length; j++) {
-                    System.out.print(result[i][j]);
+    protected void printWords(char[][] words) {
+        for (int i = 0; i < words.length; i++) {
+            if (words[i] != null) {
+                for (int j = 0; j < words[i].length; j++) {
+                    System.out.print(words[i][j]);
                 }
                 System.out.println();
             } else {
@@ -65,4 +41,33 @@ public class StringView {
             }
         }
     }
+
+    protected void optionParseStringToArrayOfWords() {
+        System.out.println("Enter string");
+        in.useDelimiter("\n");
+        in.nextLine();
+        printWords(stringController.parseStringToArrayOfWords(in.nextLine().toCharArray()));
+    }
+
+    protected void optionReplaceWithCharacter() {
+        System.out.println("Enter character, k");
+        char character = in.next().charAt(0);
+        int k = in.nextInt();
+        in.nextLine();
+        char[][] result = stringController.replaceNeededLettersWithAGivenCharacter(character, k,
+                stringController.parseStringToArrayOfWords(in.nextLine().toCharArray()));
+        printWords(result);
+    }
+
+    protected void optionFixIncorrectLetters() {
+        System.out.println("Enter preceding, incorrect, needed, string");
+        char preceding = in.next().charAt(0);
+        char incorrect = in.next().charAt(0);
+        char needed = in.next().charAt(0);
+        in.nextLine();
+        char[][] result = stringController.fixIncorrectLetters(preceding, incorrect, needed,
+                stringController.parseStringToArrayOfWords(in.nextLine().toCharArray()));
+        printWords(result);
+    }
+
 }
