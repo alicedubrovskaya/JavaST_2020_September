@@ -1,14 +1,17 @@
 package by.training.command;
 
+import by.training.controller.CharArrayController;
 import by.training.controller.StringController;
 
 import java.util.Scanner;
 
 public class StringReceiver {
+    private CharArrayController charArrayController;
     private StringController stringController;
-    private Scanner in=new Scanner(System.in);
+    private Scanner in = new Scanner(System.in);
 
-    public StringReceiver(StringController stringController) {
+    public StringReceiver(CharArrayController charArrayController, StringController stringController) {
+        this.charArrayController = charArrayController;
         this.stringController = stringController;
         this.in.useDelimiter("\n");
     }
@@ -54,8 +57,9 @@ public class StringReceiver {
     protected void textFromConsole() {
         //TODO
         System.out.println("Enter string:");
-        char [] array=in.nextLine().toCharArray();
-        stringController.saveText(array);
+        // stringController.parseStringToListOfWords(in.nextLine());
+        char[] array = in.nextLine().toCharArray();
+        charArrayController.saveText(array);
     }
 
     /**
@@ -63,18 +67,18 @@ public class StringReceiver {
      */
     protected void textFromFile() {
         System.out.println("Enter filePath: ");
-        stringController.saveText(in.nextLine());
+        charArrayController.saveText(in.nextLine());
     }
 
     protected void optionReplaceWithCharacter() {
         System.out.println("Enter character, k");
-        char[][] result = stringController.replaceNeededLettersWithAGivenCharacter(in.next().charAt(0), in.nextInt());
+        char[][] result = charArrayController.replaceNeededLettersWithAGivenCharacter(in.next().charAt(0), in.nextInt());
         printWords(result);
     }
 
     protected void optionFixIncorrectLetters() {
         System.out.println("Enter preceding, incorrect, needed");
-        char[][] result = stringController.fixIncorrectLetters(in.next().charAt(0), in.next().charAt(0), in.next().charAt(0));
+        char[][] result = charArrayController.fixIncorrectLetters(in.next().charAt(0), in.next().charAt(0), in.next().charAt(0));
         printWords(result);
     }
 
@@ -82,13 +86,13 @@ public class StringReceiver {
         System.out.println("Enter length of replacing words, word to be replaced");
         int length = in.nextInt();
         in.nextLine();
-        char [] array = in.nextLine().toCharArray();
-        char[][] result = stringController.replaceWordsOfSpecifiedLength(length, array);
+        char[] array = in.nextLine().toCharArray();
+        char[][] result = charArrayController.replaceWordsOfSpecifiedLength(length, array);
         printWords(result);
     }
 
     protected void optionWordsWithoutConsonantsAtTheBeginning() {
-        char[][] result = stringController.wordsWithoutConsonantsAtTheBeginning();
+        char[][] result = charArrayController.wordsWithoutConsonantsAtTheBeginning();
         printWords(result);
     }
 }

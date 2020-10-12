@@ -2,7 +2,7 @@ package by.training.dao;
 
 public class DAOFactory {
     private static final DAOFactory instance = new DAOFactory();
-    private final StringDAO stringDAO = new StringDAOImpl();
+    private final CharArrayDAO charArrayDAO = new CharArrayDAOImpl();
 
     private DAOFactory() {
     }
@@ -11,7 +11,7 @@ public class DAOFactory {
         return instance;
     }
 
-    public StringDAO getStringDAO() {
-        return stringDAO;
+    public CharArrayDAO getCharArrayDAO() {
+        return charArrayDAO;
     }
 }

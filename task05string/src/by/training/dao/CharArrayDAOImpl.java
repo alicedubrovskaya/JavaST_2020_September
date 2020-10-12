@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author Alisa Dubrovskaya
  * @since 11/10/20
  */
-public class StringDAOImpl implements StringDAO {
+public class CharArrayDAOImpl implements CharArrayDAO {
     private Text text;
 
     @Override

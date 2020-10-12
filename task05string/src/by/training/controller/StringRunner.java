@@ -12,9 +12,10 @@ public class StringRunner {
         Scanner in = new Scanner(System.in);
         in.useDelimiter("\n");
 
-        StringController stringController = new StringController();
+        CharArrayController charArrayController = new CharArrayController();
+        StringController stringController=new StringController();
 
-        StringReceiver receiver = new StringReceiver(stringController);
+        StringReceiver receiver = new StringReceiver(charArrayController, stringController);
         StringClient client = new StringClient(receiver);
 
         StringCommand command = client.initCommand(1);
