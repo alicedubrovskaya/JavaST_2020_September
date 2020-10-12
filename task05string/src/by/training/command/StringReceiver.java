@@ -1,46 +1,37 @@
-package by.training.view;
+package by.training.command;
 
 import by.training.controller.StringController;
 
 import java.util.Scanner;
 
-public class StringView {
-    //TODO command pattern
+public class StringReceiver {
     private StringController stringController;
-    private Scanner in;
+    private Scanner in=new Scanner(System.in);
 
-    public StringView(StringController stringController) {
+    public StringReceiver(StringController stringController) {
         this.stringController = stringController;
-        this.in = new Scanner(System.in);
-        in.useDelimiter("\n");
+        this.in.useDelimiter("\n");
+    }
 
-        System.out.println("\n1 - text from console, 2 - text from file");
+    public void action(int option) {
 
-        switch (in.nextInt()) {
+        switch (option) {
             case 1:
                 textFromConsole();
                 break;
             case 2:
                 textFromFile();
                 break;
-            default:
-        }
-
-        System.out.println("\n1 - replace needed letters with character \n2 - fix incorrect letters" +
-                "\n3 - replace words of specified length" +
-                "\n4 - get words without consonants at the beginning");
-
-        switch (in.nextInt()) {
-            case 1:
+            case 3:
                 optionReplaceWithCharacter();
                 break;
-            case 2:
+            case 4:
                 optionFixIncorrectLetters();
                 break;
-            case 3:
+            case 5:
                 optionReplaceWordsOfSpecifiedLength();
                 break;
-            case 4:
+            case 6:
                 optionWordsWithoutConsonantsAtTheBeginning();
                 break;
             default:
@@ -63,19 +54,17 @@ public class StringView {
     protected void textFromConsole() {
         //TODO
         System.out.println("Enter string:");
-        in.nextLine();
-        stringController.saveText(in.nextLine().toCharArray());
+        char [] array=in.nextLine().toCharArray();
+        stringController.saveText(array);
     }
 
     /**
      * Example of file path: task05string/data/text.txt
      */
-    protected  void textFromFile(){
+    protected void textFromFile() {
         System.out.println("Enter filePath: ");
-        in.nextLine();
         stringController.saveText(in.nextLine());
     }
-
 
     protected void optionReplaceWithCharacter() {
         System.out.println("Enter character, k");
@@ -90,8 +79,11 @@ public class StringView {
     }
 
     protected void optionReplaceWordsOfSpecifiedLength() {
-        System.out.println("Enter length of replacing words, word to be replaced, string");
-        char[][] result = stringController.replaceWordsOfSpecifiedLength(in.nextInt(), in.nextLine().toCharArray());
+        System.out.println("Enter length of replacing words, word to be replaced");
+        int length = in.nextInt();
+        in.nextLine();
+        char [] array = in.nextLine().toCharArray();
+        char[][] result = stringController.replaceWordsOfSpecifiedLength(length, array);
         printWords(result);
     }
 
