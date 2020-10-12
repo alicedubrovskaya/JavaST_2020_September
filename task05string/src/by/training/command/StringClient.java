@@ -1,6 +1,7 @@
 package by.training.command;
 
-import by.training.command.implementation.*;
+import by.training.command.implementation.array.*;
+import by.training.command.implementation.string.CommandReplaceWithCharacterString;
 
 public class StringClient {
     private StringReceiver stringReceiver;
@@ -29,6 +30,9 @@ public class StringClient {
                 break;
             case 6:
                 command=new CommandWordsWithoutConsonants(stringReceiver);
+                break;
+            case 7:
+                command=new CommandReplaceWithCharacterString(stringReceiver);
                 break;
             default:
         }

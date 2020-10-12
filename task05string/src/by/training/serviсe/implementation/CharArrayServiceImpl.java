@@ -1,7 +1,7 @@
 package by.training.serviсe.implementation;
 
 import by.training.dao.DAOFactory;
-import by.training.dao.CharArrayDAO;
+import by.training.dao.WordDAO;
 import by.training.serviсe.CharArrayService;
 
 import java.io.IOException;
@@ -13,7 +13,7 @@ import java.io.IOException;
  * @since 11/10/20
  */
 public class CharArrayServiceImpl implements CharArrayService {
-    private CharArrayDAO charArrayDAO;
+    private WordDAO wordDAO;
     //TODO upperCase
     private static final char[] englishConsonants = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q',
             'r', 's', 't', 'v', 'w', 'x', 'y', 'z'};
@@ -22,22 +22,22 @@ public class CharArrayServiceImpl implements CharArrayService {
 
     public CharArrayServiceImpl() {
         DAOFactory daoFactory = DAOFactory.getInstance();
-        this.charArrayDAO = daoFactory.getCharArrayDAO();
+        this.wordDAO = daoFactory.getWordDAO();
     }
 
     @Override
     public void saveText(char[][] words) {
-        charArrayDAO.createText(words);
+        wordDAO.createText(words);
     }
 
     @Override
     public char[][] getWords() {
-        return charArrayDAO.getText().getWords();
+        return wordDAO.getText().getWordsChar();
     }
 
     @Override
     public char[] getFromFile(String fileName) throws IOException {
-        return charArrayDAO.getTextFromFile(fileName);
+        return wordDAO.getTextFromFile(fileName);
     }
 
     @Override

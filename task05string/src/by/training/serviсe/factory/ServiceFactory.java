@@ -1,5 +1,8 @@
-package by.training.serviсe;
+package by.training.serviсe.factory;
 
+import by.training.serviсe.CharArrayService;
+import by.training.serviсe.ParserService;
+import by.training.serviсe.StringService;
 import by.training.serviсe.implementation.CharArrayServiceImpl;
 import by.training.serviсe.implementation.ParserServiceImpl;
 import by.training.serviсe.implementation.StringServiceImpl;

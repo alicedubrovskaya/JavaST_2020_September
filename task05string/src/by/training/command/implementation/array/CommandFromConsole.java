@@ -1,4 +1,4 @@
-package by.training.command.implementation;
+package by.training.command.implementation.array;
 
 import by.training.command.Receiver;
 import by.training.command.StringCommand;

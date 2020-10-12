@@ -3,6 +3,7 @@ package by.training.command;
 import by.training.controller.CharArrayController;
 import by.training.controller.StringController;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class StringReceiver {
@@ -36,6 +37,9 @@ public class StringReceiver {
                 break;
             case 6:
                 optionWordsWithoutConsonantsAtTheBeginning();
+                break;
+            case 7:
+                optionReplaceWithCharacterString();
                 break;
             default:
         }
@@ -74,6 +78,11 @@ public class StringReceiver {
         System.out.println("Enter character, k");
         char[][] result = charArrayController.replaceNeededLettersWithAGivenCharacter(in.next().charAt(0), in.nextInt());
         printWords(result);
+    }
+
+    protected void optionReplaceWithCharacterString() {
+        System.out.println("Enter character, k");
+        List<StringBuilder> result = stringController.replaceNeededLettersWithAGivenCharacter(in.next().charAt(0), in.nextInt());
     }
 
     protected void optionFixIncorrectLetters() {

@@ -1,17 +1,17 @@
-package by.training.command.implementation;
+package by.training.command.implementation.array;
 
 import by.training.command.StringCommand;
 import by.training.command.StringReceiver;
 
-public class CommandReplaceWithCharacter implements StringCommand {
+public class CommandFromFile implements StringCommand {
     private StringReceiver receiver;
 
-    public CommandReplaceWithCharacter(StringReceiver receiver) {
+    public CommandFromFile(StringReceiver receiver) {
         this.receiver = receiver;
     }
 
     @Override
     public void execute() {
-        receiver.action(3);
+        receiver.action(2);
     }
 }

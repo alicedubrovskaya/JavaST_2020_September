@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -14,12 +15,17 @@ import java.util.Scanner;
  * @author Alisa Dubrovskaya
  * @since 11/10/20
  */
-public class CharArrayDAOImpl implements CharArrayDAO {
+public class WordDAOImpl implements WordDAO {
     private Text text;
 
     @Override
     public void createText(char[][] words) {
         text = new Text(words);
+    }
+
+    @Override
+    public void createText(List<StringBuilder> words) {
+        text=new Text(words);
     }
 
     @Override

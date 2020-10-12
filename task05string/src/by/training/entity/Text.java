@@ -1,13 +1,25 @@
 package by.training.entity;
 
-public class Text {
-    char[][] words;
+import java.util.List;
 
-    public Text(char[][] words) {
-        this.words = words;
+public class Text {
+    //TODO one type and methods in DAO to convert
+    char[][] wordsChar;
+    List<StringBuilder> wordsString;
+
+    public Text(char[][] wordsChar) {
+        this.wordsChar = wordsChar;
     }
 
-    public char[][] getWords() {
-        return words;
+    public Text(List<StringBuilder> wordsString) {
+        this.wordsString = wordsString;
+    }
+
+    public char[][] getWordsChar() {
+        return wordsChar;
+    }
+
+    public List<StringBuilder> getWordsString() {
+        return wordsString;
     }
 }

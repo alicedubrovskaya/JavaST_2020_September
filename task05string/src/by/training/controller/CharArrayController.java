@@ -1,7 +1,7 @@
 package by.training.controller;
 
 import by.training.serviсe.ParserService;
-import by.training.serviсe.ServiceFactory;
+import by.training.serviсe.factory.ServiceFactory;
 import by.training.serviсe.CharArrayService;
 
 import java.io.IOException;
