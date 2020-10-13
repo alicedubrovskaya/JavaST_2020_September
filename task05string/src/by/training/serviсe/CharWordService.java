@@ -1,19 +1,11 @@
 package by.training.serviсe;
 
-import java.io.IOException;
-
-/**
- * Interface for work with string
- *
- * @author Alisa Dubrovskaya
- * @since 11/10/20
- */
-public interface CharArrayService {
-    void saveText(char[][] words);
-
+public interface CharWordService {
     char[][] getWords();
 
-    char[] getFromFile(String fileName) throws IOException;
+    void saveText(char[][] words);
+
+    //TODO char[] getFromFile(String fileName) throws IOException;
 
     char[] replaceLetterWithAGivenCharacter(char character, int k, char[] string);
 

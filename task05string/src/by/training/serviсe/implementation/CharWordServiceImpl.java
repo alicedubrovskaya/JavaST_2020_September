@@ -2,9 +2,7 @@ package by.training.serviсe.implementation;
 
 import by.training.dao.DAOFactory;
 import by.training.dao.WordDAO;
-import by.training.serviсe.CharArrayService;
-
-import java.io.IOException;
+import by.training.serviсe.CharWordService;
 
 /**
  * Class is an implementation of interface StringService
@@ -12,7 +10,7 @@ import java.io.IOException;
  * @author Alisa Dubrovskaya
  * @since 11/10/20
  */
-public class CharArrayServiceImpl implements CharArrayService {
+public class CharWordServiceImpl implements CharWordService {
     private WordDAO wordDAO;
     //TODO upperCase
     private static final char[] englishConsonants = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q',
@@ -20,7 +18,7 @@ public class CharArrayServiceImpl implements CharArrayService {
     private static final char[] russianConsonants = {'б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р',
             'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ'};
 
-    public CharArrayServiceImpl() {
+    public CharWordServiceImpl() {
         DAOFactory daoFactory = DAOFactory.getInstance();
         this.wordDAO = daoFactory.getWordDAO();
     }
@@ -32,13 +30,16 @@ public class CharArrayServiceImpl implements CharArrayService {
 
     @Override
     public char[][] getWords() {
-        return wordDAO.getText().getWordsChar();
+        return wordDAO.getText().getWords();
     }
 
-    @Override
+    //TODO
+  /*  @Override
     public char[] getFromFile(String fileName) throws IOException {
         return wordDAO.getTextFromFile(fileName);
     }
+
+   */
 
     @Override
     public char[] replaceLetterWithAGivenCharacter(char character, int k, char[] string) {
@@ -86,6 +87,7 @@ public class CharArrayServiceImpl implements CharArrayService {
     public boolean startsWithConsonant(char[] word) {
         boolean hasConsonant = false;
         char firstCharacter = word[0];
+
         if (isEnglishLetter(firstCharacter)) {
             for (int i = 0; i < englishConsonants.length; i++) {
                 if (englishConsonants[i] == firstCharacter) {

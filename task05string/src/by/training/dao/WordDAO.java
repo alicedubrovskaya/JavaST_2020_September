@@ -14,7 +14,9 @@ import java.util.List;
 public interface WordDAO {
     void createText(char[][] words);
 
-    void createText(List<StringBuilder> words);
+    char[][] convert(List<StringBuilder> words);
+
+    List<StringBuilder> convertToString(char[][] words);
 
     Text getText();
 

@@ -25,8 +25,24 @@ public class WordDAOImpl implements WordDAO {
     }
 
     @Override
-    public void createText(List<StringBuilder> words) {
-        text=new Text(words);
+    public char[][] convert(List<StringBuilder> words) {
+        //TODO size bigger than it is (to change capacity)
+        char[][] wordsResult = new char[words.size()][];
+
+        for (int i = 0; i < words.size(); i++) {
+            wordsResult[i]=words.get(i).toString().toCharArray();
+        }
+        return wordsResult;
+    }
+
+    @Override
+    public List<StringBuilder> convertToString(char[][] words) {
+        List<StringBuilder> wordsResult = new ArrayList<>();
+
+        for (int i = 0; i < words.length; i++) {
+            wordsResult.add(new StringBuilder(String.valueOf(words[i])));
+        }
+        return wordsResult;
     }
 
     @Override

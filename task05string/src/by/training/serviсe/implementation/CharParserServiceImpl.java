@@ -1,16 +1,13 @@
 package by.training.serviсe.implementation;
 
-import by.training.serviсe.CharArrayService;
-import by.training.serviсe.ParserService;
+import by.training.serviсe.CharParserService;
+import by.training.serviсe.CharWordService;
 
-import java.util.ArrayList;
-import java.util.List;
+public class CharParserServiceImpl implements CharParserService {
+    private CharWordService charWordService;
 
-public class ParserServiceImpl implements ParserService {
-    private CharArrayService charArrayService;
-
-    public ParserServiceImpl(CharArrayService charArrayService) {
-        this.charArrayService = charArrayService;
+    public CharParserServiceImpl(CharWordService charWordService) {
+        this.charWordService = charWordService;
     }
 
     /**
@@ -23,6 +20,7 @@ public class ParserServiceImpl implements ParserService {
     @Override
     public char[][] parseStringToWords(char[] string) {
         char[][] words = new char[string.length][];
+
         int currentCharacterInWord = 0;
         int startOfWord = 0;
         int currentWordInResult = 0;
@@ -30,6 +28,7 @@ public class ParserServiceImpl implements ParserService {
         for (int i = 0; i < string.length; i++) {
             if (string[i] == ' ') {
                 words[currentWordInResult] = new char[currentCharacterInWord];
+                Character[] word = new Character[currentCharacterInWord];
                 System.arraycopy(string, startOfWord, words[currentWordInResult], 0, currentCharacterInWord);
                 startOfWord = i + 1;
                 currentWordInResult++;
@@ -44,25 +43,6 @@ public class ParserServiceImpl implements ParserService {
     }
 
     @Override
-    public List<StringBuilder> parseStringToWords(StringBuilder string) {
-        List<StringBuilder> words = new ArrayList<>();
-        int currentCharacterInWord = 0;
-        int startOfWord = 0;
-
-        for (int i = 0; i < string.length(); i++) {
-            if (string.charAt(i) == ' ') {
-                words.add(new StringBuilder(string.substring(startOfWord,
-                        startOfWord + currentCharacterInWord)));
-                startOfWord = i + 1;
-                currentCharacterInWord = 0;
-            } else {
-                currentCharacterInWord++;
-            }
-        }
-        return words;
-    }
-
-    @Override
     public char[] removeExtraCharacters(char[] string) {
         char[] result;
         char[] correctDuplicate = new char[string.length];
@@ -70,7 +50,7 @@ public class ParserServiceImpl implements ParserService {
 
         for (int i = 0; i < string.length; i++) {
             if ((string[i] == ' ' && currentCharacterInDuplicate > 0 && correctDuplicate[currentCharacterInDuplicate] != ' ')
-                    || (charArrayService.isEnglishLetter(string[i]) || charArrayService.isRussianLetter(string[i]))) {
+                    || (charWordService.isEnglishLetter(string[i]) || charWordService.isRussianLetter(string[i]))) {
                 currentCharacterInDuplicate++;
                 correctDuplicate[currentCharacterInDuplicate] = string[i];
             }
@@ -82,21 +62,6 @@ public class ParserServiceImpl implements ParserService {
         result = new char[currentCharacterInDuplicate];
         System.arraycopy(correctDuplicate, 0, result, 0, currentCharacterInDuplicate);
 
-        return result;
-    }
-
-    @Override
-    public StringBuilder removeExtraCharacters(String string) {
-        StringBuilder result = new StringBuilder();
-
-        for (int i = 0; i < string.length(); i++) {
-            char currentCharacter = string.charAt(i);
-            if ((currentCharacter == ' ' && result.length() > 0 && result.charAt(result.length() - 1) != ' ')
-                    || (charArrayService.isEnglishLetter(currentCharacter)) || charArrayService.isRussianLetter(currentCharacter)) {
-                result.append(currentCharacter);
-            }
-        }
-        //TODO ?
         return result;
     }
 }

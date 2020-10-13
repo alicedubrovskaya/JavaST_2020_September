@@ -1,24 +1,22 @@
-package by.training.command;
+package by.training.command.implementation.receiver;
 
-import by.training.controller.CharArrayController;
+import by.training.command.TextReceiver;
 import by.training.controller.StringController;
 
 import java.util.List;
 import java.util.Scanner;
 
-public class StringReceiver {
-    private CharArrayController charArrayController;
+public class StringReceiverImpl implements TextReceiver {
     private StringController stringController;
     private Scanner in = new Scanner(System.in);
 
-    public StringReceiver(CharArrayController charArrayController, StringController stringController) {
-        this.charArrayController = charArrayController;
+    public StringReceiverImpl(StringController stringController) {
         this.stringController = stringController;
         this.in.useDelimiter("\n");
     }
 
+    @Override
     public void action(int option) {
-
         switch (option) {
             case 1:
                 textFromConsole();
@@ -38,56 +36,33 @@ public class StringReceiver {
             case 6:
                 optionWordsWithoutConsonantsAtTheBeginning();
                 break;
-            case 7:
-                optionReplaceWithCharacterString();
-                break;
             default:
         }
     }
 
-    protected void printWords(char[][] words) {
-        for (int i = 0; i < words.length; i++) {
-            if (words[i] != null) {
-                for (int j = 0; j < words[i].length; j++) {
-                    System.out.print(words[i][j]);
-                }
-                System.out.println();
-            } else {
-                break;
-            }
-        }
-    }
-
     protected void textFromConsole() {
-        //TODO
         System.out.println("Enter string:");
-        // stringController.parseStringToListOfWords(in.nextLine());
-        char[] array = in.nextLine().toCharArray();
-        charArrayController.saveText(array);
+        stringController.saveText(in.nextLine());
     }
 
     /**
      * Example of file path: task05string/data/text.txt
      */
     protected void textFromFile() {
+        //TODO another name of method in controller (the same parameters now)
         System.out.println("Enter filePath: ");
-        charArrayController.saveText(in.nextLine());
+        //charArrayController.saveText(in.nextLine());
     }
 
     protected void optionReplaceWithCharacter() {
         System.out.println("Enter character, k");
-        char[][] result = charArrayController.replaceNeededLettersWithAGivenCharacter(in.next().charAt(0), in.nextInt());
-        printWords(result);
-    }
-
-    protected void optionReplaceWithCharacterString() {
-        System.out.println("Enter character, k");
         List<StringBuilder> result = stringController.replaceNeededLettersWithAGivenCharacter(in.next().charAt(0), in.nextInt());
+        printWords(result);
     }
 
     protected void optionFixIncorrectLetters() {
         System.out.println("Enter preceding, incorrect, needed");
-        char[][] result = charArrayController.fixIncorrectLetters(in.next().charAt(0), in.next().charAt(0), in.next().charAt(0));
+        List<StringBuilder> result = stringController.fixIncorrectLetters(in.next().charAt(0), in.next().charAt(0), in.next().charAt(0));
         printWords(result);
     }
 
@@ -95,13 +70,18 @@ public class StringReceiver {
         System.out.println("Enter length of replacing words, word to be replaced");
         int length = in.nextInt();
         in.nextLine();
-        char[] array = in.nextLine().toCharArray();
-        char[][] result = charArrayController.replaceWordsOfSpecifiedLength(length, array);
+        List<StringBuilder> result = stringController.replaceWordsOfSpecifiedLength(length, in.nextLine());
         printWords(result);
     }
 
     protected void optionWordsWithoutConsonantsAtTheBeginning() {
-        char[][] result = charArrayController.wordsWithoutConsonantsAtTheBeginning();
+        List<StringBuilder> result = stringController.wordsWithoutConsonantsAtTheBeginning();
         printWords(result);
+    }
+
+    protected void printWords(List<StringBuilder> words){
+        for (StringBuilder word: words){
+            System.out.println(word);
+        }
     }
 }

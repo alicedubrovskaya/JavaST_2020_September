@@ -1,5 +1,5 @@
 package by.training.command;
 
-public interface StringCommand {
+public interface TextCommand {
     void execute();
 }

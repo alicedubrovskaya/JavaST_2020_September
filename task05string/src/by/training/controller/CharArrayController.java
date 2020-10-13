@@ -1,41 +1,40 @@
 package by.training.controller;
 
-import by.training.serviсe.ParserService;
-import by.training.serviсe.factory.ServiceFactory;
-import by.training.serviсe.CharArrayService;
-
-import java.io.IOException;
+import by.training.serviсe.CharParserService;
+import by.training.serviсe.CharWordService;
+import by.training.serviсe.factory.FactoryService;
 
 public class CharArrayController {
-    private CharArrayService charArrayService;
-    private ParserService parserService;
+    private CharWordService wordService;
+    private CharParserService parserService;
 
     public CharArrayController() {
-        ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        this.charArrayService = serviceFactory.getCharArrayService();
-        this.parserService = serviceFactory.getParserService();
+        FactoryService factoryService = FactoryService.getInstance();
+        this.wordService = factoryService.getCharWordService();
+        this.parserService = factoryService.getCharParserService();
     }
 
-    public void saveText(char[] string) {
-        charArrayService.saveText(parseStringToArrayOfWords(string));
+    public void saveText(String string) {
+        wordService.saveText(parseStringToArrayOfWords(string));
     }
 
-    public void saveText(String fileName) {
+   /* public void saveText(String fileName) {
         try {
-            char[][] words = parseStringToArrayOfWords(charArrayService.getFromFile(fileName));
-            charArrayService.saveText(words);
+            char[][] words = parseStringToArrayOfWords(wordService.getFromFile(fileName));
+            wordService.saveText(words);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
 
+    */
     public char[][] replaceNeededLettersWithAGivenCharacter(char character, int k) {
-        char[][] words = charArrayService.getWords();
+        char[][] words = wordService.getWords();
         char[][] result = new char[words.length][];
 
-        for (int i = 0; i < words.length; i++) {
+        for (int i=0;i<words.length;i++) {
             if (words[i] != null) {
-                result[i] = charArrayService.replaceLetterWithAGivenCharacter(character, k, words[i]);
+                result[i]= wordService.replaceLetterWithAGivenCharacter(character, k, words[i]);
             } else {
                 break;
             }
@@ -44,12 +43,12 @@ public class CharArrayController {
     }
 
     public char[][] fixIncorrectLetters(char preceding, char incorrect, char needed) {
-        char[][] words = charArrayService.getWords();
+        char[][] words = wordService.getWords();
         char[][] result = new char[words.length][];
 
-        for (int i = 0; i < words.length; i++) {
+        for (int i=0;i<words.length;i++) {
             if (words[i] != null) {
-                result[i] = charArrayService.changeIncorrectCharacters(preceding, incorrect, needed, words[i]);
+                result[i]=  wordService.changeIncorrectCharacters(preceding, incorrect, needed, words[i]);
             } else {
                 break;
             }
@@ -57,13 +56,13 @@ public class CharArrayController {
         return result;
     }
 
-    public char[][] replaceWordsOfSpecifiedLength(int lengthOfWordsToReplace, char[] wordToWrite) {
-        char[][] words = charArrayService.getWords();
+    public  char[][] replaceWordsOfSpecifiedLength(int lengthOfWordsToReplace, char[] wordToWrite) {
+        char[][] words = wordService.getWords();
         char[][] result = new char[words.length][];
 
-        for (int i = 0; i < words.length; i++) {
+        for (int i=0;i<words.length;i++) {
             if (words[i] != null) {
-                result[i] = charArrayService.replaceWordOfSpecifiedLength(lengthOfWordsToReplace, words[i], wordToWrite);
+                result[i]= wordService.replaceWordOfSpecifiedLength(lengthOfWordsToReplace,words[i], wordToWrite);
             } else {
                 break;
             }
@@ -72,15 +71,14 @@ public class CharArrayController {
     }
 
     public char[][] wordsWithoutConsonantsAtTheBeginning() {
-        char[][] words = charArrayService.getWords();
-        //TODO remove fixed length
+        char[][] words = wordService.getWords();
         char[][] result = new char[words.length][];
+
         int currentWordInResult = -1;
-        for (int i = 0; i < words.length; i++) {
+        for (int i=0;i<words.length;i++) {
             if (words[i] != null) {
-                if (!charArrayService.startsWithConsonant(words[i])) {
-                    currentWordInResult++;
-                    result[currentWordInResult] = words[i];
+                if (!wordService.startsWithConsonant(words[i])) {
+                    result[i]= words[i];
                 }
             } else {
                 break;
@@ -89,8 +87,8 @@ public class CharArrayController {
         return result;
     }
 
-    public char[][] parseStringToArrayOfWords(char[] string) {
-        char[] stringWithoutExtraCharacters = parserService.removeExtraCharacters(string);
+    public char[][] parseStringToArrayOfWords(String string) {
+        char[] stringWithoutExtraCharacters = parserService.removeExtraCharacters(string.toCharArray());
         return parserService.parseStringToWords(stringWithoutExtraCharacters);
     }
 }

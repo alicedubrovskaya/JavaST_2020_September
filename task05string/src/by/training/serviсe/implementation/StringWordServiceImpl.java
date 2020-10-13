@@ -1,35 +1,33 @@
 package by.training.serviсe.implementation;
 
-import by.training.dao.WordDAO;
 import by.training.dao.DAOFactory;
-import by.training.serviсe.CharArrayService;
-import by.training.serviсe.StringService;
+import by.training.dao.WordDAO;
+import by.training.serviсe.StringWordService;
 
 import java.util.List;
 
-public class StringServiceImpl implements StringService {
+public class StringWordServiceImpl implements StringWordService {
     private WordDAO wordDAO;
-    private CharArrayService charArrayService;
+
     //TODO upperCase
     private static final char[] englishConsonants = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q',
             'r', 's', 't', 'v', 'w', 'x', 'y', 'z'};
     private static final char[] russianConsonants = {'б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р',
             'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ'};
 
-    public StringServiceImpl(CharArrayService charArrayService) {
+    public StringWordServiceImpl() {
         DAOFactory daoFactory = DAOFactory.getInstance();
         this.wordDAO = daoFactory.getWordDAO();
-        this.charArrayService = charArrayService;
     }
 
     @Override
     public List<StringBuilder> getWords() {
-        return wordDAO.getText().getWordsString();
+        return wordDAO.convertToString(wordDAO.getText().getWords());
     }
 
     @Override
     public void saveText(List<StringBuilder> words) {
-        wordDAO.createText(words);
+        wordDAO.createText(wordDAO.convert(words));
     }
 
     @Override
@@ -79,13 +77,13 @@ public class StringServiceImpl implements StringService {
         boolean hasConsonant = false;
         char firstCharacter = word.charAt(0);
 
-        if (charArrayService.isEnglishLetter(firstCharacter)) {
+        if (isEnglishLetter(firstCharacter)) {
             for (int i = 0; i < englishConsonants.length; i++) {
                 if (englishConsonants[i] == firstCharacter) {
                     hasConsonant = true;
                 }
             }
-        } else if (charArrayService.isRussianLetter(firstCharacter)) {
+        } else if (isRussianLetter(firstCharacter)) {
             for (int i = 0; i < russianConsonants.length; i++) {
                 if (russianConsonants[i] == firstCharacter) {
                     hasConsonant = true;
@@ -93,5 +91,17 @@ public class StringServiceImpl implements StringService {
             }
         }
         return hasConsonant;
+    }
+
+    @Override
+    public boolean isEnglishLetter(char letter) {
+        int code = (int) letter;
+        return ((code > 96 && code < 123) || (code > 64 && code < 91));
+    }
+
+    @Override
+    public boolean isRussianLetter(char letter) {
+        int code = (int) letter; //UTF-8
+        return (code > 1040 && code < 1104);
     }
 }

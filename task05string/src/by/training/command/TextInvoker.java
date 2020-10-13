@@ -1,9 +1,9 @@
 package by.training.command;
 
-public class StringInvoker {
-    private StringCommand command;
+public class TextInvoker {
+    private TextCommand command;
 
-    public StringInvoker(StringCommand command) {
+    public TextInvoker(TextCommand command) {
         this.command=command;
     }
 
