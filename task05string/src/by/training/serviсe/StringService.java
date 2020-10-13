@@ -9,4 +9,9 @@ public interface StringService {
 
     StringBuilder replaceLetterWithAGivenCharacter(char character, int k, StringBuilder word);
 
+    StringBuilder changeIncorrectCharacters(char preceding, char incorrect, char needed, StringBuilder word);
+
+    StringBuilder replaceWordOfSpecifiedLength(int length, StringBuilder word, StringBuilder wordToWrite);
+
+    boolean startsWithConsonant(StringBuilder word);
 }

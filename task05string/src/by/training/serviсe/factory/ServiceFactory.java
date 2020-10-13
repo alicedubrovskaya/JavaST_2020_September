@@ -17,11 +17,12 @@ public class ServiceFactory {
     private static final ServiceFactory instance = new ServiceFactory();
 
     private final CharArrayService charArrayService = new CharArrayServiceImpl();
-    private final StringService stringService = new StringServiceImpl();
+    private final StringService stringService;
     private final ParserService parserService;
 
     private ServiceFactory() {
         parserService = new ParserServiceImpl(charArrayService);
+        stringService=new StringServiceImpl(charArrayService);
     }
 
     public static ServiceFactory getInstance() {

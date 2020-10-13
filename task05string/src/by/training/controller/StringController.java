@@ -32,4 +32,31 @@ public class StringController {
         return result;
     }
 
+    public List<StringBuilder> fixIncorrectLetters(char preceding, char incorrect, char needed) {
+        List<StringBuilder> result = new ArrayList<>();
+
+        for (StringBuilder word: stringService.getWords()){
+            result.add(stringService.changeIncorrectCharacters(preceding, incorrect, needed, word));
+        }
+        return result;
+    }
+
+    public List<StringBuilder> replaceWordsOfSpecifiedLength(int lengthOfWordsToReplace, String wordToWrite) {
+        List<StringBuilder> result = new ArrayList<>();
+
+        for (StringBuilder word: stringService.getWords()){
+            result.add(stringService.replaceWordOfSpecifiedLength(lengthOfWordsToReplace,word,new StringBuilder(wordToWrite)));
+        }
+        return result;
+    }
+
+    public List<StringBuilder> wordsWithoutConsonantsAtTheBeginning() {
+        List<StringBuilder> result = new ArrayList<>();
+        for (StringBuilder word: stringService.getWords()){
+            if (!stringService.startsWithConsonant(word)){
+                result.add(word);
+            }
+        }
+        return result;
+    }
 }

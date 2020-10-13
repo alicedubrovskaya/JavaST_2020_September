@@ -73,31 +73,33 @@ public class CharArrayServiceImpl implements CharArrayService {
 
     @Override
     public char[] replaceWordOfSpecifiedLength(int length, char[] word, char[] wordToWrite) {
-        char[] result = null;
+        char[] result;
         if (length == word.length) {
             result = wordToWrite;
+        } else {
+            result = word;
         }
         return result;
     }
 
     @Override
     public boolean startsWithConsonant(char[] word) {
-        boolean isConsonant = false;
+        boolean hasConsonant = false;
         char firstCharacter = word[0];
         if (isEnglishLetter(firstCharacter)) {
             for (int i = 0; i < englishConsonants.length; i++) {
                 if (englishConsonants[i] == firstCharacter) {
-                    isConsonant = true;
+                    hasConsonant = true;
                 }
             }
         } else if (isRussianLetter(firstCharacter)) {
             for (int i = 0; i < russianConsonants.length; i++) {
                 if (russianConsonants[i] == firstCharacter) {
-                    isConsonant = true;
+                    hasConsonant = true;
                 }
             }
         }
-        return isConsonant;
+        return hasConsonant;
     }
 
     @Override

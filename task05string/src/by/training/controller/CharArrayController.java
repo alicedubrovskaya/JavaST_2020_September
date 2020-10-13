@@ -13,7 +13,7 @@ public class CharArrayController {
     public CharArrayController() {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         this.charArrayService = serviceFactory.getCharArrayService();
-        this.parserService=serviceFactory.getParserService();
+        this.parserService = serviceFactory.getParserService();
     }
 
     public void saveText(char[] string) {
@@ -63,12 +63,7 @@ public class CharArrayController {
 
         for (int i = 0; i < words.length; i++) {
             if (words[i] != null) {
-                char[] wordNew = charArrayService.replaceWordOfSpecifiedLength(lengthOfWordsToReplace, words[i], wordToWrite);
-                if (wordNew != null) {
-                    result[i] = wordNew;
-                } else {
-                    result[i] = words[i];
-                }
+                result[i] = charArrayService.replaceWordOfSpecifiedLength(lengthOfWordsToReplace, words[i], wordToWrite);
             } else {
                 break;
             }
