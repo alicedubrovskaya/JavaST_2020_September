@@ -3,6 +3,7 @@ package by.training.command.implementation.receiver;
 import by.training.command.TextReceiver;
 import by.training.controller.StringController;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -49,9 +50,8 @@ public class StringReceiverImpl implements TextReceiver {
      * Example of file path: task05string/data/text.txt
      */
     protected void textFromFile() {
-        //TODO another name of method in controller (the same parameters now)
         System.out.println("Enter filePath: ");
-        //charArrayController.saveText(in.nextLine());
+        stringController.saveFromFile(in.nextLine());
     }
 
     protected void optionReplaceWithCharacter() {

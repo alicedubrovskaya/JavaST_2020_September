@@ -4,6 +4,7 @@ import by.training.dao.DAOFactory;
 import by.training.dao.WordDAO;
 import by.training.serviсe.StringWordService;
 
+import java.io.IOException;
 import java.util.List;
 
 public class StringWordServiceImpl implements StringWordService {
@@ -28,6 +29,11 @@ public class StringWordServiceImpl implements StringWordService {
     @Override
     public void saveText(List<StringBuilder> words) {
         wordDAO.createText(wordDAO.convert(words));
+    }
+
+    @Override
+    public String getFromFile(String fileName) throws IOException {
+        return wordDAO.getTextFromFile(fileName);
     }
 
     @Override

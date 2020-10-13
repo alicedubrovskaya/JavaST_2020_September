@@ -4,6 +4,8 @@ import by.training.dao.DAOFactory;
 import by.training.dao.WordDAO;
 import by.training.serviсe.CharWordService;
 
+import java.io.IOException;
+
 /**
  * Class is an implementation of interface StringService
  *
@@ -26,6 +28,11 @@ public class CharWordServiceImpl implements CharWordService {
     @Override
     public void saveText(char[][] words) {
         wordDAO.createText(words);
+    }
+
+    @Override
+    public String getFromFile(String fileName) throws IOException {
+        return wordDAO.getTextFromFile(fileName);
     }
 
     @Override

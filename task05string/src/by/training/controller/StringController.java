@@ -4,6 +4,7 @@ import by.training.serviсe.StringParserService;
 import by.training.serviсe.StringWordService;
 import by.training.serviсe.factory.FactoryService;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,15 @@ public class StringController {
 
     public void saveText(String string) {
         wordService.saveText(parseStringToArrayOfWords(string));
+    }
+
+    public void saveFromFile(String fileName) {
+        try {
+            String words = wordService.getFromFile(fileName);
+            saveText(words);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public List<StringBuilder> replaceNeededLettersWithAGivenCharacter(char character, int k) {

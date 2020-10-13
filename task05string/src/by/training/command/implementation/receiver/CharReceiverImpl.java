@@ -50,9 +50,7 @@ public class CharReceiverImpl implements TextReceiver {
     }
 
     protected void textFromConsole() {
-        //TODO
         System.out.println("Enter string:");
-        // stringController.parseStringToListOfWords(in.nextLine());
         charArrayController.saveText(in.nextLine());
     }
 
@@ -60,9 +58,8 @@ public class CharReceiverImpl implements TextReceiver {
      * Example of file path: task05string/data/text.txt
      */
     protected void textFromFile() {
-        //TODO another name of method in controller (the same parameters now)
-        System.out.println("Enter filePath: ");
-        charArrayController.saveText(in.nextLine());
+        System.out.println("Enter filePath:");
+        charArrayController.saveFromFile(in.nextLine());
     }
 
     protected void optionReplaceWithCharacter() {

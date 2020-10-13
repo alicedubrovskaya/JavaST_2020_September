@@ -4,6 +4,8 @@ import by.training.serviсe.CharParserService;
 import by.training.serviсe.CharWordService;
 import by.training.serviсe.factory.FactoryService;
 
+import java.io.IOException;
+
 public class CharArrayController {
     private CharWordService wordService;
     private CharParserService parserService;
@@ -18,23 +20,22 @@ public class CharArrayController {
         wordService.saveText(parseStringToArrayOfWords(string));
     }
 
-   /* public void saveText(String fileName) {
+    public void saveFromFile(String fileName) {
         try {
-            char[][] words = parseStringToArrayOfWords(wordService.getFromFile(fileName));
-            wordService.saveText(words);
+            String words = wordService.getFromFile(fileName);
+            saveText(words);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
 
-    */
     public char[][] replaceNeededLettersWithAGivenCharacter(char character, int k) {
         char[][] words = wordService.getWords();
         char[][] result = new char[words.length][];
 
-        for (int i=0;i<words.length;i++) {
+        for (int i = 0; i < words.length; i++) {
             if (words[i] != null) {
-                result[i]= wordService.replaceLetterWithAGivenCharacter(character, k, words[i]);
+                result[i] = wordService.replaceLetterWithAGivenCharacter(character, k, words[i]);
             } else {
                 break;
             }
@@ -46,9 +47,9 @@ public class CharArrayController {
         char[][] words = wordService.getWords();
         char[][] result = new char[words.length][];
 
-        for (int i=0;i<words.length;i++) {
+        for (int i = 0; i < words.length; i++) {
             if (words[i] != null) {
-                result[i]=  wordService.changeIncorrectCharacters(preceding, incorrect, needed, words[i]);
+                result[i] = wordService.changeIncorrectCharacters(preceding, incorrect, needed, words[i]);
             } else {
                 break;
             }
@@ -56,13 +57,13 @@ public class CharArrayController {
         return result;
     }
 
-    public  char[][] replaceWordsOfSpecifiedLength(int lengthOfWordsToReplace, char[] wordToWrite) {
+    public char[][] replaceWordsOfSpecifiedLength(int lengthOfWordsToReplace, char[] wordToWrite) {
         char[][] words = wordService.getWords();
         char[][] result = new char[words.length][];
 
-        for (int i=0;i<words.length;i++) {
+        for (int i = 0; i < words.length; i++) {
             if (words[i] != null) {
-                result[i]= wordService.replaceWordOfSpecifiedLength(lengthOfWordsToReplace,words[i], wordToWrite);
+                result[i] = wordService.replaceWordOfSpecifiedLength(lengthOfWordsToReplace, words[i], wordToWrite);
             } else {
                 break;
             }
@@ -75,10 +76,10 @@ public class CharArrayController {
         char[][] result = new char[words.length][];
 
         int currentWordInResult = -1;
-        for (int i=0;i<words.length;i++) {
+        for (int i = 0; i < words.length; i++) {
             if (words[i] != null) {
                 if (!wordService.startsWithConsonant(words[i])) {
-                    result[i]= words[i];
+                    result[i] = words[i];
                 }
             } else {
                 break;

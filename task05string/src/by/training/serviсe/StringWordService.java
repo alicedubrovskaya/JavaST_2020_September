@@ -1,5 +1,6 @@
 package by.training.serviсe;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface StringWordService {
@@ -7,7 +8,7 @@ public interface StringWordService {
 
     void saveText(List<StringBuilder> words);
 
-    //TODO char[] getFromFile(String fileName) throws IOException;
+    String getFromFile(String fileName) throws IOException;
 
     StringBuilder replaceLetterWithAGivenCharacter(char character, int k, StringBuilder string);
 

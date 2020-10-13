@@ -51,16 +51,16 @@ public class WordDAOImpl implements WordDAO {
     }
 
     @Override
-    public char[] getTextFromFile(String fileName) throws IOException {
+    public String getTextFromFile(String fileName) throws IOException {
         //TODO multiple lines
 
         String filePath = new File(fileName).getAbsolutePath();
-        char[] string = null;
+        String string = null;
         try (FileReader fr = new FileReader(filePath);
              Scanner in = new Scanner(fr);
         ) {
             in.useDelimiter("\n");
-            string = in.nextLine().toCharArray();
+            string = in.nextLine();
         } catch (FileNotFoundException e) {
             System.err.println(e);
         }

@@ -1,11 +1,13 @@
 package by.training.serviсe;
 
+import java.io.IOException;
+
 public interface CharWordService {
     char[][] getWords();
 
     void saveText(char[][] words);
 
-    //TODO char[] getFromFile(String fileName) throws IOException;
+    String getFromFile(String fileName) throws IOException;
 
     char[] replaceLetterWithAGivenCharacter(char character, int k, char[] string);
 
