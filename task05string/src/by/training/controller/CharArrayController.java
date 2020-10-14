@@ -1,10 +1,11 @@
 package by.training.controller;
 
 import by.training.serviсe.CharWordService;
-import by.training.serviсe.MemoryCharService;
+import by.training.serviсe.MemoryService;
 import by.training.serviсe.factory.FactoryService;
 
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -14,27 +15,29 @@ import java.io.IOException;
  */
 public class CharArrayController {
     private CharWordService wordService;
-    private MemoryCharService memoryService;
+    private MemoryService memoryService;
 
     public CharArrayController() {
         FactoryService factoryService = FactoryService.getInstance();
         this.wordService = factoryService.getCharWordService();
-        this.memoryService = factoryService.getMemoryCharService();
+        this.memoryService = factoryService.getMemoryService();
     }
 
     /**
-     * Saves words to text
-     * @param string
+     * Saves lines to text
+     *
+     * @param lines
      */
-    public void saveText(String string) {
-        memoryService.saveText(parseStringToArrayOfWords(string));
+    public void saveText(List<String> lines) {
+        memoryService.saveText(lines);
     }
 
     /**
-     * Saves words from file to text
+     * Saves lines from file to text
      * @param fileName
      */
-    public void saveFromFile(String fileName) {
+    //TODO
+  /*  public void saveFromFile(String fileName) {
         try {
             String words = memoryService.getFromFile(fileName);
             saveText(words);
@@ -43,94 +46,129 @@ public class CharArrayController {
         }
     }
 
+   */
+
     /**
      * Replaces specified letters of word with specified character
+     *
      * @param character
      * @param k
      * @return
      */
-    public char[][] replaceNeededLettersWithAGivenCharacter(char character, int k) {
-        char[][] words = memoryService.getWords();
-        char[][] result = new char[words.length][];
+    public List<String> replaceNeededLettersWithAGivenCharacter(char character, int k) {
+        List<String> resultingLines = new ArrayList<>();
 
-        for (int i = 0; i < words.length; i++) {
-            if (words[i] != null) {
-                result[i] = wordService.replaceLetterWithAGivenCharacter(character, k, words[i]);
-            } else {
-                break;
+        for (String line : memoryService.getLines()) {
+            char[][] words = parseStringToArrayOfWords(line);
+            String string = new String();
+
+            for (int i = 0; i < words.length; i++) {
+                if (words[i] != null) {
+                    string = convert(wordService.replaceLetterWithAGivenCharacter(character, k, words[i])) + " ";
+                } else {
+                    break;
+                }
             }
+            resultingLines.add(string);
         }
-        return result;
+        return resultingLines;
     }
 
     /**
      * Replaces character in specified sequences with needed character
+     *
      * @param preceding
      * @param incorrect
      * @param needed
      * @return
      */
-    public char[][] fixIncorrectLetters(char preceding, char incorrect, char needed) {
-        char[][] words = memoryService.getWords();
-        char[][] result = new char[words.length][];
+    public List<String> fixIncorrectLetters(char preceding, char incorrect, char needed) {
+        List<String> resultingLines = new ArrayList<>();
 
-        for (int i = 0; i < words.length; i++) {
-            if (words[i] != null) {
-                result[i] = wordService.changeIncorrectCharacters(preceding, incorrect, needed, words[i]);
-            } else {
-                break;
+        for (String line : memoryService.getLines()) {
+            char[][] words = parseStringToArrayOfWords(line);
+            String string = new String();
+
+            for (int i = 0; i < words.length; i++) {
+                if (words[i] != null) {
+                    string = convert(wordService.changeIncorrectCharacters(preceding, incorrect, needed, words[i])) + " ";
+                } else {
+                    break;
+                }
             }
+            resultingLines.add(string);
         }
-        return result;
+        return resultingLines;
     }
 
     /**
      * Replaces word with another word if it's length corresponds to needed length
+     *
      * @param lengthOfWordsToReplace
      * @param wordToWrite
      * @return
      */
-    public char[][] replaceWordsOfSpecifiedLength(int lengthOfWordsToReplace, char[] wordToWrite) {
-        char[][] words = memoryService.getWords();
-        char[][] result = new char[words.length][];
+    public List<String> replaceWordsOfSpecifiedLength(int lengthOfWordsToReplace, char[] wordToWrite) {
+        List<String> resultingLines = new ArrayList<>();
 
-        for (int i = 0; i < words.length; i++) {
-            if (words[i] != null) {
-                result[i] = wordService.replaceWordOfSpecifiedLength(lengthOfWordsToReplace, words[i], wordToWrite);
-            } else {
-                break;
+        for (String line : memoryService.getLines()) {
+            char[][] words = parseStringToArrayOfWords(line);
+            String string = new String();
+
+            for (int i = 0; i < words.length; i++) {
+                if (words[i] != null) {
+                    string = convert(wordService.replaceWordOfSpecifiedLength(lengthOfWordsToReplace, words[i], wordToWrite)) + " ";
+                } else {
+                    break;
+                }
             }
+            resultingLines.add(string);
         }
-        return result;
+        return resultingLines;
     }
 
     /**
      * Checks if specified word starts with consonant or not
+     *
      * @return
      */
-    public char[][] wordsWithoutConsonantsAtTheBeginning() {
-        char[][] words = memoryService.getWords();
-        char[][] result = new char[words.length][];
+    public List<String> wordsWithoutConsonantsAtTheBeginning() {
+        List<String> resultingLines = new ArrayList<>();
 
-        for (int i = 0; i < words.length; i++) {
-            if (words[i] != null) {
-                if (!wordService.startsWithConsonant(words[i])) {
-                    result[i] = words[i];
+        for (String line : memoryService.getLines()) {
+            char[][] words = parseStringToArrayOfWords(line);
+            String string = new String();
+
+            for (int i = 0; i < words.length; i++) {
+                if (words[i] != null) {
+                    if (!wordService.startsWithConsonant(words[i])) {
+                        string = convert(words[i]) + " ";
+                    }
+                } else {
+                    break;
                 }
-            } else {
-                break;
             }
+            resultingLines.add(string);
         }
-        return result;
+        return resultingLines;
     }
 
     /**
      * Parsers string to words
+     *
      * @param string
      * @return array of words
      */
     public char[][] parseStringToArrayOfWords(String string) {
         char[] stringWithoutExtraCharacters = wordService.removeExtraCharacters(string.toCharArray());
         return wordService.parseStringToWords(stringWithoutExtraCharacters);
+    }
+
+    public String convert(char[] word){
+        String result="";
+        for (int i=0;i<word.length;i++){
+            result+=String.valueOf(word[i]);
+        }
+        return result;
     }
 }

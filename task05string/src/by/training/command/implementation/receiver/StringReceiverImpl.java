@@ -3,6 +3,7 @@ package by.training.command.implementation.receiver;
 import by.training.command.TextReceiver;
 import by.training.controller.StringController;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -21,7 +22,7 @@ public class StringReceiverImpl implements TextReceiver {
     public StringReceiverImpl(StringController stringController, ResourceBundle resourceBundle) {
         this.stringController = stringController;
         this.in.useDelimiter("\n");
-        this.rb=resourceBundle;
+        this.rb = resourceBundle;
     }
 
     @Override
@@ -31,7 +32,7 @@ public class StringReceiverImpl implements TextReceiver {
                 textFromConsole();
                 break;
             case 2:
-                textFromFile();
+                //textFromFile();
                 break;
             case 3:
                 optionReplaceWithCharacter();
@@ -49,47 +50,63 @@ public class StringReceiverImpl implements TextReceiver {
         }
     }
 
+    protected List<String> getLines() {
+        List<String> lines = new ArrayList<>();
+        int count = in.nextInt();
+        in.nextLine();
+
+        for (int i = 0; i < count; i++) {
+            lines.add(in.nextLine());
+        }
+        return lines;
+    }
+
+    /**
+     * To stop entering text - press Ctrl+D
+     */
     protected void textFromConsole() {
         System.out.println(rb.getString("enter.string"));
-        stringController.saveText(in.nextLine());
+        stringController.saveText(getLines());
     }
 
     /**
      * Example of file path: task05string/data/text.txt
      */
-    protected void textFromFile() {
+    //TODO
+  /*  protected void textFromFile() {
         System.out.println(rb.getString("enter.filepath"));
         stringController.saveFromFile(in.nextLine());
     }
 
+   */
     protected void optionReplaceWithCharacter() {
-        System.out.println(rb.getString("enter.symbol")+", k");
-        List<StringBuilder> result = stringController.replaceNeededLettersWithAGivenCharacter(in.next().charAt(0), in.nextInt());
-        printWords(result);
+        System.out.println(rb.getString("enter.symbol") + ", k");
+        List<String> result = stringController.replaceNeededLettersWithAGivenCharacter(in.next().charAt(0), in.nextInt());
+        printLines(result);
     }
 
     protected void optionFixIncorrectLetters() {
         System.out.println(rb.getString("enter.fix"));
-        List<StringBuilder> result = stringController.fixIncorrectLetters(in.next().charAt(0), in.next().charAt(0), in.next().charAt(0));
-        printWords(result);
+        List<String> result = stringController.fixIncorrectLetters(in.next().charAt(0), in.next().charAt(0), in.next().charAt(0));
+        printLines(result);
     }
 
     protected void optionReplaceWordsOfSpecifiedLength() {
-        System.out.println(rb.getString("enter.length")+", "+rb.getString("enter.wordToBePlaced"));
+        System.out.println(rb.getString("enter.length") + ", " + rb.getString("enter.wordToBePlaced"));
         int length = in.nextInt();
         in.nextLine();
-        List<StringBuilder> result = stringController.replaceWordsOfSpecifiedLength(length, in.nextLine());
-        printWords(result);
+        List<String> result = stringController.replaceWordsOfSpecifiedLength(length, in.nextLine());
+        printLines(result);
     }
 
     protected void optionWordsWithoutConsonantsAtTheBeginning() {
-        List<StringBuilder> result = stringController.wordsWithoutConsonantsAtTheBeginning();
-        printWords(result);
+        List<String> result = stringController.wordsWithoutConsonantsAtTheBeginning();
+        printLines(result);
     }
 
-    protected void printWords(List<StringBuilder> words){
-        for (StringBuilder word: words){
-            System.out.println(word);
+    protected void printLines(List<String> lines) {
+        for (String line : lines) {
+            System.out.println(line);
         }
     }
 }

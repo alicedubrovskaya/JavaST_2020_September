@@ -1,13 +1,11 @@
 package by.training.controller;
 
-import by.training.serviсe.MemoryStringService;
+import by.training.serviсe.MemoryService;
 import by.training.serviсe.StringWordService;
 import by.training.serviсe.factory.FactoryService;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
 /**
  * Class is a controller of class Text. Works with words, witch type is String
@@ -16,12 +14,12 @@ import java.util.ResourceBundle;
  */
 public class StringController {
     private StringWordService wordService;
-    private MemoryStringService memoryService;
+    private MemoryService memoryService;
 
     public StringController(String typeOfServiceImplementation) {
         FactoryService factoryService = FactoryService.getInstance();
         this.wordService = factoryService.getStringWordService(typeOfServiceImplementation);
-        this.memoryService = factoryService.getMemoryStringService();
+        this.memoryService = factoryService.getMemoryService();
     }
 
     /**
@@ -29,8 +27,8 @@ public class StringController {
      *
      * @param string
      */
-    public void saveText(String string) {
-        memoryService.saveText(parseStringToArrayOfWords(string));
+    public void saveText(List<String> string) {
+        memoryService.saveText(string);
     }
 
     /**
@@ -38,7 +36,7 @@ public class StringController {
      *
      * @param fileName
      */
-    public void saveFromFile(String fileName) {
+ /*   public void saveFromFile(String fileName) {
         try {
             String words = memoryService.getFromFile(fileName);
             saveText(words);
@@ -47,6 +45,9 @@ public class StringController {
         }
     }
 
+
+  */
+
     /**
      * Replaces character in specified sequences with needed character
      *
@@ -54,14 +55,20 @@ public class StringController {
      * @param k
      * @return
      */
-    public List<StringBuilder> replaceNeededLettersWithAGivenCharacter(char character, int k) {
-        List<StringBuilder> result = new ArrayList<>();
+    public List<String> replaceNeededLettersWithAGivenCharacter(char character, int k) {
+        List<String> resultingLines = new ArrayList<>();
 
-        for (StringBuilder word : memoryService.getWords()) {
-            result.add(wordService.replaceLetterWithAGivenCharacter(character, k, word));
+        for (String line : memoryService.getLines()) {
+            String string = new String();
+
+            for (StringBuilder word : parseStringToArrayOfWords(line)) {
+                string += wordService.replaceLetterWithAGivenCharacter(character, k, word) + " ";
+            }
+            resultingLines.add(string);
         }
-        return result;
+        return resultingLines;
     }
+
 
     /**
      * Replaces word with another word if it's length corresponds to needed length
@@ -71,13 +78,18 @@ public class StringController {
      * @param needed
      * @return
      */
-    public List<StringBuilder> fixIncorrectLetters(char preceding, char incorrect, char needed) {
-        List<StringBuilder> result = new ArrayList<>();
+    public List<String> fixIncorrectLetters(char preceding, char incorrect, char needed) {
+        List<String> resultingLines = new ArrayList<>();
 
-        for (StringBuilder word : memoryService.getWords()) {
-            result.add(wordService.changeIncorrectCharacters(preceding, incorrect, needed, word));
+        for (String line : memoryService.getLines()) {
+            String string = new String();
+
+            for (StringBuilder word : parseStringToArrayOfWords(line)) {
+                string +=wordService.changeIncorrectCharacters(preceding, incorrect, needed, word) + " ";
+            }
+            resultingLines.add(string);
         }
-        return result;
+        return resultingLines;
     }
 
     /**
@@ -87,14 +99,19 @@ public class StringController {
      * @param wordToWrite
      * @return
      */
-    public List<StringBuilder> replaceWordsOfSpecifiedLength(int lengthOfWordsToReplace, String wordToWrite) {
-        List<StringBuilder> result = new ArrayList<>();
+    public List<String> replaceWordsOfSpecifiedLength(int lengthOfWordsToReplace, String wordToWrite) {
+        List<String> resultingLines = new ArrayList<>();
 
-        for (StringBuilder word : memoryService.getWords()) {
-            result.add(wordService.replaceWordOfSpecifiedLength
-                    (lengthOfWordsToReplace, word, new StringBuilder(wordToWrite)));
+        for (String line : memoryService.getLines()) {
+            String string = new String();
+
+            for (StringBuilder word : parseStringToArrayOfWords(line)) {
+                string +=wordService.replaceWordOfSpecifiedLength
+                        (lengthOfWordsToReplace, word, new StringBuilder(wordToWrite)) + " ";
+            }
+            resultingLines.add(string);
         }
-        return result;
+        return resultingLines;
     }
 
     /**
@@ -102,14 +119,20 @@ public class StringController {
      *
      * @return
      */
-    public List<StringBuilder> wordsWithoutConsonantsAtTheBeginning() {
-        List<StringBuilder> result = new ArrayList<>();
-        for (StringBuilder word : memoryService.getWords()) {
-            if (!wordService.startsWithConsonant(word)) {
-                result.add(word);
+    public List<String> wordsWithoutConsonantsAtTheBeginning() {
+        List<String> resultingLines = new ArrayList<>();
+
+        for (String line : memoryService.getLines()) {
+            String string = new String();
+
+            for (StringBuilder word : parseStringToArrayOfWords(line)) {
+                if (!wordService.startsWithConsonant(word)) {
+                    string=word+" ";
+                }
             }
+            resultingLines.add(string);
         }
-        return result;
+        return resultingLines;
     }
 
     /**

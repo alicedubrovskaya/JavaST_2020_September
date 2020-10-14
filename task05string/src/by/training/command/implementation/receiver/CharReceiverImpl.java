@@ -3,6 +3,8 @@ package by.training.command.implementation.receiver;
 import by.training.command.TextReceiver;
 import by.training.controller.CharArrayController;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
@@ -19,7 +21,7 @@ public class CharReceiverImpl implements TextReceiver {
     public CharReceiverImpl(CharArrayController charArrayController, ResourceBundle resourceBundle) {
         this.charArrayController = charArrayController;
         this.in.useDelimiter("\n");
-        this.rb=resourceBundle;
+        this.rb = resourceBundle;
     }
 
     public void action(int option) {
@@ -29,7 +31,7 @@ public class CharReceiverImpl implements TextReceiver {
                 textFromConsole();
                 break;
             case 2:
-                textFromFile();
+                //      textFromFile();
                 break;
             case 3:
                 optionReplaceWithCharacter();
@@ -47,52 +49,62 @@ public class CharReceiverImpl implements TextReceiver {
         }
     }
 
-    protected void printWords(char[][] words) {
-        for (int i = 0; i < words.length; i++) {
-            if (words[i] != null) {
-                System.out.println(words[i]);
-            } else {
-                break;
-            }
+    protected List<String> getLines() {
+        List<String> lines = new ArrayList<>();
+        int count = in.nextInt();
+        in.nextLine();
+
+        for (int i = 0; i < count; i++) {
+            lines.add(in.nextLine());
         }
+        return lines;
     }
+
 
     protected void textFromConsole() {
         System.out.println(rb.getString("enter.string"));
-        charArrayController.saveText(in.nextLine());
+        charArrayController.saveText(getLines());
     }
 
     /**
      * Example of file path: task05string/data/text.txt
      */
-    protected void textFromFile() {
+    //TODO
+   /* protected void textFromFile() {
         System.out.println(rb.getString("enter.filepath"));
         charArrayController.saveFromFile(in.nextLine());
     }
 
+    */
     protected void optionReplaceWithCharacter() {
-        System.out.println(rb.getString("enter.symbol")+", k");
-        char[][] result = charArrayController.replaceNeededLettersWithAGivenCharacter(in.next().charAt(0), in.nextInt());
-        printWords(result);
+        System.out.println(rb.getString("enter.symbol") + ", k");
+        List<String> result = charArrayController.replaceNeededLettersWithAGivenCharacter(in.next().charAt(0), in.nextInt());
+        printLines(result);
     }
 
     protected void optionFixIncorrectLetters() {
         System.out.println(rb.getString("enter.fix"));
-        char[][] result = charArrayController.fixIncorrectLetters(in.next().charAt(0), in.next().charAt(0), in.next().charAt(0));
-        printWords(result);
+        List<String> result = charArrayController.fixIncorrectLetters(in.next().charAt(0), in.next().charAt(0), in.next().charAt(0));
+        printLines(result);
     }
 
     protected void optionReplaceWordsOfSpecifiedLength() {
-        System.out.println(rb.getString("enter.length")+", "+rb.getString("enter.wordToBePlaced"));
+        System.out.println(rb.getString("enter.length") + ", " + rb.getString("enter.wordToBePlaced"));
         int length = in.nextInt();
         in.nextLine();
         char[] array = in.nextLine().toCharArray();
-        char[][] result = charArrayController.replaceWordsOfSpecifiedLength(length, array);
-        printWords(result);
+        List<String> result = charArrayController.replaceWordsOfSpecifiedLength(length, array);
+        printLines(result);
     }
 
     protected void optionWordsWithoutConsonantsAtTheBeginning() {
-        char[][] result = charArrayController.wordsWithoutConsonantsAtTheBeginning();
-        printWords(result);
+        List<String> result = charArrayController.wordsWithoutConsonantsAtTheBeginning();
+        printLines(result);
+    }
+
+    protected void printLines(List<String> lines) {
+        for (String line : lines) {
+            System.out.println(line);
+        }
     }
 }

@@ -1,18 +1,20 @@
 package by.training.entity;
 
+import java.util.List;
+
 /**
  * CLass describes entity Text. Contains field words.
  *
  * @author Alisa Dubrovskaya
  */
 public class Text {
-    char[][] words;
+    List<String> lines;
 
-    public Text(char[][] words) {
-        this.words = words;
+    public Text(List<String> lines) {
+        this.lines = lines;
     }
 
-    public char[][] getWords() {
-        return words;
+    public List<String> getLines() {
+        return lines;
     }
 }

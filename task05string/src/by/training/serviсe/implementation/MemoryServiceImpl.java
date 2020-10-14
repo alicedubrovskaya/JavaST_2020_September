@@ -2,21 +2,21 @@ package by.training.serviсe.implementation;
 
 import by.training.dao.DAOFactory;
 import by.training.dao.WordDAO;
-import by.training.serviсe.MemoryStringService;
+import by.training.serviсe.MemoryService;
 
 import java.io.IOException;
 import java.util.List;
 
 /**
- * Class is an implementation of interface MemoryCharService.
- * This class does operations (creating text, getting words) with words, which type is StringBuilder.
+ * Class is an implementation of interface MemoryService.
+ * This class does operations (creating text, getting words) with lines.
  *
  * @author Alisa Dubrovskaya
  */
-public class MemoryStringServiceImpl implements MemoryStringService {
+public class MemoryServiceImpl implements MemoryService {
     private WordDAO wordDAO;
 
-    public MemoryStringServiceImpl() {
+    public MemoryServiceImpl() {
         DAOFactory daoFactory = DAOFactory.getInstance();
         this.wordDAO = daoFactory.getWordDAO();
     }
@@ -24,21 +24,21 @@ public class MemoryStringServiceImpl implements MemoryStringService {
     /**
      * Gets words from memory
      *
-     * @return array of words
+     * @return array of lines
      */
     @Override
-    public List<StringBuilder> getWords() {
-        return wordDAO.convertToString(wordDAO.getText().getWords());
+    public List<String> getLines() {
+        return wordDAO.getText().getLines();
     }
 
     /**
      * Saves words to text
      *
-     * @param words
+     * @param lines
      */
     @Override
-    public void saveText(List<StringBuilder> words) {
-        wordDAO.createText(wordDAO.convert(words));
+    public void saveText(List<String> lines) {
+        wordDAO.createText(lines);
     }
 
     /**

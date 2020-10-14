@@ -12,7 +12,7 @@ import java.util.List;
  * @since 11/10/20
  */
 public interface WordDAO {
-    void createText(char[][] words);
+    void createText(List<String> lines);
 
     char[][] convert(List<StringBuilder> words);
 

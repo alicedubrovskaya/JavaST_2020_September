@@ -20,8 +20,8 @@ public class WordDAOImpl implements WordDAO {
     private Text text;
 
     @Override
-    public void createText(char[][] words) {
-        text = new Text(words);
+    public void createText(List<String> lines) {
+        text = new Text(lines);
     }
 
     @Override
