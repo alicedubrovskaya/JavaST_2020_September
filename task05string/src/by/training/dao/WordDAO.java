@@ -20,5 +20,5 @@ public interface WordDAO {
 
     Text getText();
 
-    String getTextFromFile(String fileName) throws IOException;
+    List<String> getTextFromFile(String fileName) throws IOException;
 }

@@ -29,7 +29,7 @@ public class WordDAOImpl implements WordDAO {
         char[][] wordsResult = new char[words.size()][];
 
         for (int i = 0; i < words.size(); i++) {
-            wordsResult[i]=words.get(i).toString().toCharArray();
+            wordsResult[i] = words.get(i).toString().toCharArray();
         }
         return wordsResult;
     }
@@ -50,20 +50,26 @@ public class WordDAOImpl implements WordDAO {
     }
 
     @Override
-    public String getTextFromFile(String fileName) throws IOException {
-        //TODO multiple lines
+    public List<String> getTextFromFile(String fileName) throws IOException {
 
         String filePath = new File(fileName).getAbsolutePath();
-        String string = null;
+        List<String> lines = new ArrayList<>();
+
         try (FileReader fr = new FileReader(filePath);
              Scanner in = new Scanner(fr);
         ) {
             in.useDelimiter("\n");
-            string = in.nextLine();
+            int count = in.nextInt();
+            in.nextLine();
+
+            for (int i = 0; i < count; i++) {
+                lines.add(in.nextLine());
+            }
         } catch (FileNotFoundException e) {
             System.err.println(e);
         }
-        return string;
+
+        return lines;
     }
 
 }

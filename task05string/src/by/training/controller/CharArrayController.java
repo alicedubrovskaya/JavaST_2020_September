@@ -4,6 +4,7 @@ import by.training.serviсe.CharWordService;
 import by.training.serviсe.MemoryService;
 import by.training.serviсe.factory.FactoryService;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,19 +35,17 @@ public class CharArrayController {
 
     /**
      * Saves lines from file to text
+     *
      * @param fileName
      */
-    //TODO
-  /*  public void saveFromFile(String fileName) {
+    public void saveFromFile(String fileName) {
         try {
-            String words = memoryService.getFromFile(fileName);
-            saveText(words);
+            memoryService.saveText(memoryService.getFromFile(fileName));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
 
-   */
 
     /**
      * Replaces specified letters of word with specified character
@@ -164,10 +163,10 @@ public class CharArrayController {
         return wordService.parseStringToWords(stringWithoutExtraCharacters);
     }
 
-    public String convert(char[] word){
-        String result="";
-        for (int i=0;i<word.length;i++){
-            result+=String.valueOf(word[i]);
+    public String convert(char[] word) {
+        String result = "";
+        for (int i = 0; i < word.length; i++) {
+            result += String.valueOf(word[i]);
         }
         return result;
     }

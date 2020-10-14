@@ -69,13 +69,11 @@ public class CharReceiverImpl implements TextReceiver {
     /**
      * Example of file path: task05string/data/text.txt
      */
-    //TODO
-   /* protected void textFromFile() {
+   protected void textFromFile() {
         System.out.println(rb.getString("enter.filepath"));
         charArrayController.saveFromFile(in.nextLine());
     }
 
-    */
     protected void optionReplaceWithCharacter() {
         System.out.println(rb.getString("enter.symbol") + ", k");
         List<String> result = charArrayController.replaceNeededLettersWithAGivenCharacter(in.next().charAt(0), in.nextInt());

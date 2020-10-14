@@ -14,6 +14,6 @@ public interface MemoryService {
 
     void saveText(List<String> words);
 
-    String getFromFile(String fileName) throws IOException;
+    List<String> getFromFile(String fileName) throws IOException;
 
 }

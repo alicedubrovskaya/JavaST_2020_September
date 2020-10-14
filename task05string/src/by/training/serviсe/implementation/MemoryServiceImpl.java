@@ -49,7 +49,7 @@ public class MemoryServiceImpl implements MemoryService {
      * @throws IOException
      */
     @Override
-    public String getFromFile(String fileName) throws IOException {
+    public List<String> getFromFile(String fileName) throws IOException {
         return wordDAO.getTextFromFile(fileName);
     }
 }

@@ -4,6 +4,7 @@ import by.training.serviсe.MemoryService;
 import by.training.serviсe.StringWordService;
 import by.training.serviсe.factory.FactoryService;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,17 +37,13 @@ public class StringController {
      *
      * @param fileName
      */
- /*   public void saveFromFile(String fileName) {
+    public void saveFromFile(String fileName) {
         try {
-            String words = memoryService.getFromFile(fileName);
-            saveText(words);
+            saveText(memoryService.getFromFile(fileName));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
-
-
-  */
 
     /**
      * Replaces character in specified sequences with needed character
@@ -85,7 +82,7 @@ public class StringController {
             String string = new String();
 
             for (StringBuilder word : parseStringToArrayOfWords(line)) {
-                string +=wordService.changeIncorrectCharacters(preceding, incorrect, needed, word) + " ";
+                string += wordService.changeIncorrectCharacters(preceding, incorrect, needed, word) + " ";
             }
             resultingLines.add(string);
         }
@@ -106,7 +103,7 @@ public class StringController {
             String string = new String();
 
             for (StringBuilder word : parseStringToArrayOfWords(line)) {
-                string +=wordService.replaceWordOfSpecifiedLength
+                string += wordService.replaceWordOfSpecifiedLength
                         (lengthOfWordsToReplace, word, new StringBuilder(wordToWrite)) + " ";
             }
             resultingLines.add(string);
@@ -127,7 +124,7 @@ public class StringController {
 
             for (StringBuilder word : parseStringToArrayOfWords(line)) {
                 if (!wordService.startsWithConsonant(word)) {
-                    string=word+" ";
+                    string = word + " ";
                 }
             }
             resultingLines.add(string);
