@@ -35,7 +35,7 @@ public class RegexWordServiceImpl implements StringWordService {
     @Override
     public StringBuilder replaceLetterWithAGivenCharacter(char character, int k, StringBuilder string) {
         String word = string.toString();
-        String regex=String.format("(.{%d}).", k-1);
+        String regex = String.format("(.{%d}).", k - 1);
         return new StringBuilder(word.replaceAll(regex, "$1" + character));
     }
 
@@ -43,12 +43,13 @@ public class RegexWordServiceImpl implements StringWordService {
     public StringBuilder changeIncorrectCharacters(char preceding, char incorrect, char needed, StringBuilder string) {
         String word = string.toString();
         String regex = String.format("(%s)%s", preceding, incorrect);
-        return new StringBuilder(word.replaceAll(regex,"$1"+needed));
+        return new StringBuilder(word.replaceAll(regex, "$1" + needed));
     }
 
     @Override
     public StringBuilder replaceWordOfSpecifiedLength(int length, StringBuilder word, StringBuilder wordToWrite) {
-        return null;
+        String regex = String.format("^.{%d}$", length);
+        return new StringBuilder(word.toString().replaceAll(regex, wordToWrite.toString()));
     }
 
     @Override
