@@ -2,6 +2,8 @@ package by.training.serviсe.implementation;
 
 import by.training.serviсe.StringWordService;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -35,12 +37,24 @@ public class RegexWordServiceImpl implements StringWordService {
     }
 
     @Override
-    public boolean isEnglishLetter(char letter) {
-        return false;
+    public List<StringBuilder> parseStringToWords(StringBuilder string) {
+        List<StringBuilder> result = new ArrayList<>();
+
+        //TODO spaces
+        String[] words = string.toString().split("\\s+");
+        for (String word : words) {
+            if (!"".equals(word)) {
+                result.add(new StringBuilder(word));
+            }
+        }
+        return result;
     }
 
     @Override
-    public boolean isRussianLetter(char letter) {
-        return false;
+    public StringBuilder removeExtraCharacters(StringBuilder string) {
+        String word = string.toString();
+        String regex = "[^a-zA-Zа-яА-я\\s]*";
+        return new StringBuilder(word.replaceAll(regex, ""));
     }
+
 }

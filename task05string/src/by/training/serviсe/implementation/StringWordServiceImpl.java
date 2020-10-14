@@ -2,6 +2,9 @@ package by.training.serviсe.implementation;
 
 import by.training.serviсe.StringWordService;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringWordServiceImpl implements StringWordService {
     //TODO upperCase
     private static final char[] englishConsonants = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q',
@@ -72,15 +75,49 @@ public class StringWordServiceImpl implements StringWordService {
         return hasConsonant;
     }
 
-    @Override
     public boolean isEnglishLetter(char letter) {
         int code = (int) letter;
         return ((code > 96 && code < 123) || (code > 64 && code < 91));
     }
 
-    @Override
     public boolean isRussianLetter(char letter) {
         int code = (int) letter; //UTF-8
         return (code > 1040 && code < 1104);
+    }
+
+    @Override
+    public List<StringBuilder> parseStringToWords(StringBuilder string) {
+        List<StringBuilder> words = new ArrayList<>();
+        int currentCharacterInWord = 0;
+        int startOfWord = 0;
+
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == ' ') {
+                words.add(new StringBuilder(string.substring(startOfWord,
+                        startOfWord + currentCharacterInWord)));
+                startOfWord = i + 1;
+                currentCharacterInWord = 0;
+            } else {
+                currentCharacterInWord++;
+            }
+        }
+        words.add(new StringBuilder(string.substring(startOfWord,
+                startOfWord + currentCharacterInWord)));
+        return words;
+    }
+
+    @Override
+    public StringBuilder removeExtraCharacters(StringBuilder string) {
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < string.length(); i++) {
+            char currentCharacter = string.charAt(i);
+            if ((currentCharacter == ' ' && result.length() > 0 && result.charAt(result.length() - 1) != ' ')
+                    || (isEnglishLetter(currentCharacter)) || isRussianLetter(currentCharacter)) {
+                result.append(currentCharacter);
+            }
+        }
+        //TODO ?
+        return result;
     }
 }

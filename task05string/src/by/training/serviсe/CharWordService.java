@@ -1,14 +1,6 @@
 package by.training.serviсe;
 
-import java.io.IOException;
-
 public interface CharWordService {
-    char[][] getWords();
-
-    void saveText(char[][] words);
-
-    String getFromFile(String fileName) throws IOException;
-
     char[] replaceLetterWithAGivenCharacter(char character, int k, char[] string);
 
     char[] changeIncorrectCharacters(char preceding, char incorrect, char needed, char[] string);
@@ -20,4 +12,8 @@ public interface CharWordService {
     boolean isEnglishLetter(char letter);
 
     boolean isRussianLetter(char letter);
+
+    char[][] parseStringToWords(char[] string);
+
+    char[] removeExtraCharacters(char[] string);
 }

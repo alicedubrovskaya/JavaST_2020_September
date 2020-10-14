@@ -11,23 +11,20 @@ import java.util.Scanner;
 
 public class StringRunner {
     public static void main(String[] args) {
-        final String CHAR = "char";
-        final String STRING="string";
+        final String CHAR = "CHAR";
+        final String STRING = "STRING";
 
         Scanner in = new Scanner(System.in);
         in.useDelimiter("\n");
 
-        CharArrayController charArrayController = new CharArrayController();
-        StringController stringController=new StringController();
-
-        //default
-        TextReceiver receiver=new StringReceiverImpl(stringController);
+        TextReceiver receiver;
         String work = in.nextLine();
-        if (CHAR.equals(work)){
-            receiver=new CharReceiverImpl(charArrayController);
-        }
-        else if (STRING.equals(work)){
-            receiver=new StringReceiverImpl(stringController);
+        if (CHAR.equals(work)) {
+            CharArrayController charArrayController = new CharArrayController();
+            receiver = new CharReceiverImpl(charArrayController);
+        } else {
+            StringController stringController = new StringController(in.nextLine());
+            receiver = new StringReceiverImpl(stringController);
         }
 
         TextClient client = new TextClient(receiver);

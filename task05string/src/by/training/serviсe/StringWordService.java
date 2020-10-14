@@ -1,5 +1,7 @@
 package by.training.serviсe;
 
+import java.util.List;
+
 public interface StringWordService {
     StringBuilder replaceLetterWithAGivenCharacter(char character, int k, StringBuilder string);
 
@@ -9,7 +11,7 @@ public interface StringWordService {
 
     boolean startsWithConsonant(StringBuilder word);
 
-    boolean isEnglishLetter(char letter);
+    List<StringBuilder> parseStringToWords(StringBuilder string);
 
-    boolean isRussianLetter(char letter);
+    StringBuilder removeExtraCharacters(StringBuilder string);
 }

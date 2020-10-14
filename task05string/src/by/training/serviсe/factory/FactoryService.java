@@ -1,13 +1,12 @@
 package by.training.serviсe.factory;
 
 import by.training.serviсe.CharWordService;
+import by.training.serviсe.MemoryCharService;
 import by.training.serviсe.MemoryStringService;
-import by.training.serviсe.ParserService;
 import by.training.serviсe.StringWordService;
 import by.training.serviсe.implementation.CharWordServiceImpl;
+import by.training.serviсe.implementation.MemoryCharServiceImpl;
 import by.training.serviсe.implementation.MemoryStringServiceImpl;
-import by.training.serviсe.implementation.ParserServiceImpl;
-import by.training.serviсe.implementation.StringWordServiceImpl;
 
 /**
  * Class represents service factory. Realized factory pattern
@@ -23,7 +22,7 @@ public class FactoryService {
 
     private final CharWordService charWordService = new CharWordServiceImpl();
     private final MemoryStringService memoryStringService = new MemoryStringServiceImpl();
-    private final ParserService parserService = new ParserServiceImpl(charWordService);
+    private final MemoryCharService memoryCharService=new MemoryCharServiceImpl();
 
     public FactoryService() {
     }
@@ -40,11 +39,11 @@ public class FactoryService {
         return charWordService;
     }
 
-    public ParserService getParserService() {
-        return parserService;
-    }
-
     public MemoryStringService getMemoryStringService() {
         return memoryStringService;
+    }
+
+    public MemoryCharService getMemoryCharService() {
+        return memoryCharService;
     }
 }

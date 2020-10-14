@@ -4,8 +4,6 @@ import by.training.dao.DAOFactory;
 import by.training.dao.WordDAO;
 import by.training.serviсe.CharWordService;
 
-import java.io.IOException;
-
 /**
  * Class is an implementation of interface StringService
  *
@@ -13,40 +11,11 @@ import java.io.IOException;
  * @since 11/10/20
  */
 public class CharWordServiceImpl implements CharWordService {
-    private WordDAO wordDAO;
     //TODO upperCase
     private static final char[] englishConsonants = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q',
             'r', 's', 't', 'v', 'w', 'x', 'y', 'z'};
     private static final char[] russianConsonants = {'б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р',
             'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ'};
-
-    public CharWordServiceImpl() {
-        DAOFactory daoFactory = DAOFactory.getInstance();
-        this.wordDAO = daoFactory.getWordDAO();
-    }
-
-    @Override
-    public void saveText(char[][] words) {
-        wordDAO.createText(words);
-    }
-
-    @Override
-    public String getFromFile(String fileName) throws IOException {
-        return wordDAO.getTextFromFile(fileName);
-    }
-
-    @Override
-    public char[][] getWords() {
-        return wordDAO.getText().getWords();
-    }
-
-    //TODO
-  /*  @Override
-    public char[] getFromFile(String fileName) throws IOException {
-        return wordDAO.getTextFromFile(fileName);
-    }
-
-   */
 
     @Override
     public char[] replaceLetterWithAGivenCharacter(char character, int k, char[] string) {
@@ -121,5 +90,60 @@ public class CharWordServiceImpl implements CharWordService {
     public boolean isRussianLetter(char letter) {
         int code = (int) letter; //UTF-8
         return (code > 1040 && code < 1104);
+    }
+
+    /**
+     * Parsers string of chars to array of words.
+     * The string is assumed to contain only words and spaces (single) between words
+     *
+     * @param string
+     * @return array of words
+     */
+    @Override
+    public char[][] parseStringToWords(char[] string) {
+        char[][] words = new char[string.length][];
+
+        int currentCharacterInWord = 0;
+        int startOfWord = 0;
+        int currentWordInResult = 0;
+
+        for (int i = 0; i < string.length; i++) {
+            if (string[i] == ' ') {
+                words[currentWordInResult] = new char[currentCharacterInWord];
+                Character[] word = new Character[currentCharacterInWord];
+                System.arraycopy(string, startOfWord, words[currentWordInResult], 0, currentCharacterInWord);
+                startOfWord = i + 1;
+                currentWordInResult++;
+                currentCharacterInWord = 0;
+            } else {
+                currentCharacterInWord++;
+            }
+        }
+        words[currentWordInResult] = new char[currentCharacterInWord];
+        System.arraycopy(string, startOfWord, words[currentWordInResult], 0, currentCharacterInWord);
+        return words;
+    }
+
+    @Override
+    public char[] removeExtraCharacters(char[] string) {
+        char[] result;
+        char[] correctDuplicate = new char[string.length];
+        int currentCharacterInDuplicate = -1;
+
+        for (int i = 0; i < string.length; i++) {
+            if ((string[i] == ' ' && currentCharacterInDuplicate > 0 && correctDuplicate[currentCharacterInDuplicate] != ' ')
+                    || (isEnglishLetter(string[i]) || isRussianLetter(string[i]))) {
+                currentCharacterInDuplicate++;
+                correctDuplicate[currentCharacterInDuplicate] = string[i];
+            }
+        }
+        if (correctDuplicate[currentCharacterInDuplicate] != ' ') {
+            currentCharacterInDuplicate++;
+        }
+
+        result = new char[currentCharacterInDuplicate];
+        System.arraycopy(correctDuplicate, 0, result, 0, currentCharacterInDuplicate);
+
+        return result;
     }
 }
