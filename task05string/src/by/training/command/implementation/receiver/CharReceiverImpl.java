@@ -3,6 +3,7 @@ package by.training.command.implementation.receiver;
 import by.training.command.TextReceiver;
 import by.training.controller.CharArrayController;
 
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
 /**
@@ -12,11 +13,13 @@ import java.util.Scanner;
  */
 public class CharReceiverImpl implements TextReceiver {
     private CharArrayController charArrayController;
+    private ResourceBundle rb;
     private Scanner in = new Scanner(System.in);
 
-    public CharReceiverImpl(CharArrayController charArrayController) {
+    public CharReceiverImpl(CharArrayController charArrayController, ResourceBundle resourceBundle) {
         this.charArrayController = charArrayController;
         this.in.useDelimiter("\n");
+        this.rb=resourceBundle;
     }
 
     public void action(int option) {
@@ -55,7 +58,7 @@ public class CharReceiverImpl implements TextReceiver {
     }
 
     protected void textFromConsole() {
-        System.out.println("Enter string:");
+        System.out.println(rb.getString("enter.string"));
         charArrayController.saveText(in.nextLine());
     }
 
@@ -63,24 +66,24 @@ public class CharReceiverImpl implements TextReceiver {
      * Example of file path: task05string/data/text.txt
      */
     protected void textFromFile() {
-        System.out.println("Enter filePath:");
+        System.out.println(rb.getString("enter.filepath"));
         charArrayController.saveFromFile(in.nextLine());
     }
 
     protected void optionReplaceWithCharacter() {
-        System.out.println("Enter character, k");
+        System.out.println(rb.getString("enter.symbol")+", k");
         char[][] result = charArrayController.replaceNeededLettersWithAGivenCharacter(in.next().charAt(0), in.nextInt());
         printWords(result);
     }
 
     protected void optionFixIncorrectLetters() {
-        System.out.println("Enter preceding, incorrect, needed");
+        System.out.println(rb.getString("enter.fix"));
         char[][] result = charArrayController.fixIncorrectLetters(in.next().charAt(0), in.next().charAt(0), in.next().charAt(0));
         printWords(result);
     }
 
     protected void optionReplaceWordsOfSpecifiedLength() {
-        System.out.println("Enter length of replacing words, word to be replaced");
+        System.out.println(rb.getString("enter.length")+", "+rb.getString("enter.wordToBePlaced"));
         int length = in.nextInt();
         in.nextLine();
         char[] array = in.nextLine().toCharArray();

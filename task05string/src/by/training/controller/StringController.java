@@ -7,6 +7,7 @@ import by.training.serviсe.factory.FactoryService;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 /**
  * Class is a controller of class Text. Works with words, witch type is String

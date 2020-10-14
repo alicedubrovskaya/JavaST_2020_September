@@ -7,9 +7,11 @@ import by.training.command.TextReceiver;
 import by.training.command.implementation.receiver.CharReceiverImpl;
 import by.training.command.implementation.receiver.StringReceiverImpl;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class StringRunner {
+public class TextRunner {
     public static void main(String[] args) {
         final String CHAR = "CHAR";
         final String STRING = "STRING";
@@ -18,13 +20,32 @@ public class StringRunner {
         in.useDelimiter("\n");
 
         TextReceiver receiver;
+
+        System.out.println("1 — английский \n2 — русский ");
+        String country = "US";
+        String language = "en";
+        switch (in.nextInt()) {
+            case 1:
+                country = "US";
+                language = "en";
+                break;
+            case 2:
+                country = "RU";
+                language = "ru";
+                break;
+            default:
+        }
+        Locale current = new Locale(language, country);
+        ResourceBundle rb = ResourceBundle.getBundle("property.text", current);
+
+        in.nextLine();
         String work = in.nextLine();
         if (CHAR.equals(work)) {
             CharArrayController charArrayController = new CharArrayController();
-            receiver = new CharReceiverImpl(charArrayController);
+            receiver = new CharReceiverImpl(charArrayController,rb);
         } else {
             StringController stringController = new StringController(in.nextLine());
-            receiver = new StringReceiverImpl(stringController);
+            receiver = new StringReceiverImpl(stringController, rb);
         }
 
         TextClient client = new TextClient(receiver);
@@ -49,9 +70,7 @@ public class StringRunner {
 
         int doOptions = 1;
         while (doOptions == 1) {
-            System.out.println("\n1 - text from console \n2 - text from file \n3 - replace needed letters with character" +
-                    " \n4 - fix incorrect letters \n5 - replace words of specified length" +
-                    "\n6 - get words without consonants at the beginning");
+            System.out.println(rb.getString("menu"));
             int option = in.nextInt();
             switch (option) {
                 case 0:

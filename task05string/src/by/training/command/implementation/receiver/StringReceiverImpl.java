@@ -4,6 +4,7 @@ import by.training.command.TextReceiver;
 import by.training.controller.StringController;
 
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
 
@@ -15,10 +16,12 @@ import java.util.Scanner;
 public class StringReceiverImpl implements TextReceiver {
     private StringController stringController;
     private Scanner in = new Scanner(System.in);
+    private ResourceBundle rb;
 
-    public StringReceiverImpl(StringController stringController) {
+    public StringReceiverImpl(StringController stringController, ResourceBundle resourceBundle) {
         this.stringController = stringController;
         this.in.useDelimiter("\n");
+        this.rb=resourceBundle;
     }
 
     @Override
@@ -47,7 +50,7 @@ public class StringReceiverImpl implements TextReceiver {
     }
 
     protected void textFromConsole() {
-        System.out.println("Enter string:");
+        System.out.println(rb.getString("enter.string"));
         stringController.saveText(in.nextLine());
     }
 
@@ -55,24 +58,24 @@ public class StringReceiverImpl implements TextReceiver {
      * Example of file path: task05string/data/text.txt
      */
     protected void textFromFile() {
-        System.out.println("Enter filePath: ");
+        System.out.println(rb.getString("enter.filepath"));
         stringController.saveFromFile(in.nextLine());
     }
 
     protected void optionReplaceWithCharacter() {
-        System.out.println("Enter character, k");
+        System.out.println(rb.getString("enter.symbol")+", k");
         List<StringBuilder> result = stringController.replaceNeededLettersWithAGivenCharacter(in.next().charAt(0), in.nextInt());
         printWords(result);
     }
 
     protected void optionFixIncorrectLetters() {
-        System.out.println("Enter preceding, incorrect, needed");
+        System.out.println(rb.getString("enter.fix"));
         List<StringBuilder> result = stringController.fixIncorrectLetters(in.next().charAt(0), in.next().charAt(0), in.next().charAt(0));
         printWords(result);
     }
 
     protected void optionReplaceWordsOfSpecifiedLength() {
-        System.out.println("Enter length of replacing words, word to be replaced");
+        System.out.println(rb.getString("enter.length")+", "+rb.getString("enter.wordToBePlaced"));
         int length = in.nextInt();
         in.nextLine();
         List<StringBuilder> result = stringController.replaceWordsOfSpecifiedLength(length, in.nextLine());
