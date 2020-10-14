@@ -10,7 +10,6 @@ import by.training.serviсe.CharWordService;
  * @since 11/10/20
  */
 public class CharWordServiceImpl implements CharWordService {
-    //TODO upperCase
     private static final char[] englishConsonants = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q',
             'r', 's', 't', 'v', 'w', 'x', 'y', 'z'};
     private static final char[] russianConsonants = {'б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р',
@@ -18,6 +17,7 @@ public class CharWordServiceImpl implements CharWordService {
 
     /**
      * Replaces specified letters of word with specified character
+     *
      * @param character
      * @param k
      * @param string
@@ -42,6 +42,7 @@ public class CharWordServiceImpl implements CharWordService {
 
     /**
      * Replaces character in specified sequences with needed character
+     *
      * @param preceding
      * @param incorrect
      * @param needed
@@ -64,6 +65,7 @@ public class CharWordServiceImpl implements CharWordService {
 
     /**
      * Replaces word with another word if it's length corresponds to needed length
+     *
      * @param length
      * @param word
      * @param wordToWrite
@@ -82,6 +84,7 @@ public class CharWordServiceImpl implements CharWordService {
 
     /**
      * Checks if specified word starts with consonant or not
+     *
      * @param word
      * @return boolean variable (starts with consonant or not)
      */
@@ -92,13 +95,13 @@ public class CharWordServiceImpl implements CharWordService {
 
         if (isEnglishLetter(firstCharacter)) {
             for (int i = 0; i < englishConsonants.length; i++) {
-                if (englishConsonants[i] == firstCharacter) {
+                if (englishConsonants[i] == firstCharacter || (int) englishConsonants[i] - 32 == (int) firstCharacter) {
                     hasConsonant = true;
                 }
             }
         } else if (isRussianLetter(firstCharacter)) {
             for (int i = 0; i < russianConsonants.length; i++) {
-                if (russianConsonants[i] == firstCharacter) {
+                if (russianConsonants[i] == firstCharacter || (int) russianConsonants[i] - 64 == (int) firstCharacter) {
                     hasConsonant = true;
                 }
             }
@@ -108,6 +111,7 @@ public class CharWordServiceImpl implements CharWordService {
 
     /**
      * Checks if letter is english or not
+     *
      * @param letter
      * @return boolean variable (is english or not)
      */
@@ -119,6 +123,7 @@ public class CharWordServiceImpl implements CharWordService {
 
     /**
      * Checks if letter is russian or not
+     *
      * @param letter
      * @return boolean variable (is english or not)
      */
@@ -162,6 +167,7 @@ public class CharWordServiceImpl implements CharWordService {
 
     /**
      * Removes extra character from string. Leaves only letters (english, russian) and spaces
+     *
      * @param string
      * @return string without extra characters
      */

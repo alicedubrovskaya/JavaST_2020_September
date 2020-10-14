@@ -26,7 +26,6 @@ public class WordDAOImpl implements WordDAO {
 
     @Override
     public char[][] convert(List<StringBuilder> words) {
-        //TODO size bigger than it is (to change capacity)
         char[][] wordsResult = new char[words.size()][];
 
         for (int i = 0; i < words.size(); i++) {

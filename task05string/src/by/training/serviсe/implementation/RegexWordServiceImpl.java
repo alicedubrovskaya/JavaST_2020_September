@@ -80,7 +80,6 @@ public class RegexWordServiceImpl implements StringWordService {
     public List<StringBuilder> parseStringToWords(StringBuilder string) {
         List<StringBuilder> result = new ArrayList<>();
 
-        //TODO spaces
         String[] words = string.toString().split("\\s+");
         for (String word : words) {
             if (!"".equals(word)) {

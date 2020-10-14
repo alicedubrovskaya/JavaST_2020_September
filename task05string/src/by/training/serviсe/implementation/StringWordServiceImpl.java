@@ -12,7 +12,6 @@ import java.util.List;
  * @author Alisa Dubrovskaya
  */
 public class StringWordServiceImpl implements StringWordService {
-    //TODO upperCase
     private static final char[] englishConsonants = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q',
             'r', 's', 't', 'v', 'w', 'x', 'y', 'z'};
     private static final char[] russianConsonants = {'б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р',
@@ -94,13 +93,13 @@ public class StringWordServiceImpl implements StringWordService {
 
         if (isEnglishLetter(firstCharacter)) {
             for (int i = 0; i < englishConsonants.length; i++) {
-                if (englishConsonants[i] == firstCharacter) {
+                if (englishConsonants[i] == firstCharacter || (int) englishConsonants[i] - 32 == (int) firstCharacter) {
                     hasConsonant = true;
                 }
             }
         } else if (isRussianLetter(firstCharacter)) {
             for (int i = 0; i < russianConsonants.length; i++) {
-                if (russianConsonants[i] == firstCharacter) {
+                if (russianConsonants[i] == firstCharacter || (int) russianConsonants[i] - 64 == (int) firstCharacter) {
                     hasConsonant = true;
                 }
             }
@@ -172,7 +171,6 @@ public class StringWordServiceImpl implements StringWordService {
                 result.append(currentCharacter);
             }
         }
-        //TODO ?
         return result;
     }
 }
