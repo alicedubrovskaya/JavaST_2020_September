@@ -1,6 +1,6 @@
 package by.training.controller;
 
-import by.training.serviсe.StringParserService;
+import by.training.serviсe.ParserService;
 import by.training.serviсe.StringWordService;
 import by.training.serviсe.factory.FactoryService;
 
@@ -10,12 +10,12 @@ import java.util.List;
 
 public class StringController {
     private StringWordService wordService;
-    private StringParserService parserService;
+    private ParserService parserService;
 
     public StringController() {
         FactoryService factoryService = FactoryService.getInstance();
-        this.wordService = factoryService.getStringWordService();
-        this.parserService = factoryService.getStringParserService();
+        this.wordService = factoryService.getStringWordService("REGEX");
+        this.parserService = factoryService.getParserService();
     }
 
     public void saveText(String string) {

@@ -1,12 +1,10 @@
 package by.training.serviсe.factory;
 
-import by.training.serviсe.CharParserService;
 import by.training.serviсe.CharWordService;
-import by.training.serviсe.StringParserService;
+import by.training.serviсe.ParserService;
 import by.training.serviсe.StringWordService;
-import by.training.serviсe.implementation.CharParserServiceImpl;
 import by.training.serviсe.implementation.CharWordServiceImpl;
-import by.training.serviсe.implementation.StringParserServiceImpl;
+import by.training.serviсe.implementation.ParserServiceImpl;
 import by.training.serviсe.implementation.StringWordServiceImpl;
 
 /**
@@ -18,10 +16,12 @@ import by.training.serviсe.implementation.StringWordServiceImpl;
 public class FactoryService {
 
     private static final FactoryService instance = new FactoryService();
+
+    private final StringWordFactory stringWordFactory = new StringWordFactory();
+
     private final StringWordService stringWordService = new StringWordServiceImpl();
     private final CharWordService charWordService = new CharWordServiceImpl();
-    private final StringParserService stringParserService = new StringParserServiceImpl(charWordService);
-    private final CharParserService charParserService = new CharParserServiceImpl(charWordService);
+    private final ParserService parserService = new ParserServiceImpl(charWordService);
 
     public FactoryService() {
     }
@@ -30,19 +30,15 @@ public class FactoryService {
         return instance;
     }
 
-    public StringWordService getStringWordService() {
-        return stringWordService;
+    public StringWordService getStringWordService(String type) {
+        return stringWordFactory.getWordService(type);
     }
 
     public CharWordService getCharWordService() {
         return charWordService;
     }
 
-    public StringParserService getStringParserService() {
-        return stringParserService;
-    }
-
-    public CharParserService getCharParserService() {
-        return charParserService;
+    public ParserService getParserService() {
+        return parserService;
     }
 }

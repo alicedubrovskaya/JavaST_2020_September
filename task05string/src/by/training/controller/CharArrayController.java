@@ -1,19 +1,19 @@
 package by.training.controller;
 
-import by.training.serviсe.CharParserService;
 import by.training.serviсe.CharWordService;
+import by.training.serviсe.ParserService;
 import by.training.serviсe.factory.FactoryService;
 
 import java.io.IOException;
 
 public class CharArrayController {
     private CharWordService wordService;
-    private CharParserService parserService;
+    private ParserService parserService;
 
     public CharArrayController() {
         FactoryService factoryService = FactoryService.getInstance();
         this.wordService = factoryService.getCharWordService();
-        this.parserService = factoryService.getCharParserService();
+        this.parserService = factoryService.getParserService();
     }
 
     public void saveText(String string) {
