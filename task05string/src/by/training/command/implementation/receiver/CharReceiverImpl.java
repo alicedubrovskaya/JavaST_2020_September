@@ -5,6 +5,11 @@ import by.training.controller.CharArrayController;
 
 import java.util.Scanner;
 
+/**
+ * Class is an implementation of interface TextReceiver
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class CharReceiverImpl implements TextReceiver {
     private CharArrayController charArrayController;
     private Scanner in = new Scanner(System.in);

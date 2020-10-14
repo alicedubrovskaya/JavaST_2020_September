@@ -1,11 +1,10 @@
 package by.training.serviсe.implementation;
 
-import by.training.dao.DAOFactory;
-import by.training.dao.WordDAO;
 import by.training.serviсe.CharWordService;
 
 /**
- * Class is an implementation of interface StringService
+ * Class is an implementation of interface CharWordService.
+ * This class does operations with words, which type is char [].
  *
  * @author Alisa Dubrovskaya
  * @since 11/10/20
@@ -17,6 +16,13 @@ public class CharWordServiceImpl implements CharWordService {
     private static final char[] russianConsonants = {'б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р',
             'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ'};
 
+    /**
+     * Replaces specified letters of word with specified character
+     * @param character
+     * @param k
+     * @param string
+     * @return new word with replaced characters
+     */
     @Override
     public char[] replaceLetterWithAGivenCharacter(char character, int k, char[] string) {
         char resultingString[] = new char[string.length];
@@ -34,6 +40,14 @@ public class CharWordServiceImpl implements CharWordService {
         return resultingString;
     }
 
+    /**
+     * Replaces character in specified sequences with needed character
+     * @param preceding
+     * @param incorrect
+     * @param needed
+     * @param string
+     * @return new changed word
+     */
     @Override
     public char[] changeIncorrectCharacters(char preceding, char incorrect, char needed, char[] string) {
         char[] resultingString = new char[string.length];
@@ -48,6 +62,13 @@ public class CharWordServiceImpl implements CharWordService {
         return resultingString;
     }
 
+    /**
+     * Replaces word with another word if it's length corresponds to needed length
+     * @param length
+     * @param word
+     * @param wordToWrite
+     * @return new word
+     */
     @Override
     public char[] replaceWordOfSpecifiedLength(int length, char[] word, char[] wordToWrite) {
         char[] result;
@@ -59,6 +80,11 @@ public class CharWordServiceImpl implements CharWordService {
         return result;
     }
 
+    /**
+     * Checks if specified word starts with consonant or not
+     * @param word
+     * @return boolean variable (starts with consonant or not)
+     */
     @Override
     public boolean startsWithConsonant(char[] word) {
         boolean hasConsonant = false;
@@ -80,12 +106,22 @@ public class CharWordServiceImpl implements CharWordService {
         return hasConsonant;
     }
 
+    /**
+     * Checks if letter is english or not
+     * @param letter
+     * @return boolean variable (is english or not)
+     */
     @Override
     public boolean isEnglishLetter(char letter) {
         int code = (int) letter;
         return ((code > 96 && code < 123) || (code > 64 && code < 91));
     }
 
+    /**
+     * Checks if letter is russian or not
+     * @param letter
+     * @return boolean variable (is english or not)
+     */
     @Override
     public boolean isRussianLetter(char letter) {
         int code = (int) letter; //UTF-8
@@ -124,6 +160,11 @@ public class CharWordServiceImpl implements CharWordService {
         return words;
     }
 
+    /**
+     * Removes extra character from string. Leaves only letters (english, russian) and spaces
+     * @param string
+     * @return string without extra characters
+     */
     @Override
     public char[] removeExtraCharacters(char[] string) {
         char[] result;

@@ -1,5 +1,10 @@
 package by.training.serviсe;
 
+/**
+ * Interface for work with words, which type is char[]
+ *
+ * @author Alisa Dubrovskaya
+ */
 public interface CharWordService {
     char[] replaceLetterWithAGivenCharacter(char character, int k, char[] string);
 

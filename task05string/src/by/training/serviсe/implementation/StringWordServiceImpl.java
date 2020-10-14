@@ -5,6 +5,12 @@ import by.training.serviсe.StringWordService;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class is an implementation of interface StringWordService.
+ * This class does operations with words, which type is StringBuilder.
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class StringWordServiceImpl implements StringWordService {
     //TODO upperCase
     private static final char[] englishConsonants = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q',
@@ -12,6 +18,13 @@ public class StringWordServiceImpl implements StringWordService {
     private static final char[] russianConsonants = {'б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р',
             'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ'};
 
+    /**
+     * Replaces specified letters of word with specified character
+     * @param character
+     * @param k
+     * @param word
+     * @return new word with replaced characters
+     */
     @Override
     public StringBuilder replaceLetterWithAGivenCharacter(char character, int k, StringBuilder word) {
         StringBuilder result = new StringBuilder();
@@ -30,6 +43,14 @@ public class StringWordServiceImpl implements StringWordService {
         return result;
     }
 
+    /**
+     * Replaces character in specified sequences with needed character
+     * @param preceding
+     * @param incorrect
+     * @param needed
+     * @param word
+     * @return new changed word
+     */
     @Override
     public StringBuilder changeIncorrectCharacters(char preceding, char incorrect, char needed, StringBuilder word) {
         StringBuilder resultingString = new StringBuilder();
@@ -43,6 +64,13 @@ public class StringWordServiceImpl implements StringWordService {
         return resultingString;
     }
 
+    /**
+     * Replaces word with another word if it's length corresponds to needed length
+     * @param length
+     * @param word
+     * @param wordToWrite
+     * @return new word
+     */
     @Override
     public StringBuilder replaceWordOfSpecifiedLength(int length, StringBuilder word, StringBuilder wordToWrite) {
         StringBuilder result;
@@ -54,6 +82,11 @@ public class StringWordServiceImpl implements StringWordService {
         return result;
     }
 
+    /**
+     * Checks if specified word starts with consonant or not
+     * @param word
+     * @return words starting with consonant
+     */
     @Override
     public boolean startsWithConsonant(StringBuilder word) {
         boolean hasConsonant = false;
@@ -75,16 +108,33 @@ public class StringWordServiceImpl implements StringWordService {
         return hasConsonant;
     }
 
+    /**
+     * Checks if letter is english or not
+     * @param letter
+     * @return boolean variable (is english or not)
+     */
     public boolean isEnglishLetter(char letter) {
         int code = (int) letter;
         return ((code > 96 && code < 123) || (code > 64 && code < 91));
     }
 
+    /**
+     * Checks if letter is russian or not
+     * @param letter
+     * @return boolean variable (is english or not)
+     */
     public boolean isRussianLetter(char letter) {
         int code = (int) letter; //UTF-8
         return (code > 1040 && code < 1104);
     }
 
+    /**
+     *  Parsers string of chars to array of words.
+     *  The string is assumed to contain only words and spaces (single) between words
+     *
+     * @param string
+     * @return list of words
+     */
     @Override
     public List<StringBuilder> parseStringToWords(StringBuilder string) {
         List<StringBuilder> words = new ArrayList<>();
@@ -106,6 +156,11 @@ public class StringWordServiceImpl implements StringWordService {
         return words;
     }
 
+    /**
+     * Removes extra character from string. Leaves only letters (english, russian) and spaces
+     * @param string
+     * @return string without extra characters
+     */
     @Override
     public StringBuilder removeExtraCharacters(StringBuilder string) {
         StringBuilder result = new StringBuilder();

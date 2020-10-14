@@ -1,5 +1,10 @@
 package by.training.entity;
 
+/**
+ * CLass describes entity Text. Contains field words.
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class Text {
     char[][] words;
 

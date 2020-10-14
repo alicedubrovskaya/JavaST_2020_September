@@ -2,6 +2,11 @@ package by.training.command;
 
 import by.training.command.implementation.command.*;
 
+/**
+ * Class is responsible for initializing the interface Command with it's implementation
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class TextClient {
     private TextReceiver textReceiver;
 
@@ -9,6 +14,11 @@ public class TextClient {
         this.textReceiver = textReceiver;
     }
 
+    /**
+     * Inits interface Command with interface implementation
+     * @param option
+     * @return exemplar of interface Command
+     */
     public TextCommand initCommand(int option) {
         TextCommand command = null;
         switch (option) {

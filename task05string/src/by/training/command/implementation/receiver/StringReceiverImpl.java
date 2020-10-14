@@ -3,10 +3,15 @@ package by.training.command.implementation.receiver;
 import by.training.command.TextReceiver;
 import by.training.controller.StringController;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
+
+/**
+ * Class is an implementation of interface TextReceiver
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class StringReceiverImpl implements TextReceiver {
     private StringController stringController;
     private Scanner in = new Scanner(System.in);

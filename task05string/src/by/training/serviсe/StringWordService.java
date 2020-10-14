@@ -2,6 +2,11 @@ package by.training.serviсe;
 
 import java.util.List;
 
+/**
+ * Interface for work with words, which type is StringBuilder
+ *
+ * @author Alisa Dubrovskaya
+ */
 public interface StringWordService {
     StringBuilder replaceLetterWithAGivenCharacter(char character, int k, StringBuilder string);
 
