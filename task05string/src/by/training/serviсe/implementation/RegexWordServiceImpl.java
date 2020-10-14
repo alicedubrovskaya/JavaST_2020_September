@@ -1,36 +1,11 @@
 package by.training.serviсe.implementation;
 
-import by.training.dao.DAOFactory;
-import by.training.dao.WordDAO;
 import by.training.serviсe.StringWordService;
 
-import java.io.IOException;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegexWordServiceImpl implements StringWordService {
-    private WordDAO wordDAO;
-
-    public RegexWordServiceImpl() {
-        DAOFactory daoFactory = DAOFactory.getInstance();
-        this.wordDAO = daoFactory.getWordDAO();
-    }
-
-    @Override
-    public List<StringBuilder> getWords() {
-        return wordDAO.convertToString(wordDAO.getText().getWords());
-    }
-
-    @Override
-    public void saveText(List<StringBuilder> words) {
-        wordDAO.createText(wordDAO.convert(words));
-    }
-
-    @Override
-    public String getFromFile(String fileName) throws IOException {
-        return wordDAO.getTextFromFile(fileName);
-    }
 
     @Override
     public StringBuilder replaceLetterWithAGivenCharacter(char character, int k, StringBuilder string) {

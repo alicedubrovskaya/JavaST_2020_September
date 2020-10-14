@@ -1,40 +1,13 @@
 package by.training.serviсe.implementation;
 
-import by.training.dao.DAOFactory;
-import by.training.dao.WordDAO;
 import by.training.serviсe.StringWordService;
 
-import java.io.IOException;
-import java.util.List;
-
 public class StringWordServiceImpl implements StringWordService {
-    private WordDAO wordDAO;
-
     //TODO upperCase
     private static final char[] englishConsonants = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q',
             'r', 's', 't', 'v', 'w', 'x', 'y', 'z'};
     private static final char[] russianConsonants = {'б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р',
             'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ'};
-
-    public StringWordServiceImpl() {
-        DAOFactory daoFactory = DAOFactory.getInstance();
-        this.wordDAO = daoFactory.getWordDAO();
-    }
-
-    @Override
-    public List<StringBuilder> getWords() {
-        return wordDAO.convertToString(wordDAO.getText().getWords());
-    }
-
-    @Override
-    public void saveText(List<StringBuilder> words) {
-        wordDAO.createText(wordDAO.convert(words));
-    }
-
-    @Override
-    public String getFromFile(String fileName) throws IOException {
-        return wordDAO.getTextFromFile(fileName);
-    }
 
     @Override
     public StringBuilder replaceLetterWithAGivenCharacter(char character, int k, StringBuilder word) {
