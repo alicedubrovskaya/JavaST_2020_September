@@ -26,7 +26,8 @@ public class BookReceiver {
                 optionDelete();
                 break;
             case GET:
-                optionGetBook();
+                //TODO
+                optionLoadData();
                 break;
             default:
         }
@@ -50,6 +51,14 @@ public class BookReceiver {
             authors.add(in.nextLine());
         }
         bookController.createNewBook(title, numberOfPages, yearOfPublishing, publishingHouse, authors);
+    }
+
+    /**
+     * Example of file path: task06book/data/book.txt
+     */
+    private void optionLoadData(){
+        System.out.println("Enter filePath");
+        System.out.println(bookController.dataLoading(in.next()).toString());
     }
 
     private void optionDelete() {

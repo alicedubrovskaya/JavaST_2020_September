@@ -9,6 +9,8 @@ import by.training.service.repository.BookRepository;
 import by.training.service.repository.BookRepositoryImpl;
 import by.training.service.BookService;
 
+import java.io.IOException;
+
 public class BookServiceImpl implements BookService {
     BookRepository bookRepository = new BookRepositoryImpl();
 
@@ -19,6 +21,17 @@ public class BookServiceImpl implements BookService {
         } catch (BookAlreadyExistsException e) {
             System.err.println(e.getMessage());
         }
+    }
+
+    @Override
+    public Book getFromFile(String filePath) {
+        Book book = null;
+        try {
+            book = bookRepository.getFromFile(filePath);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+        return book;
     }
 
     @Override
