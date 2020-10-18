@@ -4,6 +4,7 @@ import by.training.entity.Book;
 import by.training.service.BookFactory;
 import by.training.service.BookService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BookController {
@@ -14,15 +15,19 @@ public class BookController {
         this.bookService = bookFactory.getBookService();
     }
 
-    public Book dataLoading(String filePath) {
-        return bookService.getFromFile(filePath);
+    public List<Book> dataLoading(String filePath) {
+        List<Book> books = bookService.getFromFile(filePath);
+        createNewBooks(books);
+        return books;
     }
 
-    public void createNewBook(String filePath){
-        Book book = dataLoading(filePath);
-        bookService.validate(book);
-        bookService.createNewBook(book);
+    public void createNewBooks(List<Book> books) {
+        for (Book book : books) {
+            bookService.validate(book);
+            bookService.createNewBook(book);
+        }
     }
+
 
     public void createNewBook(String title, int numberOfPages, int yearOfPublishing, String publishingHouse, List<String> authors) {
         Book book = new Book(title, numberOfPages, yearOfPublishing, publishingHouse, authors);

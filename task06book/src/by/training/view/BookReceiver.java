@@ -1,6 +1,7 @@
 package by.training.view;
 
 import by.training.controller.BookController;
+import by.training.entity.Book;
 import by.training.entity.TypeCommand;
 
 import java.util.ArrayList;
@@ -26,7 +27,9 @@ public class BookReceiver {
                 optionDelete();
                 break;
             case GET:
-                //TODO
+                optionGetBook();
+                break;
+            case LOAD:
                 optionLoadData();
                 break;
             default:
@@ -58,7 +61,7 @@ public class BookReceiver {
      */
     private void optionLoadData(){
         System.out.println("Enter filePath");
-        System.out.println(bookController.dataLoading(in.next()).toString());
+        printBooks(bookController.dataLoading(in.next()));
     }
 
     private void optionDelete() {
@@ -69,5 +72,11 @@ public class BookReceiver {
     private void optionGetBook() {
         System.out.println("Title: ");
         System.out.println(bookController.getBook(in.next()).toString());
+    }
+
+    private void printBooks(List<Book> books){
+        for (Book book: books){
+            System.out.println(book.toString());
+        }
     }
 }

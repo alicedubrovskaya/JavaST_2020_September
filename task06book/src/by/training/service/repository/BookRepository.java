@@ -4,6 +4,7 @@ import by.training.entity.Book;
 import by.training.exception.BookAlreadyExistsException;
 
 import java.io.IOException;
+import java.util.List;
 
 public interface BookRepository {
     Book get(String title);
@@ -12,5 +13,5 @@ public interface BookRepository {
 
     void remove(String title);
 
-    Book getFromFile(String filePath) throws IOException;
+    List<Book> getFromFile(String filePath) throws IOException;
 }

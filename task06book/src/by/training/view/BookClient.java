@@ -3,6 +3,7 @@ package by.training.view;
 import by.training.entity.TypeCommand;
 import by.training.view.command.DeleteCommand;
 import by.training.view.command.GetCommand;
+import by.training.view.command.LoadCommand;
 import by.training.view.command.NewBookCommand;
 
 public class BookClient {
@@ -23,6 +24,9 @@ public class BookClient {
                 break;
             case GET:
                 command=new GetCommand(bookReceiver);
+                break;
+            case LOAD:
+                command=new LoadCommand(bookReceiver);
                 break;
             default:
         }

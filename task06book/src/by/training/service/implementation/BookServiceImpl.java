@@ -10,6 +10,8 @@ import by.training.service.repository.BookRepositoryImpl;
 import by.training.service.BookService;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BookServiceImpl implements BookService {
     BookRepository bookRepository = new BookRepositoryImpl();
@@ -24,14 +26,15 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book getFromFile(String filePath) {
+    public List<Book> getFromFile(String filePath) {
         Book book = null;
+        List<Book> books = new ArrayList<>();
         try {
-            book = bookRepository.getFromFile(filePath);
+            books = bookRepository.getFromFile(filePath);
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
-        return book;
+        return books;
     }
 
     @Override

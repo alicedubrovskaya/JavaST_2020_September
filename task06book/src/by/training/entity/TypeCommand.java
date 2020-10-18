@@ -1,5 +1,5 @@
 package by.training.entity;
 
 public enum TypeCommand {
-    NEW_BOOK, DELETE, GET
+    NEW_BOOK, DELETE, GET, LOAD
 }
