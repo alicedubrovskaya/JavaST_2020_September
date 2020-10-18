@@ -1,28 +1,29 @@
 package by.training.dao.implementation;
 
 import by.training.dao.BookDao;
-import by.training.entity.data.BookList;
+import by.training.entity.data.BookSet;
 import by.training.entity.Book;
 import by.training.exception.BookAlreadyExistsException;
 import by.training.exception.BookNotFoundException;
 
 public class BookDaoImpl implements BookDao {
-    private BookList bookList = new BookList();
+    private BookSet bookSet = new BookSet();
 
     @Override
     public void create(Book book) throws BookAlreadyExistsException {
-        if (!bookList.bookExists(book.getTitle())) {
-            bookList.add(book);
-        } else throw new BookAlreadyExistsException(book.getTitle());
+        boolean doesntExist = bookSet.add(book);
+        if (!doesntExist) {
+            throw new BookAlreadyExistsException(book.getTitle());
+        }
     }
 
     @Override
     public void delete(String title) throws BookNotFoundException {
-        bookList.delete(title);
+        bookSet.delete(title);
     }
 
     @Override
     public Book get(String title) throws BookNotFoundException {
-        return bookList.get(title);
+        return bookSet.get(title);
     }
 }

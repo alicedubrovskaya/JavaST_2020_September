@@ -3,14 +3,14 @@ package by.training.entity.data;
 import by.training.entity.Book;
 import by.training.exception.BookNotFoundException;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
-public class BookList {
-    private List<Book> books = new ArrayList<>();
+public class BookSet {
+    private Set<Book> books =new HashSet<>();
 
-    public void add(Book book) {
-        books.add(book);
+    public boolean add(Book book) {
+        return books.add(book);
     }
 
     public void delete(String title) {
