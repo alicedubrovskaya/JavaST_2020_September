@@ -11,11 +11,45 @@ import java.util.Objects;
  */
 public class JaggedArray {
     private int[][] jaggedArrayInt;
-    private int id;
 
-    public JaggedArray(int[][] jaggedArrayInt, int id) {
-        this.id = id;
+    public JaggedArray(int[][] jaggedArrayInt) {
         this.jaggedArrayInt = jaggedArrayInt;
+    }
+
+    public JaggedArray(int verticalSize) {
+        this.jaggedArrayInt = new int[verticalSize][];
+    }
+
+    public JaggedArray(int verticalSize, int horizontalSize) {
+        this.jaggedArrayInt = new int[verticalSize][horizontalSize];
+    }
+
+    public void initializeRow(int i, int length) {
+        this.jaggedArrayInt[i] = new int[length];
+    }
+
+    public int getVerticalSize() {
+        return jaggedArrayInt.length;
+    }
+
+    public int getHorizontalSize(int row) {
+        return jaggedArrayInt[row].length;
+    }
+
+    public int getElement(int i, int j) {
+        return jaggedArrayInt[i][j];
+    }
+
+    public void setElement(int i, int j, int value) {
+        jaggedArrayInt[i][j] = value;
+    }
+
+    public int[] getRow(int i) {
+        return jaggedArrayInt[i];
+    }
+
+    public void setRow(int i, int[] array) {
+        jaggedArrayInt[i] = array;
     }
 
     @Override
@@ -24,28 +58,20 @@ public class JaggedArray {
         JaggedArray other = (JaggedArray) otherObject;
         return otherObject != null
                 && getClass() == otherObject.getClass()
-                && Arrays.equals(this.getJaggedArrayInt(), other.getJaggedArrayInt());
+                && Arrays.equals(this.jaggedArrayInt, other.jaggedArrayInt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(this.getJaggedArrayInt());
+        return Objects.hashCode(this.jaggedArrayInt);
     }
 
     @Override
     public String toString() {
         String array = "";
         for (int row = 0; row < jaggedArrayInt.length; row++) {
-            array +=Arrays.toString(jaggedArrayInt[row])+"\n";
+            array += Arrays.toString(jaggedArrayInt[row]) + "\n";
         }
         return "JaggedArray[jaggedArrayInt=\n" + array + "]";
-    }
-
-    public int[][] getJaggedArrayInt() {
-        return jaggedArrayInt;
-    }
-
-    public int getId() {
-        return id;
     }
 }

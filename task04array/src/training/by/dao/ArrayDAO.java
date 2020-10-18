@@ -17,9 +17,9 @@ public interface ArrayDAO {
 
     int[][] getElementsOfJaggedArrayFromFile(String fileName) throws IOException;
 
-    Array getArray();
+    Array getArray(int i);
 
-    List<JaggedArray> getJaggedArrayList();
+    JaggedArray getJaggedArray(int position);
 
     void createArrayWithElementsFromFile();
 

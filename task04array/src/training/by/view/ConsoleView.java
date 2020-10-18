@@ -26,7 +26,7 @@ public class ConsoleView {
             default:
         }
         Locale current = new Locale(language, country);
-        ResourceBundle rb = ResourceBundle.getBundle("property.text", current);
+        ResourceBundle rb = ResourceBundle.getBundle("property.array", current);
         String s1 = rb.getString("console.array");
 
         System.out.println(s1);

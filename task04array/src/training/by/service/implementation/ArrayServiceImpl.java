@@ -22,31 +22,34 @@ public class ArrayServiceImpl implements ArrayService {
     }
 
     @Override
-    public Array getArray() {
-        return arrayDAO.getArray();
+    public Array getArray(int i) {
+        return arrayDAO.getArray(i);
     }
-
 
     /**
      * Binary search of element.
      * Gets sorted array. There are left and right bounds of search that narrow. How they narrow: it depends on
      * whether required element is less or more than element in the middle.
      *
+     * @param array
      * @param value
      * @param left
      * @param right
-     * @return position of required element
+     * @return
      */
     @Override
-    public int binarySearch(int[] arrayInt, int value, int left, int right) {
+    public int binarySearch(Array array, int value, int left, int right) {
         int position = -1;
+
         while (left <= right) {
             int middle = (left + right) / 2;
-            if (arrayInt[middle] == value) {
+            int element = 0;
+            element = array.getElement(middle);
+            if (element == value) {
                 position = middle;
                 break;
             }
-            if (value < arrayInt[middle]) {
+            if (value < element) {
                 right = middle - 1;
             } else {
                 left = middle + 1;
@@ -61,12 +64,15 @@ public class ArrayServiceImpl implements ArrayService {
      * @return list of found prime numbers
      */
     @Override
-    public List<Integer> findPrimeNumbers() {
+    public List<Integer> findPrimeNumbers(int arrayPosition) {
         List<Integer> primeNumbers = new ArrayList<>();
-        int[] arrayInt = arrayDAO.getArray().getArrayInt();
-        for (int i = 0; i < arrayInt.length; i++) {
-            if (isPrime(arrayInt[i])) {
-                primeNumbers.add(arrayInt[i]);
+        Array array = arrayDAO.getArray(arrayPosition);
+
+        for (int i = 0; i < array.getLength(); i++) {
+            int element = 0;
+            element = array.getElement(i);
+            if (isPrime(element)) {
+                primeNumbers.add(element);
             }
         }
         return primeNumbers;
@@ -110,20 +116,21 @@ public class ArrayServiceImpl implements ArrayService {
     /**
      * Finds fibonacci numbers in specified array.
      *
-     * @param arrayInt  - sorted array of numbers
-     * @param maxNumber - maxNumber in arrayInt
-     * @return fibonacci list
+     * @param maxNumber
+     * @return
      */
     @Override
-    public List<Integer> findFibonacciNumbers(int[] arrayInt, int maxNumber) {
+    public List<Integer> findFibonacciNumbers(Array array, int maxNumber) {
         List<Integer> fibonacciFromArray = new ArrayList<>();
         int[] fibonacciNumbers = getFibonacciNumbers(maxNumber);
         int position = 0;
 
-        for (int i = 0; i < arrayInt.length; i++) {
-            while (fibonacciNumbers[position] <= arrayInt[i]) {
-                if (arrayInt[i] == fibonacciNumbers[position]) {
-                    fibonacciFromArray.add(arrayInt[i]);
+        for (int i = 0; i < array.getLength(); i++) {
+            int element = 0;
+            element = array.getElement(i);
+            while (fibonacciNumbers[position] <= element) {
+                if (element == fibonacciNumbers[position]) {
+                    fibonacciFromArray.add(element);
                 }
                 position++;
             }
@@ -170,12 +177,15 @@ public class ArrayServiceImpl implements ArrayService {
      * @return list of found numbers
      */
     @Override
-    public List<Integer> findNumbersWithoutTHeSameDigitsInArray(int countOfDigits) {
+    public List<Integer> findNumbersWithoutTHeSameDigitsInArray(int countOfDigits, int arrayPosition) {
         List<Integer> numbers = new ArrayList<>();
-        int[] arrayInt = arrayDAO.getArray().getArrayInt();
-        for (int i = 0; i < arrayInt.length; i++) {
-            if (isNDigitWithoutIdenticalNumerals(countOfDigits, arrayInt[i])) {
-                numbers.add(arrayInt[i]);
+        Array array = arrayDAO.getArray(arrayPosition);
+
+        for (int i = 0; i < array.getLength(); i++) {
+            int element = 0;
+            element = array.getElement(i);
+            if (isNDigitWithoutIdenticalNumerals(countOfDigits, element)) {
+                numbers.add(element);
             }
         }
         return numbers;

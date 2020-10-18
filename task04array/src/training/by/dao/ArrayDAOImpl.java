@@ -1,6 +1,7 @@
 package training.by.dao;
 
 import training.by.entity.Array;
+import training.by.entity.ArrayList;
 import training.by.entity.JaggedArray;
 import training.by.entity.JaggedArrayList;
 import training.by.exception.IncorrectTypeOfElementsException;
@@ -18,13 +19,12 @@ import java.util.Scanner;
  * @author Alisa Dubrovskaya
  */
 public class ArrayDAOImpl implements ArrayDAO {
-    private Array array;
+    private ArrayList arrayList;
     private JaggedArrayList jaggedArrayList;
-    private int idJaggedArray;
 
     public ArrayDAOImpl() {
+        this.arrayList = new ArrayList();
         this.jaggedArrayList = new JaggedArrayList();
-        this.idJaggedArray = 0;
     }
 
     /**
@@ -89,13 +89,13 @@ public class ArrayDAOImpl implements ArrayDAO {
 
 
     @Override
-    public Array getArray() {
-        return array;
+    public Array getArray(int i) {
+        return arrayList.getArray(i);
     }
 
     @Override
-    public List<JaggedArray> getJaggedArrayList() {
-        return jaggedArrayList.getJaggedArrays();
+    public JaggedArray getJaggedArray(int position) {
+        return jaggedArrayList.getArray(position);
     }
 
     /**
@@ -111,7 +111,7 @@ public class ArrayDAOImpl implements ArrayDAO {
             for (Integer element : arrayInt) {
                 System.out.print(element + " ");
             }
-            this.array = new Array(arrayInt);
+            this.arrayList.addArray(new Array(arrayInt));
         } catch (IOException e) {
             System.out.println("Array wasn't created");
         } catch (IncorrectTypeOfElementsException e) {
@@ -139,15 +139,14 @@ public class ArrayDAOImpl implements ArrayDAO {
 
     @Override
     public void createArray(Integer... elements) {
-        this.array = new Array(elements);
+        arrayList.addArray(new Array(elements));
     }
 
     @Override
     public int createArray(int[][] arrayInt) {
-        idJaggedArray++;
-        JaggedArray jaggedArray = new JaggedArray(arrayInt, idJaggedArray);
+        JaggedArray jaggedArray = new JaggedArray(arrayInt);
         this.jaggedArrayList.add(jaggedArray);
-        return jaggedArray.getId();
+        return jaggedArrayList.getSize()-1;
     }
 
     /**

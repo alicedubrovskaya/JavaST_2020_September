@@ -1,6 +1,7 @@
 package training.by.view;
 
 import training.by.controller.JaggedArrayController;
+import training.by.entity.JaggedArray;
 import training.by.exception.ElementNotFoundException;
 
 import java.util.*;
@@ -147,11 +148,7 @@ public class JaggedArrayView {
         optionPrintMatrix(jaggedArrayController.sortByMinElementsInRows(in.nextInt(), in.nextInt() == 1));
     }
 
-    protected void optionPrintMatrix(int[][] matrix) {
-        String array = "";
-        for (int[] ints : matrix) {
-            array += Arrays.toString(ints) + "\n";
-        }
-        System.out.println(array);
+    protected void optionPrintMatrix(JaggedArray matrix) {
+        System.out.println(matrix.toString());
     }
 }

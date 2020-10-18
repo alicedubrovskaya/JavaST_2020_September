@@ -1,5 +1,6 @@
 package training.by.service;
 
+import training.by.entity.Array;
 import training.by.entity.JaggedArray;
 import training.by.exception.MatricesAreIncompatibleException;
 import training.by.exception.MatrixCannotBeTransposedException;
@@ -18,16 +19,16 @@ public interface JaggedArrayService {
 
     boolean sameDimensionOfJaggedArrays(int idFirstArray, int idSecondArray);
 
-    int[][] arithmeticOperationOnMatrices(int idFirstMatrix, int idSecondMatrix, boolean addition) throws MatricesAreIncompatibleException;
+    JaggedArray arithmeticOperationOnMatrices(int idFirstMatrix, int idSecondMatrix, boolean addition) throws MatricesAreIncompatibleException;
 
-    int[][] multiplyByConstant(int id, int constant);
+    JaggedArray multiplyByConstant(int id, int constant);
 
-    int[][] transpose(int id) throws MatrixCannotBeTransposedException;
+    JaggedArray transpose(int id) throws MatrixCannotBeTransposedException;
 
-    int[] sumOfElementsInRows(int[][] array);
+    int [] sumOfElementsInRows(JaggedArray array);
 
-    int[] maxElementsInRows(int[][] array);
+    int []  maxElementsInRows(JaggedArray array);
 
-    int[] minElementsInRows(int[][] array);
+    int [] minElementsInRows(JaggedArray array);
 
 }

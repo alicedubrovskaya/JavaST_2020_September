@@ -2,10 +2,12 @@ package training.by.service.implementation;
 
 import training.by.dao.ArrayDAO;
 import training.by.dao.DAOFactory;
+import training.by.entity.Array;
 import training.by.entity.JaggedArray;
 import training.by.exception.MatricesAreIncompatibleException;
 import training.by.exception.MatrixCannotBeTransposedException;
 import training.by.service.BaseOperationsService;
+import training.by.service.FindingService;
 import training.by.service.JaggedArrayService;
 
 import java.util.List;
@@ -17,10 +19,12 @@ import java.util.List;
  */
 public class JaggedArrayServiceImpl implements JaggedArrayService {
     private BaseOperationsService baseOperationsService;
+    private FindingService findingService;
     private ArrayDAO arrayDAO;
 
-    public JaggedArrayServiceImpl(BaseOperationsService baseOperationsService) {
+    public JaggedArrayServiceImpl(BaseOperationsService baseOperationsService, FindingService findingService) {
         this.baseOperationsService = baseOperationsService;
+        this.findingService = findingService;
         DAOFactory daoFactory = DAOFactory.getInstance();
         this.arrayDAO = daoFactory.getArrayDAO();
     }
@@ -33,15 +37,7 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
      */
     @Override
     public JaggedArray findJaggedArray(int id) {
-        JaggedArray jaggedArray = null;
-        List<JaggedArray> jaggedArrayList = arrayDAO.getJaggedArrayList();
-
-        for (JaggedArray element : jaggedArrayList) {
-            if (element.getId() == id) {
-                jaggedArray = element;
-            }
-        }
-        return jaggedArray;
+        return arrayDAO.getJaggedArray(id);
     }
 
     /**
@@ -54,14 +50,14 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
     @Override
     public boolean sameDimensionOfJaggedArrays(int idFirstArray, int idSecondArray) {
         boolean isEqualDimension = true;
-        int[][] firstArray = findJaggedArray(idFirstArray).getJaggedArrayInt();
-        int[][] secondArray = findJaggedArray(idSecondArray).getJaggedArrayInt();
+        JaggedArray firstArray = findJaggedArray(idFirstArray);
+        JaggedArray secondArray = findJaggedArray(idSecondArray);
 
-        if (firstArray.length != secondArray.length) {
+        if (firstArray.getVerticalSize() != secondArray.getVerticalSize()) {
             isEqualDimension = false;
         } else {
-            for (int row = 0; row < firstArray.length; row++) {
-                if (firstArray[row].length != secondArray[row].length) {
+            for (int row = 0; row < firstArray.getVerticalSize(); row++) {
+                if (firstArray.getHorizontalSize(row) != secondArray.getHorizontalSize(row)) {
                     isEqualDimension = false;
                     break;
                 }
@@ -80,11 +76,11 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
     @Override
     public boolean squareMatrix(int id) {
         boolean isSquare = true;
-        int[][] array = findJaggedArray(id).getJaggedArrayInt();
-        int countOfRows = array.length;
+        JaggedArray array = findJaggedArray(id);
+        int countOfRows = array.getVerticalSize();
 
-        for (int[] ints : array) {
-            if (ints.length != countOfRows) {
+        for (int i = 0; i < array.getVerticalSize(); i++) {
+            if (array.getHorizontalSize(i) != countOfRows) {
                 isSquare = false;
                 break;
             }
@@ -101,11 +97,11 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
     @Override
     public boolean rectangularMatrix(int id) {
         boolean isSquare = true;
-        int[][] array = findJaggedArray(id).getJaggedArrayInt();
-        int countOfColumns = array[0].length;
+        JaggedArray array = findJaggedArray(id);
+        int countOfColumns = array.getHorizontalSize(0);
 
-        for (int[] ints : array) {
-            if (ints.length != countOfColumns) {
+        for (int i = 0; i < array.getVerticalSize(); i++) {
+            if (array.getHorizontalSize(i) != countOfColumns) {
                 isSquare = false;
                 break;
             }
@@ -124,23 +120,25 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
      * @throws MatricesAreIncompatibleException
      */
     @Override
-    public int[][] arithmeticOperationOnMatrices(int idFirstMatrix, int idSecondMatrix, boolean addition)
+    public JaggedArray arithmeticOperationOnMatrices(int idFirstMatrix, int idSecondMatrix, boolean addition)
             throws MatricesAreIncompatibleException {
 
-        int[][] resultingMatrix;
+        JaggedArray resultingMatrix;
         if (sameDimensionOfJaggedArrays(idFirstMatrix, idSecondMatrix)) {
-            int[][] firstMatrix = findJaggedArray(idFirstMatrix).getJaggedArrayInt();
-            int[][] secondMatrix = findJaggedArray(idSecondMatrix).getJaggedArrayInt();
-            resultingMatrix = new int[firstMatrix.length][];
+            JaggedArray firstMatrix = findJaggedArray(idFirstMatrix);
+            JaggedArray secondMatrix = findJaggedArray(idSecondMatrix);
+            resultingMatrix = new JaggedArray(firstMatrix.getVerticalSize());
 
-            for (int i = 0; i < firstMatrix.length; i++) {
-                resultingMatrix[i] = new int[firstMatrix[i].length];
+            for (int i = 0; i < firstMatrix.getVerticalSize(); i++) {
+                resultingMatrix.initializeRow(i, firstMatrix.getHorizontalSize(0));
 
-                for (int j = 0; j < firstMatrix[i].length; j++) {
+                for (int j = 0; j < firstMatrix.getHorizontalSize(i); j++) {
                     if (addition) {
-                        resultingMatrix[i][j] = baseOperationsService.addition(firstMatrix[i][j], secondMatrix[i][j]);
+                        resultingMatrix.setElement(i, j,
+                                baseOperationsService.addition(firstMatrix.getElement(i, j), secondMatrix.getElement(i, j)));
                     } else {
-                        resultingMatrix[i][j] = baseOperationsService.subtraction(firstMatrix[i][j], secondMatrix[i][j]);
+                        resultingMatrix.setElement(i, j,
+                                baseOperationsService.subtraction(firstMatrix.getElement(i, j), secondMatrix.getElement(i, j)));
                     }
                 }
             }
@@ -158,14 +156,15 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
      * @return new resulting matrix
      */
     @Override
-    public int[][] multiplyByConstant(int id, int constant) {
-        int[][] matrix = findJaggedArray(id).getJaggedArrayInt();
-        int[][] resultingMatrix = new int[matrix.length][];
+    public JaggedArray multiplyByConstant(int id, int constant) {
+        JaggedArray matrix = findJaggedArray(id);
+        JaggedArray resultingMatrix = new JaggedArray(matrix.getVerticalSize());
 
-        for (int row = 0; row < matrix.length; row++) {
-            resultingMatrix[row] = new int[matrix[row].length];
-            for (int column = 0; column < matrix[row].length; column++) {
-                resultingMatrix[row][column] = matrix[row][column] * constant;
+        for (int row = 0; row < matrix.getVerticalSize(); row++) {
+            resultingMatrix.initializeRow(row, matrix.getHorizontalSize(row));
+
+            for (int column = 0; column < matrix.getHorizontalSize(row); column++) {
+                resultingMatrix.setElement(row, column, matrix.getElement(row, column) * constant);
             }
         }
         return resultingMatrix;
@@ -180,21 +179,21 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
      * @throws MatrixCannotBeTransposedException
      */
     @Override
-    public int[][] transpose(int id) throws MatrixCannotBeTransposedException {
-        int[][] matrix = findJaggedArray(id).getJaggedArrayInt();
+    public JaggedArray transpose(int id) throws MatrixCannotBeTransposedException {
+        JaggedArray matrix = findJaggedArray(id);
 
         if (rectangularMatrix(id)) {
-            int[][] resultingMatrix = new int[matrix[0].length][matrix.length];
+            JaggedArray resultingMatrix = new JaggedArray(matrix.getHorizontalSize(0), matrix.getVerticalSize());
 
-            for (int row = 0; row < matrix.length; row++) {
-                for (int column = 0; column < matrix[row].length; column++) {
-                    resultingMatrix[column][row] = matrix[row][column];
+            for (int row = 0; row < matrix.getVerticalSize(); row++) {
+                for (int column = 0; column < matrix.getHorizontalSize(row); column++) {
+                    resultingMatrix.setElement(column, row, matrix.getElement(row, column));
                 }
             }
             return resultingMatrix;
         } else if (squareMatrix(id)) {
-            for (int i = 0; i < matrix.length; i++) {
-                for (int j = 0; j < matrix[i].length; j++) {
+            for (int i = 0; i < matrix.getVerticalSize(); i++) {
+                for (int j = 0; j < matrix.getHorizontalSize(i); j++) {
                     baseOperationsService.swap(matrix, i, j);
                 }
             }
@@ -211,11 +210,11 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
      * @return sum
      */
     @Override
-    public int[] sumOfElementsInRows(int[][] array) {
-        int[] sums = new int[array.length];
+    public int[] sumOfElementsInRows(JaggedArray array) {
+        int[] sums = new int[array.getVerticalSize()];
 
-        for (int i = 0; i < array.length; i++) {
-            sums[i] = baseOperationsService.sumOfElements(array[i]);
+        for (int i = 0; i < array.getVerticalSize(); i++) {
+            sums[i] = findingService.sumOfElements(new Array(array.getRow(i)));
         }
         return sums;
     }
@@ -227,11 +226,11 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
      * @return max elements
      */
     @Override
-    public int[] maxElementsInRows(int[][] array) {
-        int[] maxElements = new int[array.length];
+    public int[] maxElementsInRows(JaggedArray array) {
+        int[] maxElements = new int[array.getVerticalSize()];
 
-        for (int i = 0; i < array.length; i++) {
-            maxElements[i] = baseOperationsService.findMaxValue(array[i]);
+        for (int i = 0; i < array.getVerticalSize(); i++) {
+            maxElements[i] = findingService.findMaxValue(new Array(array.getRow(i)));
         }
         return maxElements;
     }
@@ -243,11 +242,11 @@ public class JaggedArrayServiceImpl implements JaggedArrayService {
      * @return min elements
      */
     @Override
-    public int[] minElementsInRows(int[][] array) {
-        int[] minElements = new int[array.length];
+    public int[] minElementsInRows(JaggedArray array) {
+        int[] minElements = new int[array.getVerticalSize()];
 
-        for (int i = 0; i < array.length; i++) {
-            minElements[i] = baseOperationsService.findMinValue(array[i]);
+        for (int i = 0; i < array.getVerticalSize(); i++) {
+            minElements[i] = findingService.findMinValue(new Array(array.getRow(i)));
         }
         return minElements;
     }

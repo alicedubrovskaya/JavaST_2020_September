@@ -1,8 +1,6 @@
 package training.by.service;
 
-import training.by.service.implementation.ArrayServiceImpl;
-import training.by.service.implementation.BaseOperationsServiceImpl;
-import training.by.service.implementation.JaggedArrayServiceImpl;
+import training.by.service.implementation.*;
 
 /**
  * Class represents service factory. Realized factory pattern
@@ -17,14 +15,16 @@ public class ServiceFactory {
 
     private final BaseOperationsService baseOperationsService = new BaseOperationsServiceImpl();
 
-    private final JaggedArrayService jaggedArrayService = new JaggedArrayServiceImpl(baseOperationsService);
-
+    private final FindingService findingService = new FindingServiceImpl();
+    private final JaggedArrayService jaggedArrayService = new JaggedArrayServiceImpl(baseOperationsService, findingService);
+    private final CreationService creationService = new CreationServiceImpl(baseOperationsService);
+    private final SortingService sortingService = new SortingServiceImpl(baseOperationsService);
 
     private ServiceFactory() {
     }
 
     public static ServiceFactory getInstance() {
-            return instance;
+        return instance;
     }
 
     public ArrayService getArrayService() {
@@ -37,5 +37,17 @@ public class ServiceFactory {
 
     public JaggedArrayService getJaggedArrayService() {
         return jaggedArrayService;
+    }
+
+    public CreationService getCreationService() {
+        return creationService;
+    }
+
+    public FindingService getFindingService() {
+        return findingService;
+    }
+
+    public SortingService getSortingService() {
+        return sortingService;
     }
 }

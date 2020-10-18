@@ -1,12 +1,11 @@
 package training.by.controller;
 
+import training.by.entity.Array;
 import training.by.entity.JaggedArray;
 import training.by.exception.ElementNotFoundException;
 import training.by.exception.MatricesAreIncompatibleException;
 import training.by.exception.MatrixCannotBeTransposedException;
-import training.by.service.BaseOperationsService;
-import training.by.service.JaggedArrayService;
-import training.by.service.ServiceFactory;
+import training.by.service.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,11 +18,17 @@ import java.util.Map;
 public class JaggedArrayController {
     private JaggedArrayService jaggedArrayService;
     private BaseOperationsService baseOperationsService;
+    private FindingService findingService;
+    private SortingService sortingService;
+    private CreationService creationService;
 
     public JaggedArrayController() {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         this.jaggedArrayService = serviceFactory.getJaggedArrayService();
         this.baseOperationsService = serviceFactory.getBaseOperationsService();
+        this.findingService = serviceFactory.getFindingService();
+        this.sortingService = serviceFactory.getSortingService();
+        this.creationService = serviceFactory.getCreationService();
     }
 
     /**
@@ -32,23 +37,23 @@ public class JaggedArrayController {
     public int createNewArray(int rowCount, int columnCount) {
         int[][] arrayInt = new int[rowCount][columnCount];
         for (int i = 0; i < rowCount; i++) {
-            arrayInt[i] = baseOperationsService.generateOneDimensionalArray(columnCount);
+            arrayInt[i] = creationService.generateOneDimensionalArray(columnCount);
         }
-        return baseOperationsService.createArray(arrayInt);
+        return creationService.createArray(arrayInt);
     }
 
     /**
      * Creates new exemplar of class JaggedArray with elements from console
      */
     public int createNewArray(int[][] jaggedArrayInt) {
-        return baseOperationsService.createArray(jaggedArrayInt);
+        return creationService.createArray(jaggedArrayInt);
     }
 
     /**
      * Creates new exemplar of class JaggedArray with elements from file
      */
     public void createNewArrayFromFile(String filePath) {
-        baseOperationsService.createJaggedArray(filePath);
+        creationService.createJaggedArray(filePath);
     }
 
     /**
@@ -63,10 +68,10 @@ public class JaggedArrayController {
         int positionColumn = -1;
         int positionRow = -1;
         boolean isFound = false;
-        int[][] jaggedArrayInt = jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
+        JaggedArray jaggedArrayInt = jaggedArrayService.findJaggedArray(id);
 
-        for (int row = 0; row < jaggedArrayInt.length; row++) {
-            positionColumn = baseOperationsService.findElement(value, jaggedArrayInt[row]);
+        for (int row = 0; row < jaggedArrayInt.getVerticalSize(); row++) {
+            positionColumn = findingService.findElement(value, new Array(jaggedArrayInt.getRow(row)));
             if (positionColumn > -1 && !isFound) {
                 positionRow = row;
                 isFound = true;
@@ -90,13 +95,13 @@ public class JaggedArrayController {
     public Map<String, Integer> findMinAndMaxValue(int id) {
         Map<String, Integer> values = new HashMap<>();
 
-        int[][] arrayInt = jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
-        int minValue = arrayInt[0][0];
-        int maxValue = arrayInt[0][0];
+        JaggedArray arrayInt = jaggedArrayService.findJaggedArray(id);
+        int minValue = arrayInt.getElement(0, 0);
+        int maxValue = arrayInt.getElement(0, 0);
 
-        for (int i = 0; i < arrayInt.length; i++) {
-            int minValueOneDimensionalArray = baseOperationsService.findMinValue(arrayInt[i]);
-            int maxValueOneDimensionalArray = baseOperationsService.findMaxValue(arrayInt[i]);
+        for (int i = 0; i < arrayInt.getVerticalSize(); i++) {
+            int minValueOneDimensionalArray = findingService.findMinValue(new Array(arrayInt.getRow(i)));
+            int maxValueOneDimensionalArray = findingService.findMaxValue(new Array(arrayInt.getRow(i)));
             if (minValueOneDimensionalArray < minValue) {
                 minValue = minValueOneDimensionalArray;
             }
@@ -127,8 +132,8 @@ public class JaggedArrayController {
      * @param secondId
      * @return result of addition
      */
-    public int[][] additionOfTwoMatrices(int firstId, int secondId) {
-        int[][] resultingMatrix = null;
+    public JaggedArray additionOfTwoMatrices(int firstId, int secondId) {
+        JaggedArray resultingMatrix = null;
         try {
             resultingMatrix = jaggedArrayService.arithmeticOperationOnMatrices(firstId, secondId, true);
         } catch (MatricesAreIncompatibleException e) {
@@ -144,8 +149,8 @@ public class JaggedArrayController {
      * @param secondId
      * @return result of subtraction
      */
-    public int[][] subtractionOfTwoMatrices(int firstId, int secondId) {
-        int[][] resultingMatrix = null;
+    public JaggedArray subtractionOfTwoMatrices(int firstId, int secondId) {
+        JaggedArray resultingMatrix = null;
         try {
             resultingMatrix = jaggedArrayService.arithmeticOperationOnMatrices(firstId, secondId, false);
         } catch (MatricesAreIncompatibleException e) {
@@ -161,7 +166,7 @@ public class JaggedArrayController {
      * @param constant
      * @return result of multiplying
      */
-    public int[][] multiplyByConstant(int id, int constant) {
+    public JaggedArray multiplyByConstant(int id, int constant) {
         return jaggedArrayService.multiplyByConstant(id, constant);
     }
 
@@ -171,8 +176,8 @@ public class JaggedArrayController {
      * @param id
      * @return result of transposition
      */
-    public int[][] transposeMatrix(int id) {
-        int[][] transposedMatrix = null;
+    public JaggedArray transposeMatrix(int id) {
+        JaggedArray transposedMatrix = null;
         try {
             transposedMatrix = jaggedArrayService.transpose(id);
         } catch (MatrixCannotBeTransposedException e) {
@@ -189,16 +194,16 @@ public class JaggedArrayController {
      * @param ascending
      * @return result of sort
      */
-    public int[][] sortBySumsOfElementsInRows(int id, boolean ascending) {
-        int array[][] = jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
-        int resultingArray[][] = new int[array.length][];
+    public JaggedArray sortBySumsOfElementsInRows(int id, boolean ascending) {
+        JaggedArray array = jaggedArrayService.findJaggedArray(id);
+        JaggedArray resultingArray = new JaggedArray(array.getVerticalSize());
 
         int sums[] = jaggedArrayService.sumOfElementsInRows(array);
-        int sortedSums[];
+        Array sortedSums;
         if (ascending) {
-            sortedSums = baseOperationsService.bubbleSort(sums);
+            sortedSums = sortingService.bubbleSort(new Array(sums));
         } else {
-            sortedSums = baseOperationsService.bubbleSortDescending(sums);
+            sortedSums = sortingService.bubbleSortDescending(new Array(sums));
         }
 
 
@@ -207,9 +212,9 @@ public class JaggedArrayController {
             indexOfSumRows.put(sums[i], i);
         }
 
-        for (int i = 0; i < sortedSums.length; i++) {
-            int rowOfArray = indexOfSumRows.get(sortedSums[i]);
-            resultingArray[i] = array[rowOfArray];
+        for (int i = 0; i < sortedSums.getLength(); i++) {
+            int rowOfArray = indexOfSumRows.get(sortedSums.getElement(i));
+            resultingArray.setRow(i, array.getRow(rowOfArray));
         }
 
         return resultingArray;
@@ -223,16 +228,16 @@ public class JaggedArrayController {
      * @param ascending
      * @return sorted result
      */
-    public int[][] sortByMaxElementsInRows(int id, boolean ascending) {
-        int array[][] = jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
-        int resultingArray[][] = new int[array.length][];
+    public JaggedArray sortByMaxElementsInRows(int id, boolean ascending) {
+        JaggedArray array = jaggedArrayService.findJaggedArray(id);
+        JaggedArray resultingArray = new JaggedArray(array.getVerticalSize());
 
         int maxElements[] = jaggedArrayService.maxElementsInRows(array);
-        int sortedMaxElements[];
+        Array sortedMaxElements;
         if (ascending) {
-            sortedMaxElements = baseOperationsService.bubbleSort(maxElements);
+            sortedMaxElements = sortingService.bubbleSort(new Array(maxElements));
         } else {
-            sortedMaxElements = baseOperationsService.bubbleSortDescending(maxElements);
+            sortedMaxElements = sortingService.bubbleSortDescending(new Array(maxElements));
         }
 
         Map<Integer, Integer> indexOfMaxElementsRows = new HashMap<>();
@@ -240,9 +245,9 @@ public class JaggedArrayController {
             indexOfMaxElementsRows.put(maxElements[i], i);
         }
 
-        for (int i = 0; i < sortedMaxElements.length; i++) {
-            int rowOfArray = indexOfMaxElementsRows.get(sortedMaxElements[i]);
-            resultingArray[i] = array[rowOfArray];
+        for (int i = 0; i < sortedMaxElements.getLength(); i++) {
+            int rowOfArray = indexOfMaxElementsRows.get(sortedMaxElements.getElement(i));
+            resultingArray.setRow(i, array.getRow(rowOfArray));
         }
 
         return resultingArray;
@@ -256,16 +261,16 @@ public class JaggedArrayController {
      * @param ascending
      * @return
      */
-    public int[][] sortByMinElementsInRows(int id, boolean ascending) {
-        int array[][] = jaggedArrayService.findJaggedArray(id).getJaggedArrayInt();
-        int resultingArray[][] = new int[array.length][];
+    public JaggedArray sortByMinElementsInRows(int id, boolean ascending) {
+        JaggedArray array = jaggedArrayService.findJaggedArray(id);
+        JaggedArray resultingArray = new JaggedArray(array.getVerticalSize());
 
         int minElements[] = jaggedArrayService.minElementsInRows(array);
-        int sortedMinElements[];
+        Array sortedMinElements;
         if (ascending) {
-            sortedMinElements = baseOperationsService.bubbleSort(minElements);
+            sortedMinElements = sortingService.bubbleSort(new Array(minElements));
         } else {
-            sortedMinElements = baseOperationsService.bubbleSortDescending(minElements);
+            sortedMinElements = sortingService.bubbleSortDescending(new Array(minElements));
         }
 
         Map<Integer, Integer> indexOfMaxElementsRows = new HashMap<>();
@@ -273,9 +278,9 @@ public class JaggedArrayController {
             indexOfMaxElementsRows.put(minElements[i], i);
         }
 
-        for (int i = 0; i < sortedMinElements.length; i++) {
-            int rowOfArray = indexOfMaxElementsRows.get(sortedMinElements[i]);
-            resultingArray[i] = array[rowOfArray];
+        for (int i = 0; i < sortedMinElements.getLength(); i++) {
+            int rowOfArray = indexOfMaxElementsRows.get(sortedMinElements.getElement(i));
+            resultingArray.setRow(i, array.getRow(rowOfArray));
         }
 
         return resultingArray;

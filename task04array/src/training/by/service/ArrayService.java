@@ -11,20 +11,20 @@ import java.util.List;
  * @since 03/10/20
  */
 public interface ArrayService {
-    Array getArray();
+    Array getArray(int i);
 
-    int binarySearch(int[] arrayInt, int value, int left, int right);
+    int binarySearch(Array array, int value, int left, int right);
 
-    List<Integer> findPrimeNumbers();
+    List<Integer> findPrimeNumbers(int arrayPosition);
 
     boolean isPrime(int number);
 
     int[] getFibonacciNumbers(int count);
 
-    List<Integer> findFibonacciNumbers(int[] arrayInt, int maxNumber);
+    List<Integer> findFibonacciNumbers(Array array, int maxNumber);
 
     boolean isNDigitWithoutIdenticalNumerals(int countOfDigits, int number);
 
-    List<Integer> findNumbersWithoutTHeSameDigitsInArray(int countOfDigits);
+    List<Integer> findNumbersWithoutTHeSameDigitsInArray(int countOfDigits, int arrayPosition);
 
 }

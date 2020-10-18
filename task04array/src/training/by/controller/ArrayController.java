@@ -1,9 +1,8 @@
 package training.by.controller;
 
+import training.by.entity.Array;
 import training.by.exception.ElementNotFoundException;
-import training.by.service.ArrayService;
-import training.by.service.BaseOperationsService;
-import training.by.service.ServiceFactory;
+import training.by.service.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -18,11 +17,17 @@ import java.util.Map;
 public class ArrayController {
     private ArrayService arrayService;
     private BaseOperationsService baseOperationsService;
+    private FindingService findingService;
+    private SortingService sortingService;
+    private CreationService creationService;
 
     public ArrayController() {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         this.arrayService = serviceFactory.getArrayService();
         this.baseOperationsService = serviceFactory.getBaseOperationsService();
+        this.findingService = serviceFactory.getFindingService();
+        this.sortingService = serviceFactory.getSortingService();
+        this.creationService = serviceFactory.getCreationService();
     }
 
     /**
@@ -31,21 +36,21 @@ public class ArrayController {
      * @param elements
      */
     public void createNewArray(Integer... elements) {
-        baseOperationsService.createArray(elements);
+        creationService.createArray(elements);
     }
 
     /**
      * Generates array
      */
     public void createNewArray(int countOfElements) {
-        baseOperationsService.generateOneDimensionalArray(countOfElements);
+        creationService.generateOneDimensionalArray(countOfElements);
     }
 
     /**
      * Creates new exemplar of class Array with elements from file
      */
     public void createNewArrayFromFile() {
-        baseOperationsService.createArray();
+        creationService.createArray();
     }
 
     /**
@@ -55,8 +60,8 @@ public class ArrayController {
      * @return
      * @throws ElementNotFoundException
      */
-    public int findElementInArray(int value) throws ElementNotFoundException {
-        int positionOfElement = baseOperationsService.findElement(value, arrayService.getArray().getArrayInt());
+    public int findElementInArray(int value, int arrayPosition) throws ElementNotFoundException {
+        int positionOfElement = findingService.findElement(value, arrayService.getArray(arrayPosition));
         if (positionOfElement == -1) {
             throw new ElementNotFoundException(value);
         }
@@ -68,10 +73,10 @@ public class ArrayController {
      *
      * @return Map<K, V> of values, where K-min or max, V-value of min or max element
      */
-    public Map<String, Integer> findMinAndMaxValue() {
+    public Map<String, Integer> findMinAndMaxValue(int arrayPosition) {
         Map<String, Integer> values = new HashMap<>();
-        values.put("min", baseOperationsService.findMinValue(arrayService.getArray().getArrayInt()));
-        values.put("max", baseOperationsService.findMaxValue(arrayService.getArray().getArrayInt()));
+        values.put("min", findingService.findMinValue(arrayService.getArray(arrayPosition)));
+        values.put("max", findingService.findMaxValue(arrayService.getArray(arrayPosition)));
         return values;
     }
 
@@ -80,9 +85,9 @@ public class ArrayController {
      *
      * @return sorted array (ascending)
      */
-    public int[] sortArrayWithBubbleSort() {
-        int[] arrayInt = arrayService.getArray().getArrayInt();
-        return baseOperationsService.bubbleSort(arrayInt);
+    public Array sortArrayWithBubbleSort(int arrayPosition) {
+        Array array = arrayService.getArray(arrayPosition);
+        return sortingService.bubbleSort(array);
     }
 
     /**
@@ -90,9 +95,9 @@ public class ArrayController {
      *
      * @return sorted array (ascending)
      */
-    public int[] sortArrayWithSelectionSort() {
-        int[] arrayInt = arrayService.getArray().getArrayInt();
-        return baseOperationsService.selectionSort(arrayInt);
+    public Array sortArrayWithSelectionSort(int arrayPosition) {
+        Array array = arrayService.getArray(arrayPosition);
+        return sortingService.selectionSort(array);
     }
 
     /**
@@ -100,9 +105,9 @@ public class ArrayController {
      *
      * @return sorted array (ascending)
      */
-    public int[] sortArrayWithInsertionSort() {
-        int[] arrayInt = arrayService.getArray().getArrayInt();
-        return baseOperationsService.insertionSort(arrayInt);
+    public Array sortArrayWithInsertionSort(int arrayPosition) {
+        Array array = arrayService.getArray(arrayPosition);
+        return sortingService.insertionSort(array);
     }
 
     /**
@@ -112,9 +117,9 @@ public class ArrayController {
      * @param value
      * @return
      */
-    public int searchElementWithBinarySearch(int value) {
-        int[] array = arrayService.getArray().getArrayInt();
-        return arrayService.binarySearch(baseOperationsService.bubbleSort(array), value, 0, array.length - 1);
+    public int searchElementWithBinarySearch(int value, int arrayPosition) {
+        Array array = arrayService.getArray(arrayPosition);
+        return arrayService.binarySearch(sortingService.bubbleSort(array), value, 0, array.getLength() - 1);
     }
 
     /**
@@ -122,8 +127,8 @@ public class ArrayController {
      *
      * @return list of prime numbers from array
      */
-    public List<Integer> findPrimeNumbersInArray() {
-        return arrayService.findPrimeNumbers();
+    public List<Integer> findPrimeNumbersInArray(int arrayPosition) {
+        return arrayService.findPrimeNumbers(arrayPosition);
     }
 
 
@@ -132,10 +137,10 @@ public class ArrayController {
      *
      * @return list of fibonacci numbers
      */
-    public List<Integer> findFibonacciNumbersInArray() {
-        int[] arrayInt = baseOperationsService.bubbleSort(arrayService.getArray().getArrayInt());
-        int maxValue = arrayInt[arrayInt.length - 1];
-        return arrayService.findFibonacciNumbers(arrayInt, maxValue);
+    public List<Integer> findFibonacciNumbersInArray(int arrayPosition) {
+        Array array = sortingService.bubbleSort(arrayService.getArray(arrayPosition));
+        int maxValue = array.getElement(array.getLength() - 1);
+        return arrayService.findFibonacciNumbers(array, maxValue);
     }
 
     /**
@@ -143,7 +148,7 @@ public class ArrayController {
      *
      * @return list of numbers without same digits and with fixed length
      */
-    public List<Integer> findNumbersWithoutSameDigits(int countOfDigits) {
-        return arrayService.findNumbersWithoutTHeSameDigitsInArray(countOfDigits);
+    public List<Integer> findNumbersWithoutSameDigits(int countOfDigits, int arrayPosition) {
+        return arrayService.findNumbersWithoutTHeSameDigitsInArray(countOfDigits, arrayPosition);
     }
 }

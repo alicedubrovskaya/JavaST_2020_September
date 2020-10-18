@@ -90,45 +90,45 @@ public class ArrayView {
     protected void optionFindElementInArray() {
         System.out.print(rb.getString("array.value"));
         try {
-            System.out.print(arrayController.findElementInArray(in.nextInt()));
+            System.out.print(arrayController.findElementInArray(in.nextInt(), 0));
         } catch (ElementNotFoundException e) {
             System.out.print(e.getMessage());
         }
     }
 
     protected void optionFindMinAndMaxElement() {
-        Map<String, Integer> values = arrayController.findMinAndMaxValue();
+        Map<String, Integer> values = arrayController.findMinAndMaxValue(0);
         for (Map.Entry<String, Integer> entry : values.entrySet()) {
             System.out.println(entry.getKey() + " = " + entry.getValue());
         }
     }
 
     protected void optionSortWithBubbleSort() {
-        System.out.println(Arrays.toString(arrayController.sortArrayWithBubbleSort()));
+        System.out.println(arrayController.sortArrayWithBubbleSort(0).toString());
     }
 
     protected void optionSortWithSelectionSort() {
-        System.out.println(Arrays.toString(arrayController.sortArrayWithSelectionSort()));
+        System.out.println(arrayController.sortArrayWithSelectionSort(0).toString());
     }
 
     protected void optionSortWithInsertionSort() {
-        System.out.println(Arrays.toString(arrayController.sortArrayWithInsertionSort()));
+        System.out.println(arrayController.sortArrayWithInsertionSort(0).toString());
     }
 
     protected void optionFindElement() {
         System.out.print(rb.getString("array.value"));
-        System.out.println(arrayController.searchElementWithBinarySearch(in.nextInt()));
+        System.out.println(arrayController.searchElementWithBinarySearch(in.nextInt(), 0));
     }
 
     protected void optionFindPrimeNumbers() {
-        System.out.println(arrayController.findPrimeNumbersInArray().toString());
+        System.out.println(arrayController.findPrimeNumbersInArray(0).toString());
     }
 
     protected void optionFindFibonacciNumbers() {
-        System.out.println(arrayController.findFibonacciNumbersInArray().toString());
+        System.out.println(arrayController.findFibonacciNumbersInArray(0).toString());
     }
 
     protected void optionFindNumbersWithoutSameDigits() {
-        System.out.println(arrayController.findNumbersWithoutSameDigits(in.nextInt()).toString());
+        System.out.println(arrayController.findNumbersWithoutSameDigits(in.nextInt(), 0).toString());
     }
 }
