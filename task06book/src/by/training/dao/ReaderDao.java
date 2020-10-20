@@ -3,8 +3,8 @@ package by.training.dao;
 import by.training.entity.Book;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Set;
 
 public interface ReaderDao {
-    List<Book> readFromFile(String filePath) throws IOException;
+    Set<Book> readFromFile(String filePath) throws IOException;
 }

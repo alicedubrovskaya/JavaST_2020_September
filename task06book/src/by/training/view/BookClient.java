@@ -1,10 +1,7 @@
 package by.training.view;
 
 import by.training.entity.TypeCommand;
-import by.training.view.command.DeleteCommand;
-import by.training.view.command.GetCommand;
-import by.training.view.command.LoadCommand;
-import by.training.view.command.NewBookCommand;
+import by.training.view.command.*;
 
 public class BookClient {
     private BookReceiver bookReceiver;
@@ -20,13 +17,16 @@ public class BookClient {
                 command = new NewBookCommand(bookReceiver);
                 break;
             case DELETE:
-                command=new DeleteCommand(bookReceiver);
+                command = new DeleteCommand(bookReceiver);
                 break;
             case GET:
-                command=new GetCommand(bookReceiver);
+                command = new GetCommand(bookReceiver);
                 break;
             case LOAD:
-                command=new LoadCommand(bookReceiver);
+                command = new LoadCommand(bookReceiver);
+                break;
+            case FIND_BY_TITLE:
+                command = new FindByTitleCommand(bookReceiver);
                 break;
             default:
         }

@@ -4,9 +4,7 @@ import by.training.controller.BookController;
 import by.training.entity.Book;
 import by.training.entity.TypeCommand;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class BookReceiver {
     private BookController bookController;
@@ -32,6 +30,9 @@ public class BookReceiver {
             case LOAD:
                 optionLoadData();
                 break;
+            case FIND_BY_TITLE:
+                optionFindByTitle();
+                break;
             default:
         }
     }
@@ -40,7 +41,7 @@ public class BookReceiver {
      * Creates new book
      */
     private void optionCreateNewBook() {
-        System.out.println("Enter title, number of pages, year of publishing, publishing house");
+        System.out.println("Enter title, number of pages, year of publishing, publishing house, count and authors");
         String title = in.next();
         int numberOfPages = in.nextInt();
         int yearOfPublishing = in.nextInt();
@@ -49,7 +50,7 @@ public class BookReceiver {
         //TODO whithout count
         int count = in.nextInt();
         in.nextLine();
-        List<String> authors = new ArrayList<>();
+        Set<String> authors = new HashSet<>();
         for (int i = 0; i < count; i++) {
             authors.add(in.nextLine());
         }
@@ -59,7 +60,7 @@ public class BookReceiver {
     /**
      * Example of file path: task06book/data/book.txt
      */
-    private void optionLoadData(){
+    private void optionLoadData() {
         System.out.println("Enter filePath");
         printBooks(bookController.dataLoading(in.next()));
     }
@@ -73,8 +74,12 @@ public class BookReceiver {
 
     }
 
-    private void printBooks(List<Book> books){
-        for (Book book: books){
+    private void optionFindByTitle() {
+        System.out.println(bookController.findBookByTitle(in.nextLine()).toString());
+    }
+
+    private void printBooks(Set<Book> books) {
+        for (Book book : books) {
             System.out.println(book.toString());
         }
     }

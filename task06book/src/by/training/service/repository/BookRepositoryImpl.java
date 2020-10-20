@@ -3,12 +3,13 @@ package by.training.service.repository;
 import by.training.dao.DaoFactory;
 import by.training.dao.ReaderDao;
 import by.training.entity.Book;
-import by.training.entity.data.BookStorage;
+import by.training.entity.storage.BookStorage;
 import by.training.exception.BookAlreadyExistsException;
 import by.training.exception.BookNotFoundException;
+import by.training.exception.BooksNotFoundException;
+import by.training.service.query.Query;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Set;
 
 public class BookRepositoryImpl implements BookRepository {
@@ -46,8 +47,16 @@ public class BookRepositoryImpl implements BookRepository {
     }
 
     @Override
-    public List<Book> getFromFile(String filePath) throws IOException {
+    public Set<Book> getFromFile(String filePath) throws IOException {
         return readerDao.readFromFile(filePath);
     }
 
+    @Override
+    public Set<Book> query(Query currentQuery) throws BooksNotFoundException {
+        Set<Book> books = currentQuery.query(storage.getBooks());
+        if (books.isEmpty()){
+            throw new BooksNotFoundException();
+        }
+        return books;
+    }
 }

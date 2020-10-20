@@ -1,8 +1,9 @@
-package by.training.service;
+package by.training.service.service;
 
 import by.training.entity.Book;
 
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -11,8 +12,8 @@ public class BookValidator {
         return (titleIsValid(book.getTitle())
                 && authorIsValid(book.getAuthors())
                 && publishingHouseIsValid(book.getPublishingHouse())
-                && book.getNumberOfPages() > 0
-                && book.getYearOfPublishing() > 0);
+                && pagesIsValid(book.getNumberOfPages())
+                && yearIsValid(book.getYearOfPublishing()));
     }
 
     public boolean match(String input, String regex) {
@@ -50,12 +51,20 @@ public class BookValidator {
      * @param authors
      * @return
      */
-    public boolean authorIsValid(List<String> authors) {
+    public boolean authorIsValid(Set<String> authors) {
         for (String author : authors) {
             if (!match(author, "^[A-Z][a-z]*\\s[A-Z][a-z]*$")) {
                 return false;
             }
         }
         return true;
+    }
+
+    public boolean yearIsValid(int year) {
+        return (year > 0);
+    }
+
+    public boolean pagesIsValid(int pages) {
+        return (pages > 0);
     }
 }

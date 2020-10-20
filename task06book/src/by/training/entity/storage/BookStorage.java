@@ -1,4 +1,4 @@
-package by.training.entity.data;
+package by.training.entity.storage;
 
 import by.training.entity.Book;
 

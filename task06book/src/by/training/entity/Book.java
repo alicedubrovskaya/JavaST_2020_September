@@ -2,16 +2,17 @@ package by.training.entity;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 public class Book {
     private String title;
     private int numberOfPages;
     private int yearOfPublishing;
-    private List<String> authors;
+    private Set<String> authors;
     private String publishingHouse;
 
     //TODO Builder pattern
-    public Book(String title, int numberOfPages, int yearOfPublishing, String publishingHouse, List<String> authors) {
+    public Book(String title, int numberOfPages, int yearOfPublishing, String publishingHouse, Set<String> authors) {
         this.title = title;
         this.numberOfPages = numberOfPages;
         this.yearOfPublishing = yearOfPublishing;
@@ -57,7 +58,7 @@ public class Book {
         return yearOfPublishing;
     }
 
-    public List<String> getAuthors() {
+    public Set<String> getAuthors() {
         return authors;
     }
 

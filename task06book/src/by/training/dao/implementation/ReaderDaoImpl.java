@@ -7,16 +7,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class ReaderDaoImpl implements ReaderDao {
 
     @Override
-    public List<Book> readFromFile(String filePath) throws IOException {
+    public Set<Book> readFromFile(String filePath) throws IOException {
         String absoluteFilePath = new File(filePath).getAbsolutePath();
-        List<Book> books = new ArrayList<>();
+        Set<Book> books = new HashSet<>();
 
         String title = null;
         int numberOfPages = 0;
@@ -30,7 +28,7 @@ public class ReaderDaoImpl implements ReaderDao {
             while (in.hasNextLine()) {
                 String line = in.nextLine();
                 if (line.equals("*")) {
-                    List<String> authors = new ArrayList<>();
+                    Set<String> authors = new HashSet<>();
                     title = in.nextLine();
                     numberOfPages = Integer.valueOf(in.nextLine());
                     yearOfPublishing = Integer.valueOf(in.nextLine());
