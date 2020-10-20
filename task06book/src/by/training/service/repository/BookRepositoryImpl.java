@@ -1,7 +1,7 @@
 package by.training.service.repository;
 
 import by.training.dao.DaoFactory;
-import by.training.dao.ReaderDao;
+import by.training.dao.BookDao;
 import by.training.entity.Book;
 import by.training.entity.storage.BookStorage;
 import by.training.exception.BookAlreadyExistsException;
@@ -13,12 +13,12 @@ import java.io.IOException;
 import java.util.Set;
 
 public class BookRepositoryImpl implements BookRepository {
-    private ReaderDao readerDao;
+    private BookDao bookDao;
     private BookStorage storage;
 
     public BookRepositoryImpl() {
         DaoFactory daoFactory = DaoFactory.getInstance();
-        this.readerDao = daoFactory.getReaderDao();
+        this.bookDao = daoFactory.getBookDao();
         this.storage = BookStorage.getInstance();
     }
 
@@ -47,8 +47,13 @@ public class BookRepositoryImpl implements BookRepository {
     }
 
     @Override
-    public Set<Book> getFromFile(String filePath) throws IOException {
-        return readerDao.readFromFile(filePath);
+    public Set<Book> getFromFile(String filePath) {
+        return bookDao.readFromFile(filePath);
+    }
+
+    @Override
+    public void saveToFile(Book book) {
+        bookDao.writeToFile(book);
     }
 
     @Override

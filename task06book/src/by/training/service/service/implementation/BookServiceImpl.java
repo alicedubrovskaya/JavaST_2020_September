@@ -6,20 +6,17 @@ import by.training.exception.BookAlreadyExistsException;
 import by.training.exception.BookNotFoundException;
 import by.training.exception.InvalidBookException;
 import by.training.exception.InvalidInvormationException;
+import by.training.service.repository.BookRepository;
 import by.training.service.service.BookService;
 import by.training.service.service.BookValidator;
-import by.training.service.repository.BookRepository;
-import by.training.service.repository.BookRepositoryImpl;
 
-import java.io.IOException;
-import java.util.HashSet;
 import java.util.Set;
 
 public class BookServiceImpl implements BookService {
     private BookRepository bookRepository;
 
-    public BookServiceImpl(BookRepository bookRepository){
-        this.bookRepository=bookRepository;
+    public BookServiceImpl(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
     }
 
     @Override
@@ -39,13 +36,14 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Set<Book> getFromFile(String filePath) {
-        Set<Book> books = new HashSet<>();
-        try {
-            books = bookRepository.getFromFile(filePath);
-        } catch (IOException e) {
-            System.err.println(e.getMessage());
+        return bookRepository.getFromFile(filePath);
+    }
+
+    @Override
+    public void saveToFile(Set<Book> books) {
+        for (Book book: books){
+            bookRepository.saveToFile(book);
         }
-        return books;
     }
 
     @Override

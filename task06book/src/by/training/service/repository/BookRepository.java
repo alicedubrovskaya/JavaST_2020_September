@@ -13,7 +13,9 @@ public interface BookRepository {
 
     void remove(String title);
 
-    Set<Book> getFromFile(String filePath) throws IOException;
+    Set<Book> getFromFile(String filePath);
+
+    void saveToFile(Book book);
 
     Set<Book> query(Query currentQuery)  throws BooksNotFoundException;
 }

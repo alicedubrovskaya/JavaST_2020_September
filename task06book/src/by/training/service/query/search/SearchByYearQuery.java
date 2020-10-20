@@ -1,6 +1,7 @@
-package by.training.service.query;
+package by.training.service.query.search;
 
 import by.training.entity.Book;
+import by.training.service.query.Query;
 
 import java.util.HashSet;
 import java.util.Set;

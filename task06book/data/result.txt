@@ -1,0 +1,1 @@
+*Book[title=Alice in wonderland, number of pages=300, year of publishing=1865, authors=[Lewis Carrol]]

@@ -19,7 +19,6 @@ public class BookRunner {
         BookCommand commandNewBook = client.initCommand(TypeCommand.NEW_BOOK);
         BookInvoker invokerNewBook = new BookInvoker(commandNewBook);
         BookInvoker invokerDelete = new BookInvoker(client.initCommand(TypeCommand.DELETE));
-        BookInvoker invokerGet = new BookInvoker(client.initCommand(TypeCommand.GET));
         BookInvoker invokerLoad = new BookInvoker(client.initCommand(TypeCommand.LOAD));
         BookInvoker invokerFind = new BookInvoker(client.initCommand(TypeCommand.FIND));
 
@@ -36,9 +35,6 @@ public class BookRunner {
                     break;
                 case 2:
                     invokerDelete.invokeCommand();
-                    break;
-                case 3:
-                    invokerGet.invokeCommand();
                     break;
                 case 4:
                     invokerLoad.invokeCommand();

@@ -19,9 +19,6 @@ public class BookClient {
             case DELETE:
                 command = new DeleteCommand(bookReceiver);
                 break;
-            case GET:
-                command = new GetCommand(bookReceiver);
-                break;
             case LOAD:
                 command = new LoadCommand(bookReceiver);
                 break;

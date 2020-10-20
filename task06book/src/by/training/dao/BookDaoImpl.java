@@ -1,18 +1,16 @@
-package by.training.dao.implementation;
+package by.training.dao;
 
-import by.training.dao.ReaderDao;
 import by.training.entity.Book;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.*;
+import java.io.*;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
 
-public class ReaderDaoImpl implements ReaderDao {
+public class BookDaoImpl implements BookDao {
 
     @Override
-    public Set<Book> readFromFile(String filePath) throws IOException {
+    public Set<Book> readFromFile(String filePath) {
         String absoluteFilePath = new File(filePath).getAbsolutePath();
         Set<Book> books = new HashSet<>();
 
@@ -41,10 +39,21 @@ public class ReaderDaoImpl implements ReaderDao {
                     books.add(new Book(title, numberOfPages, yearOfPublishing, publishingHouse, authors));
                 }
             }
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             System.err.println(e);
         }
 
         return books;
+    }
+
+    @Override
+    public void writeToFile(Book book) {
+        String absoluteFilePath = new File("task06book/data/result.txt").getAbsolutePath();
+        try(FileWriter writer = new FileWriter(absoluteFilePath, false)){
+            writer.write(book.toString());
+        }
+        catch (IOException e){
+            System.err.println(e.getMessage());
+        }
     }
 }

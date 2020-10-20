@@ -1,14 +1,12 @@
 package by.training.dao;
 
-import by.training.dao.implementation.ReaderDaoImpl;
-
 public class DaoFactory {
     private static final DaoFactory instance = new DaoFactory();
 
-    private final ReaderDao readerDao = new ReaderDaoImpl();
+    private final BookDao bookDao = new BookDaoImpl();
 
-    public ReaderDao getReaderDao() {
-        return readerDao;
+    public BookDao getBookDao() {
+        return bookDao;
     }
 
     public static DaoFactory getInstance() {

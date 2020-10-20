@@ -24,9 +24,6 @@ public class BookReceiver {
             case DELETE:
                 optionDelete();
                 break;
-            case GET:
-                optionGetBook();
-                break;
             case LOAD:
                 optionLoadData();
                 break;
@@ -68,10 +65,6 @@ public class BookReceiver {
     private void optionDelete() {
         System.out.println("Enter title");
         bookController.deleteBook(in.next());
-    }
-
-    private void optionGetBook() {
-
     }
 
     /**

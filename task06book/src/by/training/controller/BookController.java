@@ -40,6 +40,9 @@ public class BookController {
 
     public Set<Book> findByTag(String typeOfTag, String tag) {
         bookService.validate(BookInformation.getEnumByTag(typeOfTag), tag);
-        return findBookService.findByTag(BookInformation.getEnumByTag(typeOfTag), tag);
+        Set<Book> result = findBookService.findByTag(BookInformation.getEnumByTag(typeOfTag), tag);
+        bookService.saveToFile(result);
+        return result;
     }
+
 }

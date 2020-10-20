@@ -12,6 +12,8 @@ public interface BookService {
 
     Set<Book> getFromFile(String filePath);
 
+    void saveToFile(Set<Book> books);
+
     void deleteBook(String title);
 
     void validate(Book book);
