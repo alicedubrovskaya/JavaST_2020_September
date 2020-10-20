@@ -47,10 +47,11 @@ public class BookDaoImpl implements BookDao {
     }
 
     @Override
-    public void writeToFile(Book book) {
+    public void writeToFile(Book book, boolean emptyFile) {
         String absoluteFilePath = new File("task06book/data/result.txt").getAbsolutePath();
-        try(FileWriter writer = new FileWriter(absoluteFilePath, false)){
+        try(FileWriter writer = new FileWriter(absoluteFilePath, !emptyFile)){
             writer.write(book.toString());
+            writer.append("\n");
         }
         catch (IOException e){
             System.err.println(e.getMessage());

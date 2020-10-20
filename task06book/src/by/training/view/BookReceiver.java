@@ -30,6 +30,9 @@ public class BookReceiver {
             case FIND:
                 optionFindByTag();
                 break;
+            case SORT:
+                optionSortByTag();
+                break;
             default:
         }
     }
@@ -77,7 +80,13 @@ public class BookReceiver {
     private void optionFindByTag() {
         System.out.println("Enter type of tag and tag");
         in.nextLine();
-        System.out.println(bookController.findByTag(in.nextLine(), in.nextLine()));
+        printBooks(bookController.findByTag(in.nextLine(), in.nextLine()));
+    }
+
+    private void optionSortByTag() {
+        System.out.println("Enter tag");
+        in.nextLine();
+        printBooks(bookController.sortByTag(in.nextLine()));
     }
 
     private void printBooks(Set<Book> books) {

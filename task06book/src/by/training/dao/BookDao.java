@@ -7,5 +7,5 @@ import java.util.Set;
 public interface BookDao {
     Set<Book> readFromFile(String filePath);
 
-    void writeToFile(Book book);
+    void writeToFile(Book book, boolean emptyFile);
 }

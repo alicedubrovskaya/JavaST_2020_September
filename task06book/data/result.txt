@@ -1,1 +1,2 @@
-*Book[title=Alice in wonderland, number of pages=300, year of publishing=1865, authors=[Lewis Carrol]]
+Book[title=Alice in wonderland, number of pages=300, year of publishing=1865, authors=[Lewis Carrol]]
+Book[title=An american tragedy, number of pages=300, year of publishing=1925, authors=[Theodore Dreiser]]

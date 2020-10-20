@@ -65,4 +65,8 @@ public class Book {
     public String getPublishingHouse() {
         return publishingHouse;
     }
+
+    public String getFirstAuthor(){
+       return authors.stream().findFirst().get();
+    }
 }

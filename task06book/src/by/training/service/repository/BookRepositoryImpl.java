@@ -1,7 +1,7 @@
 package by.training.service.repository;
 
-import by.training.dao.DaoFactory;
 import by.training.dao.BookDao;
+import by.training.dao.DaoFactory;
 import by.training.entity.Book;
 import by.training.entity.storage.BookStorage;
 import by.training.exception.BookAlreadyExistsException;
@@ -9,7 +9,6 @@ import by.training.exception.BookNotFoundException;
 import by.training.exception.BooksNotFoundException;
 import by.training.service.query.Query;
 
-import java.io.IOException;
 import java.util.Set;
 
 public class BookRepositoryImpl implements BookRepository {
@@ -52,8 +51,8 @@ public class BookRepositoryImpl implements BookRepository {
     }
 
     @Override
-    public void saveToFile(Book book) {
-        bookDao.writeToFile(book);
+    public void saveToFile(Book book, boolean emptyFile) {
+        bookDao.writeToFile(book, emptyFile);
     }
 
     @Override

@@ -21,10 +21,11 @@ public class BookRunner {
         BookInvoker invokerDelete = new BookInvoker(client.initCommand(TypeCommand.DELETE));
         BookInvoker invokerLoad = new BookInvoker(client.initCommand(TypeCommand.LOAD));
         BookInvoker invokerFind = new BookInvoker(client.initCommand(TypeCommand.FIND));
+        BookInvoker invokerSort = new BookInvoker(client.initCommand(TypeCommand.SORT));
 
         int doOptions = 1;
         while (doOptions == 1) {
-            System.out.println("1 - add book, 2 - delete book, 3 - get book, 4 - load, 5 - find by tag");
+            System.out.println("1 - add book, 2 - delete book, 3 - get book, 4 - load, 5 - find by tag, 6 - sort by tag");
             int option = in.nextInt();
             switch (option) {
                 case 0:
@@ -41,6 +42,9 @@ public class BookRunner {
                     break;
                 case 5:
                     invokerFind.invokeCommand();
+                    break;
+                case 6:
+                    invokerSort.invokeCommand();
                     break;
                 default:
             }

@@ -15,7 +15,7 @@ public interface BookRepository {
 
     Set<Book> getFromFile(String filePath);
 
-    void saveToFile(Book book);
+    void saveToFile(Book book, boolean emptyFile);
 
     Set<Book> query(Query currentQuery)  throws BooksNotFoundException;
 }

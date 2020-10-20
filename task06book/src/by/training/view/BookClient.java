@@ -25,6 +25,9 @@ public class BookClient {
             case FIND:
                 command = new FindByTagCommand(bookReceiver);
                 break;
+            case SORT:
+                command=new SortByTagCommand(bookReceiver);
+                break;
             default:
         }
         return command;

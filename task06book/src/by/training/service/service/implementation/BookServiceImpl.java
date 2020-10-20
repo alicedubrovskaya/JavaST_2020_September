@@ -41,8 +41,12 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void saveToFile(Set<Book> books) {
-        for (Book book: books){
-            bookRepository.saveToFile(book);
+        boolean firstBook = true;
+        for (Book book : books) {
+            bookRepository.saveToFile(book, firstBook);
+            if (firstBook) {
+                firstBook = false;
+            }
         }
     }
 
