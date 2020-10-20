@@ -9,11 +9,13 @@ import java.util.*;
 public class BookReceiver {
     private BookController bookController;
     private Scanner in;
+    private ResourceBundle rb;
 
-    public BookReceiver(BookController bookController) {
+    public BookReceiver(BookController bookController, ResourceBundle rb) {
         this.bookController = bookController;
         in = new Scanner(System.in);
         in.useDelimiter("\n");
+        this.rb = rb;
     }
 
     public void action(TypeCommand option) {
@@ -41,7 +43,7 @@ public class BookReceiver {
      * Creates new book
      */
     private void optionCreateNewBook() {
-        System.out.println("Enter title, number of pages, year of publishing, publishing house, count and authors");
+        System.out.println(rb.getString("book.info"));
         String title = in.next();
         int numberOfPages = in.nextInt();
         int yearOfPublishing = in.nextInt();
@@ -61,7 +63,7 @@ public class BookReceiver {
      * Example of file path: task06book/data/book.txt
      */
     private void optionLoadData() {
-        System.out.println("Enter filePath");
+        System.out.println(rb.getString("book.filePath"));
         printBooks(bookController.dataLoading(in.next()));
     }
 
@@ -78,13 +80,13 @@ public class BookReceiver {
      * AUTHORS("author");
      */
     private void optionFindByTag() {
-        System.out.println("Enter type of tag and tag");
+        System.out.println(rb.getString("book.tag"));
         in.nextLine();
         printBooks(bookController.findByTag(in.nextLine(), in.nextLine()));
     }
 
     private void optionSortByTag() {
-        System.out.println("Enter tag, write asc or desc");
+        System.out.println(rb.getString("book.sort"));
         in.nextLine();
         printBooks(bookController.sortByTag(in.nextLine(), in.nextLine()));
     }

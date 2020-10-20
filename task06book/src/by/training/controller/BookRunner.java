@@ -6,14 +6,35 @@ import by.training.view.BookCommand;
 import by.training.view.BookInvoker;
 import by.training.view.BookReceiver;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class BookRunner {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+
+        //TODO move to view
+        System.out.println("1 — английский \n2 — русский ");
+        String country = "US";
+        String language = "en";
+        switch (in.nextInt()) {
+            case 1:
+                country = "US";
+                language = "en";
+                break;
+            case 2:
+                country = "RU";
+                language = "ru";
+                break;
+            default:
+        }
+        Locale current = new Locale(language, country);
+        ResourceBundle rb = ResourceBundle.getBundle("property.text", current);
+
         BookController bookController = new BookController();
-        BookReceiver receiver = new BookReceiver(bookController);
+        BookReceiver receiver = new BookReceiver(bookController, rb);
         BookClient client = new BookClient(receiver);
 
         BookCommand commandNewBook = client.initCommand(TypeCommand.NEW_BOOK);
@@ -25,7 +46,7 @@ public class BookRunner {
 
         int doOptions = 1;
         while (doOptions == 1) {
-            System.out.println("1 - add book, 2 - delete book, 3 - get book, 4 - load, 5 - find by tag, 6 - sort by tag");
+            System.out.println(rb.getString("menu.main"));
             int option = in.nextInt();
             switch (option) {
                 case 0:
@@ -37,13 +58,13 @@ public class BookRunner {
                 case 2:
                     invokerDelete.invokeCommand();
                     break;
-                case 4:
+                case 3:
                     invokerLoad.invokeCommand();
                     break;
-                case 5:
+                case 4:
                     invokerFind.invokeCommand();
                     break;
-                case 6:
+                case 5:
                     invokerSort.invokeCommand();
                     break;
                 default:
