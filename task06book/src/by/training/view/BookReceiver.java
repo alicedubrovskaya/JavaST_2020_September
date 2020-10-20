@@ -70,8 +70,7 @@ public class BookReceiver {
     }
 
     private void optionGetBook() {
-        System.out.println("Title: ");
-        System.out.println(bookController.getBook(in.next()).toString());
+
     }
 
     private void printBooks(List<Book> books){

@@ -3,11 +3,13 @@ package by.training.controller;
 import by.training.entity.Book;
 import by.training.service.BookFactory;
 import by.training.service.BookService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BookController {
+    private static final Logger logger = LogManager.getLogger(BookController.class);
     private BookService bookService;
 
     public BookController() {
@@ -16,6 +18,7 @@ public class BookController {
     }
 
     public List<Book> dataLoading(String filePath) {
+        logger.trace("data loading");
         List<Book> books = bookService.getFromFile(filePath);
         createNewBooks(books);
         return books;
@@ -37,9 +40,5 @@ public class BookController {
 
     public void deleteBook(String title) {
         bookService.deleteBook(title);
-    }
-
-    public Book getBook(String title) {
-        return bookService.findBook(title);
     }
 }

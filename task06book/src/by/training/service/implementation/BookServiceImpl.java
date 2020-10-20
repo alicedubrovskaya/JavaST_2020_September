@@ -27,25 +27,16 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<Book> getFromFile(String filePath) {
-        Book book = null;
         List<Book> books = new ArrayList<>();
         try {
             books = bookRepository.getFromFile(filePath);
-        } catch (IOException e) {
+            for (Book book : books) {
+                bookRepository.add(book);
+            }
+        } catch (IOException | BookAlreadyExistsException e) {
             System.err.println(e.getMessage());
         }
         return books;
-    }
-
-    @Override
-    public Book findBook(String title) {
-        Book book = null;
-        try {
-            book = bookRepository.get(title);
-        } catch (BookNotFoundException e) {
-            System.err.println(e.getMessage());
-        }
-        return book;
     }
 
     @Override

@@ -10,6 +10,7 @@ public class Book {
     private List<String> authors;
     private String publishingHouse;
 
+    //TODO Builder pattern
     public Book(String title, int numberOfPages, int yearOfPublishing, String publishingHouse, List<String> authors) {
         this.title = title;
         this.numberOfPages = numberOfPages;

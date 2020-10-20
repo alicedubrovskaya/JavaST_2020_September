@@ -9,6 +9,7 @@ import by.training.view.BookReceiver;
 import java.util.Scanner;
 
 public class BookRunner {
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         BookController bookController = new BookController();
