@@ -40,6 +40,11 @@ public class BookController {
 
     public Set<Book> findBookByTitle(String title) {
         bookService.validate(BookInformation.TITLE, title);
-        return findBookService.findByTitle(title);
+        return findBookService.findByTag(BookInformation.TITLE, title);
+    }
+
+    public Set<Book> findBookByYearOfPublishing(String year) {
+        bookService.validate(BookInformation.YEAR, year);
+        return findBookService.findByTag(BookInformation.YEAR, year);
     }
 }
