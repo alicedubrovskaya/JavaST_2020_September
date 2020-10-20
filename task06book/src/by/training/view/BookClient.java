@@ -25,8 +25,8 @@ public class BookClient {
             case LOAD:
                 command = new LoadCommand(bookReceiver);
                 break;
-            case FIND_BY_TITLE:
-                command = new FindByTitleCommand(bookReceiver);
+            case FIND:
+                command = new FindByTagCommand(bookReceiver);
                 break;
             default:
         }

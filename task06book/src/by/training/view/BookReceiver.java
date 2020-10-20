@@ -30,8 +30,8 @@ public class BookReceiver {
             case LOAD:
                 optionLoadData();
                 break;
-            case FIND_BY_TITLE:
-                optionFindByTitle();
+            case FIND:
+                optionFindByTag();
                 break;
             default:
         }
@@ -74,8 +74,17 @@ public class BookReceiver {
 
     }
 
-    private void optionFindByTitle() {
-        System.out.println(bookController.findBookByTitle(in.nextLine()).toString());
+    /**
+     * TITLE("title"),
+     * PAGES("pages"),
+     * YEAR("year"),
+     * PUBLISHING_HOUSE("house"),
+     * AUTHORS("author");
+     */
+    private void optionFindByTag() {
+        System.out.println("Enter type of tag and tag");
+        in.nextLine();
+        System.out.println(bookController.findByTag(in.nextLine(), in.nextLine()));
     }
 
     private void printBooks(Set<Book> books) {

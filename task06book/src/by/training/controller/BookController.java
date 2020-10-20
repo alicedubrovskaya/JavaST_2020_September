@@ -38,13 +38,8 @@ public class BookController {
         bookService.deleteBook(title);
     }
 
-    public Set<Book> findBookByTitle(String title) {
-        bookService.validate(BookInformation.TITLE, title);
-        return findBookService.findByTag(BookInformation.TITLE, title);
-    }
-
-    public Set<Book> findBookByYearOfPublishing(String year) {
-        bookService.validate(BookInformation.YEAR, year);
-        return findBookService.findByTag(BookInformation.YEAR, year);
+    public Set<Book> findByTag(String typeOfTag, String tag) {
+        bookService.validate(BookInformation.getEnumByTag(typeOfTag), tag);
+        return findBookService.findByTag(BookInformation.getEnumByTag(typeOfTag), tag);
     }
 }
