@@ -2,6 +2,7 @@ package by.training.controller;
 
 import by.training.entity.Book;
 import by.training.entity.BookInformation;
+import by.training.entity.Sorting;
 import by.training.service.ServiceFactory;
 import by.training.service.service.BookService;
 import by.training.service.service.FindBookService;
@@ -48,8 +49,8 @@ public class BookController {
         return result;
     }
 
-    public Set<Book> sortByTag(String typeOfTag) {
-        Set<Book> result = sortBookService.sortByTag(BookInformation.getEnumByTag(typeOfTag));
+    public Set<Book> sortByTag(String typeOfTag, String typeOfSorting) {
+        Set<Book> result= sortBookService.sortByTag(BookInformation.getEnumByTag(typeOfTag), Sorting.getEnum(typeOfSorting));
         bookService.saveToFile(result);
         return result;
     }

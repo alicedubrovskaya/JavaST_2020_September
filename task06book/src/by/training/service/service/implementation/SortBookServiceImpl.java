@@ -2,6 +2,7 @@ package by.training.service.service.implementation;
 
 import by.training.entity.Book;
 import by.training.entity.BookInformation;
+import by.training.entity.Sorting;
 import by.training.exception.BooksNotFoundException;
 import by.training.service.query.Query;
 import by.training.service.query.sort.*;
@@ -19,24 +20,25 @@ public class SortBookServiceImpl implements SortBookService {
     }
 
     @Override
-    public Set<Book> sortByTag(BookInformation bookInformation) {
+    public Set<Book> sortByTag(BookInformation bookInformation, Sorting sorting) {
         Set<Book> books = new HashSet<>();
         Query query = null;
+        boolean isAscending = Sorting.getEnum("asc").equals(sorting);
         switch (bookInformation) {
             case TITLE:
-                query = new SortByTitleQuery();
+                query = new SortByTitleQuery(isAscending);
                 break;
             case YEAR:
-                query = new SortByYearQuery();
+                query = new SortByYearQuery(isAscending);
                 break;
             case PUBLISHING_HOUSE:
-                query = new SortByPublishingHouseQuery();
+                query = new SortByPublishingHouseQuery(isAscending);
                 break;
             case PAGES:
-                query = new SortByNumberOfPagesQuery();
+                query = new SortByNumberOfPagesQuery(isAscending);
                 break;
             case AUTHORS:
-                query = new SortByAuthorQuery();
+                query = new SortByAuthorQuery(isAscending);
                 break;
 
             default:

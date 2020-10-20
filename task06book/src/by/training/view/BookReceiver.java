@@ -84,9 +84,9 @@ public class BookReceiver {
     }
 
     private void optionSortByTag() {
-        System.out.println("Enter tag");
+        System.out.println("Enter tag, write asc or desc");
         in.nextLine();
-        printBooks(bookController.sortByTag(in.nextLine()));
+        printBooks(bookController.sortByTag(in.nextLine(), in.nextLine()));
     }
 
     private void printBooks(Set<Book> books) {
