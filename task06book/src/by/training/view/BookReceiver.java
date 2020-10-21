@@ -6,6 +6,11 @@ import by.training.entity.enumeration.TypeCommand;
 
 import java.util.*;
 
+/**
+ * This interface is responsible for executing requests sent with the command
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class BookReceiver {
     private BookController bookController;
     private Scanner in;
@@ -49,7 +54,6 @@ public class BookReceiver {
         int yearOfPublishing = in.nextInt();
         String publishingHouse = in.next();
 
-        //TODO whithout count
         int count = in.nextInt();
         in.nextLine();
         Set<String> authors = new HashSet<>();
@@ -64,7 +68,7 @@ public class BookReceiver {
      */
     private void optionLoadData() {
         System.out.println(rb.getString("book.filePath"));
-        printBooks(bookController.dataLoading(in.next()));
+        bookController.dataLoading(in.next());
     }
 
     private void optionDelete() {

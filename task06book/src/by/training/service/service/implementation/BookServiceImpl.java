@@ -1,6 +1,5 @@
 package by.training.service.service.implementation;
 
-import by.training.controller.BookController;
 import by.training.entity.Book;
 import by.training.exception.BookAlreadyExistsException;
 import by.training.exception.BookNotFoundException;
@@ -11,6 +10,11 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Set;
 
+/**
+ * Class is an implementation of interface BookService
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class BookServiceImpl implements BookService {
     private BookRepository bookRepository;
     private static final Logger logger = LogManager.getLogger(BookServiceImpl.class);
@@ -19,6 +23,10 @@ public class BookServiceImpl implements BookService {
         this.bookRepository = bookRepository;
     }
 
+    /**
+     * Adds new book
+     * @param book
+     */
     @Override
     public void createNewBook(Book book) {
         try {
@@ -29,6 +37,10 @@ public class BookServiceImpl implements BookService {
         }
     }
 
+    /**
+     * Adds new books
+     * @param books
+     */
     public void createNewBooks(Set<Book> books) {
         logger.debug("Creation of new books");
         for (Book book : books) {
@@ -36,6 +48,10 @@ public class BookServiceImpl implements BookService {
         }
     }
 
+    /**
+     * Deletes a book
+     * @param title
+     */
     @Override
     public void deleteBook(String title) {
         try {

@@ -6,6 +6,9 @@ import by.training.service.query.Query;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Class is an implementation of interface Query. Searches books by number of pages
+ */
 public class SearchByNumberOfPagesQuery implements Query {
     private int numberOfPages;
 
@@ -13,6 +16,13 @@ public class SearchByNumberOfPagesQuery implements Query {
         this.numberOfPages = numberOfPages;
     }
 
+
+    /**
+     * Searches books by number of pages
+     *
+     * @param books
+     * @return resulting set of found books
+     */
     @Override
     public Set<Book> query(Set<Book> books) {
         Set<Book> result = new HashSet<>();

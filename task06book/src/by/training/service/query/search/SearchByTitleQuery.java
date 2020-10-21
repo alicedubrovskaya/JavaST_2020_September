@@ -6,6 +6,9 @@ import by.training.service.query.Query;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Class is an implementation of interface Query. Searches books by title
+ */
 public class SearchByTitleQuery implements Query {
 
     private String title;
@@ -14,6 +17,12 @@ public class SearchByTitleQuery implements Query {
         this.title=title;
     }
 
+    /**
+     * Searches books by title
+     *
+     * @param books
+     * @return resulting set of found books
+     */
     @Override
     public Set<Book> query(Set<Book> books) {
         Set<Book> result = new HashSet<>();

@@ -14,6 +14,9 @@ import org.apache.logging.log4j.Logger;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Class is an implementation of interface SortBookService
+ */
 public class SortBookServiceImpl implements SortBookService {
     private BookRepository bookRepository;
     private static final Logger logger = LogManager.getLogger(SortBookServiceImpl.class);
@@ -22,6 +25,13 @@ public class SortBookServiceImpl implements SortBookService {
         this.bookRepository = bookRepository;
     }
 
+    /**
+     * Sorts books by tag (creates query, depending on type of tag)
+     *
+     * @param bookInformation
+     * @param sorting
+     * @return
+     */
     @Override
     public Set<Book> sortByTag(BookInformation bookInformation, Sorting sorting) {
         Set<Book> books = new HashSet<>();

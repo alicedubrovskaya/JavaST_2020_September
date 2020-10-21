@@ -3,6 +3,11 @@ package by.training.entity;
 import java.util.Objects;
 import java.util.Set;
 
+/**
+ * CLass describes entity Book. Has overridden methods, getters
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class Book {
     private String title;
     private int numberOfPages;

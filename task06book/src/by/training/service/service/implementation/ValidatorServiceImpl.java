@@ -11,19 +11,39 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Set;
 
+/**
+ * Class is a validator of data
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class ValidatorServiceImpl implements ValidatorService {
 
     private static final Logger logger = LogManager.getLogger(ValidatorServiceImpl.class);
 
+    /**
+     * Validates all fields of a book
+     *
+     * @param book
+     * @throws InvalidBookException
+     */
     @Override
-    public void validate(Book book) throws InvalidBookException {
+    public void validate(Book book) {
         BookValidator bookValidator = new BookValidator();
-        //TODO catching
-        if (!bookValidator.isValidBook(book)) {
-            throw new InvalidBookException();
+        try {
+            if (!bookValidator.isValidBook(book)) {
+                throw new InvalidBookException();
+            }
+        } catch (InvalidBookException e) {
+            logger.error(e.getMessage());
         }
     }
 
+    /**
+     * Validates information, depending on its type
+     *
+     * @param bookInformation
+     * @param information
+     */
     @Override
     public void validate(BookInformation bookInformation, String information) {
         BookValidator bookValidator = new BookValidator();
@@ -44,17 +64,30 @@ public class ValidatorServiceImpl implements ValidatorService {
                 break;
         }
         logger.debug(String.format("Information is valid: %s", isValid));
-        if (!isValid) {
-            throw new InvalidInvormationException();
+        try {
+            if (!isValid) {
+                throw new InvalidInvormationException();
+            }
+        } catch (InvalidBookException e) {
+            logger.error(e.getMessage());
         }
     }
 
+    /**
+     * Validates set of authors
+     *
+     * @param authors
+     */
     @Override
     public void validate(Set<String> authors) {
         BookValidator bookValidator = new BookValidator();
         logger.debug("Validation of authors");
-        if (!bookValidator.authorIsValid(authors)) {
-            throw new InvalidBookException();
+        try {
+            if (!bookValidator.authorIsValid(authors)) {
+                throw new InvalidBookException();
+            }
+        } catch (InvalidBookException e) {
+            logger.error(e.getMessage());
         }
     }
 }

@@ -8,6 +8,9 @@ import by.training.service.query.Query;
 import java.io.IOException;
 import java.util.Set;
 
+/**
+ * Class that is a repository
+ */
 public interface BookRepository {
     void add(Book book) throws BookAlreadyExistsException;
 
@@ -17,5 +20,5 @@ public interface BookRepository {
 
     void saveToFile(Book book, boolean emptyFile);
 
-    Set<Book> query(Query currentQuery)  throws BooksNotFoundException;
+    Set<Book> query(Query currentQuery) throws BooksNotFoundException;
 }

@@ -13,6 +13,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Set;
 
+/**
+ * Class is an implementation of interface repository
+ */
 public class BookRepositoryImpl implements BookRepository {
     private BookDao bookDao;
     private BookStorage storage;
@@ -24,6 +27,12 @@ public class BookRepositoryImpl implements BookRepository {
         this.storage = BookStorage.getInstance();
     }
 
+    /**
+     * Adds book to storage
+     *
+     * @param book
+     * @throws BookAlreadyExistsException
+     */
     @Override
     public void add(Book book) throws BookAlreadyExistsException {
         boolean doesntExist = storage.add(book);
@@ -33,6 +42,12 @@ public class BookRepositoryImpl implements BookRepository {
         }
     }
 
+    /**
+     * Removes book from storage
+     *
+     * @param title
+     * @throws BookNotFoundException
+     */
     @Override
     public void remove(String title) throws BookNotFoundException {
         Set<Book> books = storage.getBooks();
@@ -50,18 +65,37 @@ public class BookRepositoryImpl implements BookRepository {
         }
     }
 
+    /**
+     * Gets set of books from file
+     *
+     * @param filePath
+     * @return set of books from file
+     */
     @Override
     public Set<Book> getFromFile(String filePath) {
         logger.debug("Receiving set of books from file");
         return bookDao.readFromFile(filePath);
     }
 
+    /**
+     * Saves book to file
+     *
+     * @param book
+     * @param emptyFile
+     */
     @Override
     public void saveToFile(Book book, boolean emptyFile) {
         logger.debug(String.format("File should be empty: %s", emptyFile));
         bookDao.writeToFile(book, emptyFile);
     }
 
+    /**
+     * Does some query (finds or sorts by tag)
+     *
+     * @param currentQuery
+     * @return
+     * @throws BooksNotFoundException
+     */
     @Override
     public Set<Book> query(Query currentQuery) throws BooksNotFoundException {
         Set<Book> books = currentQuery.query(storage.getBooks());

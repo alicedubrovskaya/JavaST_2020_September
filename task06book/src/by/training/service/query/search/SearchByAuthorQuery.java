@@ -6,6 +6,9 @@ import by.training.service.query.Query;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Class is an implementation of interface Query. Searches books by author
+ */
 public class SearchByAuthorQuery implements Query {
     private String author;
 
@@ -13,6 +16,12 @@ public class SearchByAuthorQuery implements Query {
         this.author = author;
     }
 
+    /**
+     * Searches books by author
+     *
+     * @param books
+     * @return resulting set of found books
+     */
     @Override
     public Set<Book> query(Set<Book> books) {
         Set<Book> result = new HashSet<>();

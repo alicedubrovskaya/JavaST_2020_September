@@ -1,5 +1,10 @@
 package by.training.view;
 
+/**
+ * Class is responsible for invocation of command execution
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class BookInvoker {
     private BookCommand command;
 

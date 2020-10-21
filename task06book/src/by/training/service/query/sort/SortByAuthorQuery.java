@@ -5,6 +5,9 @@ import by.training.service.query.Query;
 
 import java.util.*;
 
+/**
+ * Class is an implementation of interface Query. Sorts books by author
+ */
 public class SortByAuthorQuery implements Query {
     private boolean isAscending;
 
@@ -12,6 +15,12 @@ public class SortByAuthorQuery implements Query {
         this.isAscending = isAscending;
     }
 
+    /**
+     * Sorts books by first author of a book
+     *
+     * @param books
+     * @return sorted set of books (LinkedSet)
+     */
     @Override
     public Set<Book> query(Set<Book> books) {
         Comparator<Book> comparator = new Comparator<Book>() {

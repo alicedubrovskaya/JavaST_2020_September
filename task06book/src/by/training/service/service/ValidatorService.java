@@ -5,6 +5,9 @@ import by.training.entity.enumeration.BookInformation;
 
 import java.util.Set;
 
+/**
+ * Class is an interface, that is responsible for validation
+ */
 public interface ValidatorService {
     void validate(Book book);
 

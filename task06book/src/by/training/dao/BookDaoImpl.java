@@ -12,9 +12,19 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
+/**
+ * Class that is an implementation of interface BookDao
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class BookDaoImpl implements BookDao {
     private static final Logger logger = LogManager.getLogger(BookDaoImpl.class);
 
+    /**
+     * Reads from file with specified file path
+     * @param filePath
+     * @return  set of read books
+     */
     @Override
     public Set<Book> readFromFile(String filePath) {
         String absoluteFilePath = new File(filePath).getAbsolutePath();
@@ -54,6 +64,12 @@ public class BookDaoImpl implements BookDao {
         return books;
     }
 
+    /**
+     * Writes exemplar of class Book to file. If the file is indicated to be empty, file clears and writing starts from the
+     * beginning of the file
+     * @param book
+     * @param emptyFile
+     */
     @Override
     public void writeToFile(Book book, boolean emptyFile) {
         String absoluteFilePath = new File("task06book/data/result.txt").getAbsolutePath();

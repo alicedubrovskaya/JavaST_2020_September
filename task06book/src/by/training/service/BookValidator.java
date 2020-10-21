@@ -7,6 +7,9 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Class is responsible for validation of data
+ */
 public class BookValidator {
     public boolean isValidBook(Book book) {
         return (titleIsValid(book.getTitle())

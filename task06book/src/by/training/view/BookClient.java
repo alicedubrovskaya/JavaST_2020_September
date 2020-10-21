@@ -3,6 +3,11 @@ package by.training.view;
 import by.training.entity.enumeration.TypeCommand;
 import by.training.view.command.*;
 
+/**
+ * Class is responsible for initializing the interface Command with it's implementation
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class BookClient {
     private BookReceiver bookReceiver;
 
