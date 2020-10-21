@@ -6,10 +6,14 @@ import by.training.exception.InvalidBookException;
 import by.training.exception.InvalidInvormationException;
 import by.training.service.BookValidator;
 import by.training.service.service.ValidatorService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Set;
 
 public class ValidatorServiceImpl implements ValidatorService {
+
+    private static final Logger logger = LogManager.getLogger(ValidatorServiceImpl.class);
 
     @Override
     public void validate(Book book) throws InvalidBookException {
@@ -24,6 +28,7 @@ public class ValidatorServiceImpl implements ValidatorService {
     public void validate(BookInformation bookInformation, String information) {
         BookValidator bookValidator = new BookValidator();
         boolean isValid = true;
+        logger.debug("Validation of information depending on type of information");
         switch (bookInformation) {
             case TITLE:
                 isValid = bookValidator.titleIsValid(information);
@@ -38,6 +43,7 @@ public class ValidatorServiceImpl implements ValidatorService {
                 isValid = bookValidator.pagesIsValid(Integer.valueOf(information));
                 break;
         }
+        logger.debug(String.format("Information is valid: %s", isValid));
         if (!isValid) {
             throw new InvalidInvormationException();
         }
@@ -46,6 +52,7 @@ public class ValidatorServiceImpl implements ValidatorService {
     @Override
     public void validate(Set<String> authors) {
         BookValidator bookValidator = new BookValidator();
+        logger.debug("Validation of authors");
         if (!bookValidator.authorIsValid(authors)) {
             throw new InvalidBookException();
         }

@@ -28,32 +28,40 @@ public class BookController {
     }
 
     public Set<Book> dataLoading(String filePath) {
-        logger.trace("data loading");
+        logger.info("Data loading");
         Set<Book> books = fileService.getFromFile(filePath);
+        logger.debug("Books from file read: " + books.toString());
         bookService.createNewBooks(books);
+        logger.info("Books added to storage");
         return books;
     }
 
     public void createNewBook(String title, int numberOfPages, int yearOfPublishing, String publishingHouse, Set<String> authors) {
+        logger.info("Creation of a new book");
         Book book = new Book(title, numberOfPages, yearOfPublishing, publishingHouse, authors);
         validatorService.validate(book);
         bookService.createNewBook(book);
     }
 
     public void deleteBook(String title) {
+        logger.info("Deleting of a new book");
         bookService.deleteBook(title);
     }
 
     public Set<Book> findByTag(String typeOfTag, String tag) {
+        logger.info("Finding by tag " + tag);
         validatorService.validate(BookInformation.getEnumByTag(typeOfTag), tag);
         Set<Book> result = findBookService.findByTag(BookInformation.getEnumByTag(typeOfTag), tag);
         fileService.saveToFile(result);
+        logger.debug("Found books: " + result.toString());
         return result;
     }
 
     public Set<Book> sortByTag(String typeOfTag, String typeOfSorting) {
+        logger.info("Sorting by tag ");
         Set<Book> result = sortBookService.sortByTag(BookInformation.getEnumByTag(typeOfTag), Sorting.getEnum(typeOfSorting));
         fileService.saveToFile(result);
+        logger.debug("Sorted books: " + result.toString());
         return result;
     }
 

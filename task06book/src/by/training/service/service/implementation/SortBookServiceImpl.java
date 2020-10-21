@@ -8,12 +8,15 @@ import by.training.service.query.Query;
 import by.training.service.query.sort.*;
 import by.training.service.repository.BookRepository;
 import by.training.service.service.SortBookService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class SortBookServiceImpl implements SortBookService {
     private BookRepository bookRepository;
+    private static final Logger logger = LogManager.getLogger(SortBookServiceImpl.class);
 
     public SortBookServiceImpl(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
@@ -43,11 +46,11 @@ public class SortBookServiceImpl implements SortBookService {
 
             default:
         }
-
+        logger.debug("Interface query implemented");
         try {
             books = bookRepository.query(query);
         } catch (BooksNotFoundException e) {
-            System.err.println(e.getMessage());
+            logger.error(e.getMessage());
         }
         return books;
     }

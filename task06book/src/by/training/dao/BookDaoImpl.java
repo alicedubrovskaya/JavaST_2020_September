@@ -1,13 +1,19 @@
 package by.training.dao;
 
 import by.training.entity.Book;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
 public class BookDaoImpl implements BookDao {
+    private static final Logger logger = LogManager.getLogger(BookDaoImpl.class);
 
     @Override
     public Set<Book> readFromFile(String filePath) {
@@ -36,13 +42,15 @@ public class BookDaoImpl implements BookDao {
                     for (int i = 0; i < count; i++) {
                         authors.add(in.nextLine());
                     }
-                    books.add(new Book(title, numberOfPages, yearOfPublishing, publishingHouse, authors));
+                    Book book = new Book(title, numberOfPages, yearOfPublishing, publishingHouse, authors);
+                    logger.debug(String.format("Read from file book:%s", book.toString()));
+                    books.add(book);
+
                 }
             }
         } catch (IOException e) {
-            System.err.println(e);
+            logger.error(e.getMessage());
         }
-
         return books;
     }
 
@@ -52,9 +60,10 @@ public class BookDaoImpl implements BookDao {
         try(FileWriter writer = new FileWriter(absoluteFilePath, !emptyFile)){
             writer.write(book.toString());
             writer.append("\n");
+            logger.debug("Book was wrote to file");
         }
         catch (IOException e){
-            System.err.println(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 }

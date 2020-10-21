@@ -3,16 +3,19 @@ package by.training.service.service.implementation;
 import by.training.entity.Book;
 import by.training.entity.enumeration.BookInformation;
 import by.training.exception.BooksNotFoundException;
-import by.training.service.query.*;
+import by.training.service.query.Query;
 import by.training.service.query.search.*;
 import by.training.service.repository.BookRepository;
 import by.training.service.service.FindBookService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class FindBookServiceImpl implements FindBookService {
     private BookRepository bookRepository;
+    private static final Logger logger = LogManager.getLogger(FindBookServiceImpl.class);
 
     public FindBookServiceImpl(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
@@ -41,10 +44,11 @@ public class FindBookServiceImpl implements FindBookService {
             default:
         }
 
+        logger.debug("Interface query implemented");
         try {
             books = bookRepository.query(query);
         } catch (BooksNotFoundException e) {
-            System.err.println(e.getMessage());
+            logger.error(e.getMessage());
         }
         return books;
     }
