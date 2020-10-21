@@ -1,7 +1,7 @@
 package by.training.service.service;
 
 import by.training.entity.Book;
-import by.training.entity.BookInformation;
+import by.training.entity.enumeration.BookInformation;
 
 import java.util.Set;
 

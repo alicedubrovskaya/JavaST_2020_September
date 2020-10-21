@@ -2,13 +2,14 @@ package by.training.service;
 
 import by.training.service.repository.BookRepository;
 import by.training.service.repository.BookRepositoryImpl;
-import by.training.service.service.FindBookService;
-import by.training.service.service.SortBookService;
-import by.training.service.service.implementation.BookServiceImpl;
-import by.training.service.service.BookService;
-import by.training.service.service.implementation.FindBookServiceImpl;
-import by.training.service.service.implementation.SortBookServiceImpl;
+import by.training.service.service.*;
+import by.training.service.service.implementation.*;
 
+/**
+ * Class represents service factory. Realized factory pattern
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class ServiceFactory {
     private static final ServiceFactory instance = new ServiceFactory();
 
@@ -16,6 +17,9 @@ public class ServiceFactory {
     private final BookService bookService = new BookServiceImpl(bookRepository);
     private final FindBookService findBookService = new FindBookServiceImpl(bookRepository);
     private final SortBookService sortBookService = new SortBookServiceImpl(bookRepository);
+    private final FileService fileService = new FileServiceImpl(bookRepository);
+    private final ValidatorService validatorService = new ValidatorServiceImpl();
+
 
     public static ServiceFactory getInstance() {
         return instance;
@@ -31,5 +35,13 @@ public class ServiceFactory {
 
     public FindBookService getFindBookService() {
         return findBookService;
+    }
+
+    public FileService getFileService() {
+        return fileService;
+    }
+
+    public ValidatorService getValidatorService() {
+        return validatorService;
     }
 }

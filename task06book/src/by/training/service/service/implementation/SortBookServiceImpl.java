@@ -1,8 +1,8 @@
 package by.training.service.service.implementation;
 
 import by.training.entity.Book;
-import by.training.entity.BookInformation;
-import by.training.entity.Sorting;
+import by.training.entity.enumeration.BookInformation;
+import by.training.entity.enumeration.Sorting;
 import by.training.exception.BooksNotFoundException;
 import by.training.service.query.Query;
 import by.training.service.query.sort.*;

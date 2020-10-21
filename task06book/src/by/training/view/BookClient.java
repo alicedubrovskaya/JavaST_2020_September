@@ -1,6 +1,6 @@
 package by.training.view;
 
-import by.training.entity.TypeCommand;
+import by.training.entity.enumeration.TypeCommand;
 import by.training.view.command.*;
 
 public class BookClient {

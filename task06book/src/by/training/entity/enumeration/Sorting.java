@@ -1,4 +1,4 @@
-package by.training.entity;
+package by.training.entity.enumeration;
 
 public enum Sorting {
     ASCENDING("asc"),

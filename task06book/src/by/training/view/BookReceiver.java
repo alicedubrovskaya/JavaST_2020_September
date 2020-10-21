@@ -2,7 +2,7 @@ package by.training.view;
 
 import by.training.controller.BookController;
 import by.training.entity.Book;
-import by.training.entity.TypeCommand;
+import by.training.entity.enumeration.TypeCommand;
 
 import java.util.*;
 

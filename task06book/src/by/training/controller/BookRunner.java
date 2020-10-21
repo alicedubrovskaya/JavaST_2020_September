@@ -1,6 +1,6 @@
 package by.training.controller;
 
-import by.training.entity.TypeCommand;
+import by.training.entity.enumeration.TypeCommand;
 import by.training.view.BookClient;
 import by.training.view.BookCommand;
 import by.training.view.BookInvoker;

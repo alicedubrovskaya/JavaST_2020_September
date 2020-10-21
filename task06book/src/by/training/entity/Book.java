@@ -1,6 +1,5 @@
 package by.training.entity;
 
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -11,7 +10,6 @@ public class Book {
     private Set<String> authors;
     private String publishingHouse;
 
-    //TODO Builder pattern
     public Book(String title, int numberOfPages, int yearOfPublishing, String publishingHouse, Set<String> authors) {
         this.title = title;
         this.numberOfPages = numberOfPages;
@@ -66,7 +64,7 @@ public class Book {
         return publishingHouse;
     }
 
-    public String getFirstAuthor(){
-       return authors.stream().findFirst().get();
+    public String getFirstAuthor() {
+        return authors.stream().findFirst().get();
     }
 }

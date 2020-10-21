@@ -1,4 +1,4 @@
-package by.training.service.service;
+package by.training.service;
 
 import by.training.entity.Book;
 
