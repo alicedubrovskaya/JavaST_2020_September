@@ -1,7 +1,7 @@
 package by.dubrovskaya.service.service;
 
-import by.dubrovskaya.entity.Book;
-import by.dubrovskaya.entity.enumeration.BookInformation;
+import by.dubrovskaya.entity.Publication;
+import by.dubrovskaya.entity.enumeration.PublicationInformation;
 
 import java.util.Set;
 
@@ -9,5 +9,5 @@ import java.util.Set;
  * Class is an interface, that is responsible for finding of books
  */
 public interface FindBookService {
-    Set<Book> findByTag(BookInformation bookInformation, String tag);
+    Set<Publication> findByTag(PublicationInformation publicationInformation, String tag);
 }

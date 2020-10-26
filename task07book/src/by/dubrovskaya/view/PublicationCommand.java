@@ -1,5 +1,5 @@
 package by.dubrovskaya.view;
 
-public interface BookCommand {
+public interface PublicationCommand {
     void execute();
 }

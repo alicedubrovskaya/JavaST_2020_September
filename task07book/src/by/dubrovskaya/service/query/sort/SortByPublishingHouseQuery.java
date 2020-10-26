@@ -1,6 +1,7 @@
 package by.dubrovskaya.service.query.sort;
 
 import by.dubrovskaya.entity.Book;
+import by.dubrovskaya.entity.Publication;
 import by.dubrovskaya.service.query.Query;
 
 import java.util.*;
@@ -18,13 +19,13 @@ public class SortByPublishingHouseQuery implements Query {
     /**
      * Sorts books by publishing house
      *
-     * @param books
+     * @param publications
      * @return sorted set of books (LinkedSet)
      */
     @Override
-    public Set<Book> query(Set<Book> books) {
-        Comparator<Book> comparator = Comparator.comparing(Book::getPublishingHouse);
-        List<Book> list = new LinkedList<Book>(books);
+    public Set<Publication> query(Set<Publication> publications) {
+        Comparator<Publication> comparator = Comparator.comparing(Publication::getPublishingHouse);
+        List<Publication> list = new LinkedList<Publication>(publications);
         if (!isAscending) {
             comparator = comparator.reversed();
         }

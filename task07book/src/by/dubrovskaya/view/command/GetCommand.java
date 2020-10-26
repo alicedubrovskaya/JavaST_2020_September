@@ -1,13 +1,13 @@
 package by.dubrovskaya.view.command;
 
 import by.dubrovskaya.entity.enumeration.TypeCommand;
-import by.dubrovskaya.view.BookCommand;
-import by.dubrovskaya.view.BookReceiver;
+import by.dubrovskaya.view.PublicationCommand;
+import by.dubrovskaya.view.PublicationReceiver;
 
-public class GetCommand implements BookCommand {
-    private BookReceiver receiver;
+public class GetCommand implements PublicationCommand {
+    private PublicationReceiver receiver;
 
-    public GetCommand(BookReceiver receiver) {
+    public GetCommand(PublicationReceiver receiver) {
         this.receiver = receiver;
     }
 

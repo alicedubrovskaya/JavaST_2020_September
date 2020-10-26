@@ -8,10 +8,10 @@ package by.dubrovskaya.dao;
 public class DaoFactory {
     private static final DaoFactory instance = new DaoFactory();
 
-    private final BookDao bookDao = new BookDaoImpl();
+    private final PublicationDao publicationDao = new PublicationDaoImpl();
 
-    public BookDao getBookDao() {
-        return bookDao;
+    public PublicationDao getPublicationDao() {
+        return publicationDao;
     }
 
     public static DaoFactory getInstance() {

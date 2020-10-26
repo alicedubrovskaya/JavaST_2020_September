@@ -1,10 +1,12 @@
 package by.dubrovskaya.service.service.implementation;
 
 import by.dubrovskaya.entity.Book;
-import by.dubrovskaya.entity.enumeration.BookInformation;
+import by.dubrovskaya.entity.Journal;
+import by.dubrovskaya.entity.Publication;
+import by.dubrovskaya.entity.enumeration.PublicationInformation;
 import by.dubrovskaya.exception.InvalidBookException;
 import by.dubrovskaya.exception.InvalidInvormationException;
-import by.dubrovskaya.service.BookValidator;
+import by.dubrovskaya.service.PublicationValidator;
 import by.dubrovskaya.service.service.ValidatorService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,16 +23,19 @@ public class ValidatorServiceImpl implements ValidatorService {
     private static final Logger logger = LogManager.getLogger(ValidatorServiceImpl.class);
 
     /**
-     * Validates all fields of a book
+     * Validates all fields of publication
      *
-     * @param book
+     * @param publication
      * @throws InvalidBookException
      */
     @Override
-    public void validate(Book book) {
-        BookValidator bookValidator = new BookValidator();
+    public void validate(Publication publication) {
+        PublicationValidator publicationValidator = new PublicationValidator();
         try {
-            if (!bookValidator.isValidBook(book)) {
+            if (!(publicationValidator.isValidPublication(publication) &&
+                    ((publication.getClass() == Book.class && publicationValidator.isValidBook((Book) publication))
+                            || (publication.getClass() == Journal.class && publicationValidator.isValidJournal((Journal) publication)))))
+            {
                 throw new InvalidBookException();
             }
         } catch (InvalidBookException e) {
@@ -41,26 +46,26 @@ public class ValidatorServiceImpl implements ValidatorService {
     /**
      * Validates information, depending on its type
      *
-     * @param bookInformation
+     * @param publicationInformation
      * @param information
      */
     @Override
-    public void validate(BookInformation bookInformation, String information) {
-        BookValidator bookValidator = new BookValidator();
+    public void validate(PublicationInformation publicationInformation, String information) {
+        PublicationValidator publicationValidator = new PublicationValidator();
         boolean isValid = true;
         logger.debug("Validation of information depending on type of information");
-        switch (bookInformation) {
+        switch (publicationInformation) {
             case TITLE:
-                isValid = bookValidator.titleIsValid(information);
+                isValid = publicationValidator.titleIsValid(information);
                 break;
             case PUBLISHING_HOUSE:
-                isValid = bookValidator.publishingHouseIsValid(information);
+                isValid = publicationValidator.publishingHouseIsValid(information);
                 break;
             case YEAR:
-                isValid = bookValidator.yearIsValid(Integer.valueOf(information));
+                isValid = publicationValidator.yearIsValid(Integer.valueOf(information));
                 break;
             case PAGES:
-                isValid = bookValidator.pagesIsValid(Integer.valueOf(information));
+                isValid = publicationValidator.pagesIsValid(Integer.valueOf(information));
                 break;
         }
         logger.debug(String.format("Information is valid: %s", isValid));
@@ -80,10 +85,10 @@ public class ValidatorServiceImpl implements ValidatorService {
      */
     @Override
     public void validate(Set<String> authors) {
-        BookValidator bookValidator = new BookValidator();
+        PublicationValidator publicationValidator = new PublicationValidator();
         logger.debug("Validation of authors");
         try {
-            if (!bookValidator.authorIsValid(authors)) {
+            if (!publicationValidator.authorIsValid(authors)) {
                 throw new InvalidBookException();
             }
         } catch (InvalidBookException e) {

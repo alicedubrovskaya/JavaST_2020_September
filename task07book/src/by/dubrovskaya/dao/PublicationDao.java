@@ -9,7 +9,7 @@ import java.util.Set;
  *
  * @author Alisa Dubrovskaya
  */
-public interface BookDao {
+public interface PublicationDao {
     Set<Book> readFromFile(String filePath);
 
     void writeToFile(Book book, boolean emptyFile);

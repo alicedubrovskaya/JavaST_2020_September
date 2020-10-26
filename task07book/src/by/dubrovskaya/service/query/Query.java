@@ -1,6 +1,6 @@
 package by.dubrovskaya.service.query;
 
-import by.dubrovskaya.entity.Book;
+import by.dubrovskaya.entity.Publication;
 
 import java.util.Set;
 
@@ -10,5 +10,5 @@ import java.util.Set;
  * @author Alisa Dubrovskaya
  */
 public interface Query {
-    Set<Book> query(Set<Book> books);
+    Set<Publication> query(Set<Publication> publications);
 }

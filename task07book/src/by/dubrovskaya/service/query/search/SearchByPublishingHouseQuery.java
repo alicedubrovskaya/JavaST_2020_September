@@ -1,6 +1,7 @@
 package by.dubrovskaya.service.query.search;
 
 import by.dubrovskaya.entity.Book;
+import by.dubrovskaya.entity.Publication;
 import by.dubrovskaya.service.query.Query;
 
 import java.util.HashSet;
@@ -21,15 +22,15 @@ public class SearchByPublishingHouseQuery implements Query {
     /**
      * Searches books by publishing house
      *
-     * @param books
+     * @param publications
      * @return resulting set of found books
      */
     @Override
-    public Set<Book> query(Set<Book> books) {
-        Set<Book> result = new HashSet<>();
-        for (Book book : books) {
-            if (book.getPublishingHouse().equals(publishingHouse)) {
-                result.add(book);
+    public Set<Publication> query(Set<Publication> publications) {
+        Set<Publication> result = new HashSet<>();
+        for (Publication publication : publications) {
+            if (publication.getPublishingHouse().equals(publishingHouse)) {
+                result.add(publication);
             }
         }
         return result;

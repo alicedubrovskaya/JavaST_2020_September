@@ -5,10 +5,10 @@ package by.dubrovskaya.view;
  *
  * @author Alisa Dubrovskaya
  */
-public class BookInvoker {
-    private BookCommand command;
+public class PublicationInvoker {
+    private PublicationCommand command;
 
-    public BookInvoker(BookCommand command) {
+    public PublicationInvoker(PublicationCommand command) {
         this.command=command;
     }
 

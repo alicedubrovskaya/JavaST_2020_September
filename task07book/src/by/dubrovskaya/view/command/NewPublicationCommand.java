@@ -4,15 +4,15 @@ import by.dubrovskaya.entity.enumeration.TypeCommand;
 import by.dubrovskaya.view.PublicationCommand;
 import by.dubrovskaya.view.PublicationReceiver;
 
-public class DeleteCommand implements PublicationCommand {
+public class NewPublicationCommand implements PublicationCommand {
     private PublicationReceiver receiver;
 
-    public DeleteCommand(PublicationReceiver receiver) {
+    public NewPublicationCommand(PublicationReceiver receiver) {
         this.receiver = receiver;
     }
 
     @Override
     public void execute() {
-        receiver.action(TypeCommand.DELETE);
+        receiver.action(TypeCommand.NEW_BOOK);
     }
 }

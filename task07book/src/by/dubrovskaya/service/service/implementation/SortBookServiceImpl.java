@@ -1,12 +1,12 @@
 package by.dubrovskaya.service.service.implementation;
 
-import by.dubrovskaya.entity.Book;
-import by.dubrovskaya.entity.enumeration.BookInformation;
+import by.dubrovskaya.entity.Publication;
+import by.dubrovskaya.entity.enumeration.PublicationInformation;
 import by.dubrovskaya.entity.enumeration.Sorting;
 import by.dubrovskaya.exception.BooksNotFoundException;
 import by.dubrovskaya.service.query.Query;
 import by.dubrovskaya.service.query.sort.*;
-import by.dubrovskaya.service.repository.BookRepository;
+import by.dubrovskaya.service.repository.PublicationRepository;
 import by.dubrovskaya.service.service.SortBookService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,31 +18,28 @@ import java.util.Set;
  * Class is an implementation of interface SortBookService
  */
 public class SortBookServiceImpl implements SortBookService {
-    private BookRepository bookRepository;
+    private PublicationRepository publicationRepository;
     private static final Logger logger = LogManager.getLogger(SortBookServiceImpl.class);
 
-    public SortBookServiceImpl(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
+    public SortBookServiceImpl(PublicationRepository publicationRepository) {
+        this.publicationRepository = publicationRepository;
     }
 
     /**
      * Sorts books by tag (creates query, depending on type of tag)
      *
-     * @param bookInformation
+     * @param publicationInformation
      * @param sorting
      * @return
      */
     @Override
-    public Set<Book> sortByTag(BookInformation bookInformation, Sorting sorting) {
-        Set<Book> books = new HashSet<>();
+    public Set<Publication> sortByTag(PublicationInformation publicationInformation, Sorting sorting) {
+        Set<Publication> publications = new HashSet<>();
         Query query = null;
         boolean isAscending = Sorting.getEnum("asc").equals(sorting);
-        switch (bookInformation) {
+        switch (publicationInformation) {
             case TITLE:
                 query = new SortByTitleQuery(isAscending);
-                break;
-            case YEAR:
-                query = new SortByYearQuery(isAscending);
                 break;
             case PUBLISHING_HOUSE:
                 query = new SortByPublishingHouseQuery(isAscending);
@@ -58,10 +55,10 @@ public class SortBookServiceImpl implements SortBookService {
         }
         logger.debug("Interface query implemented");
         try {
-            books = bookRepository.query(query);
+            publications = publicationRepository.query(query);
         } catch (BooksNotFoundException e) {
             logger.error(e.getMessage());
         }
-        return books;
+        return publications;
     }
 }

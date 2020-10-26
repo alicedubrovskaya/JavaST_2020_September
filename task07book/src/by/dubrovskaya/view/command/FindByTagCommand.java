@@ -1,13 +1,13 @@
 package by.dubrovskaya.view.command;
 
 import by.dubrovskaya.entity.enumeration.TypeCommand;
-import by.dubrovskaya.view.BookCommand;
-import by.dubrovskaya.view.BookReceiver;
+import by.dubrovskaya.view.PublicationCommand;
+import by.dubrovskaya.view.PublicationReceiver;
 
-public class FindByTagCommand implements BookCommand {
-    private BookReceiver receiver;
+public class FindByTagCommand implements PublicationCommand {
+    private PublicationReceiver receiver;
 
-    public FindByTagCommand(BookReceiver receiver) {
+    public FindByTagCommand(PublicationReceiver receiver) {
         this.receiver = receiver;
     }
 

@@ -1,6 +1,7 @@
 package by.dubrovskaya.service.query.sort;
 
 import by.dubrovskaya.entity.Book;
+import by.dubrovskaya.entity.Publication;
 import by.dubrovskaya.service.query.Query;
 
 import java.util.*;
@@ -18,20 +19,20 @@ public class SortByAuthorQuery implements Query {
     /**
      * Sorts books by first author of a book
      *
-     * @param books
+     * @param publications
      * @return sorted set of books (LinkedSet)
      */
     @Override
-    public Set<Book> query(Set<Book> books) {
-        Comparator<Book> comparator = new Comparator<Book>() {
+    public Set<Publication> query(Set<Publication> publications) {
+        Comparator<Publication> comparator = new Comparator<Publication>() {
             @Override
-            public int compare(Book book, Book t1) {
-                String firstAuthor = book.getFirstAuthor();
-                String secondAuthor = book.getFirstAuthor();
+            public int compare(Publication publication, Publication t1) {
+                String firstAuthor = publication.getFirstAuthor();
+                String secondAuthor = t1.getFirstAuthor();
                 return firstAuthor.compareTo(secondAuthor);
             }
         };
-        List<Book> list = new LinkedList<Book>(books);
+        List<Publication> list = new LinkedList<Publication>(publications);
         if (!isAscending) {
             comparator = comparator.reversed();
         }

@@ -8,24 +8,20 @@ import java.util.Set;
  *
  * @author Alisa Dubrovskaya
  */
-public class Book {
-    private String title;
-    private int numberOfPages;
+public class Book extends Publication {
     private int yearOfPublishing;
-    private Set<String> authors;
-    private String publishingHouse;
+    private String genre;
 
-    public Book(String title, int numberOfPages, int yearOfPublishing, String publishingHouse, Set<String> authors) {
-        this.title = title;
-        this.numberOfPages = numberOfPages;
+    public Book(String title, int numberOfPages, String publishingHouse, Set<String> authors, int yearOfPublishing,
+                String genre) {
+        super(title, numberOfPages, publishingHouse, authors);
         this.yearOfPublishing = yearOfPublishing;
-        this.publishingHouse = publishingHouse;
-        this.authors = authors;
+        this.genre = genre;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, numberOfPages, yearOfPublishing, publishingHouse, authors);
+        return Objects.hash(super.hashCode(), yearOfPublishing, genre);
     }
 
     @Override
@@ -34,42 +30,24 @@ public class Book {
         Book other = (Book) otherObject;
         return otherObject != null
                 && getClass() == otherObject.getClass()
-                && Objects.equals(title, other.getTitle())
-                && Objects.equals(numberOfPages, other.getNumberOfPages())
+                && super.equals(other)
                 && Objects.equals(yearOfPublishing, other.getYearOfPublishing())
-                && Objects.equals(publishingHouse, other.getPublishingHouse())
-                && Objects.equals(authors, other.getAuthors());
+                && Objects.equals(genre, other.getGenre());
     }
 
     @Override
     public String toString() {
-        return "Book[title=" + title +
-                ", number of pages=" + numberOfPages +
-                ", year of publishing=" + yearOfPublishing +
-                ", authors=" + authors.toString() + "]";
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public int getNumberOfPages() {
-        return numberOfPages;
+        return super.toString() +
+                "[yearOfPublishing=" + yearOfPublishing +
+                ",genre=" + genre +
+                "]";
     }
 
     public int getYearOfPublishing() {
         return yearOfPublishing;
     }
 
-    public Set<String> getAuthors() {
-        return authors;
-    }
-
-    public String getPublishingHouse() {
-        return publishingHouse;
-    }
-
-    public String getFirstAuthor() {
-        return authors.stream().findFirst().get();
+    public String getGenre() {
+        return genre;
     }
 }

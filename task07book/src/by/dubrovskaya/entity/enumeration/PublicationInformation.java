@@ -1,6 +1,6 @@
 package by.dubrovskaya.entity.enumeration;
 
-public enum BookInformation {
+public enum PublicationInformation {
     TITLE("title"),
     PAGES("pages"),
     YEAR("year"),
@@ -9,7 +9,7 @@ public enum BookInformation {
 
     private final String bookInformation;
 
-    BookInformation(String bookInformation) {
+    PublicationInformation(String bookInformation) {
         this.bookInformation = bookInformation;
     }
 
@@ -17,8 +17,8 @@ public enum BookInformation {
         return bookInformation;
     }
 
-    public static BookInformation getEnumByTag(String tag) {
-        for (BookInformation info : values()) {
+    public static PublicationInformation getEnumByTag(String tag) {
+        for (PublicationInformation info : values()) {
             if (info.getBookInformation().equals(tag)) {
                 return info;
             }

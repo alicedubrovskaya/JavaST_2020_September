@@ -1,7 +1,6 @@
 package by.dubrovskaya.view;
 
-import by.dubrovskaya.controller.BookController;
-import by.dubrovskaya.entity.Book;
+import by.dubrovskaya.controller.PublicationController;
 import by.dubrovskaya.entity.enumeration.TypeCommand;
 
 import java.util.HashSet;
@@ -14,13 +13,13 @@ import java.util.Set;
  *
  * @author Alisa Dubrovskaya
  */
-public class BookReceiver {
-    private BookController bookController;
+public class PublicationReceiver {
+    private PublicationController publicationController;
     private Scanner in;
     private ResourceBundle rb;
 
-    public BookReceiver(BookController bookController, ResourceBundle rb) {
-        this.bookController = bookController;
+    public PublicationReceiver(PublicationController publicationController, ResourceBundle rb) {
+        this.publicationController = publicationController;
         in = new Scanner(System.in);
         in.useDelimiter("\n");
         this.rb = rb;
@@ -30,6 +29,9 @@ public class BookReceiver {
         switch (option) {
             case NEW_BOOK:
                 optionCreateNewBook();
+                break;
+            case NEW_JOURNAL:
+                optionCreateNewJournal();
                 break;
             case DELETE:
                 optionDelete();
@@ -51,10 +53,9 @@ public class BookReceiver {
      * Creates new book
      */
     private void optionCreateNewBook() {
-        System.out.println(rb.getString("book.info"));
+        System.out.println(rb.getString("publication.info")+rb.getString("book.info"));
         String title = in.next();
         int numberOfPages = in.nextInt();
-        int yearOfPublishing = in.nextInt();
         String publishingHouse = in.next();
 
         int count = in.nextInt();
@@ -63,7 +64,32 @@ public class BookReceiver {
         for (int i = 0; i < count; i++) {
             authors.add(in.nextLine());
         }
-        bookController.createNewBook(title, numberOfPages, yearOfPublishing, publishingHouse, authors);
+
+        int yearOfPublishing = in.nextInt();
+        String genre = in.next();
+
+        publicationController.createNewBook(title, numberOfPages, publishingHouse, authors, yearOfPublishing, genre);
+    }
+
+    /**
+     * Creates new journal
+     */
+    private void optionCreateNewJournal() {
+        System.out.println(rb.getString("publication.info")+rb.getString("journal.info"));
+        String title = in.next();
+        int numberOfPages = in.nextInt();
+        String publishingHouse = in.next();
+        int count = in.nextInt();
+        in.nextLine();
+        Set<String> authors = new HashSet<>();
+        for (int i = 0; i < count; i++) {
+            authors.add(in.nextLine());
+        }
+
+        int foundationDate = in.nextInt();
+        String periodicity = in.next();
+
+        publicationController.createNewJournal(title, numberOfPages, publishingHouse, authors, periodicity, foundationDate);
     }
 
     /**
@@ -71,12 +97,12 @@ public class BookReceiver {
      */
     private void optionLoadData() {
         System.out.println(rb.getString("book.filePath"));
-        bookController.dataLoading(in.next());
+        publicationController.dataLoading(in.next());
     }
 
     private void optionDelete() {
         System.out.println("Enter title");
-        bookController.deleteBook(in.next());
+        publicationController.deleteBook(in.next());
     }
 
     /**
@@ -89,18 +115,12 @@ public class BookReceiver {
     private void optionFindByTag() {
         System.out.println(rb.getString("book.tag"));
         in.nextLine();
-        printBooks(bookController.findByTag(in.nextLine(), in.nextLine()));
+        publicationController.findByTag(in.nextLine(), in.nextLine());
     }
 
     private void optionSortByTag() {
         System.out.println(rb.getString("book.sort"));
         in.nextLine();
-        printBooks(bookController.sortByTag(in.nextLine(), in.nextLine()));
-    }
-
-    private void printBooks(Set<Book> books) {
-        for (Book book : books) {
-            System.out.println(book.toString());
-        }
+        publicationController.sortByTag(in.nextLine(), in.nextLine());
     }
 }

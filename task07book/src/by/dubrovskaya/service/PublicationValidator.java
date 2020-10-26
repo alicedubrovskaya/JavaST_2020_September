@@ -1,6 +1,8 @@
 package by.dubrovskaya.service;
 
 import by.dubrovskaya.entity.Book;
+import by.dubrovskaya.entity.Journal;
+import by.dubrovskaya.entity.Publication;
 
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -9,13 +11,20 @@ import java.util.regex.Pattern;
 /**
  * Class is responsible for validation of data
  */
-public class BookValidator {
+public class PublicationValidator {
+    public boolean isValidPublication(Publication publication) {
+        return (titleIsValid(publication.getTitle())
+                && authorIsValid(publication.getAuthors())
+                && publishingHouseIsValid(publication.getPublishingHouse())
+                && pagesIsValid(publication.getNumberOfPages()));
+    }
+
     public boolean isValidBook(Book book) {
-        return (titleIsValid(book.getTitle())
-                && authorIsValid(book.getAuthors())
-                && publishingHouseIsValid(book.getPublishingHouse())
-                && pagesIsValid(book.getNumberOfPages())
-                && yearIsValid(book.getYearOfPublishing()));
+        return yearIsValid(book.getYearOfPublishing()) && genreIsValid(book.getGenre());
+    }
+
+    public boolean isValidJournal(Journal journal) {
+        return yearIsValid(journal.getFoundationDate()) && periodicityIsValid(journal.getPeriodicity());
     }
 
     public boolean match(String input, String regex) {
@@ -45,6 +54,20 @@ public class BookValidator {
      */
     public boolean publishingHouseIsValid(String publishingHouse) {
         return match(publishingHouse, "^[A-Z].*$");
+    }
+
+    /**
+     * Genre consists of 1 or more letters in lower case
+     *
+     * @param genre
+     * @return
+     */
+    public boolean genreIsValid(String genre) {
+        return match(genre, "^[a-z]+$");
+    }
+
+    public boolean periodicityIsValid(String periodicity) {
+        return match(periodicity, "^[a-z]+$");
     }
 
     /**
