@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Class is an implementation of interface Query. Searches books by title
+ * Class is an implementation of interface Query. Searches publications by title
  */
 public class SearchByTitleQuery implements Query {
 
@@ -19,10 +19,10 @@ public class SearchByTitleQuery implements Query {
     }
 
     /**
-     * Searches books by title
+     * Searches publications by title
      *
      * @param publications
-     * @return resulting set of found books
+     * @return resulting set of found publications
      */
     @Override
     public Set<Publication> query(Set<Publication> publications) {

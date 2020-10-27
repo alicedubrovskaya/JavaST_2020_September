@@ -12,14 +12,18 @@ import by.dubrovskaya.service.service.implementation.*;
  */
 public class ServiceFactory {
     private static final ServiceFactory INSTANCE = new ServiceFactory();
-    private ServiceFactory(){}
+
+    private ServiceFactory() {
+    }
 
     private final PublicationRepository publicationRepository = new PublicationRepositoryImpl();
     private final BookService bookService = new BookServiceImpl(publicationRepository);
-    private final FindBookService findBookService = new FindBookServiceImpl(publicationRepository);
-    private final SortBookService sortBookService = new SortBookServiceImpl(publicationRepository);
+    private final SearchService searchService = new SearchServiceImpl(publicationRepository);
+    private final SortService sortService = new SortServiceImpl(publicationRepository);
     private final FileService fileService = new FileServiceImpl(publicationRepository);
     private final ValidatorService validatorService = new ValidatorServiceImpl();
+    private final StringService stringService = new StringServiceImpl();
+    private final NumberService numberService = new NumberServiceImpl();
 
 
     public static ServiceFactory getInstance() {
@@ -30,12 +34,12 @@ public class ServiceFactory {
         return bookService;
     }
 
-    public SortBookService getSortBookService() {
-        return sortBookService;
+    public SortService getSortService() {
+        return sortService;
     }
 
-    public FindBookService getFindBookService() {
-        return findBookService;
+    public SearchService getSearchService() {
+        return searchService;
     }
 
     public FileService getFileService() {
@@ -44,5 +48,13 @@ public class ServiceFactory {
 
     public ValidatorService getValidatorService() {
         return validatorService;
+    }
+
+    public StringService getStringService() {
+        return stringService;
+    }
+
+    public NumberService getNumberService() {
+        return numberService;
     }
 }

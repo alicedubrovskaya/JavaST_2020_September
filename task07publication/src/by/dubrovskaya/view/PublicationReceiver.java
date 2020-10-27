@@ -114,7 +114,6 @@ public class PublicationReceiver {
      */
     private void optionFindByTag() {
         System.out.println(rb.getString("book.tag"));
-        in.nextLine();
         publicationController.findByTag(in.nextLine(), in.nextLine());
     }
 

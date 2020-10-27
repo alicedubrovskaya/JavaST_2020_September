@@ -20,16 +20,16 @@ import java.util.Set;
 public class PublicationController {
     private static final Logger logger = LogManager.getLogger(PublicationController.class);
     private BookService bookService;
-    private FindBookService findBookService;
-    private SortBookService sortBookService;
+    private SearchService searchService;
+    private SortService sortService;
     private ValidatorService validatorService;
     private FileService fileService;
 
     public PublicationController() {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         this.bookService = serviceFactory.getBookService();
-        this.findBookService = serviceFactory.getFindBookService();
-        this.sortBookService = serviceFactory.getSortBookService();
+        this.searchService = serviceFactory.getSearchService();
+        this.sortService = serviceFactory.getSortService();
         this.validatorService = serviceFactory.getValidatorService();
         this.fileService = serviceFactory.getFileService();
     }
@@ -92,7 +92,7 @@ public class PublicationController {
     public void findByTag(String typeOfTag, String tag) {
         logger.info("Finding by tag " + tag);
         validatorService.validate(PublicationInformation.getEnumByTag(typeOfTag), tag);
-        Set<Publication> result = findBookService.findByTag(PublicationInformation.getEnumByTag(typeOfTag), tag);
+        Set<Publication> result = searchService.findByTag(PublicationInformation.getEnumByTag(typeOfTag), tag);
         fileService.saveToFile(result);
         logger.debug("Found publications");
     }
@@ -106,7 +106,7 @@ public class PublicationController {
      */
     public void sortByTag(String typeOfTag, String typeOfSorting) {
         logger.info("Sorting by tag ");
-        Set<Publication> result = sortBookService.sortByTag(PublicationInformation.getEnumByTag(typeOfTag), Sorting.getEnum(typeOfSorting));
+        Set<Publication> result = sortService.sortByTag(PublicationInformation.getEnumByTag(typeOfTag), Sorting.getEnum(typeOfSorting));
         //TODO
         // fileService.saveToFile(result);
         logger.debug("Sorted books: " + result.toString());

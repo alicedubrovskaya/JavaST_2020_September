@@ -7,7 +7,7 @@ import by.dubrovskaya.exception.BooksNotFoundException;
 import by.dubrovskaya.service.query.Query;
 import by.dubrovskaya.service.query.sort.*;
 import by.dubrovskaya.service.repository.PublicationRepository;
-import by.dubrovskaya.service.service.SortBookService;
+import by.dubrovskaya.service.service.SortService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,11 +17,11 @@ import java.util.Set;
 /**
  * Class is an implementation of interface SortBookService
  */
-public class SortBookServiceImpl implements SortBookService {
+public class SortServiceImpl implements SortService {
     private PublicationRepository publicationRepository;
-    private static final Logger logger = LogManager.getLogger(SortBookServiceImpl.class);
+    private static final Logger logger = LogManager.getLogger(SortServiceImpl.class);
 
-    public SortBookServiceImpl(PublicationRepository publicationRepository) {
+    public SortServiceImpl(PublicationRepository publicationRepository) {
         this.publicationRepository = publicationRepository;
     }
 

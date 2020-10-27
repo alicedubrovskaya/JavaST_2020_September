@@ -8,27 +8,30 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Class is an implementation of interface Query. Searches publications by author
+ * Class is an implementation of interface Query. Searches books by year
  */
-public class SearchByAuthorQuery implements Query {
-    private String author;
+public class SearchBooksByYearQuery implements Query {
+    private int year;
 
-    public SearchByAuthorQuery(String author) {
-        this.author = author;
+    public SearchBooksByYearQuery(int year) {
+        this.year = year;
     }
 
     /**
-     * Searches publications by author
+     * Searches books by year
      *
      * @param publications
-     * @return resulting set of found publications
+     * @return resulting set of found books
      */
     @Override
     public Set<Publication> query(Set<Publication> publications) {
         Set<Publication> result = new HashSet<>();
         for (Publication publication : publications) {
-            if (publication.getAuthors().contains(author)) {
-                result.add(publication);
+            if (publication.getClass() == Book.class) {
+                Book book = (Book) publication;
+                if (book.getYearOfPublishing() == year) {
+                    result.add(publication);
+                }
             }
         }
         return result;

@@ -6,7 +6,7 @@ import by.dubrovskaya.exception.BooksNotFoundException;
 import by.dubrovskaya.service.query.Query;
 import by.dubrovskaya.service.query.search.*;
 import by.dubrovskaya.service.repository.PublicationRepository;
-import by.dubrovskaya.service.service.FindBookService;
+import by.dubrovskaya.service.service.SearchService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,11 +16,11 @@ import java.util.Set;
 /**
  * Class is an implementation of interface FindBookService
  */
-public class FindBookServiceImpl implements FindBookService {
+public class SearchServiceImpl implements SearchService {
     private PublicationRepository publicationRepository;
-    private static final Logger logger = LogManager.getLogger(FindBookServiceImpl.class);
+    private static final Logger logger = LogManager.getLogger(SearchServiceImpl.class);
 
-    public FindBookServiceImpl(PublicationRepository publicationRepository) {
+    public SearchServiceImpl(PublicationRepository publicationRepository) {
         this.publicationRepository = publicationRepository;
     }
 
@@ -40,7 +40,7 @@ public class FindBookServiceImpl implements FindBookService {
                 query = new SearchByTitleQuery(tag);
                 break;
             case YEAR:
-                query = new SearchByYearQuery(Integer.valueOf(tag));
+                query = new SearchBooksByYearQuery(Integer.valueOf(tag));
                 break;
             case PUBLISHING_HOUSE:
                 query = new SearchByPublishingHouseQuery(tag);
