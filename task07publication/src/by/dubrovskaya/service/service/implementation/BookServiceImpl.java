@@ -1,6 +1,5 @@
 package by.dubrovskaya.service.service.implementation;
 
-import by.dubrovskaya.entity.Book;
 import by.dubrovskaya.entity.Publication;
 import by.dubrovskaya.exception.BookAlreadyExistsException;
 import by.dubrovskaya.exception.BookNotFoundException;
@@ -12,7 +11,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.Set;
 
 /**
- * Class is an implementation of interface BookService
+ * Class is an implementation of interface PublicationService
  *
  * @author Alisa Dubrovskaya
  */
@@ -25,13 +24,13 @@ public class BookServiceImpl implements BookService {
     }
 
     /**
-     * Adds new book
+     * Adds new publication
      * @param publication
      */
     @Override
-    public void createNewBook(Publication publication) {
+    public void createNewPublication(Publication publication) {
         try {
-            logger.debug("Adding book to storage");
+            logger.debug("Adding publication to storage");
             publicationRepository.add(publication);
         } catch (BookAlreadyExistsException e) {
             logger.error(e.getMessage());
@@ -39,13 +38,13 @@ public class BookServiceImpl implements BookService {
     }
 
     /**
-     * Adds new books
+     * Adds new publications
      * @param publications
      */
-    public void createNewBooks(Set<Publication> publications) {
-        logger.debug("Creation of new books");
+    public void createNewPublications(Set<Publication> publications) {
+        logger.debug("Creation of new publications");
         for (Publication publication : publications) {
-            createNewBook(publication);
+            createNewPublication(publication);
         }
     }
 
@@ -54,7 +53,7 @@ public class BookServiceImpl implements BookService {
      * @param title
      */
     @Override
-    public void deleteBook(String title) {
+    public void deletePublication(String title) {
         try {
             logger.debug("Deleting from storage of a book by title");
             publicationRepository.remove(title);

@@ -43,7 +43,7 @@ public class PublicationController {
         logger.info("Data loading");
         Set<Publication> publication = fileService.getFromFile(filePath);
         logger.debug("Books from file read: " + publication.toString());
-        bookService.createNewBooks(publication);
+        bookService.createNewPublications(publication);
         logger.info("Books added to storage");
     }
 
@@ -61,7 +61,7 @@ public class PublicationController {
         logger.info("Creation of a new book");
         Publication publication = new Book(title, numberOfPages, publishingHouse, authors, yearOfPublishing, genre);
         validatorService.validate(publication);
-        bookService.createNewBook(publication);
+        bookService.createNewPublication(publication);
     }
 
     public void createNewJournal(String title, int numberOfPages, String publishingHouse,
@@ -69,15 +69,7 @@ public class PublicationController {
         logger.info("Creation of a new journal");
         Publication publication = new Journal(title, numberOfPages, publishingHouse, authors, periodicity, foundationDate);
         validatorService.validate(publication);
-        bookService.createNewBook(publication);
-    }
-
-    public void createNewPublication(String title, int numberOfPages, String publishingHouse,
-                                     Set<String> authors, String periodicity, int foundationDate) {
-        logger.info("Creation of a new journal");
-        Publication publication = new Journal(title, numberOfPages, publishingHouse, authors, periodicity, foundationDate);
-        validatorService.validate(publication);
-        bookService.createNewBook(publication);
+        bookService.createNewPublication(publication);
     }
 
     /**
@@ -87,7 +79,7 @@ public class PublicationController {
      */
     public void deleteBook(String title) {
         logger.info("Deleting of a new book");
-        bookService.deleteBook(title);
+        bookService.deletePublication(title);
     }
 
     /**

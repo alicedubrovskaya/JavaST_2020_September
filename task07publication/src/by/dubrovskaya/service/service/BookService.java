@@ -9,9 +9,9 @@ import java.util.Set;
  * Class is an interface, that is responsible for adding and deleting books
  */
 public interface BookService {
-    void createNewBook(Publication publication);
+    void createNewPublication(Publication publication);
 
-    void createNewBooks(Set<Publication> publications);
+    void createNewPublications(Set<Publication> publications);
 
-    void deleteBook(String title);
+    void deletePublication(String title);
 }

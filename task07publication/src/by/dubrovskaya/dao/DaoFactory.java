@@ -6,7 +6,10 @@ package by.dubrovskaya.dao;
  * @author Alisa Dubrovskaya
  */
 public class DaoFactory {
-    private static final DaoFactory instance = new DaoFactory();
+    private static final DaoFactory INSTANCE = new DaoFactory();
+
+    private DaoFactory() {
+    }
 
     private final PublicationDao publicationDao = new PublicationDaoImpl();
 
@@ -15,6 +18,6 @@ public class DaoFactory {
     }
 
     public static DaoFactory getInstance() {
-        return instance;
+        return INSTANCE;
     }
 }

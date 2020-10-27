@@ -1,8 +1,7 @@
 package by.dubrovskaya.service.repository;
 
-import by.dubrovskaya.dao.PublicationDao;
 import by.dubrovskaya.dao.DaoFactory;
-import by.dubrovskaya.entity.Book;
+import by.dubrovskaya.dao.PublicationDao;
 import by.dubrovskaya.entity.Publication;
 import by.dubrovskaya.entity.storage.PublicationStorage;
 import by.dubrovskaya.exception.BookAlreadyExistsException;
@@ -20,12 +19,25 @@ import java.util.Set;
 public class PublicationRepositoryImpl implements PublicationRepository {
     private PublicationDao publicationDao;
     private PublicationStorage storage;
+    private int id;
     private static final Logger logger = LogManager.getLogger(PublicationRepositoryImpl.class);
 
     public PublicationRepositoryImpl() {
         DaoFactory daoFactory = DaoFactory.getInstance();
         this.publicationDao = daoFactory.getPublicationDao();
         this.storage = PublicationStorage.getInstance();
+        this.id = 0;
+    }
+
+    /**
+     * Generates new id
+     *
+     * @return
+     */
+    @Override
+    public int generateId() {
+        id++;
+        return id;
     }
 
     /**
@@ -40,11 +52,14 @@ public class PublicationRepositoryImpl implements PublicationRepository {
         logger.debug(String.format("Checking whether the book exists or not: %s", !doesntExist));
         if (!doesntExist) {
             throw new BookAlreadyExistsException(publication.getTitle());
+        } else {
+            publication.setId(generateId());
+            update(publication);
         }
     }
 
     /**
-     * Removes book from storage
+     * Removes book from storage by title
      *
      * @param title
      * @throws BookNotFoundException
@@ -64,6 +79,17 @@ public class PublicationRepositoryImpl implements PublicationRepository {
         if (!publicationFound) {
             throw new BookNotFoundException(title);
         }
+    }
+
+    /**
+     * Updates publication in storage
+     *
+     * @param publication
+     */
+    @Override
+    public void update(Publication publication) {
+        remove(publication.getTitle());
+        storage.add(publication);
     }
 
     /**

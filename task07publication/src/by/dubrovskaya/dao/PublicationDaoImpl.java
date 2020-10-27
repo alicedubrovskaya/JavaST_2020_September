@@ -12,6 +12,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -42,18 +43,22 @@ public class PublicationDaoImpl implements PublicationDao {
                 String line = in.nextLine();
                 if (line.equals("*")) {
                     PublicationType type = PublicationType.getEnum(in.nextLine());
-                    Publication publication = null;
+                    Optional<Publication> publication;
                     switch (type) {
                         case BOOK:
-                            publication = readBook(in);
+                            publication = Optional.ofNullable(readBook(in));
                             break;
                         case JOURNAL:
-                            publication = readJournal(in);
+                            publication = Optional.ofNullable(readJournal(in));
                             break;
+                        default:
+                            publication = Optional.empty();
                     }
 
-                    logger.debug(String.format("Read from file publication:%s", publication.toString()));
-                    publications.add(publication);
+                    if (publication.isPresent()) {
+                        logger.debug(String.format("Read from file publication:%s", publication.get().toString()));
+                        publications.add(publication.get());
+                    }
                 }
             }
         } catch (IOException e) {

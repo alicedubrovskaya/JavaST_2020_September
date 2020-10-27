@@ -11,7 +11,8 @@ import by.dubrovskaya.service.service.implementation.*;
  * @author Alisa Dubrovskaya
  */
 public class ServiceFactory {
-    private static final ServiceFactory instance = new ServiceFactory();
+    private static final ServiceFactory INSTANCE = new ServiceFactory();
+    private ServiceFactory(){}
 
     private final PublicationRepository publicationRepository = new PublicationRepositoryImpl();
     private final BookService bookService = new BookServiceImpl(publicationRepository);
@@ -22,7 +23,7 @@ public class ServiceFactory {
 
 
     public static ServiceFactory getInstance() {
-        return instance;
+        return INSTANCE;
     }
 
     public BookService getBookService() {
