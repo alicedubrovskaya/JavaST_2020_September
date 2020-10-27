@@ -1,6 +1,5 @@
 package by.dubrovskaya.service.service;
 
-import by.dubrovskaya.entity.Book;
 import by.dubrovskaya.entity.Publication;
 
 import java.util.Set;
@@ -11,5 +10,5 @@ import java.util.Set;
 public interface FileService  {
     Set<Publication> getFromFile(String filePath);
 
-    void saveToFile(Set<Book> books);
+    void saveToFile(Set<Publication> publications);
 }

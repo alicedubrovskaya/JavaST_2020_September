@@ -33,15 +33,15 @@ public class FileServiceImpl implements FileService {
 
     /**
      * Saves to file set of publications
-     * @param books
+     * @param publications
      */
     @Override
-    public void saveToFile(Set<Book> books) {
-        logger.debug("Saving to file set of books");
+    public void saveToFile(Set<Publication> publications) {
+        logger.debug("Saving to file set of publications");
         boolean firstBook = true;
-        for (Book book : books) {
-            logger.debug(String.format("Saving to file book: %s", book.toString()));
-            publicationRepository.saveToFile(book, firstBook);
+        for (Publication publication : publications) {
+            logger.debug(String.format("Saving to file publication: %s", publication.toString()));
+            publicationRepository.saveToFile(publication, firstBook);
             if (firstBook) {
                 firstBook = false;
             }

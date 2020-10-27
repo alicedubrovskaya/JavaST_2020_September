@@ -101,9 +101,8 @@ public class PublicationController {
         logger.info("Finding by tag " + tag);
         validatorService.validate(PublicationInformation.getEnumByTag(typeOfTag), tag);
         Set<Publication> result = findBookService.findByTag(PublicationInformation.getEnumByTag(typeOfTag), tag);
-        //TODO
-        //  fileService.saveToFile(result);
-        logger.debug(String.format("Found books: %s", result.toString()));
+        fileService.saveToFile(result);
+        logger.debug("Found publications");
     }
 
     /**

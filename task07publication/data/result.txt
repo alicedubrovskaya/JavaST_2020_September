@@ -1,0 +1,1 @@
+by.dubrovskaya.entity.Book[title=An american tragedy, number of pages=300, authors=[Theodore Dreiser]][yearOfPublishing=1925,genre=novel]
