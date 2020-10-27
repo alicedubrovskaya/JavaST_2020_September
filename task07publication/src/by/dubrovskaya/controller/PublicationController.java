@@ -41,18 +41,10 @@ public class PublicationController {
      */
     public void dataLoading(String filePath) {
         logger.info("Data loading");
-        Set<Book> books = fileService.getFromFile(filePath);
-        logger.debug("Books from file read: " + books.toString());
-        bookService.createNewBooks(books);
+        Set<Publication> publication = fileService.getFromFile(filePath);
+        logger.debug("Books from file read: " + publication.toString());
+        bookService.createNewBooks(publication);
         logger.info("Books added to storage");
-    }
-
-    public void createNewPublication(String title, int numberOfPages, String publishingHouse,
-                                     Set<String> authors) {
-        logger.info("Creation of a new publication");
-        Publication publication = new Publication(title, numberOfPages, publishingHouse, authors);
-        validatorService.validate(publication);
-        bookService.createNewBook(publication);
     }
 
     /**
@@ -87,7 +79,6 @@ public class PublicationController {
         validatorService.validate(publication);
         bookService.createNewBook(publication);
     }
-
 
     /**
      * Deletes a book from storage

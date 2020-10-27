@@ -40,12 +40,12 @@ public class BookServiceImpl implements BookService {
 
     /**
      * Adds new books
-     * @param books
+     * @param publications
      */
-    public void createNewBooks(Set<Book> books) {
+    public void createNewBooks(Set<Publication> publications) {
         logger.debug("Creation of new books");
-        for (Book book : books) {
-            createNewBook(book);
+        for (Publication publication : publications) {
+            createNewBook(publication);
         }
     }
 

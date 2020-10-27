@@ -16,9 +16,9 @@ public interface PublicationRepository {
 
     void remove(String title);
 
-    Set<Book> getFromFile(String filePath);
+    Set<Publication> getFromFile(String filePath);
 
-    void saveToFile(Book book, boolean emptyFile);
+    void saveToFile(Publication publication, boolean emptyFile);
 
     Set<Publication> query(Query currentQuery) throws BooksNotFoundException;
 }

@@ -73,7 +73,7 @@ public class PublicationRepositoryImpl implements PublicationRepository {
      * @return set of books from file
      */
     @Override
-    public Set<Book> getFromFile(String filePath) {
+    public Set<Publication> getFromFile(String filePath) {
         logger.debug("Receiving set of books from file");
         return publicationDao.readFromFile(filePath);
     }
@@ -81,13 +81,13 @@ public class PublicationRepositoryImpl implements PublicationRepository {
     /**
      * Saves book to file
      *
-     * @param book
+     * @param publication
      * @param emptyFile
      */
     @Override
-    public void saveToFile(Book book, boolean emptyFile) {
+    public void saveToFile(Publication publication, boolean emptyFile) {
         logger.debug(String.format("File should be empty: %s", emptyFile));
-        publicationDao.writeToFile(book, emptyFile);
+        publicationDao.writeToFile(publication, emptyFile);
     }
 
     /**

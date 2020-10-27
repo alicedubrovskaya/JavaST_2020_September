@@ -93,11 +93,11 @@ public class PublicationReceiver {
     }
 
     /**
-     * Example of file path: task06book/data/book.txt
+     * Example of file path: task07publication/data/publication.txt
      */
     private void optionLoadData() {
         System.out.println(rb.getString("book.filePath"));
-        publicationController.dataLoading(in.next());
+        publicationController.dataLoading("task07publication/data/publication.txt");
     }
 
     private void optionDelete() {

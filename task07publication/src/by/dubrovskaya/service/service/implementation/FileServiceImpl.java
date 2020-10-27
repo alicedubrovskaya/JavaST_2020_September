@@ -1,6 +1,7 @@
 package by.dubrovskaya.service.service.implementation;
 
 import by.dubrovskaya.entity.Book;
+import by.dubrovskaya.entity.Publication;
 import by.dubrovskaya.service.repository.PublicationRepository;
 import by.dubrovskaya.service.service.FileService;
 import org.apache.logging.log4j.LogManager;
@@ -20,18 +21,18 @@ public class FileServiceImpl implements FileService {
     }
 
     /**
-     * Gets set of books from file
+     * Gets set of publications from file
      * @param filePath
      * @return set of read books
      */
     @Override
-    public Set<Book> getFromFile(String filePath) {
+    public Set<Publication> getFromFile(String filePath) {
         logger.debug(String.format("Reading from file with path: %s", filePath));
         return publicationRepository.getFromFile(filePath);
     }
 
     /**
-     * Saves to file set of books
+     * Saves to file set of publications
      * @param books
      */
     @Override

@@ -11,7 +11,7 @@ import java.util.Set;
 public interface BookService {
     void createNewBook(Publication publication);
 
-    void createNewBooks(Set<Book> books);
+    void createNewBooks(Set<Publication> publications);
 
     void deleteBook(String title);
 }

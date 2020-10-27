@@ -5,6 +5,7 @@ import java.util.Set;
 
 public class Journal extends Publication {
     private String periodicity;
+    //TODO Data?
     private int foundationDate;
 
     public Journal(String title, int numberOfPages, String publishingHouse, Set<String> authors, String periodicity,
