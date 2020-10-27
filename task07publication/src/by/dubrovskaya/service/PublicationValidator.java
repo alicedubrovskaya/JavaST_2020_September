@@ -20,7 +20,7 @@ public class PublicationValidator {
     }
 
     public boolean isValidBook(Book book) {
-        return yearIsValid(book.getYearOfPublishing()) && genreIsValid(book.getGenre());
+        return yearIsValid(book.getYearOfPublishing()) && wordIsValid(book.getGenre());
     }
 
     public boolean isValidJournal(Journal journal) {
@@ -57,13 +57,13 @@ public class PublicationValidator {
     }
 
     /**
-     * Genre consists of 1 or more letters in lower case
+     * Word consists of 1 or more letters in lower case
      *
-     * @param genre
+     * @param word
      * @return
      */
-    public boolean genreIsValid(String genre) {
-        return match(genre, "^[a-z]+$");
+    public boolean wordIsValid(String word) {
+        return match(word, "^[a-z]+$");
     }
 
     public boolean periodicityIsValid(String periodicity) {
@@ -91,5 +91,13 @@ public class PublicationValidator {
 
     public boolean pagesIsValid(int pages) {
         return (pages > 0);
+    }
+
+    public boolean idIsValid(int id) {
+        return (id > 0);
+    }
+
+    public boolean idIntervalIsValid(int  left, int right){
+        return (left > 0 && right >=left);
     }
 }

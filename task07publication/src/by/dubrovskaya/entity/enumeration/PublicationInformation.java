@@ -4,8 +4,11 @@ public enum PublicationInformation {
     TITLE("title"),
     PAGES("pages"),
     YEAR("year"),
+    AUTHORS("author"),
     PUBLISHING_HOUSE("house"),
-    AUTHORS("author");
+    ID("id"),
+    ID_INTERVAL("interval"),
+    PHRASE_AND_LETTER("phrase and letter");
 
     private final String bookInformation;
 

@@ -11,6 +11,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -28,28 +29,39 @@ public class SearchServiceImpl implements SearchService {
      * Finds books by tag (creates query, depending on type of tag)
      *
      * @param publicationInformation
-     * @param tag
+     * @param tagsInfo
      * @return found books
      */
     @Override
-    public Set<Publication> findByTag(PublicationInformation publicationInformation, String tag) {
+    public Set<Publication> findByTag(PublicationInformation publicationInformation, Map<String, Object> tagsInfo) {
+
         Set<Publication> publications = new HashSet<>();
         Query query = null;
         switch (publicationInformation) {
             case TITLE:
-                query = new SearchByTitleQuery(tag);
+                query = new SearchByTitleQuery((String) tagsInfo.get("title"));
                 break;
             case YEAR:
-                query = new SearchBooksByYearQuery(Integer.valueOf(tag));
+                query = new SearchBooksByYearQuery((int) tagsInfo.get("year"));
                 break;
             case PUBLISHING_HOUSE:
-                query = new SearchByPublishingHouseQuery(tag);
+                query = new SearchByPublishingHouseQuery((String) tagsInfo.get("house"));
                 break;
             case PAGES:
-                query = new SearchByNumberOfPagesQuery(Integer.valueOf(tag));
+                query = new SearchByNumberOfPagesQuery((int) tagsInfo.get("pages"));
                 break;
             case AUTHORS:
-                query = new SearchByAuthorQuery(tag);
+                query = new SearchByAuthorQuery((String) tagsInfo.get("author"));
+                break;
+            case ID:
+                query = new SearchByIdQuery((int) tagsInfo.get("id"));
+                break;
+            case PHRASE_AND_LETTER:
+                query = new SearchByPhraseOrStartingLetter((String) tagsInfo.get("phrase"),
+                        (Character) tagsInfo.get("letter"));
+                break;
+            case ID_INTERVAL:
+                query = new SearchByIntervalOfId((int) tagsInfo.get("left"), (int) tagsInfo.get("right"));
                 break;
             default:
         }

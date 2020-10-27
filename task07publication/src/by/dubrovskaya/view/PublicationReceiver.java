@@ -3,10 +3,7 @@ package by.dubrovskaya.view;
 import by.dubrovskaya.controller.PublicationController;
 import by.dubrovskaya.entity.enumeration.TypeCommand;
 
-import java.util.HashSet;
-import java.util.ResourceBundle;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 /**
  * This interface is responsible for executing requests sent with the command
@@ -53,7 +50,7 @@ public class PublicationReceiver {
      * Creates new book
      */
     private void optionCreateNewBook() {
-        System.out.println(rb.getString("publication.info")+rb.getString("book.info"));
+        System.out.println(rb.getString("publication.info") + rb.getString("book.info"));
         String title = in.next();
         int numberOfPages = in.nextInt();
         String publishingHouse = in.next();
@@ -75,7 +72,7 @@ public class PublicationReceiver {
      * Creates new journal
      */
     private void optionCreateNewJournal() {
-        System.out.println(rb.getString("publication.info")+rb.getString("journal.info"));
+        System.out.println(rb.getString("publication.info") + rb.getString("journal.info"));
         String title = in.next();
         int numberOfPages = in.nextInt();
         String publishingHouse = in.next();
@@ -109,12 +106,19 @@ public class PublicationReceiver {
      * TITLE("title"),
      * PAGES("pages"),
      * YEAR("year"),
+     * AUTHORS("author"),
      * PUBLISHING_HOUSE("house"),
-     * AUTHORS("author");
+     * ID("id"),
+     * ID_INTERVAL("interval"),
+     * PHRASE_AND_LETTER("phrase and letter");
      */
     private void optionFindByTag() {
         System.out.println(rb.getString("book.tag"));
-        publicationController.findByTag(in.nextLine(), in.nextLine());
+        //TODO input
+        Map<String, Object> tags = new HashMap<>();
+        tags.put("left", 1);
+        tags.put("right", 0);
+        publicationController.findByTag(in.nextLine(), tags);
     }
 
     private void optionSortByTag() {

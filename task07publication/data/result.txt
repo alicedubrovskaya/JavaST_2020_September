@@ -1,1 +1,2 @@
+by.dubrovskaya.entity.Journal[title=Vogue, number of pages=20, authors=[Anna Wintour, Eugenia de la Torriente]][periodicity=monthlya,foundationDate=1892]
 by.dubrovskaya.entity.Book[title=An american tragedy, number of pages=300, authors=[Theodore Dreiser]][yearOfPublishing=1925,genre=novel]

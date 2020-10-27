@@ -10,6 +10,7 @@ import by.dubrovskaya.service.service.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -86,13 +87,14 @@ public class PublicationController {
      * Finds books by tag
      *
      * @param typeOfTag
-     * @param tag       - value of specified tag
+     * @param tagsInfo  - values of tags
      * @return
      */
-    public void findByTag(String typeOfTag, String tag) {
-        logger.info("Finding by tag " + tag);
-        validatorService.validate(PublicationInformation.getEnumByTag(typeOfTag), tag);
-        Set<Publication> result = searchService.findByTag(PublicationInformation.getEnumByTag(typeOfTag), tag);
+    public void findByTag(String typeOfTag, Map<String, Object> tagsInfo) {
+        logger.info("Finding by specified tags ");
+
+        validatorService.validate(PublicationInformation.getEnumByTag(typeOfTag), tagsInfo);
+        Set<Publication> result = searchService.findByTag(PublicationInformation.getEnumByTag(typeOfTag), tagsInfo);
         fileService.saveToFile(result);
         logger.debug("Found publications");
     }
