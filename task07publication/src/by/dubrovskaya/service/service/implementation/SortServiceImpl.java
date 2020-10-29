@@ -1,7 +1,7 @@
 package by.dubrovskaya.service.service.implementation;
 
 import by.dubrovskaya.entity.Publication;
-import by.dubrovskaya.entity.enumeration.PublicationInformation;
+import by.dubrovskaya.entity.enumeration.SortType;
 import by.dubrovskaya.entity.enumeration.Sorting;
 import by.dubrovskaya.exception.BooksNotFoundException;
 import by.dubrovskaya.service.query.Query;
@@ -28,16 +28,16 @@ public class SortServiceImpl implements SortService {
     /**
      * Sorts books by tag (creates query, depending on type of tag)
      *
-     * @param publicationInformation
+     * @param sortType
      * @param sorting
      * @return
      */
     @Override
-    public Set<Publication> sortByTag(PublicationInformation publicationInformation, Sorting sorting) {
+    public Set<Publication> sortByTag(SortType sortType, Sorting sorting) {
         Set<Publication> publications = new HashSet<>();
         Query query = null;
         boolean isAscending = Sorting.getEnum("asc").equals(sorting);
-        switch (publicationInformation) {
+        switch (sortType) {
             case TITLE:
                 query = new SortByTitleQuery(isAscending);
                 break;
@@ -45,12 +45,17 @@ public class SortServiceImpl implements SortService {
                 query = new SortByPublishingHouseQuery(isAscending);
                 break;
             case PAGES:
-                query = new SortByNumberOfPagesQuery(isAscending);
+                query = new SortByPagesQuery(isAscending);
                 break;
             case AUTHORS:
                 query = new SortByAuthorQuery(isAscending);
                 break;
-
+            case TITLE_AND_PAGE:
+                query = new SortByTitleAndPages(isAscending);
+                break;
+            case PAGE_AND_PUBLISHING_HOUSE:
+                query = new SortByPagesAndPublishingHouse(isAscending);
+                break;
             default:
         }
         logger.debug("Interface query implemented");

@@ -3,7 +3,8 @@ package by.dubrovskaya.controller;
 import by.dubrovskaya.entity.Book;
 import by.dubrovskaya.entity.Journal;
 import by.dubrovskaya.entity.Publication;
-import by.dubrovskaya.entity.enumeration.PublicationInformation;
+import by.dubrovskaya.entity.enumeration.SearchType;
+import by.dubrovskaya.entity.enumeration.SortType;
 import by.dubrovskaya.entity.enumeration.Sorting;
 import by.dubrovskaya.service.ServiceFactory;
 import by.dubrovskaya.service.service.*;
@@ -93,8 +94,8 @@ public class PublicationController {
     public void findByTag(String typeOfTag, Map<String, Object> tagsInfo) {
         logger.info("Finding by specified tags ");
 
-        validatorService.validate(PublicationInformation.getEnumByTag(typeOfTag), tagsInfo);
-        Set<Publication> result = searchService.findByTag(PublicationInformation.getEnumByTag(typeOfTag), tagsInfo);
+        validatorService.validate(SearchType.getEnumByTag(typeOfTag), tagsInfo);
+        Set<Publication> result = searchService.findByTag(SearchType.getEnumByTag(typeOfTag), tagsInfo);
         fileService.saveToFile(result);
         logger.debug("Found publications");
     }
@@ -108,9 +109,8 @@ public class PublicationController {
      */
     public void sortByTag(String typeOfTag, String typeOfSorting) {
         logger.info("Sorting by tag ");
-        Set<Publication> result = sortService.sortByTag(PublicationInformation.getEnumByTag(typeOfTag), Sorting.getEnum(typeOfSorting));
-        //TODO
-        // fileService.saveToFile(result);
-        logger.debug("Sorted books: " + result.toString());
+        Set<Publication> result = sortService.sortByTag(SortType.getEnum(typeOfTag), Sorting.getEnum(typeOfSorting));
+        fileService.saveToFile(result);
+        logger.debug("Publications sorted");
     }
 }

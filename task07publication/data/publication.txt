@@ -8,6 +8,24 @@ Theodore Dreiser
 1925
 novel
 *
+book
+Ao american tragedy
+300
+Boni & Liverigths
+1
+Theodore Dreiser
+1925
+novel
+*
+book
+Am american tragedy
+20
+Boni & Liverigths
+1
+Theodore Dreiser
+1925
+novel
+*
 journal
 Vogue
 20

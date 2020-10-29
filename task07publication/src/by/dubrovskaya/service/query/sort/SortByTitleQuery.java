@@ -3,6 +3,7 @@ package by.dubrovskaya.service.query.sort;
 import by.dubrovskaya.entity.Book;
 import by.dubrovskaya.entity.Publication;
 import by.dubrovskaya.service.query.Query;
+import by.dubrovskaya.service.query.sort.comparator.TitleComparator;
 
 import java.util.*;
 
@@ -24,7 +25,7 @@ public class SortByTitleQuery implements Query {
      */
     @Override
     public Set<Publication> query(Set<Publication> publications) {
-        Comparator<Publication> comparator = Comparator.comparing(Publication::getTitle);
+        Comparator<Publication> comparator = new TitleComparator();
         List<Publication> list = new LinkedList<Publication>(publications);
         if (!isAscending) {
             comparator = comparator.reversed();

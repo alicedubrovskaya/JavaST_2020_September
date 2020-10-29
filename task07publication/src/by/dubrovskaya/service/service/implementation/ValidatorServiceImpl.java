@@ -3,7 +3,7 @@ package by.dubrovskaya.service.service.implementation;
 import by.dubrovskaya.entity.Book;
 import by.dubrovskaya.entity.Journal;
 import by.dubrovskaya.entity.Publication;
-import by.dubrovskaya.entity.enumeration.PublicationInformation;
+import by.dubrovskaya.entity.enumeration.SearchType;
 import by.dubrovskaya.exception.InvalidBookException;
 import by.dubrovskaya.exception.InvalidInvormationException;
 import by.dubrovskaya.service.PublicationValidator;
@@ -46,15 +46,15 @@ public class ValidatorServiceImpl implements ValidatorService {
     /**
      * Validates information, depending on its type
      *
-     * @param publicationInformation
+     * @param searchType
      * @param information
      */
     @Override
-    public void validate(PublicationInformation publicationInformation, Map<String, Object> information) {
+    public void validate(SearchType searchType, Map<String, Object> information) {
         PublicationValidator publicationValidator = new PublicationValidator();
         boolean isValid = true;
         logger.debug("Validation of information depending on type of information");
-        switch (publicationInformation) {
+        switch (searchType) {
             case TITLE:
                 isValid = publicationValidator.titleIsValid((String) information.get("title"));
                 break;

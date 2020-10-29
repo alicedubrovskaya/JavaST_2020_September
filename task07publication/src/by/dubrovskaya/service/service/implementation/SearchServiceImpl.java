@@ -1,7 +1,7 @@
 package by.dubrovskaya.service.service.implementation;
 
 import by.dubrovskaya.entity.Publication;
-import by.dubrovskaya.entity.enumeration.PublicationInformation;
+import by.dubrovskaya.entity.enumeration.SearchType;
 import by.dubrovskaya.exception.BooksNotFoundException;
 import by.dubrovskaya.service.query.Query;
 import by.dubrovskaya.service.query.search.*;
@@ -28,16 +28,16 @@ public class SearchServiceImpl implements SearchService {
     /**
      * Finds books by tag (creates query, depending on type of tag)
      *
-     * @param publicationInformation
+     * @param searchType
      * @param tagsInfo
      * @return found books
      */
     @Override
-    public Set<Publication> findByTag(PublicationInformation publicationInformation, Map<String, Object> tagsInfo) {
+    public Set<Publication> findByTag(SearchType searchType, Map<String, Object> tagsInfo) {
 
         Set<Publication> publications = new HashSet<>();
         Query query = null;
-        switch (publicationInformation) {
+        switch (searchType) {
             case TITLE:
                 query = new SearchByTitleQuery((String) tagsInfo.get("title"));
                 break;

@@ -124,6 +124,6 @@ public class PublicationReceiver {
     private void optionSortByTag() {
         System.out.println(rb.getString("book.sort"));
         in.nextLine();
-        publicationController.sortByTag(in.nextLine(), in.nextLine());
+        publicationController.sortByTag("title and page", "asc");
     }
 }
