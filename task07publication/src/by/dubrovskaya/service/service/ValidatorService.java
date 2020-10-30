@@ -10,7 +10,11 @@ import java.util.Set;
  * Class is an interface, that is responsible for validation
  */
 public interface ValidatorService {
-    void validate(Publication publication);
+    boolean validate(String title, String numberOfPages, String publishingHouse, Set<String> authors);
+
+    boolean validateBook(String yearOfPublishing, String genre);
+
+    boolean validateJournal(String periodicity, String foundationDate);
 
     void validate(SearchType searchType, Map<String, Object> information);
 

@@ -11,6 +11,7 @@ import by.dubrovskaya.service.query.Query;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -19,14 +20,14 @@ import java.util.Set;
 public class PublicationRepositoryImpl implements PublicationRepository {
     private PublicationDao publicationDao;
     private PublicationStorage storage;
-    private int id;
+    private int currentId;
     private static final Logger logger = LogManager.getLogger(PublicationRepositoryImpl.class);
 
     public PublicationRepositoryImpl() {
         DaoFactory daoFactory = DaoFactory.getInstance();
         this.publicationDao = daoFactory.getPublicationDao();
         this.storage = PublicationStorage.getInstance();
-        this.id = 0;
+        this.currentId = 0;
     }
 
     /**
@@ -36,8 +37,8 @@ public class PublicationRepositoryImpl implements PublicationRepository {
      */
     @Override
     public int generateId() {
-        id++;
-        return id;
+        currentId++;
+        return currentId;
     }
 
     /**
@@ -48,13 +49,12 @@ public class PublicationRepositoryImpl implements PublicationRepository {
      */
     @Override
     public void add(Publication publication) throws BookAlreadyExistsException {
-        boolean doesntExist = storage.add(publication);
-        logger.debug(String.format("Checking whether the book exists or not: %s", !doesntExist));
-        if (!doesntExist) {
+        logger.debug("Checking whether the book exists or not");
+        if (storage.exists(publication)) {
             throw new BookAlreadyExistsException(publication.getTitle());
         } else {
             publication.setId(generateId());
-            update(publication);
+            storage.add(publication);
         }
     }
 
@@ -99,7 +99,7 @@ public class PublicationRepositoryImpl implements PublicationRepository {
      * @return set of books from file
      */
     @Override
-    public Set<Publication> getFromFile(String filePath) {
+    public List<String> getFromFile(String filePath) {
         logger.debug("Receiving set of books from file");
         return publicationDao.readFromFile(filePath);
     }

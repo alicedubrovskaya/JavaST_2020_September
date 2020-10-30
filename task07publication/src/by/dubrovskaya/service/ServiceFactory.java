@@ -20,9 +20,9 @@ public class ServiceFactory {
     private final BookService bookService = new BookServiceImpl(publicationRepository);
     private final SearchService searchService = new SearchServiceImpl(publicationRepository);
     private final SortService sortService = new SortServiceImpl(publicationRepository);
-    private final FileService fileService = new FileServiceImpl(publicationRepository);
-    private final ValidatorService validatorService = new ValidatorServiceImpl();
-    private final StringService stringService = new StringServiceImpl();
+    private final ValidatorService validatorService = new ValidatorServiceImpl(new PublicationValidator());
+    private final StringService stringService = new StringServiceImpl(validatorService);
+    private final FileService fileService = new FileServiceImpl(publicationRepository, stringService, validatorService);
     private final NumberService numberService = new NumberServiceImpl();
 
 

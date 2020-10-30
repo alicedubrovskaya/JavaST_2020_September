@@ -11,10 +11,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Class that is an implementation of interface PublicationDao
@@ -30,8 +27,28 @@ public class PublicationDaoImpl implements PublicationDao {
      * @param filePath
      * @return set of read books
      */
+
     @Override
-    public Set<Publication> readFromFile(String filePath) {
+    public List<String> readFromFile(String filePath) {
+        String absoluteFilePath = new File(filePath).getAbsolutePath();
+        List<String> lines = new ArrayList<>();
+
+        try (FileReader fr = new FileReader(absoluteFilePath);
+             Scanner in = new Scanner(fr);
+        ) {
+            in.useDelimiter("\r\n");
+            while (in.hasNextLine()) {
+                String line = in.nextLine();
+                lines.add(line);
+            }
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+        }
+        return lines;
+    }
+
+  /*  @Override
+    public List<String> readFromFile(String filePath) {
         String absoluteFilePath = new File(filePath).getAbsolutePath();
         Set<Publication> publications = new HashSet<>();
 
@@ -66,6 +83,8 @@ public class PublicationDaoImpl implements PublicationDao {
         }
         return publications;
     }
+
+   */
 
     @Override
     public Book readBook(Scanner in) {

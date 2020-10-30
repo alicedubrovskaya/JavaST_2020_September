@@ -4,8 +4,8 @@ import by.dubrovskaya.entity.Book;
 import by.dubrovskaya.entity.Journal;
 import by.dubrovskaya.entity.Publication;
 
+import java.util.List;
 import java.util.Scanner;
-import java.util.Set;
 
 /**
  * Interface that works with files
@@ -13,7 +13,7 @@ import java.util.Set;
  * @author Alisa Dubrovskaya
  */
 public interface PublicationDao {
-    Set<Publication> readFromFile(String filePath);
+    List<String> readFromFile(String filePath);
 
     void writeToFile(Publication publication, boolean emptyFile);
 

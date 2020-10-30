@@ -1,9 +1,5 @@
 package by.dubrovskaya.service;
 
-import by.dubrovskaya.entity.Book;
-import by.dubrovskaya.entity.Journal;
-import by.dubrovskaya.entity.Publication;
-
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -12,19 +8,19 @@ import java.util.regex.Pattern;
  * Class is responsible for validation of data
  */
 public class PublicationValidator {
-    public boolean isValidPublication(Publication publication) {
-        return (titleIsValid(publication.getTitle())
-                && authorIsValid(publication.getAuthors())
-                && publishingHouseIsValid(publication.getPublishingHouse())
-                && pagesIsValid(publication.getNumberOfPages()));
+    public boolean isValidPublication(String title, String numberOfPages, String publishingHouse, Set<String> authors) {
+        return (titleIsValid(title)
+                && authorIsValid(authors)
+                && publishingHouseIsValid(publishingHouse)
+                && pagesIsValid(numberOfPages));
     }
 
-    public boolean isValidBook(Book book) {
-        return yearIsValid(book.getYearOfPublishing()) && wordIsValid(book.getGenre());
+    public boolean isValidBook(String yearOfPublishing, String genre) {
+        return yearIsValid(yearOfPublishing) && wordIsValid(genre);
     }
 
-    public boolean isValidJournal(Journal journal) {
-        return yearIsValid(journal.getFoundationDate()) && periodicityIsValid(journal.getPeriodicity());
+    public boolean isValidJournal(String foundationDate, String periodicity) {
+        return yearIsValid(foundationDate) && periodicityIsValid(periodicity);
     }
 
     public boolean match(String input, String regex) {
@@ -85,19 +81,19 @@ public class PublicationValidator {
         return true;
     }
 
-    public boolean yearIsValid(int year) {
-        return (year > 0);
+    public boolean yearIsValid(String year) {
+        return year.matches("^\\d+$");
     }
 
-    public boolean pagesIsValid(int pages) {
-        return (pages > 0);
+    public boolean pagesIsValid(String pages) {
+        return pages.matches("^\\d+$");
     }
 
-    public boolean idIsValid(int id) {
-        return (id > 0);
+    public boolean idIsValid(String id) {
+        return id.matches("^\\d+$");
     }
 
-    public boolean idIntervalIsValid(int  left, int right){
-        return (left > 0 && right >=left);
+    public boolean idIntervalIsValid(int left, int right) {
+        return (left > 0 && right >= left);
     }
 }

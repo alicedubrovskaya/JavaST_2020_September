@@ -1,10 +1,7 @@
 package by.dubrovskaya.service.service.implementation;
 
-import by.dubrovskaya.entity.Book;
-import by.dubrovskaya.entity.Journal;
-import by.dubrovskaya.entity.Publication;
 import by.dubrovskaya.entity.enumeration.SearchType;
-import by.dubrovskaya.exception.InvalidBookException;
+import by.dubrovskaya.exception.InvalidPublicationException;
 import by.dubrovskaya.exception.InvalidInvormationException;
 import by.dubrovskaya.service.PublicationValidator;
 import by.dubrovskaya.service.service.ValidatorService;
@@ -22,25 +19,57 @@ import java.util.Set;
 public class ValidatorServiceImpl implements ValidatorService {
 
     private static final Logger logger = LogManager.getLogger(ValidatorServiceImpl.class);
+    private PublicationValidator publicationValidator;
+
+    public ValidatorServiceImpl(PublicationValidator publicationValidator) {
+        this.publicationValidator = publicationValidator;
+    }
 
     /**
-     * Validates all fields of publication
+     * Validates all parameters of publication
      *
-     * @param publication
-     * @throws InvalidBookException
+     * @param title
+     * @param numberOfPages
+     * @param publishingHouse
+     * @param authors
+     * @return
      */
     @Override
-    public void validate(Publication publication) {
-        PublicationValidator publicationValidator = new PublicationValidator();
+    //TODO
+    public boolean validate(String title, String numberOfPages, String publishingHouse, Set<String> authors) {
         try {
-            if (!(publicationValidator.isValidPublication(publication) &&
-                    ((publication.getClass() == Book.class && publicationValidator.isValidBook((Book) publication))
-                            || (publication.getClass() == Journal.class && publicationValidator.isValidJournal((Journal) publication))))) {
-                throw new InvalidBookException();
+            if (!publicationValidator.isValidPublication(title, numberOfPages, publishingHouse, authors)) {
+                throw new InvalidPublicationException();
             }
-        } catch (InvalidBookException e) {
+        } catch (InvalidPublicationException e) {
+            logger.error(e.getMessage());
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean validateBook(String yearOfPublishing, String genre) {
+        try {
+            if (!publicationValidator.isValidBook(yearOfPublishing, genre)) {
+                throw new InvalidPublicationException();
+            }
+        } catch (InvalidPublicationException e) {
             logger.error(e.getMessage());
         }
+        return true;
+    }
+
+    @Override
+    public boolean validateJournal(String periodicity, String foundationDate) {
+        try {
+            if (!publicationValidator.isValidJournal(periodicity, foundationDate)) {
+                throw new InvalidPublicationException();
+            }
+        } catch (InvalidPublicationException e) {
+            logger.error(e.getMessage());
+        }
+        return true;
     }
 
     /**
@@ -51,7 +80,6 @@ public class ValidatorServiceImpl implements ValidatorService {
      */
     @Override
     public void validate(SearchType searchType, Map<String, Object> information) {
-        PublicationValidator publicationValidator = new PublicationValidator();
         boolean isValid = true;
         logger.debug("Validation of information depending on type of information");
         switch (searchType) {
@@ -62,13 +90,13 @@ public class ValidatorServiceImpl implements ValidatorService {
                 isValid = publicationValidator.publishingHouseIsValid((String) information.get("house"));
                 break;
             case YEAR:
-                isValid = publicationValidator.yearIsValid((int) information.get("year"));
+                isValid = publicationValidator.yearIsValid((String) information.get("year"));
                 break;
             case PAGES:
-                isValid = publicationValidator.pagesIsValid((int) information.get("pages"));
+                isValid = publicationValidator.pagesIsValid((String) information.get("pages"));
                 break;
             case ID:
-                isValid = publicationValidator.idIsValid((int) information.get("id"));
+                isValid = publicationValidator.idIsValid((String) information.get("id"));
                 break;
             case PHRASE_AND_LETTER:
                 //TODO char
@@ -85,7 +113,7 @@ public class ValidatorServiceImpl implements ValidatorService {
             if (!isValid) {
                 throw new InvalidInvormationException();
             }
-        } catch (InvalidBookException e) {
+        } catch (InvalidPublicationException e) {
             logger.error(e.getMessage());
         }
     }
@@ -97,13 +125,12 @@ public class ValidatorServiceImpl implements ValidatorService {
      */
     @Override
     public void validate(Set<String> authors) {
-        PublicationValidator publicationValidator = new PublicationValidator();
         logger.debug("Validation of authors");
         try {
             if (!publicationValidator.authorIsValid(authors)) {
-                throw new InvalidBookException();
+                throw new InvalidPublicationException();
             }
-        } catch (InvalidBookException e) {
+        } catch (InvalidPublicationException e) {
             logger.error(e.getMessage());
         }
     }

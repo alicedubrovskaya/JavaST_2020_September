@@ -52,7 +52,7 @@ public class PublicationReceiver {
     private void optionCreateNewBook() {
         System.out.println(rb.getString("publication.info") + rb.getString("book.info"));
         String title = in.next();
-        int numberOfPages = in.nextInt();
+        String numberOfPages = in.next();
         String publishingHouse = in.next();
 
         int count = in.nextInt();
@@ -62,7 +62,7 @@ public class PublicationReceiver {
             authors.add(in.nextLine());
         }
 
-        int yearOfPublishing = in.nextInt();
+        String yearOfPublishing = in.next();
         String genre = in.next();
 
         publicationController.createNewBook(title, numberOfPages, publishingHouse, authors, yearOfPublishing, genre);
@@ -72,9 +72,10 @@ public class PublicationReceiver {
      * Creates new journal
      */
     private void optionCreateNewJournal() {
+        //TODO the same as reading from file
         System.out.println(rb.getString("publication.info") + rb.getString("journal.info"));
         String title = in.next();
-        int numberOfPages = in.nextInt();
+        String numberOfPages = in.next();
         String publishingHouse = in.next();
         int count = in.nextInt();
         in.nextLine();
@@ -83,7 +84,7 @@ public class PublicationReceiver {
             authors.add(in.nextLine());
         }
 
-        int foundationDate = in.nextInt();
+        String foundationDate = in.next();
         String periodicity = in.next();
 
         publicationController.createNewJournal(title, numberOfPages, publishingHouse, authors, periodicity, foundationDate);

@@ -1,12 +1,12 @@
 package by.dubrovskaya.service.repository;
 
-import by.dubrovskaya.entity.Book;
 import by.dubrovskaya.entity.Publication;
 import by.dubrovskaya.exception.BookAlreadyExistsException;
 import by.dubrovskaya.exception.BookNotFoundException;
 import by.dubrovskaya.exception.BooksNotFoundException;
 import by.dubrovskaya.service.query.Query;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -21,7 +21,7 @@ public interface PublicationRepository {
 
     void remove(String title) throws BookNotFoundException;
 
-    Set<Publication> getFromFile(String filePath);
+    List<String> getFromFile(String filePath);
 
     void saveToFile(Publication publication, boolean emptyFile);
 

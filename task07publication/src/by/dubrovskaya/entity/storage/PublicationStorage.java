@@ -21,6 +21,9 @@ public class PublicationStorage {
         return publications.add(publication);
     }
 
+    public boolean exists(Publication publication){
+        return publications.contains(publication);
+    }
     public void delete(Publication publication) {
         publications.remove(publication);
     }

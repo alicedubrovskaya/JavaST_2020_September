@@ -2,9 +2,9 @@ package by.dubrovskaya.exception;
 
 import java.util.InputMismatchException;
 
-public class InvalidBookException extends InputMismatchException {
+public class InvalidPublicationException extends InputMismatchException {
 
-    public InvalidBookException() {
+    public InvalidPublicationException() {
         super("Invalid book");
     }
 }

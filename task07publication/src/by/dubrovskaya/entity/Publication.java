@@ -4,7 +4,6 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Publication {
-    //TODO move id
     private int id;
     private String title;
     private int numberOfPages;

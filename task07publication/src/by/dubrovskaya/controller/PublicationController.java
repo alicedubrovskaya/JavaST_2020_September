@@ -43,9 +43,9 @@ public class PublicationController {
      */
     public void dataLoading(String filePath) {
         logger.info("Data loading");
-        Set<Publication> publication = fileService.getFromFile(filePath);
-        logger.debug("Books from file read: " + publication.toString());
-        bookService.createNewPublications(publication);
+        Set<Publication> publications = fileService.getFromFile(filePath);
+        logger.debug("Books from file read: " + publications.toString());
+        bookService.createNewPublications(publications);
         logger.info("Books added to storage");
     }
 
@@ -58,20 +58,27 @@ public class PublicationController {
      * @param publishingHouse
      * @param authors
      */
-    public void createNewBook(String title, int numberOfPages, String publishingHouse,
-                              Set<String> authors, int yearOfPublishing, String genre) {
+    public void createNewBook(String title, String numberOfPages, String publishingHouse,
+                              Set<String> authors, String yearOfPublishing, String genre) {
         logger.info("Creation of a new book");
-        Publication publication = new Book(title, numberOfPages, publishingHouse, authors, yearOfPublishing, genre);
-        validatorService.validate(publication);
-        bookService.createNewPublication(publication);
+        if (validatorService.validate(title, numberOfPages, publishingHouse, authors)
+                && validatorService.validateBook(yearOfPublishing, genre)) {
+            Publication publication = new Book(title, Integer.parseInt(numberOfPages), publishingHouse, authors,
+                    Integer.parseInt(yearOfPublishing), genre);
+            bookService.createNewPublication(publication);
+        }
     }
 
-    public void createNewJournal(String title, int numberOfPages, String publishingHouse,
-                                 Set<String> authors, String periodicity, int foundationDate) {
+
+    public void createNewJournal(String title, String numberOfPages, String publishingHouse,
+                                 Set<String> authors, String periodicity, String foundationDate) {
         logger.info("Creation of a new journal");
-        Publication publication = new Journal(title, numberOfPages, publishingHouse, authors, periodicity, foundationDate);
-        validatorService.validate(publication);
-        bookService.createNewPublication(publication);
+        if (validatorService.validate(title, numberOfPages, publishingHouse, authors)
+                && validatorService.validateJournal(periodicity, foundationDate)) {
+            Publication publication = new Journal(title, Integer.parseInt(numberOfPages),
+                    publishingHouse, authors, periodicity, Integer.parseInt(foundationDate));
+            bookService.createNewPublication(publication);
+        }
     }
 
     /**
