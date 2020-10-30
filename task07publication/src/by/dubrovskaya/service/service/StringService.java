@@ -2,6 +2,8 @@ package by.dubrovskaya.service.service;
 
 import by.dubrovskaya.entity.Publication;
 
+import java.util.List;
+
 public interface StringService {
     boolean startsWith(String phrase, String string);
 
@@ -9,5 +11,9 @@ public interface StringService {
 
     Publication parse(String line);
 
-    Publication receiveParameters(String[] subLines);
+    Publication receiveBook(List<String> parameters);
+
+    Publication receiveJournal(List<String> parameters);
+
+    List<String> receiveParameters(String line);
 }

@@ -47,45 +47,6 @@ public class PublicationDaoImpl implements PublicationDao {
         return lines;
     }
 
-  /*  @Override
-    public List<String> readFromFile(String filePath) {
-        String absoluteFilePath = new File(filePath).getAbsolutePath();
-        Set<Publication> publications = new HashSet<>();
-
-        try (FileReader fr = new FileReader(absoluteFilePath);
-             Scanner in = new Scanner(fr);
-        ) {
-            in.useDelimiter("\r\n");
-            while (in.hasNextLine()) {
-                String line = in.nextLine();
-                if (line.equals("*")) {
-                    PublicationType type = PublicationType.getEnum(in.nextLine());
-                    Optional<Publication> publication;
-                    switch (type) {
-                        case BOOK:
-                            publication = Optional.ofNullable(readBook(in));
-                            break;
-                        case JOURNAL:
-                            publication = Optional.ofNullable(readJournal(in));
-                            break;
-                        default:
-                            publication = Optional.empty();
-                    }
-
-                    if (publication.isPresent()) {
-                        logger.debug(String.format("Read from file publication:%s", publication.get().toString()));
-                        publications.add(publication.get());
-                    }
-                }
-            }
-        } catch (IOException e) {
-            logger.error(e.getMessage());
-        }
-        return publications;
-    }
-
-   */
-
     @Override
     public Book readBook(Scanner in) {
         String title = in.next();

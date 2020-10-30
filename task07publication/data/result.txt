@@ -1,1 +1,2 @@
-by.dubrovskaya.entity.Publication[title=Anp american tragedy, number of pages=20, authors=[Theodore Dreiser]]
+by.dubrovskaya.entity.Book[title=An american tragedy, number of pages=300, authors=[Theodore Dreiser]][yearOfPublishing=1925,genre=novel]
+by.dubrovskaya.entity.Journal[title=Vogue, number of pages=20, authors=[Anna Wintour]][periodicity=monthly,foundationDate=1892]

@@ -1,5 +1,7 @@
 package by.dubrovskaya.service.service.implementation;
 
+import by.dubrovskaya.entity.Book;
+import by.dubrovskaya.entity.Journal;
 import by.dubrovskaya.entity.Publication;
 import by.dubrovskaya.service.service.StringService;
 import by.dubrovskaya.service.service.ValidatorService;
@@ -32,26 +34,58 @@ public class StringServiceImpl implements StringService {
 
     @Override
     public Publication parse(String line) {
-        String[] parameters = line.split(",");
-        return receiveParameters(parameters);
+        Publication publication = null;
+        if (line.matches("^book,.*$")) {
+            line = line.replaceFirst("book,", "");
+            publication = receiveBook(receiveParameters(line));
+        } else if (line.matches("^journal,.*$")) {
+            line = line.replaceFirst("journal,", "");
+            publication = receiveJournal(receiveParameters(line));
+        }
+        return publication;
     }
 
-    //TODO optional
     @Override
-    public Publication receiveParameters(String[] subLines) {
-        Publication publication = null;
+    public List<String> receiveParameters(String line) {
+        String[] subLines = line.split(",");
         List<String> parameters = new ArrayList<>();
         for (String subLine : subLines) {
             parameters.add(subLine.substring(subLine.indexOf("=") + 1));
         }
+        return parameters;
+    }
 
+    //TODO optional
+    @Override
+    public Publication receiveBook(List<String> parameters) {
+        Publication publication = null;
         Set<String> authors = new HashSet<>();
+
         authors.add(parameters.get(3));
         //TODO authors =[[One], [Two]]
 
-        if (validatorService.validate(parameters.get(0), parameters.get(1), parameters.get(2), authors)) {
-            publication = new Publication(parameters.get(0), Integer.parseInt(parameters.get(1)),
-                    parameters.get(2), authors);
+        if (parameters.size() == 6) {
+            if (validatorService.validate(parameters.get(0), parameters.get(1), parameters.get(2), authors)) {
+                publication = new Book(parameters.get(0), Integer.parseInt(parameters.get(1)),
+                        parameters.get(2), authors, Integer.parseInt(parameters.get(4)), parameters.get(5));
+            }
+        }
+        return publication;
+    }
+
+    @Override
+    public Publication receiveJournal(List<String> parameters) {
+        Publication publication = null;
+        Set<String> authors = new HashSet<>();
+
+        authors.add(parameters.get(3));
+        //TODO authors =[[One], [Two]]
+
+        if (parameters.size() == 6) {
+            if (validatorService.validate(parameters.get(0), parameters.get(1), parameters.get(2), authors)) {
+                publication = new Journal(parameters.get(0), Integer.parseInt(parameters.get(1)),
+                        parameters.get(2), authors, parameters.get(4), Integer.parseInt(parameters.get(5)));
+            }
         }
         return publication;
     }
