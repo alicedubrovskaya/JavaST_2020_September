@@ -15,5 +15,7 @@ public interface StringService {
 
     Publication receiveJournal(List<String> parameters);
 
+    List<String> receiveAuthors(String string);
+
     List<String> receiveParameters(String line);
 }

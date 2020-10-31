@@ -6,10 +6,7 @@ import by.dubrovskaya.entity.Publication;
 import by.dubrovskaya.service.service.StringService;
 import by.dubrovskaya.service.service.ValidatorService;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -47,12 +44,28 @@ public class StringServiceImpl implements StringService {
 
     @Override
     public List<String> receiveParameters(String line) {
+        List<String> authors = new ArrayList<>();
         String[] subLines = line.split(",");
         List<String> parameters = new ArrayList<>();
+
         for (String subLine : subLines) {
-            parameters.add(subLine.substring(subLine.indexOf("=") + 1));
+            if (subLine.indexOf("=") > 6 &&
+                    subLine.substring(subLine.indexOf("=") - 7, subLine.indexOf("=")).equals("authors")) {
+                authors = receiveAuthors(subLine.substring(subLine.indexOf("=") + 1));
+            } else {
+                parameters.add(subLine.substring(subLine.indexOf("=") + 1));
+            }
         }
+        //authors to the end
+        parameters.addAll(authors);
         return parameters;
+    }
+
+    @Override
+    public List<String> receiveAuthors(String string) {
+        string = string.replaceAll("\\[", "");
+        string = string.replaceAll("\\]", "");
+        return Arrays.asList(string.split(";"));
     }
 
     //TODO optional
@@ -60,14 +73,17 @@ public class StringServiceImpl implements StringService {
     public Publication receiveBook(List<String> parameters) {
         Publication publication = null;
         Set<String> authors = new HashSet<>();
+        if (parameters.size() > 4) {
+            for (int i = 5; i < parameters.size(); i++) {
+                authors.add(parameters.get(i));
+            }
+        }
 
-        authors.add(parameters.get(3));
-        //TODO authors =[[One], [Two]]
-
-        if (parameters.size() == 6) {
-            if (validatorService.validate(parameters.get(0), parameters.get(1), parameters.get(2), authors)) {
+        if (parameters.size() > 5) {
+            if (validatorService.validate(parameters.get(0), parameters.get(1), parameters.get(2), authors)
+                    && validatorService.validateBook(parameters.get(3), parameters.get(4))) {
                 publication = new Book(parameters.get(0), Integer.parseInt(parameters.get(1)),
-                        parameters.get(2), authors, Integer.parseInt(parameters.get(4)), parameters.get(5));
+                        parameters.get(2), authors, Integer.parseInt(parameters.get(3)), parameters.get(4));
             }
         }
         return publication;
@@ -77,14 +93,17 @@ public class StringServiceImpl implements StringService {
     public Publication receiveJournal(List<String> parameters) {
         Publication publication = null;
         Set<String> authors = new HashSet<>();
+        if (parameters.size() > 4) {
+            for (int i = 5; i < parameters.size(); i++) {
+                authors.add(parameters.get(i));
+            }
+        }
 
-        authors.add(parameters.get(3));
-        //TODO authors =[[One], [Two]]
-
-        if (parameters.size() == 6) {
-            if (validatorService.validate(parameters.get(0), parameters.get(1), parameters.get(2), authors)) {
+        if (parameters.size() > 5) {
+            if (validatorService.validate(parameters.get(0), parameters.get(1), parameters.get(2), authors) &&
+                    validatorService.validateJournal(parameters.get(3), parameters.get(4))) {
                 publication = new Journal(parameters.get(0), Integer.parseInt(parameters.get(1)),
-                        parameters.get(2), authors, parameters.get(4), Integer.parseInt(parameters.get(5)));
+                        parameters.get(2), authors, parameters.get(3), Integer.parseInt(parameters.get(4)));
             }
         }
         return publication;
