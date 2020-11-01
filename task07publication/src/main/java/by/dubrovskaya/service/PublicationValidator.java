@@ -19,7 +19,7 @@ public class PublicationValidator {
         return yearIsValid(yearOfPublishing) && wordIsValid(genre);
     }
 
-    public boolean isValidJournal(String foundationDate, String periodicity) {
+    public boolean isValidJournal(String periodicity, String foundationDate) {
         return yearIsValid(foundationDate) && periodicityIsValid(periodicity);
     }
 

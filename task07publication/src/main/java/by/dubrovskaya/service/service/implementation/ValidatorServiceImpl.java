@@ -35,41 +35,45 @@ public class ValidatorServiceImpl implements ValidatorService {
      * @return
      */
     @Override
-    //TODO
     public boolean validate(String title, String numberOfPages, String publishingHouse, Set<String> authors) {
+        boolean isValid = true;
         try {
             if (!publicationValidator.isValidPublication(title, numberOfPages, publishingHouse, authors)) {
+                isValid = false;
                 throw new InvalidPublicationException();
             }
         } catch (InvalidPublicationException e) {
             logger.error(e.getMessage());
-            return false;
         }
-        return true;
+        return isValid;
     }
 
     @Override
     public boolean validateBook(String yearOfPublishing, String genre) {
+        boolean isValid = true;
         try {
             if (!publicationValidator.isValidBook(yearOfPublishing, genre)) {
+                isValid = false;
                 throw new InvalidPublicationException();
             }
         } catch (InvalidPublicationException e) {
             logger.error(e.getMessage());
         }
-        return true;
+        return isValid;
     }
 
     @Override
     public boolean validateJournal(String periodicity, String foundationDate) {
+        boolean isValid = true;
         try {
             if (!publicationValidator.isValidJournal(periodicity, foundationDate)) {
+                isValid = false;
                 throw new InvalidPublicationException();
             }
         } catch (InvalidPublicationException e) {
             logger.error(e.getMessage());
         }
-        return true;
+        return isValid;
     }
 
     /**
