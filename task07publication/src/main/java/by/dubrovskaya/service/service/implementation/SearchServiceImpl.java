@@ -54,7 +54,7 @@ public class SearchServiceImpl implements SearchService {
                 query = new SearchByAuthorQuery((String) tagsInfo.get("author"));
                 break;
             case ID:
-                query = new SearchByIdQuery((int) tagsInfo.get("id"));
+                query = new SearchByIdQuery(Integer.parseInt((String) tagsInfo.get("id")));
                 break;
             case PHRASE_AND_LETTER:
                 query = new SearchByPhraseOrStartingLetter((String) tagsInfo.get("phrase"),
