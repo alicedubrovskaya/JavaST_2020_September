@@ -12,6 +12,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -33,8 +34,8 @@ public class SortServiceImpl implements SortService {
      * @return
      */
     @Override
-    public Set<Publication> sortByTag(SortType sortType, Sorting sorting) {
-        Set<Publication> publications = new HashSet<>();
+    public Optional<Set<Publication>> sortByTag(SortType sortType, Sorting sorting) {
+        Optional<Set<Publication>> publications = Optional.empty();
         Query query = null;
         boolean isAscending = Sorting.getEnum("asc").equals(sorting);
         switch (sortType) {

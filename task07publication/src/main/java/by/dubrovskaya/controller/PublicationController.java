@@ -12,6 +12,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -102,9 +103,11 @@ public class PublicationController {
         logger.info("Finding by specified tags ");
 
         validatorService.validate(SearchType.getEnumByTag(typeOfTag), tagsInfo);
-        Set<Publication> result = searchService.findByTag(SearchType.getEnumByTag(typeOfTag), tagsInfo);
-        fileService.saveToFile(result);
-        logger.debug("Found publications");
+        Optional<Set<Publication>> result = searchService.findByTag(SearchType.getEnumByTag(typeOfTag), tagsInfo);
+        if (result.isPresent()) {
+            fileService.saveToFile(result.get());
+            logger.debug("Found publications");
+        }
     }
 
     /**
@@ -116,8 +119,10 @@ public class PublicationController {
      */
     public void sortByTag(String typeOfTag, String typeOfSorting) {
         logger.info("Sorting by tag ");
-        Set<Publication> result = sortService.sortByTag(SortType.getEnum(typeOfTag), Sorting.getEnum(typeOfSorting));
-        fileService.saveToFile(result);
-        logger.debug("Publications sorted");
+        Optional<Set<Publication>> result = sortService.sortByTag(SortType.getEnum(typeOfTag), Sorting.getEnum(typeOfSorting));
+        if (result.isPresent()) {
+            fileService.saveToFile(result.get());
+            logger.debug("Publications sorted");
+        }
     }
 }

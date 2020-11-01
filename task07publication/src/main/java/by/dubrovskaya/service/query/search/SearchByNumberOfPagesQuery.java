@@ -5,6 +5,7 @@ import by.dubrovskaya.entity.Publication;
 import by.dubrovskaya.service.query.Query;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -25,13 +26,13 @@ public class SearchByNumberOfPagesQuery implements Query {
      * @return resulting set of found publications
      */
     @Override
-    public Set<Publication> query(Set<Publication> publications) {
+    public Optional<Set<Publication>> query(Set<Publication> publications) {
         Set<Publication> result = new HashSet<>();
         for (Publication publication : publications) {
             if (publication.getNumberOfPages() == numberOfPages) {
                 result.add(publication);
             }
         }
-        return result;
+        return Optional.ofNullable(result);
     }
 }

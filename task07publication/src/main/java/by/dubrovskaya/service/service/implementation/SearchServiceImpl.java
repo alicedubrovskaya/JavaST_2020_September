@@ -12,6 +12,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -33,9 +34,9 @@ public class SearchServiceImpl implements SearchService {
      * @return found books
      */
     @Override
-    public Set<Publication> findByTag(SearchType searchType, Map<String, Object> tagsInfo) {
+    public Optional<Set<Publication>> findByTag(SearchType searchType, Map<String, Object> tagsInfo) {
 
-        Set<Publication> publications = new HashSet<>();
+        Optional<Set<Publication>> publications = Optional.empty();
         Query query = null;
         switch (searchType) {
             case TITLE:

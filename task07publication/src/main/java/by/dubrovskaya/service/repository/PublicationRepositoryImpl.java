@@ -7,11 +7,13 @@ import by.dubrovskaya.entity.storage.PublicationStorage;
 import by.dubrovskaya.exception.BookAlreadyExistsException;
 import by.dubrovskaya.exception.BookNotFoundException;
 import by.dubrovskaya.exception.BooksNotFoundException;
+import by.dubrovskaya.observer.PublicationObserver;
 import by.dubrovskaya.service.query.Query;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -19,6 +21,7 @@ import java.util.Set;
  */
 public class PublicationRepositoryImpl implements PublicationRepository {
     private PublicationDao publicationDao;
+    private PublicationObserver publicationObserver;
     private PublicationStorage storage;
     private int currentId;
     private static final Logger logger = LogManager.getLogger(PublicationRepositoryImpl.class);
@@ -28,6 +31,7 @@ public class PublicationRepositoryImpl implements PublicationRepository {
         this.publicationDao = daoFactory.getPublicationDao();
         this.storage = PublicationStorage.getInstance();
         this.currentId = 0;
+        this.publicationObserver = new PublicationObserver();
     }
 
     /**
@@ -54,6 +58,7 @@ public class PublicationRepositoryImpl implements PublicationRepository {
             throw new BookAlreadyExistsException(publication.getTitle());
         } else {
             publication.setId(generateId());
+            publication.attach(publicationObserver);
             storage.add(publication);
         }
     }
@@ -71,6 +76,7 @@ public class PublicationRepositoryImpl implements PublicationRepository {
         boolean publicationFound = false;
         for (Publication publication : publications) {
             if (publication.getTitle().equals(title)) {
+                publication.detach(publicationObserver);
                 storage.delete(publication);
                 publicationFound = true;
             }
@@ -84,12 +90,12 @@ public class PublicationRepositoryImpl implements PublicationRepository {
     /**
      * Updates publication in storage
      *
-     * @param publication
+     * @param title
+     * @param countOfPages
      */
     @Override
-    public void update(Publication publication) {
-        remove(publication.getTitle());
-        storage.add(publication);
+    public void update(String title, int countOfPages, Publication publication) {
+        publication.changeData(title, countOfPages);
     }
 
     /**
@@ -124,8 +130,8 @@ public class PublicationRepositoryImpl implements PublicationRepository {
      * @throws BooksNotFoundException
      */
     @Override
-    public Set<Publication> query(Query currentQuery) throws BooksNotFoundException {
-        Set<Publication> books = currentQuery.query(storage.getPublications());
+    public Optional<Set<Publication>> query(Query currentQuery) throws BooksNotFoundException {
+        Optional<Set<Publication>> books = currentQuery.query(storage.getPublications());
         logger.debug("Checking whether set of books is empty or not");
         if (books.isEmpty()) {
             throw new BooksNotFoundException();

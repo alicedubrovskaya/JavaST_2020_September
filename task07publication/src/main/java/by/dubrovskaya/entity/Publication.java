@@ -49,7 +49,8 @@ public class Publication implements Observable {
                 "]";
     }
 
-    public void changeData(int numberOfPages) {
+    public void changeData(String title, int numberOfPages) {
+        this.title = title;
         this.numberOfPages = numberOfPages;
         notifyObservers();
     }

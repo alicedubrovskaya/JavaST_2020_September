@@ -6,6 +6,7 @@ import by.dubrovskaya.service.query.Query;
 import by.dubrovskaya.service.service.NumberService;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -30,13 +31,13 @@ public class SearchByIntervalOfId implements Query {
      * @return
      */
     @Override
-    public Set<Publication> query(Set<Publication> publications) {
+    public Optional<Set<Publication>> query(Set<Publication> publications) {
         Set<Publication> result = new HashSet<>();
         for (Publication publication : publications) {
             if (numberService.includedToInterval(leftBoundOfInterval, rightBoundOfInterval, publication.getId())) {
                 result.add(publication);
             }
         }
-        return result;
+        return Optional.ofNullable(result);
     }
 }

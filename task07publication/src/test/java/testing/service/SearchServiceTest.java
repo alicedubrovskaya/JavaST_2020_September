@@ -35,7 +35,7 @@ public class SearchServiceTest {
         bookService.createNewPublications(expected);
         Map<String, Object> map = new HashMap<>();
         map.put((String) parameters[1], parameters[2]);
-        Set<Publication> actual = searchService.findByTag((SearchType) parameters[0], map);
+        Set<Publication> actual = searchService.findByTag((SearchType) parameters[0], map).get();
         Assert.assertEquals(actual, expected);
     }
 }

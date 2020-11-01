@@ -7,6 +7,7 @@ import by.dubrovskaya.exception.BooksNotFoundException;
 import by.dubrovskaya.service.query.Query;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -17,7 +18,7 @@ public interface PublicationRepository {
 
     void add(Publication publication) throws BookAlreadyExistsException;
 
-    void update(Publication publication);
+    void update(String title, int countOfPages, Publication publication);
 
     void remove(String title) throws BookNotFoundException;
 
@@ -25,5 +26,5 @@ public interface PublicationRepository {
 
     void saveToFile(Publication publication, boolean emptyFile);
 
-    Set<Publication> query(Query currentQuery) throws BooksNotFoundException;
+    Optional<Set<Publication>> query(Query currentQuery) throws BooksNotFoundException;
 }

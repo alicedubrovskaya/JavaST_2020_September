@@ -6,6 +6,7 @@ import by.dubrovskaya.service.query.Query;
 import by.dubrovskaya.service.service.StringService;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -24,7 +25,7 @@ public class SearchByPhraseOrStartingLetter implements Query {
     }
 
     @Override
-    public Set<Publication> query(Set<Publication> publications) {
+    public Optional<Set<Publication>> query(Set<Publication> publications) {
         Set<Publication> result = new HashSet<>();
         for (Publication publication : publications) {
             if (stringService.startsWith(String.valueOf(startingLetter), publication.getTitle())
@@ -32,6 +33,6 @@ public class SearchByPhraseOrStartingLetter implements Query {
                 result.add(publication);
             }
         }
-        return result;
+        return Optional.ofNullable(result);
     }
 }

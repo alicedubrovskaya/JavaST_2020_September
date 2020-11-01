@@ -5,6 +5,7 @@ import by.dubrovskaya.entity.Publication;
 import by.dubrovskaya.service.query.Query;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -24,7 +25,7 @@ public class SearchBooksByYearQuery implements Query {
      * @return resulting set of found books
      */
     @Override
-    public Set<Publication> query(Set<Publication> publications) {
+    public Optional<Set<Publication>> query(Set<Publication> publications) {
         Set<Publication> result = new HashSet<>();
         for (Publication publication : publications) {
             if (publication.getClass() == Book.class) {
@@ -34,6 +35,7 @@ public class SearchBooksByYearQuery implements Query {
                 }
             }
         }
-        return result;
+
+        return Optional.ofNullable(result);
     }
 }

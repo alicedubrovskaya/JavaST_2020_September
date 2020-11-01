@@ -41,7 +41,7 @@ public class SortServiceTest {
     @Test(dataProvider = "input_sort")
     public void sortByTagTest(Object[] parameters, Set<Publication> expected) {
         bookService.createNewPublications(expected);
-        Set<Publication> actual = sortService.sortByTag((SortType) parameters[0], (Sorting) parameters[1]);
+        Set<Publication> actual = sortService.sortByTag((SortType) parameters[0], (Sorting) parameters[1]).get();
         Assert.assertEquals(actual, expected);
     }
 }

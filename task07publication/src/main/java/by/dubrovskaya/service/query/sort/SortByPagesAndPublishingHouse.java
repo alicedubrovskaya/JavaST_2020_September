@@ -16,13 +16,14 @@ public class SortByPagesAndPublishingHouse implements Query {
     }
 
     @Override
-    public Set<Publication> query(Set<Publication> publications) {
+    public Optional<Set<Publication>> query(Set<Publication> publications) {
         Comparator<Publication> comparator = new PagesComparator().thenComparing(new PublishingHouseComparator());
         List<Publication> list = new LinkedList<Publication>(publications);
         if (!isAscending) {
             comparator = comparator.reversed();
         }
         list.sort(comparator);
-        return new LinkedHashSet<>(list);
+        Set<Publication> linkedList = new LinkedHashSet<>(list);
+        return Optional.ofNullable(linkedList);
     }
 }
