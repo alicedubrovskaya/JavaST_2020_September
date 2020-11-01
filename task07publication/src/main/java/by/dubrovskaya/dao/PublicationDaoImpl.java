@@ -47,41 +47,6 @@ public class PublicationDaoImpl implements PublicationDao {
         return lines;
     }
 
-    @Override
-    public Book readBook(Scanner in) {
-        String title = in.next();
-        int numberOfPages = in.nextInt();
-        String publishingHouse = in.next();
-
-        int count = in.nextInt();
-        in.nextLine();
-        Set<String> authors = new HashSet<>();
-        for (int i = 0; i < count; i++) {
-            authors.add(in.nextLine());
-        }
-
-        int yearOfPublishing = in.nextInt();
-        String genre = in.next();
-        return new Book(title, numberOfPages, publishingHouse, authors, yearOfPublishing, genre);
-    }
-
-    @Override
-    public Journal readJournal(Scanner in) {
-        String title = in.next();
-        int numberOfPages = in.nextInt();
-        String publishingHouse = in.next();
-        int count = in.nextInt();
-        in.nextLine();
-        Set<String> authors = new HashSet<>();
-        for (int i = 0; i < count; i++) {
-            authors.add(in.nextLine());
-        }
-
-        int foundationDate = in.nextInt();
-        String periodicity = in.next();
-        return new Journal(title, numberOfPages, publishingHouse, authors, periodicity, foundationDate);
-    }
-
     /**
      * Writes exemplar of class Publication to file.
      * If the file is indicated to be empty, file clears and writing starts from the
@@ -92,7 +57,6 @@ public class PublicationDaoImpl implements PublicationDao {
      */
     @Override
     public void writeToFile(Publication publication, boolean emptyFile) {
-        //TODO
         String absoluteFilePath = new File("task07publication/data/result.txt").getAbsolutePath();
         try (FileWriter writer = new FileWriter(absoluteFilePath, !emptyFile)) {
             writer.write(publication.toString());

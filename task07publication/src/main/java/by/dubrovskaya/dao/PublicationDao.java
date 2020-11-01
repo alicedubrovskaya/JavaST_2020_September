@@ -16,8 +16,4 @@ public interface PublicationDao {
     List<String> readFromFile(String filePath);
 
     void writeToFile(Publication publication, boolean emptyFile);
-
-    Book readBook(Scanner in);
-
-    Journal readJournal(Scanner in);
 }

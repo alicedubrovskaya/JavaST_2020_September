@@ -1,4 +1,4 @@
-package testing;
+package testing.service;
 
 import by.dubrovskaya.controller.PublicationController;
 import by.dubrovskaya.entity.Book;

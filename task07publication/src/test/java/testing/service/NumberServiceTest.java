@@ -1,4 +1,4 @@
-package testing;
+package testing.service;
 
 import by.dubrovskaya.service.service.NumberService;
 import by.dubrovskaya.service.service.implementation.NumberServiceImpl;

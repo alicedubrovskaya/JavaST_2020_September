@@ -1,4 +1,4 @@
-package testing;
+package testing.service;
 
 import by.dubrovskaya.entity.Book;
 import by.dubrovskaya.entity.Publication;
