@@ -18,11 +18,8 @@ public class PublicationClient {
     public PublicationCommand initCommand(TypeCommand option) {
         PublicationCommand command = null;
         switch (option) {
-            case NEW_BOOK:
+            case NEW_PUBLICATION:
                 command = new NewPublicationCommand(publicationReceiver);
-                break;
-            case NEW_JOURNAL:
-                command = new NewJournalCommand(publicationReceiver);
                 break;
             case DELETE:
                 command = new DeleteCommand(publicationReceiver);

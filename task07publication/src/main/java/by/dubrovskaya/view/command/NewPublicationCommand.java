@@ -13,6 +13,6 @@ public class NewPublicationCommand implements PublicationCommand {
 
     @Override
     public void execute() {
-        receiver.action(TypeCommand.NEW_BOOK);
+        receiver.action(TypeCommand.NEW_PUBLICATION);
     }
 }

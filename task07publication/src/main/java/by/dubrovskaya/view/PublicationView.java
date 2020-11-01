@@ -31,9 +31,8 @@ public class PublicationView {
         PublicationReceiver receiver = new PublicationReceiver(publicationController, rb);
         PublicationClient client = new PublicationClient(receiver);
 
-        PublicationCommand commandNewBook = client.initCommand(TypeCommand.NEW_BOOK);
+        PublicationCommand commandNewBook = client.initCommand(TypeCommand.NEW_PUBLICATION);
         PublicationInvoker invokerNewBook = new PublicationInvoker(commandNewBook);
-        PublicationInvoker invokerNewJournal= new PublicationInvoker(client.initCommand(TypeCommand.NEW_JOURNAL));
         PublicationInvoker invokerDelete = new PublicationInvoker(client.initCommand(TypeCommand.DELETE));
         PublicationInvoker invokerLoad = new PublicationInvoker(client.initCommand(TypeCommand.LOAD));
         PublicationInvoker invokerFind = new PublicationInvoker(client.initCommand(TypeCommand.FIND));
@@ -49,9 +48,6 @@ public class PublicationView {
                     break;
                 case 1:
                     invokerNewBook.invokeCommand();
-                    break;
-                case 2:
-                    invokerNewJournal.invokeCommand();
                     break;
                 case 3:
                     invokerDelete.invokeCommand();

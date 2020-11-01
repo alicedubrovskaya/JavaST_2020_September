@@ -27,6 +27,7 @@ public class PublicationController {
     private SortService sortService;
     private ValidatorService validatorService;
     private FileService fileService;
+    private StringService stringService;
 
     public PublicationController() {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
@@ -35,6 +36,7 @@ public class PublicationController {
         this.sortService = serviceFactory.getSortService();
         this.validatorService = serviceFactory.getValidatorService();
         this.fileService = serviceFactory.getFileService();
+        this.stringService = serviceFactory.getStringService();
     }
 
     /**
@@ -51,43 +53,22 @@ public class PublicationController {
     }
 
     /**
-     * Creates a new book with specified information
+     * Creates a new publication with specified information
      *
-     * @param title
-     * @param numberOfPages
-     * @param yearOfPublishing
-     * @param publishingHouse
-     * @param authors
+     * @param line
      */
-    public void createNewBook(String title, String numberOfPages, String publishingHouse,
-                              Set<String> authors, String yearOfPublishing, String genre) {
+    public void createNewPublication(String line) {
         logger.info("Creation of a new book");
-        if (validatorService.validate(title, numberOfPages, publishingHouse, authors)
-                && validatorService.validateBook(yearOfPublishing, genre)) {
-            Publication publication = new Book(title, Integer.parseInt(numberOfPages), publishingHouse, authors,
-                    Integer.parseInt(yearOfPublishing), genre);
-            bookService.createNewPublication(publication);
-        }
-    }
-
-
-    public void createNewJournal(String title, String numberOfPages, String publishingHouse,
-                                 Set<String> authors, String periodicity, String foundationDate) {
-        logger.info("Creation of a new journal");
-        if (validatorService.validate(title, numberOfPages, publishingHouse, authors)
-                && validatorService.validateJournal(periodicity, foundationDate)) {
-            Publication publication = new Journal(title, Integer.parseInt(numberOfPages),
-                    publishingHouse, authors, periodicity, Integer.parseInt(foundationDate));
-            bookService.createNewPublication(publication);
-        }
+        Optional<Publication> publication = stringService.parse(line);
+        publication.ifPresent(value -> bookService.createNewPublication(value));
     }
 
     /**
-     * Deletes a book from storage
+     * Deletes publication from storage by title
      *
      * @param title
      */
-    public void deleteBook(String title) {
+    public void deletePublication(String title) {
         logger.info("Deleting of a new book");
         bookService.deletePublication(title);
     }

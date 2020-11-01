@@ -24,11 +24,8 @@ public class PublicationReceiver {
 
     public void action(TypeCommand option) {
         switch (option) {
-            case NEW_BOOK:
-                optionCreateNewBook();
-                break;
-            case NEW_JOURNAL:
-                optionCreateNewJournal();
+            case NEW_PUBLICATION:
+                optionCreateNewPublication();
                 break;
             case DELETE:
                 optionDelete();
@@ -47,47 +44,11 @@ public class PublicationReceiver {
     }
 
     /**
-     * Creates new book
+     * Creates new publication
      */
-    private void optionCreateNewBook() {
-        System.out.println(rb.getString("publication.info") + rb.getString("book.info"));
-        String title = in.next();
-        String numberOfPages = in.next();
-        String publishingHouse = in.next();
-
-        int count = in.nextInt();
-        in.nextLine();
-        Set<String> authors = new HashSet<>();
-        for (int i = 0; i < count; i++) {
-            authors.add(in.nextLine());
-        }
-
-        String yearOfPublishing = in.next();
-        String genre = in.next();
-
-        publicationController.createNewBook(title, numberOfPages, publishingHouse, authors, yearOfPublishing, genre);
-    }
-
-    /**
-     * Creates new journal
-     */
-    private void optionCreateNewJournal() {
-        //TODO the same as reading from file
-        System.out.println(rb.getString("publication.info") + rb.getString("journal.info"));
-        String title = in.next();
-        String numberOfPages = in.next();
-        String publishingHouse = in.next();
-        int count = in.nextInt();
-        in.nextLine();
-        Set<String> authors = new HashSet<>();
-        for (int i = 0; i < count; i++) {
-            authors.add(in.nextLine());
-        }
-
-        String foundationDate = in.next();
-        String periodicity = in.next();
-
-        publicationController.createNewJournal(title, numberOfPages, publishingHouse, authors, periodicity, foundationDate);
+    private void optionCreateNewPublication() {
+        System.out.println(rb.getString("publication.info"));
+        publicationController.createNewPublication(in.nextLine());
     }
 
     /**
@@ -100,7 +61,7 @@ public class PublicationReceiver {
 
     private void optionDelete() {
         System.out.println("Enter title");
-        publicationController.deleteBook(in.next());
+        publicationController.deletePublication(in.next());
     }
 
     /**
@@ -115,7 +76,6 @@ public class PublicationReceiver {
      */
     private void optionFindByTag() {
         System.out.println(rb.getString("book.tag"));
-        //TODO input
         Map<String, Object> tags = new HashMap<>();
         tags.put("left", 1);
         tags.put("right", 0);

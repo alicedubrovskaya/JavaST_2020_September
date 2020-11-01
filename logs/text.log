@@ -1,0 +1,31 @@
+2020-11-01 21:56:29.801 [main] INFO  by.dubrovskaya.controller.PublicationController - Data loading
+2020-11-01 21:56:29.809 [main] DEBUG dubrovskaya.service.service.implementation.FileServiceImpl - Reading from file with path: task07publication/data/publication.txt
+2020-11-01 21:56:29.810 [main] DEBUG by.dubrovskaya.service.repository.PublicationRepositoryImpl - Receiving set of books from file
+2020-11-01 21:56:29.948 [main] DEBUG by.dubrovskaya.controller.PublicationController - Books from file read: [by.dubrovskaya.entity.Journal[title=Vogue, number of pages=20, authors=[Anna Wintour]][periodicity=monthly,foundationDate=1892], by.dubrovskaya.entity.Book[title=An american tragedy, number of pages=300, authors=[Theodore Dreiser]][yearOfPublishing=1925,genre=novel]]
+2020-11-01 21:56:29.951 [main] DEBUG dubrovskaya.service.service.implementation.BookServiceImpl - Creation of new publications
+2020-11-01 21:56:29.951 [main] DEBUG dubrovskaya.service.service.implementation.BookServiceImpl - Adding publication to storage
+2020-11-01 21:56:29.952 [main] DEBUG by.dubrovskaya.service.repository.PublicationRepositoryImpl - Checking whether the book exists or not
+2020-11-01 21:56:29.952 [main] DEBUG dubrovskaya.service.service.implementation.BookServiceImpl - Adding publication to storage
+2020-11-01 21:56:29.953 [main] DEBUG by.dubrovskaya.service.repository.PublicationRepositoryImpl - Checking whether the book exists or not
+2020-11-01 21:56:29.953 [main] INFO  by.dubrovskaya.controller.PublicationController - Books added to storage
+2020-11-01 22:12:39.073 [main] INFO  by.dubrovskaya.controller.PublicationController - Data loading
+2020-11-01 22:12:39.083 [main] DEBUG dubrovskaya.service.service.implementation.FileServiceImpl - Reading from file with path: task07publication/data/publication.txt
+2020-11-01 22:12:39.084 [main] DEBUG by.dubrovskaya.service.repository.PublicationRepositoryImpl - Receiving set of books from file
+2020-11-01 22:12:39.231 [main] DEBUG by.dubrovskaya.controller.PublicationController - Books from file read: [by.dubrovskaya.entity.Journal[title=Vogue, number of pages=20, authors=[Anna Wintour]][periodicity=monthly,foundationDate=1892], by.dubrovskaya.entity.Book[title=An american tragedy, number of pages=300, authors=[Theodore Dreiser]][yearOfPublishing=1925,genre=novel]]
+2020-11-01 22:12:39.232 [main] DEBUG dubrovskaya.service.service.implementation.BookServiceImpl - Creation of new publications
+2020-11-01 22:12:39.233 [main] DEBUG dubrovskaya.service.service.implementation.BookServiceImpl - Adding publication to storage
+2020-11-01 22:12:39.233 [main] DEBUG by.dubrovskaya.service.repository.PublicationRepositoryImpl - Checking whether the book exists or not
+2020-11-01 22:12:39.234 [main] INFO  by.dubrovskaya.service.observer.PublicationObserver - Adding of observable
+2020-11-01 22:12:39.235 [main] DEBUG dubrovskaya.service.service.implementation.BookServiceImpl - Adding publication to storage
+2020-11-01 22:12:39.236 [main] DEBUG by.dubrovskaya.service.repository.PublicationRepositoryImpl - Checking whether the book exists or not
+2020-11-01 22:12:39.237 [main] INFO  by.dubrovskaya.service.observer.PublicationObserver - Adding of observable
+2020-11-01 22:12:39.238 [main] INFO  by.dubrovskaya.controller.PublicationController - Books added to storage
+2020-11-01 22:34:10.489 [main] INFO  by.dubrovskaya.controller.PublicationController - Creation of a new book
+2020-11-01 22:36:29.995 [main] INFO  by.dubrovskaya.controller.PublicationController - Creation of a new book
+2020-11-01 22:36:30.012 [main] DEBUG dubrovskaya.service.service.implementation.BookServiceImpl - Adding publication to storage
+2020-11-01 22:36:30.012 [main] DEBUG by.dubrovskaya.service.repository.PublicationRepositoryImpl - Checking whether the book exists or not
+2020-11-01 22:36:30.013 [main] INFO  by.dubrovskaya.observer.PublicationObserver - Adding of observable
+2020-11-01 22:37:40.227 [main] INFO  by.dubrovskaya.controller.PublicationController - Creation of a new book
+2020-11-01 22:37:40.245 [main] DEBUG dubrovskaya.service.service.implementation.BookServiceImpl - Adding publication to storage
+2020-11-01 22:37:40.246 [main] DEBUG by.dubrovskaya.service.repository.PublicationRepositoryImpl - Checking whether the book exists or not
+2020-11-01 22:37:40.247 [main] INFO  by.dubrovskaya.observer.PublicationObserver - Adding of observable
