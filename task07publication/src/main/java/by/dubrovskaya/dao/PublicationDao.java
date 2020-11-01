@@ -5,6 +5,7 @@ import by.dubrovskaya.entity.Journal;
 import by.dubrovskaya.entity.Publication;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 /**

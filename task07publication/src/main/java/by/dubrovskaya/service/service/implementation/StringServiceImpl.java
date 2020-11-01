@@ -6,6 +6,7 @@ import by.dubrovskaya.entity.Publication;
 import by.dubrovskaya.service.service.StringService;
 import by.dubrovskaya.service.service.ValidatorService;
 
+import javax.swing.text.html.Option;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -30,8 +31,9 @@ public class StringServiceImpl implements StringService {
     }
 
     @Override
-    public Publication parse(String line) {
-        Publication publication = null;
+    public Optional<Publication> parse(String line) {
+        Optional<Publication> publication = Optional.empty();
+
         if (line.matches("^book,.*$")) {
             line = line.replaceFirst("book,", "");
             publication = receiveBook(receiveParameters(line));
@@ -68,9 +70,8 @@ public class StringServiceImpl implements StringService {
         return Arrays.asList(string.split(";"));
     }
 
-    //TODO optional
     @Override
-    public Publication receiveBook(List<String> parameters) {
+    public Optional<Publication> receiveBook(List<String> parameters) {
         Publication publication = null;
         Set<String> authors = new HashSet<>();
         if (parameters.size() > 4) {
@@ -86,11 +87,11 @@ public class StringServiceImpl implements StringService {
                         parameters.get(2), authors, Integer.parseInt(parameters.get(3)), parameters.get(4));
             }
         }
-        return publication;
+        return Optional.ofNullable(publication);
     }
 
     @Override
-    public Publication receiveJournal(List<String> parameters) {
+    public Optional<Publication> receiveJournal(List<String> parameters) {
         Publication publication = null;
         Set<String> authors = new HashSet<>();
         if (parameters.size() > 4) {
@@ -106,6 +107,6 @@ public class StringServiceImpl implements StringService {
                         parameters.get(2), authors, parameters.get(3), Integer.parseInt(parameters.get(4)));
             }
         }
-        return publication;
+        return Optional.ofNullable(publication);
     }
 }

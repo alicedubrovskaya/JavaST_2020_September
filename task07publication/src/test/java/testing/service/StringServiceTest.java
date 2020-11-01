@@ -106,13 +106,13 @@ public class StringServiceTest {
 
     @Test(dataProvider = "input_receive_book")
     public void receiveBookTest(String[] parameters, Book expected) {
-        Publication actual = stringService.receiveBook(Arrays.asList(parameters));
+        Publication actual = stringService.receiveBook(Arrays.asList(parameters)).get();
         Assert.assertEquals(actual, expected);
     }
 
     @Test(dataProvider = "input_receive_journal")
     public void receiveJournalTest(String[] parameters, Journal expected) {
-        Publication actual = stringService.receiveJournal(Arrays.asList(parameters));
+        Publication actual = stringService.receiveJournal(Arrays.asList(parameters)).get();
         Assert.assertEquals(actual, expected);
     }
 
@@ -130,7 +130,7 @@ public class StringServiceTest {
 
     @Test(dataProvider = "input_full_line")
     public void parseTest(String[] parameters, Publication expected) {
-        Publication actual = stringService.parse(parameters[0]);
+        Publication actual = stringService.parse(parameters[0]).get();
         Assert.assertEquals(actual,expected);
     }
 }

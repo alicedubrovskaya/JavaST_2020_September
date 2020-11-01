@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -40,9 +41,9 @@ public class FileServiceImpl implements FileService {
         logger.debug(String.format("Reading from file with path: %s", filePath));
         List<String> lines = publicationRepository.getFromFile(filePath);
         for (String line : lines) {
-            Publication publication = stringService.parse(line);
-            if (publication != null) {
-                publications.add(publication);
+            Optional<Publication> publication = stringService.parse(line);
+            if (publication.isPresent()) {
+                publications.add(publication.get());
             }
         }
         return publications;
