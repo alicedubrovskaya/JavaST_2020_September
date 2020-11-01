@@ -1,2 +1,2 @@
 book,title=An american tragedy,pages=300,house=Boni & Liverigths,authors=[Theodore Dreiser],year=1925,genre=novel
-journal,title=Vogue,pages=20,house=Conde Nast Publiations,authors=[Anna Wintour;Theodore Dreiser],periodicity=monthly,foundationDate=1892
+journal,title=Vogue,pages=20,house=Conde Nast Publiations,authors=[Anna Wintour],periodicity=monthly,foundationDate=1892
