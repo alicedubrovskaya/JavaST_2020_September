@@ -1,4 +1,4 @@
-package by.training.thread.task02;
+package by.training.thread02runnable;
 
 public class Person {
     private String lastName;
@@ -7,7 +7,8 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public String getSurname() {
+    public String getLastName() {
         return lastName;
     }
 }
+

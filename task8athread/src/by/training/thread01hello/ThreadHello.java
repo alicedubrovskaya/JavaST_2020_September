@@ -1,4 +1,4 @@
-package by.training.thread.task01;
+package by.training.thread01hello;
 
 public class ThreadHello extends Thread {
 
@@ -9,7 +9,6 @@ public class ThreadHello extends Thread {
 
     public static void main(String[] args) {
         ThreadHello thread = new ThreadHello();
-        //thread hello
         thread.start();
         System.out.println(Thread.currentThread().getName());
     }

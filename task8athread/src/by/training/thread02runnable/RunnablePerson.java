@@ -1,4 +1,4 @@
-package by.training.thread.task02;
+package by.training.thread02runnable;
 
 public class RunnablePerson extends Person implements Runnable {
     public RunnablePerson(String name) {
@@ -8,7 +8,7 @@ public class RunnablePerson extends Person implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < 10; i++) {
-            System.out.println(getSurname() + ": Hello world!");
+            System.out.println(getLastName() + ": Hello world!");
         }
     }
 
