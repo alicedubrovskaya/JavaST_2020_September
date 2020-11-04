@@ -5,23 +5,29 @@ import by.dubrovskaya.thread.dao.FiledDao;
 import by.dubrovskaya.thread.entity.Matrix;
 import by.dubrovskaya.thread.entity.MatrixThread;
 import by.dubrovskaya.thread.service.FileService;
+import by.dubrovskaya.thread.service.MatrixCrudService;
 import by.dubrovskaya.thread.service.StringService;
 import by.dubrovskaya.thread.service.ValidatorService;
+import by.dubrovskaya.thread.service.implementation.thread.LockerThread;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.*;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class FileServiceImpl implements FileService {
     private final Logger logger = LogManager.getLogger(getClass().getName());
     private FiledDao filedDao;
     private StringService stringService;
     private ValidatorService validatorService;
+    private MatrixCrudService matrixCrudService;
+    private final ReentrantLock locker = new ReentrantLock();
 
-    public FileServiceImpl(StringService stringService, ValidatorService validatorService) {
+    public FileServiceImpl(StringService stringService, ValidatorService validatorService, MatrixCrudService matrixCrudService) {
         this.filedDao = new FileDaoImpl();
         this.stringService = stringService;
         this.validatorService = validatorService;
+        this.matrixCrudService = matrixCrudService;
     }
 
     /**
@@ -84,9 +90,15 @@ public class FileServiceImpl implements FileService {
         }
 
         for (int valuesOfThread : valuesOfThreads) {
-            matrixThreads.add(new MatrixThread(valuesOfThread));
-        }
+            //TODO implementation multiple
+            final int M = valuesOfThreads.length;
+            final int N = matrixCrudService.get().getSize();
 
+            matrixThreads.add(new MatrixThread(
+                    new LockerThread(locker, matrixCrudService.get(), (int) Math.ceil((double) N / M)),
+                    valuesOfThread)
+            );
+        }
         return Optional.of(matrixThreads);
     }
 }

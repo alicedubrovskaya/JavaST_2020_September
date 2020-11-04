@@ -1,4 +1,4 @@
-package by.training.thread03priority.task1;
+package by.training.thread03priority;
 
 public class PriorThread extends Thread {
     public PriorThread(ThreadGroup threadGroup, String name) {

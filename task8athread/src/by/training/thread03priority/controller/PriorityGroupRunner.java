@@ -1,6 +1,6 @@
-package by.training.thread03priority.task1.controller;
+package by.training.thread03priority.controller;
 
-import by.training.thread03priority.task1.PriorThread;
+import by.training.thread03priority.PriorThread;
 
 public class PriorityGroupRunner {
     public static void main(String[] args) {

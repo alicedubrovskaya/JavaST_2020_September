@@ -9,15 +9,14 @@ public class Consumer extends Thread {
         this.store = store;
     }
 
-    public void run(){
-        try{
-            while (product<N){
-                product = product+store.get();
-                System.out.println("Consumer has "+product+" of products");
+    public void run() {
+        try {
+            while (product < N) {
+                product = product + store.get();
+                System.out.println("Consumer has " + product + " of products");
                 sleep(100);
             }
-        }
-        catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

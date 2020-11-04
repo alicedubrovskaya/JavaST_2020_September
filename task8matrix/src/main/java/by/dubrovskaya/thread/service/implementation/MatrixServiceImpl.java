@@ -5,16 +5,14 @@ import by.dubrovskaya.thread.entity.MatrixThread;
 import by.dubrovskaya.thread.service.MatrixCrudService;
 import by.dubrovskaya.thread.service.MatrixService;
 import by.dubrovskaya.thread.service.ThreadService;
+import by.dubrovskaya.thread.service.implementation.thread.InitializeMatrixThread;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.util.concurrent.locks.ReentrantLock;
 
 public class MatrixServiceImpl implements MatrixService {
     private final Logger logger = LogManager.getLogger(getClass().getName());
     private ThreadService threadService;
     private MatrixCrudService matrixCrudService;
-    private final ReentrantLock locker = new ReentrantLock();
 
     public MatrixServiceImpl(ThreadService threadService, MatrixCrudService matrixCrudService) {
         this.threadService = threadService;
@@ -27,14 +25,26 @@ public class MatrixServiceImpl implements MatrixService {
 
         Matrix matrix = matrixCrudService.get();
         if (matrix != null) {
-            final int M = threadService.getCountOfThreads();
-            final int N = matrix.getSize();
-
-            for (int i = 0; i < M; i++) {
+            for (int i = 0; i < threadService.getCountOfThreads(); i++) {
                 MatrixThread thread = threadService.get(i);
-                thread.update(matrix, locker, (int) Math.ceil((double) N / M));
                 thread.start();
             }
+
+            //TODO wait
+//            MatrixThread matrixThread = new MatrixThread(
+//                    new InitializeMatrixThread(matrix), threadService.get(0).getValue()
+//            );
+//            matrixThread.start();
         }
+    }
+
+    @Override
+    public boolean initializedDiagonal(Matrix matrix) {
+        for (int i = 0; i < matrix.getSize(); i++) {
+            if (matrix.getElement(i, i) == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }

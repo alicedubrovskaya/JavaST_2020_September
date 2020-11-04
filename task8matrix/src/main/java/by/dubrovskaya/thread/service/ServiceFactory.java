@@ -10,9 +10,9 @@ public class ServiceFactory {
 
     private final ValidatorService validatorService = new ValidatorServiceImpl();
     private final StringService stringService = new StringServiceImpl(validatorService);
-    private final FileService fileService = new FileServiceImpl(stringService, validatorService);
-    private final ThreadService threadService = new ThreadServiceImpl();
     private final MatrixCrudService matrixCrudService = new MatrixCrudServiceImpl();
+    private final FileService fileService = new FileServiceImpl(stringService, validatorService, matrixCrudService);
+    private final ThreadService threadService = new ThreadServiceImpl();
     private final MatrixService matrixService = new MatrixServiceImpl(threadService, matrixCrudService);
 
     public static ServiceFactory getINSTANCE() {
