@@ -33,4 +33,16 @@ public class Storage {
     public void add(Matrix matrix) {
         this.matrix = matrix;
     }
+
+    public MatrixThread getThread(int index) {
+        return threads.get(index);
+    }
+
+    public int getCountOfThreads(){
+        return threads.size();
+    }
+
+    public Matrix getMatrix() {
+        return matrix;
+    }
 }

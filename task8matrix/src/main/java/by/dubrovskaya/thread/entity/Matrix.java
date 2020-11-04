@@ -10,12 +10,8 @@ public class Matrix {
         this.matrix = matrix;
     }
 
-    public int getVerticalSize() {
+    public int getSize() {
         return matrix.length;
-    }
-
-    public int getHorizontalSize(int row) {
-        return matrix[row].length;
     }
 
     public int getElement(int i, int j) {
