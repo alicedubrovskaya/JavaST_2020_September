@@ -7,6 +7,7 @@ import java.util.Set;
 
 public class PublicationStorage {
     private static final PublicationStorage INSTANCE = new PublicationStorage();
+    private Set<Publication> publications = new HashSet<>();
 
     private PublicationStorage() {
     }
@@ -14,8 +15,6 @@ public class PublicationStorage {
     public static PublicationStorage getInstance() {
         return INSTANCE;
     }
-
-    private Set<Publication> publications = new HashSet<>();
 
     public boolean add(Publication publication) {
         return publications.add(publication);

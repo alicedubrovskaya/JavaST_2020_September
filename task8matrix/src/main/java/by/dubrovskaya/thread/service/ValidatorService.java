@@ -1,6 +1,6 @@
-package by.dubrovskaya.service;
+package by.dubrovskaya.thread.service;
 
-public interface ThreadValidatorService {
+public interface ValidatorService {
     boolean validInteger(String string);
 
     boolean validQuadraticMatrix(int [][] matrix);

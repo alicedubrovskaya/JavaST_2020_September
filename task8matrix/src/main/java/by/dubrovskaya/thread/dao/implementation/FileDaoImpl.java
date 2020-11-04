@@ -1,5 +1,6 @@
-package by.dubrovskaya.dao;
+package by.dubrovskaya.thread.dao.implementation;
 
+import by.dubrovskaya.thread.dao.FiledDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -36,6 +37,7 @@ public class FileDaoImpl implements FiledDao {
         } catch (IOException e) {
             logger.error(e.getMessage());
         }
+        logger.debug("Lines from file read");
         return lines;
     }
 }

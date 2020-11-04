@@ -1,4 +1,4 @@
-package by.dubrovskaya.entity;
+package by.dubrovskaya.thread.entity;
 
 import java.util.Arrays;
 import java.util.Objects;

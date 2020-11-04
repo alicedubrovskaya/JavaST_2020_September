@@ -36,3 +36,7 @@
 2020-11-04 15:04:49.981 [main] DEBUG by.dubrovskaya.service.implementation.ThreadFileServiceImpl - Reading from file with path: task8matrix/data/matrix.txt
 2020-11-04 15:05:24.404 [main] DEBUG by.dubrovskaya.service.implementation.ThreadFileServiceImpl - Reading from file with path: task8matrix/data/matrix.txt
 2020-11-04 15:06:34.565 [main] DEBUG by.dubrovskaya.service.implementation.ThreadFileServiceImpl - Reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 15:43:37.366 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 15:44:53.858 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 15:45:30.607 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 16:16:05.169 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt

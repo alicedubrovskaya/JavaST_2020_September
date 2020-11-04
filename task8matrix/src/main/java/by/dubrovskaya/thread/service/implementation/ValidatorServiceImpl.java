@@ -1,8 +1,8 @@
-package by.dubrovskaya.service.implementation;
+package by.dubrovskaya.thread.service.implementation;
 
-import by.dubrovskaya.service.ThreadValidatorService;
+import by.dubrovskaya.thread.service.ValidatorService;
 
-public class ThreadThreadValidatorServiceImpl implements ThreadValidatorService {
+public class ValidatorServiceImpl implements ValidatorService {
     @Override
     public boolean validInteger(String string) {
         return string.matches("^\\d+$");

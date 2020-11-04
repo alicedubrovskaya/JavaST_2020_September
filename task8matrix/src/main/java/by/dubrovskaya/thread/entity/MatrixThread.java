@@ -1,4 +1,4 @@
-package by.dubrovskaya.entity;
+package by.dubrovskaya.thread.entity;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,5 +16,9 @@ public class MatrixThread extends Thread {
     @Override
     public void run() {
         logger.info(startedThread);
+    }
+
+    public int getValue() {
+        return value;
     }
 }

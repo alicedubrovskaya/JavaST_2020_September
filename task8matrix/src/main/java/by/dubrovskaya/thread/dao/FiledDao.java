@@ -1,4 +1,4 @@
-package by.dubrovskaya.dao;
+package by.dubrovskaya.thread.dao;
 
 import java.util.List;
 
