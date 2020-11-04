@@ -29,3 +29,10 @@
 2020-11-01 22:37:40.245 [main] DEBUG dubrovskaya.service.service.implementation.BookServiceImpl - Adding publication to storage
 2020-11-01 22:37:40.246 [main] DEBUG by.dubrovskaya.service.repository.PublicationRepositoryImpl - Checking whether the book exists or not
 2020-11-01 22:37:40.247 [main] INFO  by.dubrovskaya.observer.PublicationObserver - Adding of observable
+2020-11-04 13:50:22.730 [main] DEBUG by.dubrovskaya.service.ThreadFileServiceImpl - Reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 14:57:41.399 [main] DEBUG by.dubrovskaya.service.ThreadFileServiceImpl - Reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 15:00:57.178 [main] DEBUG by.dubrovskaya.service.ThreadFileServiceImpl - Reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 15:03:18.038 [main] DEBUG by.dubrovskaya.service.ThreadFileServiceImpl - Reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 15:04:49.981 [main] DEBUG by.dubrovskaya.service.ThreadFileServiceImpl - Reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 15:05:24.404 [main] DEBUG by.dubrovskaya.service.ThreadFileServiceImpl - Reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 15:06:34.565 [main] DEBUG by.dubrovskaya.service.ThreadFileServiceImpl - Reading from file with path: task8matrix/data/matrix.txt

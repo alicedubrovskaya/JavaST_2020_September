@@ -1,7 +1,5 @@
 package by.dubrovskaya.controller;
 
-import by.dubrovskaya.entity.Book;
-import by.dubrovskaya.entity.Journal;
 import by.dubrovskaya.entity.Publication;
 import by.dubrovskaya.entity.enumeration.SearchType;
 import by.dubrovskaya.entity.enumeration.SortType;
