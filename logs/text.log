@@ -202,3 +202,422 @@
 2020-11-04 18:22:31.589 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal
 2020-11-04 18:22:31.590 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value
 2020-11-04 18:22:31.592 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal
+2020-11-04 18:34:24.407 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 18:34:24.487 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:34:24.502 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-04 18:34:24.503 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-04 18:34:24.504 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 18:34:24.532 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:34:24.561 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:34:24.561 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:34:24.563 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:34:24.563 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:34:24.564 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-04 18:34:24.564 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:34:24.565 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:34:24.570 [Thread 0] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 0 started
+2020-11-04 18:34:24.570 [Thread 1] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 1 started
+2020-11-04 18:34:24.572 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal
+2020-11-04 18:34:24.573 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value
+2020-11-04 18:34:24.574 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal
+2020-11-04 18:34:26.594 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal
+2020-11-04 18:34:26.596 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal
+2020-11-04 18:34:28.597 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal
+2020-11-04 18:34:28.598 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal
+2020-11-04 18:34:30.597 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal
+2020-11-04 18:34:30.598 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal
+2020-11-04 18:34:32.602 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal
+2020-11-04 18:34:32.604 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal
+2020-11-04 18:34:34.603 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal
+2020-11-04 18:34:34.606 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal
+2020-11-04 18:34:36.604 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal
+2020-11-04 18:34:36.606 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal
+2020-11-04 18:34:38.606 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal
+2020-11-04 18:34:38.607 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal
+2020-11-04 18:35:47.780 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 18:35:47.875 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:35:47.884 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-04 18:35:47.889 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-04 18:35:47.890 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 18:35:47.894 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:35:47.919 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:35:47.919 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:35:47.920 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:35:47.921 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:35:47.921 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-04 18:35:47.922 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:35:47.923 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:35:47.964 [Thread 0] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 0 started
+2020-11-04 18:35:47.974 [Thread 1] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 1 started
+2020-11-04 18:35:47.976 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal
+2020-11-04 18:35:47.978 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value
+2020-11-04 18:35:47.979 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal
+2020-11-04 18:35:49.980 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal
+2020-11-04 18:35:49.981 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value
+2020-11-04 18:35:49.982 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal
+2020-11-04 18:38:26.111 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 18:38:26.156 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:38:26.170 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-04 18:38:26.171 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-04 18:38:26.175 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 18:38:26.179 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:38:26.202 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:38:26.203 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:38:26.204 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:38:26.205 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:38:26.215 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-04 18:38:26.217 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:38:26.220 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:38:26.225 [Thread 0] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 0 started
+2020-11-04 18:38:26.229 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal
+2020-11-04 18:38:26.227 [Thread 1] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 1 started
+2020-11-04 18:38:26.233 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal
+2020-11-04 18:39:22.586 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 18:39:22.663 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:39:22.674 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-04 18:39:22.674 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-04 18:39:22.675 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 18:39:22.689 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:39:22.701 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:39:22.702 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:39:22.734 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:39:22.735 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:39:22.736 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-04 18:39:22.736 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:39:22.738 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:39:22.768 [Thread 1] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 1 started
+2020-11-04 18:39:22.770 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal
+2020-11-04 18:39:22.772 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 sets its value to [0,0]
+2020-11-04 18:39:22.752 [Thread 0] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 0 started
+2020-11-04 18:39:22.773 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal
+2020-11-04 18:39:24.784 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal
+2020-11-04 18:39:24.786 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [1,1]
+2020-11-04 18:39:24.789 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal
+2020-11-04 18:44:35.917 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 18:44:36.014 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:44:36.030 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-04 18:44:36.031 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-04 18:44:36.032 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 18:44:36.036 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:44:36.046 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:44:36.047 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:44:36.048 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:44:36.049 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:44:36.051 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-04 18:44:36.052 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:44:36.056 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:44:36.059 [Thread 1] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 1 started
+2020-11-04 18:44:36.059 [Thread 0] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 0 started
+2020-11-04 18:44:36.063 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal
+2020-11-04 18:44:36.064 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 sets its value to [0,0]
+2020-11-04 18:44:36.065 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal
+2020-11-04 18:44:38.068 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal
+2020-11-04 18:44:38.074 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 sets its value to [1,1]
+2020-11-04 18:44:38.075 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal
+2020-11-04 18:46:28.674 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 18:46:28.723 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:46:28.734 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-04 18:46:28.735 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-04 18:46:28.736 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 18:46:28.740 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:46:28.751 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:46:28.751 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:46:28.753 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:46:28.753 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:46:28.756 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-04 18:46:28.757 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:46:28.760 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:46:28.762 [Thread 0] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 0 started
+2020-11-04 18:46:28.763 [Thread 1] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 1 started
+2020-11-04 18:46:28.766 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=0
+2020-11-04 18:46:28.767 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [0,0]
+2020-11-04 18:46:28.769 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=0
+2020-11-04 18:46:30.769 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=1
+2020-11-04 18:46:30.772 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [1,1]
+2020-11-04 18:46:30.780 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=1
+2020-11-04 18:51:21.332 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 18:51:21.381 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:51:21.389 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-04 18:51:21.390 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-04 18:51:21.391 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 18:51:21.394 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:51:21.401 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:51:21.402 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:51:21.403 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:51:21.403 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:51:21.404 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-04 18:51:21.404 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:51:21.407 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:51:21.409 [Thread 0] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 0 started
+2020-11-04 18:51:21.409 [Thread 1] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 1 started
+2020-11-04 18:51:21.412 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=0
+2020-11-04 18:51:21.414 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [0,0]
+2020-11-04 18:51:21.416 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=0
+2020-11-04 18:51:23.416 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=1
+2020-11-04 18:51:23.417 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [1,1]
+2020-11-04 18:51:23.418 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=1
+2020-11-04 18:52:53.580 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 18:52:53.627 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:52:53.644 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-04 18:52:53.646 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-04 18:52:53.647 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 18:52:53.654 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:52:53.724 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:52:53.725 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:52:53.727 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:52:53.727 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:52:53.729 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-04 18:53:13.063 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:54:48.190 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:54:48.195 [Thread 0] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 0 started
+2020-11-04 18:54:48.197 [Thread 1] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 1 started
+2020-11-04 18:54:48.200 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=0
+2020-11-04 18:54:48.201 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [0,0]
+2020-11-04 18:54:48.202 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=0
+2020-11-04 18:55:05.781 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 18:55:05.845 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:55:05.854 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-04 18:55:05.855 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-04 18:55:05.856 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 18:55:05.860 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:55:05.882 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:55:05.883 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:55:05.885 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:55:05.886 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:55:05.887 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-04 18:55:05.889 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:55:05.891 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:55:05.933 [Thread 0] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 0 started
+2020-11-04 18:55:05.959 [Thread 1] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 1 started
+2020-11-04 18:55:05.962 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=0
+2020-11-04 18:55:05.965 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [0,0]
+2020-11-04 18:55:05.967 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=0
+2020-11-04 18:55:07.967 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=1
+2020-11-04 18:55:07.968 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [1,1]
+2020-11-04 18:55:07.970 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=1
+2020-11-04 18:55:09.970 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=2
+2020-11-04 18:55:09.971 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [2,2]
+2020-11-04 18:55:09.972 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=2
+2020-11-04 18:57:42.583 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 18:57:42.691 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:57:42.710 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-04 18:57:42.711 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-04 18:57:42.711 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 18:57:42.716 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 18:57:42.724 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:57:42.725 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:57:42.726 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 18:57:42.726 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 18:57:42.727 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-04 18:57:42.729 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:57:42.731 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 18:57:42.737 [Thread 0] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 0 started
+2020-11-04 18:57:42.855 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=0
+2020-11-04 18:57:42.858 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [0,0]
+2020-11-04 18:57:42.853 [Thread 1] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 1 started
+2020-11-04 18:57:44.860 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=1
+2020-11-04 18:57:44.862 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [1,1]
+2020-11-04 18:57:46.864 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=2
+2020-11-04 18:57:46.865 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [2,2]
+2020-11-04 18:57:48.866 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=0
+2020-11-04 18:57:48.867 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=1
+2020-11-04 18:57:48.868 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=2
+2020-11-04 19:01:03.979 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 19:01:04.018 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 19:01:04.033 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-04 19:01:04.034 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-04 19:01:04.035 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 19:01:04.040 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 19:01:04.047 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 19:01:04.048 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 19:01:04.050 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 19:01:04.050 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 19:01:04.051 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-04 19:01:04.052 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 19:01:04.054 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 19:01:04.057 [Thread 1] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 1 started
+2020-11-04 19:01:04.062 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=0
+2020-11-04 19:01:04.056 [Thread 0] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 0 started
+2020-11-04 19:01:04.064 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 sets its value to [0,0]
+2020-11-04 19:01:04.067 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=0
+2020-11-04 19:01:06.079 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=1
+2020-11-04 19:01:06.090 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 sets its value to [1,1]
+2020-11-04 19:01:06.091 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=1
+2020-11-04 19:01:08.091 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=2
+2020-11-04 19:01:08.092 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 sets its value to [2,2]
+2020-11-04 19:01:08.093 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=2
+2020-11-04 19:02:24.182 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 19:02:24.234 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 19:02:24.243 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-04 19:02:24.244 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-04 19:02:24.245 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 19:02:24.248 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 19:02:24.258 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 19:02:24.259 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 19:02:24.259 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 19:02:24.260 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 19:02:24.262 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 19:02:24.263 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 19:02:24.264 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-04 19:02:24.265 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 19:02:24.268 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 19:02:24.271 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 19:02:24.270 [Thread 0] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 0 started
+2020-11-04 19:02:24.277 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=0
+2020-11-04 19:02:24.279 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [0,0]
+2020-11-04 19:02:24.276 [Thread 1] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 1 started
+2020-11-04 19:02:24.281 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=0
+2020-11-04 19:02:24.286 [Thread 2] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 2 started
+2020-11-04 19:02:24.294 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=0
+2020-11-04 19:02:26.279 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=1
+2020-11-04 19:02:26.280 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [1,1]
+2020-11-04 19:02:26.283 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=1
+2020-11-04 19:02:26.301 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=1
+2020-11-04 19:04:48.215 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 19:04:48.282 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 19:04:48.293 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-04 19:04:48.293 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-04 19:04:48.294 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 19:04:48.298 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 19:04:48.307 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 19:04:48.308 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 19:04:48.309 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 19:04:48.309 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 19:04:48.310 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 19:04:48.311 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 19:04:48.312 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-04 19:04:48.313 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 19:04:48.316 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 19:04:48.317 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 19:04:48.317 [Thread 0] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 0 started
+2020-11-04 19:04:48.320 [Thread 1] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 1 started
+2020-11-04 19:04:48.321 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=0, filled =0
+2020-11-04 19:04:48.320 [Thread 2] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 2 started
+2020-11-04 19:04:48.322 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [0,0]
+2020-11-04 19:04:48.323 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=0, filled =0
+2020-11-04 19:04:48.324 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=0, filled =0
+2020-11-04 19:04:50.324 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=1, filled =1
+2020-11-04 19:04:50.325 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [1,1]
+2020-11-04 19:04:50.327 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=1, filled =0
+2020-11-04 19:04:50.328 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=1, filled =0
+2020-11-04 19:04:52.329 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=2, filled =0
+2020-11-04 19:04:52.330 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 sets its value to [2,2]
+2020-11-04 19:04:52.331 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=2, filled =0
+2020-11-04 19:04:54.331 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=3, filled =1
+2020-11-04 19:04:54.332 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 sets its value to [3,3]
+2020-11-04 19:04:54.333 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=3, filled =0
+2020-11-04 19:04:56.335 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=4, filled =0
+2020-11-04 19:04:56.336 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 sets its value to [4,4]
+2020-11-04 19:04:58.337 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=5, filled =1
+2020-11-04 19:04:58.338 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 sets its value to [5,5]
+2020-11-04 19:06:10.696 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 19:06:10.790 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 19:06:10.800 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-04 19:06:10.801 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-04 19:06:10.801 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 19:06:10.806 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 19:06:10.815 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 19:06:10.816 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 19:06:10.816 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 19:06:10.817 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 19:06:10.818 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 19:06:10.818 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 19:06:10.819 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-04 19:06:10.819 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 19:06:10.821 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 19:06:10.822 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 19:06:10.823 [Thread 0] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 0 started
+2020-11-04 19:06:10.827 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=0, filled =0
+2020-11-04 19:06:10.825 [Thread 1] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 1 started
+2020-11-04 19:06:10.827 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [0,0], filled =0
+2020-11-04 19:06:10.826 [Thread 2] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 2 started
+2020-11-04 19:06:10.829 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=0, filled =0
+2020-11-04 19:06:10.830 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=0, filled =0
+2020-11-04 19:06:12.831 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=1, filled =1
+2020-11-04 19:06:12.832 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [1,1], filled =1
+2020-11-04 19:06:12.834 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=1, filled =0
+2020-11-04 19:06:12.835 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=1, filled =0
+2020-11-04 19:06:14.836 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=2, filled =0
+2020-11-04 19:06:14.837 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 sets its value to [2,2], filled =0
+2020-11-04 19:06:14.838 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=2, filled =0
+2020-11-04 19:06:16.837 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=3, filled =1
+2020-11-04 19:06:16.838 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 sets its value to [3,3], filled =1
+2020-11-04 19:06:16.839 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=3, filled =0
+2020-11-04 19:06:18.840 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=4, filled =0
+2020-11-04 19:06:18.841 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 sets its value to [4,4], filled =0
+2020-11-04 19:06:20.843 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=5, filled =1
+2020-11-04 19:06:20.843 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 sets its value to [5,5], filled =1
+2020-11-04 19:07:29.677 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 19:07:29.757 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 19:07:29.771 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-04 19:07:29.772 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-04 19:07:29.773 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 19:07:29.777 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 19:07:29.785 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 19:07:29.786 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 19:07:29.787 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 19:07:29.787 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 19:07:29.788 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 19:07:29.788 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 19:07:29.789 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-04 19:07:29.789 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 19:07:29.791 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 19:07:29.792 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 19:07:29.794 [Thread 0] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 0 started
+2020-11-04 19:07:29.797 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=0, filled =0
+2020-11-04 19:07:29.795 [Thread 2] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 2 started
+2020-11-04 19:07:29.798 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [0,0], therefore filled =0
+2020-11-04 19:07:29.796 [Thread 1] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 1 started
+2020-11-04 19:07:29.800 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=0, filled =0
+2020-11-04 19:07:29.802 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=0, filled =0
+2020-11-04 19:07:30.804 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=1, filled =1
+2020-11-04 19:07:30.805 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [1,1], therefore filled =1
+2020-11-04 19:07:30.808 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=1, filled =0
+2020-11-04 19:07:30.809 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=1, filled =0
+2020-11-04 19:07:31.810 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=2, filled =0
+2020-11-04 19:07:31.812 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 sets its value to [2,2], therefore filled =0
+2020-11-04 19:07:31.814 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=2, filled =0
+2020-11-04 19:07:32.813 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=3, filled =1
+2020-11-04 19:07:32.814 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 sets its value to [3,3], therefore filled =1
+2020-11-04 19:07:32.815 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=3, filled =0
+2020-11-04 19:07:33.817 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=4, filled =0
+2020-11-04 19:07:33.818 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 sets its value to [4,4], therefore filled =0
+2020-11-04 19:07:34.818 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=5, filled =1
+2020-11-04 19:07:34.819 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 sets its value to [5,5], therefore filled =1
+2020-11-04 19:08:19.693 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-04 19:08:19.744 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 19:08:19.753 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-04 19:08:19.754 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-04 19:08:19.755 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-04 19:08:19.758 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-04 19:08:19.766 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 19:08:19.767 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 19:08:19.767 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 19:08:19.768 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 19:08:19.769 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-04 19:08:19.769 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-04 19:08:19.770 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-04 19:08:19.771 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 19:08:19.773 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 19:08:19.774 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-04 19:08:19.775 [Thread 0] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 0 started
+2020-11-04 19:08:19.775 [Thread 1] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 1 started
+2020-11-04 19:08:19.778 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=0, filled =0
+2020-11-04 19:08:19.777 [Thread 2] INFO  by.dubrovskaya.thread.entity.MatrixThread - Thread 2 started
+2020-11-04 19:08:19.779 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [0,0], therefore filled =1
+2020-11-04 19:08:19.781 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=0, filled =0
+2020-11-04 19:08:19.782 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=0, filled =0
+2020-11-04 19:08:20.781 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 checks element of diagonal, i=1, filled =1
+2020-11-04 19:08:20.784 [Thread 0] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 0 sets its value to [1,1], therefore filled =2
+2020-11-04 19:08:20.785 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=1, filled =0
+2020-11-04 19:08:20.788 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=1, filled =0
+2020-11-04 19:08:21.788 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=2, filled =0
+2020-11-04 19:08:21.789 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 sets its value to [2,2], therefore filled =1
+2020-11-04 19:08:21.790 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=2, filled =0
+2020-11-04 19:08:22.789 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 checks element of diagonal, i=3, filled =1
+2020-11-04 19:08:22.790 [Thread 1] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 1 sets its value to [3,3], therefore filled =2
+2020-11-04 19:08:22.792 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=3, filled =0
+2020-11-04 19:08:23.794 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=4, filled =0
+2020-11-04 19:08:23.795 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 sets its value to [4,4], therefore filled =1
+2020-11-04 19:08:24.795 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 checks element of diagonal, i=5, filled =1
+2020-11-04 19:08:24.796 [Thread 2] DEBUG by.dubrovskaya.thread.entity.MatrixThread - Thread 2 sets its value to [5,5], therefore filled =2

@@ -10,6 +10,7 @@ public class MatrixThread extends Thread {
     private int value;
     private int countToFill;
     private Matrix commonMatrix;
+    private boolean isActive;
 
     private ReentrantLock locker;
     private final Logger logger = LogManager.getLogger(getClass().getName());
@@ -17,26 +18,39 @@ public class MatrixThread extends Thread {
     final String startedThread = "Started thread with value: " + value;
 
     public MatrixThread(int value) {
+        this.isActive = true;
         this.value = value;
+    }
+
+    void disable() {
+        isActive = false;
     }
 
     @Override
     public void run() {
-        logger.info(Thread.currentThread().getName()+" started");
+        logger.info(Thread.currentThread().getName() + " started");
+        int countOfFilled = 0;
         try {
             for (int i = 0; i < commonMatrix.getSize(); i++) {
                 locker.lock();
                 try {
-                    logger.debug(String.format("%s checks element of diagonal", Thread.currentThread().getName()));
+                    logger.debug(String.format("%s checks element of diagonal, i=%d, filled =%d",
+                            Thread.currentThread().getName(), i, countOfFilled));
                     if (commonMatrix.getElement(i, i) == 0) {
-                        logger.debug(String.format("%s sets its value", Thread.currentThread().getName()));
                         commonMatrix.setElement(i, i, value);
+                        countOfFilled++;
+                        logger.debug(String.format("%s sets its value to [%d,%d], therefore filled =%d",
+                                Thread.currentThread().getName(), i, i, countOfFilled));
                     }
                 } finally {
                     locker.unlock();
                 }
-
-                TimeUnit.SECONDS.sleep(2);
+                if (countOfFilled == countToFill) {
+                    disable();
+                    break;
+                } else {
+                    TimeUnit.SECONDS.sleep(1);
+                }
             }
         } catch (InterruptedException e) {
             logger.error(e.getMessage());

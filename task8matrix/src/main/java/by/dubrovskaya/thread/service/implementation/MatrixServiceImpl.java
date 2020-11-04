@@ -32,7 +32,7 @@ public class MatrixServiceImpl implements MatrixService {
 
             for (int i = 0; i < M; i++) {
                 MatrixThread thread = threadService.get(i);
-                thread.update(matrix, locker, N / M);
+                thread.update(matrix, locker, (int) Math.ceil((double) N / M));
                 thread.start();
             }
         }
