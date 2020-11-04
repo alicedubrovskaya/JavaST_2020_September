@@ -1,4 +1,6 @@
-package by.dubrovskaya.service;
+package by.dubrovskaya.service.implementation;
+
+import by.dubrovskaya.service.ThreadValidatorService;
 
 public class ThreadThreadValidatorServiceImpl implements ThreadValidatorService {
     @Override

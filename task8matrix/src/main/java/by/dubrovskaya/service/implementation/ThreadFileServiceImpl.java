@@ -1,8 +1,12 @@
-package by.dubrovskaya.service;
+package by.dubrovskaya.service.implementation;
 
 import by.dubrovskaya.dao.FileDaoImpl;
 import by.dubrovskaya.dao.FiledDao;
 import by.dubrovskaya.entity.Matrix;
+import by.dubrovskaya.service.ThreadFileService;
+import by.dubrovskaya.service.ThreadServiceFactory;
+import by.dubrovskaya.service.ThreadStringService;
+import by.dubrovskaya.service.ThreadValidatorService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,8 +20,9 @@ public class ThreadFileServiceImpl implements ThreadFileService {
 
     public ThreadFileServiceImpl() {
         this.filedDao = new FileDaoImpl();
-        this.threadStringService = new ThreadThreadStringServiceImpl();
-        this.threadValidatorService = new ThreadThreadValidatorServiceImpl();
+        ThreadServiceFactory factory = ThreadServiceFactory.getINSTANCE();
+        this.threadStringService = factory.getStringService();
+        this.threadValidatorService = factory.getValidatorService();
     }
 
     /**

@@ -1,11 +1,16 @@
-package by.dubrovskaya.service;
+package by.dubrovskaya.service.implementation;
+
+import by.dubrovskaya.service.ThreadServiceFactory;
+import by.dubrovskaya.service.ThreadStringService;
+import by.dubrovskaya.service.ThreadValidatorService;
 
 public class ThreadThreadStringServiceImpl implements ThreadStringService {
     private int count = 0;
     private ThreadValidatorService threadValidatorService;
 
     public ThreadThreadStringServiceImpl() {
-        this.threadValidatorService = new ThreadThreadValidatorServiceImpl();
+        ThreadServiceFactory factory = ThreadServiceFactory.getINSTANCE();
+        this.threadValidatorService = factory.getValidatorService();
     }
 
     @Override

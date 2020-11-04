@@ -1,16 +1,17 @@
 package by.dubrovskaya.controller;
 
 import by.dubrovskaya.service.ThreadFileService;
-import by.dubrovskaya.service.ThreadFileServiceImpl;
+import by.dubrovskaya.service.ThreadServiceFactory;
 
 public class MatrixController {
-    private ThreadFileService threadFileService;
+    private ThreadFileService fileService;
 
     public MatrixController() {
-        this.threadFileService = new ThreadFileServiceImpl();
+        ThreadServiceFactory factory = ThreadServiceFactory.getINSTANCE();
+        this.fileService = factory.getFileService();
     }
 
-    public void loadMatrix(){
-        threadFileService.getFromFile("task8matrix/data/matrix.txt");
+    public void loadMatrix() {
+        fileService.getFromFile("task8matrix/data/matrix.txt");
     }
 }
