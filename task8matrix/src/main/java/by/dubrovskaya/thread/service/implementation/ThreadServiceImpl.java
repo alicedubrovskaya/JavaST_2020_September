@@ -1,47 +1,78 @@
 package by.dubrovskaya.thread.service.implementation;
 
-import by.dubrovskaya.thread.dao.DaoFactory;
-import by.dubrovskaya.thread.dao.ThreadDao;
+import by.dubrovskaya.thread.entity.CommonDiagonal;
 import by.dubrovskaya.thread.entity.MatrixThread;
-import by.dubrovskaya.thread.exception.ThreadAlreadyExistsException;
-import by.dubrovskaya.thread.exception.ThreadNotFoundException;
+import by.dubrovskaya.thread.entity.ThreadExecution;
+import by.dubrovskaya.thread.service.MatrixCrudService;
+import by.dubrovskaya.thread.service.ThreadCrudService;
 import by.dubrovskaya.thread.service.ThreadService;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import by.dubrovskaya.thread.service.implementation.thread.ExecutorThread;
+import by.dubrovskaya.thread.service.implementation.thread.LockerThread;
+import by.dubrovskaya.thread.service.implementation.thread.SemaphoreThread;
+
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class ThreadServiceImpl implements ThreadService {
-    private ThreadDao threadDao;
-    private final Logger logger = LogManager.getLogger(getClass().getName());
+    private MatrixCrudService matrixCrudService;
+    private ThreadCrudService threadCrudService;
 
-    public ThreadServiceImpl() {
-        DaoFactory daoFactory = DaoFactory.getINSTANCE();
-        this.threadDao = daoFactory.getThreadDao();
+    public ThreadServiceImpl(ThreadCrudService threadCrudService, MatrixCrudService matrixCrudService) {
+        this.threadCrudService = threadCrudService;
+        this.matrixCrudService = matrixCrudService;
     }
 
     @Override
-    public void save(MatrixThread thread) {
-        try {
-            threadDao.save(thread);
-            logger.debug("Adding of thread");
-        } catch (ThreadAlreadyExistsException e) {
-            logger.error(e.getMessage());
+    public void initializeThreads(int[] valuesOfThreads, ThreadExecution threadExecution) {
+        switch (threadExecution) {
+            case EXECUTOR:
+                executorInitialization(valuesOfThreads);
+                break;
+            case SEMAPHORE:
+                semaphoreInitialization(valuesOfThreads);
+                break;
+            case LOCKER:
+                lockerInitialization(valuesOfThreads);
+                break;
+            default:
         }
     }
 
-    @Override
-    public MatrixThread get(int index) {
-        MatrixThread matrixThread = null;
-        try {
-            logger.debug("Getting of thread");
-            matrixThread = threadDao.getThread(index);
-        } catch (ThreadNotFoundException e) {
-            logger.error(e.getMessage());
+    void executorInitialization(int[] valuesOfThreads) {
+        CommonDiagonal commonDiagonal = new CommonDiagonal(matrixCrudService.get().getSize());
+
+        final int M = valuesOfThreads.length;
+        final int N = matrixCrudService.get().getSize();
+
+        for (int valuesOfThread : valuesOfThreads) {
+            threadCrudService.save(new MatrixThread(new ExecutorThread(matrixCrudService.get(), commonDiagonal,
+                    (int) Math.ceil((double) N / M), valuesOfThread), valuesOfThread));
         }
-        return matrixThread;
     }
 
-    @Override
-    public int getCountOfThreads() {
-        return threadDao.getCount();
+    void semaphoreInitialization(int[] valuesOfThreads) {
+        final Semaphore semaphore = new Semaphore(1);
+        CommonDiagonal commonDiagonal = new CommonDiagonal(matrixCrudService.get().getSize());
+
+        final int M = valuesOfThreads.length;
+        final int N = matrixCrudService.get().getSize();
+
+        for (int valuesOfThread : valuesOfThreads) {
+            threadCrudService.save(new MatrixThread(new SemaphoreThread(matrixCrudService.get(), commonDiagonal,
+                    semaphore, (int) Math.ceil((double) N / M)), valuesOfThread));
+        }
+    }
+
+    void lockerInitialization(int[] valuesOfThreads) {
+        final ReentrantLock locker = new ReentrantLock();
+
+        final int M = valuesOfThreads.length;
+        final int N = matrixCrudService.get().getSize();
+
+        for (int valueOfThread : valuesOfThreads) {
+            threadCrudService.save(new MatrixThread(
+                    new LockerThread(locker, matrixCrudService.get(), (int) Math.ceil((double) N / M)),
+                    valueOfThread));
+        }
     }
 }

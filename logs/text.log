@@ -1388,3 +1388,155 @@
 2020-11-08 12:40:02.972 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 set its value, count of filled elements: 2
 2020-11-08 12:40:02.973 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 1, current element index: 3
 2020-11-08 12:40:02.974 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 set its value, count of filled elements: 2
+2020-11-08 13:55:57.252 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 13:55:57.308 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 13:55:57.316 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 13:55:57.317 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 13:55:57.318 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-08 13:55:57.320 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 13:55:57.331 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 13:55:57.331 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-08 13:55:57.333 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 13:55:57.333 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-08 13:55:57.334 [main] DEBUG thread.service.implementation.initialization.ExecutorMatrixServiceImpl - Started initialization of main diagonal
+2020-11-08 13:55:57.335 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-08 13:55:57.337 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-08 13:58:56.583 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 13:58:56.661 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 13:58:56.673 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 13:58:56.674 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 13:58:56.676 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-08 13:58:56.682 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 13:58:56.705 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 13:58:56.705 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-08 13:58:56.707 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 13:58:56.708 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-08 13:58:56.708 [main] DEBUG thread.service.implementation.initialization.ExecutorMatrixServiceImpl - Started initialization of main diagonal
+2020-11-08 13:58:56.710 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-08 13:58:56.713 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-08 14:02:19.001 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 14:02:19.082 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 14:02:19.091 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 14:02:19.092 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 14:02:19.092 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-08 14:02:19.095 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 14:02:19.112 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 14:02:19.113 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-08 14:02:19.114 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 14:02:19.115 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-08 14:02:19.115 [main] DEBUG thread.service.implementation.initialization.ExecutorMatrixServiceImpl - Started initialization of main diagonal
+2020-11-08 14:02:19.117 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-08 14:02:19.119 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-08 14:02:19.120 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is working
+2020-11-08 14:02:19.124 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 14:02:50.356 [pool-2-thread-2] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-2 is working
+2020-11-08 14:02:50.359 [pool-2-thread-2] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-2 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 14:03:39.957 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 14:03:40.010 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 14:03:40.019 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 14:03:40.020 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 14:03:40.021 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-08 14:03:40.024 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 14:03:40.042 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 14:03:40.043 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-08 14:03:40.045 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 14:03:40.045 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-08 14:03:40.046 [main] DEBUG thread.service.implementation.initialization.ExecutorMatrixServiceImpl - Started initialization of main diagonal
+2020-11-08 14:03:40.048 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-08 14:03:40.051 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-08 14:03:40.056 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is working
+2020-11-08 14:03:40.059 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 14:05:32.823 [pool-2-thread-2] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-2 is working
+2020-11-08 14:05:32.828 [pool-2-thread-2] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-2 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 14:10:02.353 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 14:10:02.390 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 14:10:02.401 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 14:10:02.401 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 14:10:02.403 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-08 14:10:02.409 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 14:10:02.419 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 14:10:02.420 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-08 14:10:02.422 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 14:10:02.422 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-08 14:10:02.423 [main] DEBUG thread.service.implementation.initialization.ExecutorMatrixServiceImpl - Started initialization of main diagonal
+2020-11-08 14:10:02.425 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-08 14:10:02.427 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-08 14:10:02.454 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is working
+2020-11-08 14:10:02.457 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 14:10:02.458 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - Set its value, count of filled elements: 1
+2020-11-08 14:10:02.459 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is in progress, count of filled elements: 1, current element index: 1
+2020-11-08 14:10:02.460 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - Set its value, count of filled elements: 2
+2020-11-08 14:10:02.461 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is working
+2020-11-08 14:10:02.462 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is in progress, count of filled elements: 0, current element index: 2
+2020-11-08 14:10:02.464 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - Set its value, count of filled elements: 1
+2020-11-08 14:10:02.465 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is in progress, count of filled elements: 1, current element index: 3
+2020-11-08 14:10:02.466 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - Set its value, count of filled elements: 2
+2020-11-08 14:10:41.316 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 14:10:41.358 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 14:10:41.370 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 14:10:41.371 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 14:10:41.372 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-08 14:10:41.376 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 14:10:41.387 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 14:10:41.388 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-08 14:10:41.389 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 14:10:41.390 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Adding of thread
+2020-11-08 14:10:41.390 [main] DEBUG thread.service.implementation.initialization.ExecutorMatrixServiceImpl - Started initialization of main diagonal
+2020-11-08 14:10:41.392 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-08 14:10:41.394 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadServiceImpl - Getting of thread
+2020-11-08 14:10:41.395 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is working
+2020-11-08 14:10:41.399 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 14:10:41.400 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - Set its value, count of filled elements: 1
+2020-11-08 14:10:41.400 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is in progress, count of filled elements: 1, current element index: 1
+2020-11-08 14:10:41.401 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - Set its value, count of filled elements: 2
+2020-11-08 14:10:41.402 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is working
+2020-11-08 14:10:41.403 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is in progress, count of filled elements: 0, current element index: 2
+2020-11-08 14:10:41.404 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - Set its value, count of filled elements: 1
+2020-11-08 14:10:41.404 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is in progress, count of filled elements: 1, current element index: 3
+2020-11-08 14:10:41.405 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - Set its value, count of filled elements: 2
+2020-11-08 18:58:30.406 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 18:58:30.460 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 18:58:30.469 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 18:58:30.470 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 18:58:30.471 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-08 18:58:30.474 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 18:58:30.490 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 18:58:30.491 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Adding of thread
+2020-11-08 18:58:30.494 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 18:58:30.495 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Adding of thread
+2020-11-08 18:58:30.504 [main] DEBUG thread.service.implementation.initialization.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-08 18:58:30.505 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Getting of thread
+2020-11-08 18:58:30.506 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Getting of thread
+2020-11-08 18:58:30.519 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is waiting for access
+2020-11-08 18:58:30.521 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is waiting for access
+2020-11-08 18:58:30.523 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 18:58:30.525 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 set its value, count of filled elements: 1
+2020-11-08 18:58:30.526 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 0, current element index: 1
+2020-11-08 18:58:30.527 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 set its value, count of filled elements: 1
+2020-11-08 18:58:31.565 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 1, current element index: 2
+2020-11-08 18:58:31.566 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 set its value, count of filled elements: 2
+2020-11-08 18:58:31.568 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 1, current element index: 3
+2020-11-08 18:58:31.569 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 set its value, count of filled elements: 2
+2020-11-08 19:00:21.765 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 19:00:21.805 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 19:00:21.814 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 19:00:21.815 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 19:00:21.816 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-08 19:00:21.822 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 19:00:21.839 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 19:00:21.840 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Adding of thread
+2020-11-08 19:00:21.841 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 19:00:21.842 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Adding of thread
+2020-11-08 19:00:21.848 [main] DEBUG thread.service.implementation.initialization.ExecutorMatrixServiceImpl - Started initialization of main diagonal
+2020-11-08 19:00:21.850 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Getting of thread
+2020-11-08 19:00:21.855 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Getting of thread
+2020-11-08 19:00:21.859 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is working
+2020-11-08 19:00:21.862 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 19:00:21.863 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - Set its value, count of filled elements: 1
+2020-11-08 19:00:21.864 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is in progress, count of filled elements: 1, current element index: 1
+2020-11-08 19:00:21.865 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - Set its value, count of filled elements: 2
+2020-11-08 19:00:21.866 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is working
+2020-11-08 19:00:21.867 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is in progress, count of filled elements: 0, current element index: 2
+2020-11-08 19:00:21.868 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - Set its value, count of filled elements: 1
+2020-11-08 19:00:21.869 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is in progress, count of filled elements: 1, current element index: 3
+2020-11-08 19:00:21.870 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - Set its value, count of filled elements: 2

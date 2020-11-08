@@ -4,7 +4,6 @@ import by.dubrovskaya.thread.dao.FiledDao;
 import by.dubrovskaya.thread.dao.implementation.FileDaoImpl;
 import by.dubrovskaya.thread.entity.Matrix;
 import by.dubrovskaya.thread.service.FileService;
-import by.dubrovskaya.thread.service.MatrixCrudService;
 import by.dubrovskaya.thread.service.StringService;
 import by.dubrovskaya.thread.service.ValidatorService;
 import org.apache.logging.log4j.LogManager;
@@ -12,21 +11,17 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class FileServiceImpl implements FileService {
     private final Logger logger = LogManager.getLogger(getClass().getName());
     private FiledDao filedDao;
     private StringService stringService;
     private ValidatorService validatorService;
-    private MatrixCrudService matrixCrudService;
-    private final ReentrantLock locker = new ReentrantLock();
 
-    public FileServiceImpl(StringService stringService, ValidatorService validatorService, MatrixCrudService matrixCrudService) {
+    public FileServiceImpl(StringService stringService, ValidatorService validatorService) {
         this.filedDao = new FileDaoImpl();
         this.stringService = stringService;
         this.validatorService = validatorService;
-        this.matrixCrudService = matrixCrudService;
     }
 
     /**

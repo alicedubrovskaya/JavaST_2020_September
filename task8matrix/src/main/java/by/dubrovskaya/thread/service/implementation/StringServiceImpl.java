@@ -1,6 +1,5 @@
 package by.dubrovskaya.thread.service.implementation;
 
-import by.dubrovskaya.thread.service.ServiceFactory;
 import by.dubrovskaya.thread.service.StringService;
 import by.dubrovskaya.thread.service.ValidatorService;
 

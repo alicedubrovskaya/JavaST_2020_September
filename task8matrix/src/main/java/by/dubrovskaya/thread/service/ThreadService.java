@@ -1,11 +1,7 @@
 package by.dubrovskaya.thread.service;
 
-import by.dubrovskaya.thread.entity.MatrixThread;
+import by.dubrovskaya.thread.entity.ThreadExecution;
 
 public interface ThreadService {
-    void save(MatrixThread thread);
-
-    MatrixThread get(int index);
-
-    int getCountOfThreads();
+    void initializeThreads(int[] valuesOfThreads, ThreadExecution threadExecution);
 }

@@ -1,13 +1,11 @@
 package by.dubrovskaya.thread.controller;
 
-import by.dubrovskaya.thread.entity.CommonDiagonal;
 import by.dubrovskaya.thread.entity.Matrix;
-import by.dubrovskaya.thread.entity.MatrixThread;
+import by.dubrovskaya.thread.entity.ThreadExecution;
 import by.dubrovskaya.thread.service.*;
-import by.dubrovskaya.thread.service.implementation.thread.SemaphoreThread;
+import by.dubrovskaya.thread.service.factory.ServiceFactory;
 
 import java.util.Optional;
-import java.util.concurrent.Semaphore;
 
 public class MatrixController {
     private FileService fileService;
@@ -20,7 +18,6 @@ public class MatrixController {
         this.fileService = serviceFactory.getFileService();
         this.threadService = serviceFactory.getThreadService();
         this.matrixCrudService = serviceFactory.getMatrixCrudService();
-        this.matrixService = serviceFactory.getMatrixService();
     }
 
     public void loadMatrix() {
@@ -32,26 +29,27 @@ public class MatrixController {
         return fileService.getThreadsFromFile("task8matrix/data/threads.txt");
     }
 
-    public void initThreads(int[] valuesOfThreads) {
-        final Semaphore semaphore = new Semaphore(1);
-        CommonDiagonal commonDiagonal = new CommonDiagonal(matrixCrudService.get().getSize());
-
-        final int M = valuesOfThreads.length;
-        final int N = matrixCrudService.get().getSize();
-
-        for (int i = 0; i < valuesOfThreads.length; i++) {
-            threadService.save(new MatrixThread(new SemaphoreThread(matrixCrudService.get(), commonDiagonal, semaphore,
-                    (int) Math.ceil((double) N / M)), valuesOfThreads[i]));
-        }
-
-//     matrixThreads.add(new MatrixThread(
-//                    new LockerThread(locker, matrixCrudService.get(), (int) Math.ceil((double) N / M)),
-//    valuesOfThread);
+    public void initThreads(int[] valuesOfThreads, String typeOfExecution) {
+        ThreadExecution execution = ThreadExecution.getEnum(typeOfExecution);
+        threadService.initializeThreads(valuesOfThreads, execution);
     }
 
-    public void initializeDiagonal() {
+    public void initializeDiagonal(String typeOfExecution) {
         loadMatrix();
-        initThreads(loadValuesOfThreads());
+        initThreads(loadValuesOfThreads(), typeOfExecution);
+
+        ThreadExecution execution = ThreadExecution.getEnum(typeOfExecution);
+        switch (execution) {
+            case EXECUTOR:
+                matrixService = ServiceFactory.getINSTANCE().getMatrixService("EXECUTOR");
+                break;
+            case LOCKER:
+            case SEMAPHORE:
+                matrixService = ServiceFactory.getINSTANCE().getMatrixService("SERVICE");
+                break;
+            default:
+        }
+
         matrixService.initializeMainDiagonal();
     }
 }
