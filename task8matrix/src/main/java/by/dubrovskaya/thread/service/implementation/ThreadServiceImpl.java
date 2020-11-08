@@ -56,30 +56,27 @@ public class ThreadServiceImpl implements ThreadService {
         final Semaphore semaphore = new Semaphore(1);
         CommonDiagonal commonDiagonal = new CommonDiagonal(matrixCrudService.get().getSize());
 
-        final int M = valuesOfThreads.length;
-        final int N = matrixCrudService.get().getSize();
         final CyclicBarrier barrier = new CyclicBarrier(valuesOfThreads.length,
                 new InitializeMatrixThread(matrixCrudService.get()));
 
         for (int valuesOfThread : valuesOfThreads) {
             threadCrudService.save(new MatrixThread(new SemaphoreThread(barrier, matrixCrudService.get(), commonDiagonal,
-                    semaphore, (int) Math.ceil((double) N / M)), valuesOfThread));
+                    semaphore), valuesOfThread));
         }
     }
 
     void lockerInitialization(int[] valuesOfThreads) {
         final ReentrantLock locker = new ReentrantLock();
 
-        final int M = valuesOfThreads.length;
-        final int N = matrixCrudService.get().getSize();
+        CommonDiagonal commonDiagonal = new CommonDiagonal(matrixCrudService.get().getSize());
         final CyclicBarrier barrier = new CyclicBarrier(valuesOfThreads.length,
                 new InitializeMatrixThread(matrixCrudService.get()));
 
-
         for (int valueOfThread : valuesOfThreads) {
             threadCrudService.save(new MatrixThread(
-                    new LockerThread(barrier, locker, matrixCrudService.get(), (int) Math.ceil((double) N / M)),
-                    valueOfThread));
+                    new LockerThread(barrier, locker, matrixCrudService.get(),
+                            commonDiagonal), valueOfThread)
+            );
         }
     }
 }

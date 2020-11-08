@@ -2,7 +2,6 @@ package by.dubrovskaya.thread.service.implementation.thread;
 
 import by.dubrovskaya.thread.entity.CommonDiagonal;
 import by.dubrovskaya.thread.entity.Matrix;
-import by.dubrovskaya.thread.entity.MatrixThread;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

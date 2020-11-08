@@ -1,5 +1,6 @@
 package by.dubrovskaya.thread.service.implementation.thread;
 
+import by.dubrovskaya.thread.entity.CommonDiagonal;
 import by.dubrovskaya.thread.entity.Matrix;
 import by.dubrovskaya.thread.entity.MatrixThread;
 import org.apache.logging.log4j.LogManager;
@@ -11,46 +12,45 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class LockerThread implements Runnable {
-    private final int countToFill;
     private Matrix commonMatrix;
     private final ReentrantLock locker;
     private CyclicBarrier barrier;
+    private CommonDiagonal commonDiagonal;
     private final Logger logger = LogManager.getLogger(getClass().getName());
 
-    public LockerThread(CyclicBarrier barrier, ReentrantLock locker, Matrix matrix, int countToFill) {
+    public LockerThread(CyclicBarrier barrier, ReentrantLock locker, Matrix matrix,
+                        CommonDiagonal commonDiagonal) {
         this.locker = locker;
         this.commonMatrix = matrix;
-        this.countToFill = countToFill;
         this.barrier = barrier;
+        this.commonDiagonal = commonDiagonal;
     }
 
     @Override
     public void run() {
-        logger.info(Thread.currentThread().getName() + " started");
-        int countOfFilled = 0;
+        logger.info("{} started", Thread.currentThread().getName());
         try {
-            for (int i = 0; i < commonMatrix.getSize(); i++) {
+            while (commonDiagonal.getIndex() < commonDiagonal.getCountOfElements()) {
                 locker.lock();
                 try {
                     Thread currentThread = Thread.currentThread();
                     MatrixThread thread = (MatrixThread) currentThread;
 
-                    logger.debug(String.format("%s checks element of diagonal, i=%d, filled =%d",
-                            Thread.currentThread().getName(), i, countOfFilled));
-                    if (commonMatrix.getElement(i, i) == 0) {
-                        commonMatrix.setElement(i, i, thread.getValue());
-                        countOfFilled++;
-                        logger.debug(String.format("%s sets its value to [%d,%d], therefore filled =%d",
-                                Thread.currentThread().getName(), i, i, countOfFilled));
+                    int index = commonDiagonal.getIndex();
+                    logger.debug("{} checks element of diagonal, i={}",
+                            Thread.currentThread().getName(), index);
+
+                    if (commonMatrix.getElement(index, index) == 0) {
+
+                        commonMatrix.setElement(index, index, thread.getValue());
+                        commonDiagonal.incrementIndex();
+                        logger.debug("{} sets its value to [{},{}]",
+                                Thread.currentThread().getName(), index, index);
                     }
                 } finally {
                     locker.unlock();
                 }
-                if (countOfFilled == countToFill) {
-                    break;
-                } else {
-                    TimeUnit.SECONDS.sleep(1);
-                }
+                TimeUnit.SECONDS.sleep(2);
             }
             this.barrier.await();
             logger.info("Continue to work...");
