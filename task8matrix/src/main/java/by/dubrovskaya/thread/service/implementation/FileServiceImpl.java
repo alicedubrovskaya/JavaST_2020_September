@@ -1,21 +1,17 @@
 package by.dubrovskaya.thread.service.implementation;
 
-import by.dubrovskaya.thread.dao.implementation.FileDaoImpl;
 import by.dubrovskaya.thread.dao.FiledDao;
-import by.dubrovskaya.thread.entity.CommonDiagonal;
+import by.dubrovskaya.thread.dao.implementation.FileDaoImpl;
 import by.dubrovskaya.thread.entity.Matrix;
-import by.dubrovskaya.thread.entity.MatrixThread;
 import by.dubrovskaya.thread.service.FileService;
 import by.dubrovskaya.thread.service.MatrixCrudService;
 import by.dubrovskaya.thread.service.StringService;
 import by.dubrovskaya.thread.service.ValidatorService;
-import by.dubrovskaya.thread.service.implementation.thread.LockerThread;
-import by.dubrovskaya.thread.service.implementation.thread.SemaphoreThread;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.*;
-import java.util.concurrent.Semaphore;
+import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class FileServiceImpl implements FileService {
@@ -67,18 +63,16 @@ public class FileServiceImpl implements FileService {
     }
 
     /**
-     * Gets threads with values from file (expected two lines - count of threads and line with values)
+     * Gets values of threads from file (expected two lines - count of threads and line with values)
      *
      * @param filePath
      * @return
      */
     @Override
-    public Optional<List<MatrixThread>> getThreadsFromFile(String filePath) {
+    public int[] getThreadsFromFile(String filePath) {
         final String THREAD_READING = String.format("Threads reading from file with path: %s", filePath);
         logger.debug(THREAD_READING);
-        List<MatrixThread> matrixThreads = new ArrayList<>();
         int[] valuesOfThreads = new int[0];
-
 
         List<String> lines = filedDao.readFromFile(filePath);
         boolean firstLine = true;
@@ -91,24 +85,6 @@ public class FileServiceImpl implements FileService {
                 valuesOfThreads = elements;
             }
         }
-
-
-        final Semaphore semaphore = new Semaphore(1);
-        CommonDiagonal commonDiagonal = new CommonDiagonal(matrixCrudService.get().getSize());
-
-        for (int valuesOfThread : valuesOfThreads) {
-            //TODO implementation multiple
-            final int M = valuesOfThreads.length;
-            final int N = matrixCrudService.get().getSize();
-
-//            matrixThreads.add(new MatrixThread(
-//                    new LockerThread(locker, matrixCrudService.get(), (int) Math.ceil((double) N / M)),
-//                    valuesOfThread)
-//            );
-
-            matrixThreads.add(new MatrixThread(new SemaphoreThread(matrixCrudService.get(), commonDiagonal, semaphore,
-                    (int) Math.ceil((double) N / M)), valuesOfThread));
-        }
-        return Optional.of(matrixThreads);
+        return valuesOfThreads;
     }
 }

@@ -1,11 +1,13 @@
 package by.dubrovskaya.thread.controller;
 
+import by.dubrovskaya.thread.entity.CommonDiagonal;
 import by.dubrovskaya.thread.entity.Matrix;
 import by.dubrovskaya.thread.entity.MatrixThread;
 import by.dubrovskaya.thread.service.*;
+import by.dubrovskaya.thread.service.implementation.thread.SemaphoreThread;
 
-import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.Semaphore;
 
 public class MatrixController {
     private FileService fileService;
@@ -26,19 +28,30 @@ public class MatrixController {
         matrix.ifPresent(value -> matrixCrudService.save(value));
     }
 
-    public void loadThreads() {
-        Optional<List<MatrixThread>> threads = fileService.getThreadsFromFile("task8matrix/data/threads.txt");
-        if (threads.isPresent()) {
-            List<MatrixThread> threadList = threads.get();
-            for (MatrixThread matrixThread : threadList) {
-                threadService.save(matrixThread);
-            }
-        }
+    public int[] loadValuesOfThreads() {
+        return fileService.getThreadsFromFile("task8matrix/data/threads.txt");
     }
 
-    public void initializeDiagonal(){
+    public void initThreads(int[] valuesOfThreads) {
+        final Semaphore semaphore = new Semaphore(1);
+        CommonDiagonal commonDiagonal = new CommonDiagonal(matrixCrudService.get().getSize());
+
+        final int M = valuesOfThreads.length;
+        final int N = matrixCrudService.get().getSize();
+
+        for (int i = 0; i < valuesOfThreads.length; i++) {
+            threadService.save(new MatrixThread(new SemaphoreThread(matrixCrudService.get(), commonDiagonal, semaphore,
+                    (int) Math.ceil((double) N / M)), valuesOfThreads[i]));
+        }
+
+//     matrixThreads.add(new MatrixThread(
+//                    new LockerThread(locker, matrixCrudService.get(), (int) Math.ceil((double) N / M)),
+//    valuesOfThread);
+    }
+
+    public void initializeDiagonal() {
         loadMatrix();
-        loadThreads();
+        initThreads(loadValuesOfThreads());
         matrixService.initializeMainDiagonal();
     }
 }
