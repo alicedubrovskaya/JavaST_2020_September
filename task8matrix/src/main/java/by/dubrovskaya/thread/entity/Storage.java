@@ -9,7 +9,7 @@ import java.util.List;
  * @author Alisa Dubrovskaya
  */
 public class Storage {
-    private static final Storage INSTANCE = new Storage();
+    private static Storage INSTANCE = null;
     private List<MatrixThread> threads;
     private Matrix matrix;
 
@@ -19,6 +19,12 @@ public class Storage {
     }
 
     public static Storage getINSTANCE() {
+        if (INSTANCE == null) {
+            synchronized (Storage.class) {
+                if (INSTANCE == null)
+                    INSTANCE = new Storage();
+            }
+        }
         return INSTANCE;
     }
 
@@ -43,7 +49,7 @@ public class Storage {
         return threads.get(index);
     }
 
-    public int getCountOfThreads(){
+    public int getCountOfThreads() {
         return threads.size();
     }
 
