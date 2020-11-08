@@ -2056,3 +2056,7 @@
 2020-11-08 22:04:08.731 [Thread 0] DEBUG thread.service.implementation.thread.InitializeMatrixThread - Sum of initialized elements 6
 2020-11-08 22:04:08.732 [Thread 1] INFO  thread.service.implementation.thread.LockerThread - Continue to work...
 2020-11-08 22:04:08.732 [Thread 0] INFO  thread.service.implementation.thread.LockerThread - Continue to work...
+2020-11-08 22:35:48.884 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 22:35:48.900 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 22:35:48.907 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 22:35:48.907 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
