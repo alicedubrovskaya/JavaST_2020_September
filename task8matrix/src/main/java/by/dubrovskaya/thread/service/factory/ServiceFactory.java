@@ -6,6 +6,9 @@ import by.dubrovskaya.thread.service.crud.MatrixCrudService;
 import by.dubrovskaya.thread.service.crud.ThreadCrudService;
 import by.dubrovskaya.thread.service.implementation.*;
 
+/**
+ * Class is a realization of pattern Factory
+ */
 public class ServiceFactory {
     private static final ServiceFactory INSTANCE = new ServiceFactory();
 

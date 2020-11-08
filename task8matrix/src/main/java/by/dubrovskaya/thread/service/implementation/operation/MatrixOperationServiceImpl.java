@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ForkJoinPool;
 
+/**
+ * Class is an implementation of interface MatrixOperationsService
+ */
 public class MatrixOperationServiceImpl implements MatrixOperationsService {
     private final Logger logger = LogManager.getLogger(getClass().getName());
 
@@ -20,6 +23,10 @@ public class MatrixOperationServiceImpl implements MatrixOperationsService {
         this.matrixCrudService = matrixCrudService;
     }
 
+    /**
+     * Finds sum of specified elements
+     * @return
+     */
     @Override
     public int sumOfDiagonalElements() {
         int result = 0;

@@ -5,6 +5,10 @@ import by.dubrovskaya.thread.entity.Matrix;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Class is an implementation of interface Runnable
+ * Uses Executor
+ */
 public class ExecutorThread implements Runnable {
     private int value;
     private final int countToFill;

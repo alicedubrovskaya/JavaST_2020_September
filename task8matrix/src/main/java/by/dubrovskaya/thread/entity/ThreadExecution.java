@@ -1,5 +1,8 @@
 package by.dubrovskaya.thread.entity;
 
+/**
+ * Enumeration for types of thread execution
+ */
 public enum ThreadExecution {
     LOCKER("locker"),
     SEMAPHORE("semaphore"),

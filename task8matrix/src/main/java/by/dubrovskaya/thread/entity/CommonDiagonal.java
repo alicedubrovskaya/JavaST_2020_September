@@ -1,5 +1,11 @@
 package by.dubrovskaya.thread.entity;
 
+/**
+ * CLass describes common diagonal of matrix
+ * Is common resource
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class CommonDiagonal {
     private int index;
     private int countOfElements;

@@ -8,6 +8,11 @@ import by.dubrovskaya.thread.exception.ThreadNotFoundException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Class that is an implementation of interface ThreadDao
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class ThreadDaoImpl implements ThreadDao {
     private final Storage storage = Storage.getINSTANCE();
     private final Logger logger = LogManager.getLogger(getClass().getName());
@@ -22,7 +27,7 @@ public class ThreadDaoImpl implements ThreadDao {
         if (!storage.exists(thread)) {
             thread.setName(String.format("Thread %d", newId()));
             storage.add(thread);
-            logger.debug("Thread added to storage");
+            logger.info("Thread added to storage");
         } else {
             throw new ThreadAlreadyExistsException(thread.getValue());
         }
@@ -30,6 +35,7 @@ public class ThreadDaoImpl implements ThreadDao {
 
     @Override
     public MatrixThread getThread(int index) throws ThreadNotFoundException {
+        logger.info("Getting thread");
         if (index >= 0 && index < storage.getCountOfThreads()) {
             return storage.getThread(index);
         } else {

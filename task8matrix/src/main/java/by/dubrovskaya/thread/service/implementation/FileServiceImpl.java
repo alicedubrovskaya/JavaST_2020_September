@@ -12,6 +12,9 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Class is an implementation of FileService
+ */
 public class FileServiceImpl implements FileService {
     private final Logger logger = LogManager.getLogger(getClass().getName());
     private FiledDao filedDao;

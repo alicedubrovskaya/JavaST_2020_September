@@ -3,6 +3,9 @@ package by.dubrovskaya.thread.service.implementation;
 import by.dubrovskaya.thread.service.StringService;
 import by.dubrovskaya.thread.service.ValidatorService;
 
+/**
+ * Class is an implementation of StringService
+ */
 public class StringServiceImpl implements StringService {
     private int count = 0;
     private ValidatorService validatorService;
@@ -11,6 +14,11 @@ public class StringServiceImpl implements StringService {
         this.validatorService = validatorService;
     }
 
+    /**
+     * Parsers line to elements
+     * @param line
+     * @return
+     */
     @Override
     public int[] parse(String line) {
         int[] elements = new int[count];

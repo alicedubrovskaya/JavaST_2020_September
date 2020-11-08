@@ -3,6 +3,13 @@ package by.dubrovskaya.thread.entity;
 import java.util.Arrays;
 import java.util.Objects;
 
+/**
+ * CLass describes matrices.
+ * Has overridden methods
+ * Is common resource
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class Matrix {
     private int[][] matrix;
 

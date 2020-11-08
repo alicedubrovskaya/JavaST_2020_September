@@ -2060,3 +2060,8 @@
 2020-11-08 22:35:48.900 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
 2020-11-08 22:35:48.907 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
 2020-11-08 22:35:48.907 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 23:01:25.647 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 23:01:25.667 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 23:01:25.676 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 23:01:25.677 [main] INFO  dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Saving matrix
+2020-11-08 23:01:25.678 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage

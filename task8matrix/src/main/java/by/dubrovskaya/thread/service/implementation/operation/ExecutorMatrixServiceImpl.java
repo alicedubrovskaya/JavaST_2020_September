@@ -11,6 +11,9 @@ import org.apache.logging.log4j.Logger;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * Class is an implementation of interface MatrixService
+ */
 public class ExecutorMatrixServiceImpl implements MatrixService {
     private final Logger logger = LogManager.getLogger(getClass().getName());
     private ThreadCrudService threadCrudService;
@@ -21,6 +24,9 @@ public class ExecutorMatrixServiceImpl implements MatrixService {
         this.matrixCrudService = matrixCrudService;
     }
 
+    /**
+     * Initializes matrix
+     */
     @Override
     public void initializeMainDiagonal() {
         logger.debug("Started initialization of main diagonal");

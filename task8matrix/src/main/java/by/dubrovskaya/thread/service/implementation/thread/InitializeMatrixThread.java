@@ -4,6 +4,11 @@ import by.dubrovskaya.thread.entity.Matrix;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Class is an implementation of interface Runnable
+ * Initializes diagonal of matrix if it wasn't initialized
+ */
+
 public class InitializeMatrixThread implements Runnable {
     private Matrix commonMatrix;
     private final int value;

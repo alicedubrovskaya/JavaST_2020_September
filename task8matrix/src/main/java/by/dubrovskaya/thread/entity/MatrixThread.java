@@ -1,5 +1,10 @@
 package by.dubrovskaya.thread.entity;
 
+/**
+ * CLass is extension of Thread
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class MatrixThread extends Thread {
     private int value;
 

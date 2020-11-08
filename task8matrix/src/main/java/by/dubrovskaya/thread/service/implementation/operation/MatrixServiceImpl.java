@@ -8,6 +8,9 @@ import by.dubrovskaya.thread.service.crud.ThreadCrudService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Class is an implementation of interface MatrixService
+ */
 public class MatrixServiceImpl implements MatrixService {
     private final Logger logger = LogManager.getLogger(getClass().getName());
     private ThreadCrudService threadCrudService;
@@ -18,6 +21,9 @@ public class MatrixServiceImpl implements MatrixService {
         this.matrixCrudService = matrixCrudService;
     }
 
+    /**
+     * Initializes diagonal
+     */
     @Override
     public void initializeMainDiagonal() {
         logger.debug("Started initialization of main diagonal");
@@ -28,12 +34,6 @@ public class MatrixServiceImpl implements MatrixService {
                 MatrixThread thread = threadCrudService.get(i);
                 thread.start();
             }
-
-            //TODO wait
-//            MatrixThread matrixThread = new MatrixThread(
-//                    new InitializeMatrixThread(matrix), threadService.get(0).getValue()
-//            );
-//            matrixThread.start();
         }
     }
 

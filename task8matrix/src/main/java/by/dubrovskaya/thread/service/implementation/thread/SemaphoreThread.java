@@ -11,6 +11,10 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Class is an implementation of interface Runnable
+ * Uses Semaphore
+ */
 public class SemaphoreThread implements Runnable {
     private Matrix commonMatrix;
     private CommonDiagonal commonDiagonal;

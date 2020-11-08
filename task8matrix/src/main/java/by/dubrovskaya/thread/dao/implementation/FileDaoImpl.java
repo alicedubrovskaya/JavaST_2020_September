@@ -11,6 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Class that is an implementation of interface FileDao
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class FileDaoImpl implements FiledDao {
     private final Logger logger = LogManager.getLogger(getClass().getName());
 

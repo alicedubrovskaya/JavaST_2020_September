@@ -9,6 +9,9 @@ import by.dubrovskaya.thread.service.crud.ThreadCrudService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Classs is an implementation of ThreadCrudService
+ */
 public class ThreadCrudServiceImpl implements ThreadCrudService {
     private ThreadDao threadDao;
     private final Logger logger = LogManager.getLogger(getClass().getName());
@@ -18,6 +21,11 @@ public class ThreadCrudServiceImpl implements ThreadCrudService {
         this.threadDao = daoFactory.getThreadDao();
     }
 
+    /**
+     * Saves thread
+     *
+     * @param thread
+     */
     @Override
     public void save(MatrixThread thread) {
         try {
@@ -28,6 +36,12 @@ public class ThreadCrudServiceImpl implements ThreadCrudService {
         }
     }
 
+    /**
+     * Gets thread by index
+     *
+     * @param index
+     * @return
+     */
     @Override
     public MatrixThread get(int index) {
         MatrixThread matrixThread = null;
@@ -40,6 +54,11 @@ public class ThreadCrudServiceImpl implements ThreadCrudService {
         return matrixThread;
     }
 
+    /**
+     * Gets count of threads at storage
+     *
+     * @return
+     */
     @Override
     public int getCountOfThreads() {
         return threadDao.getCount();

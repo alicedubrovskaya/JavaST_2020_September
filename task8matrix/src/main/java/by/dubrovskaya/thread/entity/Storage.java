@@ -3,6 +3,11 @@ package by.dubrovskaya.thread.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * CLass represents a storage
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class Storage {
     private static final Storage INSTANCE = new Storage();
     private List<MatrixThread> threads;

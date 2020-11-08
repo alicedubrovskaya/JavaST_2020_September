@@ -8,6 +8,9 @@ import by.dubrovskaya.thread.service.crud.MatrixCrudService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Class is an implementation of MatrixCrudService
+ */
 public class MatrixCrudServiceImpl implements MatrixCrudService {
     private MatrixDao matrixDao;
     private final Logger logger = LogManager.getLogger(getClass().getName());
@@ -17,12 +20,20 @@ public class MatrixCrudServiceImpl implements MatrixCrudService {
         this.matrixDao = daoFactory.getMatrixDao();
     }
 
+    /**
+     * Saves matrix
+     * @param matrix
+     */
     @Override
     public void save(Matrix matrix) {
         logger.debug("Adding of matrix");
         matrixDao.save(matrix);
     }
 
+    /**
+     * Gets matrix
+     * @return
+     */
     @Override
     public Matrix get() {
         Matrix matrix = null;

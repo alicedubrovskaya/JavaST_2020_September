@@ -15,6 +15,9 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * Class is an implementation of ThreadService
+ */
 public class ThreadServiceImpl implements ThreadService {
     private MatrixCrudService matrixCrudService;
     private ThreadCrudService threadCrudService;
@@ -24,6 +27,12 @@ public class ThreadServiceImpl implements ThreadService {
         this.matrixCrudService = matrixCrudService;
     }
 
+    /**
+     * Initializes threads with thread implementations, depending on specified parameter
+     *
+     * @param valuesOfThreads
+     * @param threadExecution
+     */
     @Override
     public void initializeThreads(int[] valuesOfThreads, ThreadExecution threadExecution) {
         switch (threadExecution) {
@@ -40,6 +49,11 @@ public class ThreadServiceImpl implements ThreadService {
         }
     }
 
+    /**
+     * Does initialization of matrix with Executor
+     *
+     * @param valuesOfThreads
+     */
     void executorInitialization(int[] valuesOfThreads) {
         CommonDiagonal commonDiagonal = new CommonDiagonal(matrixCrudService.get().getSize());
 
@@ -52,6 +66,11 @@ public class ThreadServiceImpl implements ThreadService {
         }
     }
 
+    /**
+     * Does initialization of matrix with Semaphore
+     *
+     * @param valuesOfThreads
+     */
     void semaphoreInitialization(int[] valuesOfThreads) {
         final Semaphore semaphore = new Semaphore(1);
         CommonDiagonal commonDiagonal = new CommonDiagonal(matrixCrudService.get().getSize());
@@ -65,6 +84,11 @@ public class ThreadServiceImpl implements ThreadService {
         }
     }
 
+    /**
+     * Does initialization of matrix with Locker
+     *
+     * @param valuesOfThreads
+     */
     void lockerInitialization(int[] valuesOfThreads) {
         final ReentrantLock locker = new ReentrantLock();
 

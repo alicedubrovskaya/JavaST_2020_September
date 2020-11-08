@@ -11,6 +11,10 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * Class is an implementation of interface Runnable
+ * Uses Locker
+ */
 public class LockerThread implements Runnable {
     private Matrix commonMatrix;
     private final ReentrantLock locker;

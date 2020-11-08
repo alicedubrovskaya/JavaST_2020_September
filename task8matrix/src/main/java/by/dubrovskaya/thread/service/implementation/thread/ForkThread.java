@@ -6,6 +6,10 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.concurrent.RecursiveTask;
 
+/**
+ * Class extends RecursiveTask<Integer>
+ * Uses ForkThreadPool
+ */
 public class ForkThread extends RecursiveTask<Integer> {
     private final List<Integer> elementsList;
 

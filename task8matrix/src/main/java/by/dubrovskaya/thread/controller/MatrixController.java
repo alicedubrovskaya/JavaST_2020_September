@@ -11,6 +11,12 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Optional;
 
+
+/**
+ * Class is a controller of class Book
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class MatrixController {
     private FileService fileService;
     private ThreadService threadService;
@@ -26,20 +32,39 @@ public class MatrixController {
         this.matrixCrudService = serviceFactory.getMatrixCrudService();
     }
 
+    /**
+     * Loads matrix from file and saves
+     */
     public void loadMatrix() {
         Optional<Matrix> matrix = fileService.getFromFile("task8matrix/data/matrix.txt");
         matrix.ifPresent(value -> matrixCrudService.save(value));
     }
 
+    /**
+     * Loads values of threads from file
+     *
+     * @return
+     */
     public int[] loadValuesOfThreads() {
         return fileService.getThreadsFromFile("task8matrix/data/threads.txt");
     }
 
+    /**
+     * Initializes threads
+     *
+     * @param valuesOfThreads
+     * @param typeOfExecution
+     */
     public void initThreads(int[] valuesOfThreads, String typeOfExecution) {
         ThreadExecution execution = ThreadExecution.getEnum(typeOfExecution);
         threadService.initializeThreads(valuesOfThreads, execution);
     }
 
+    /**
+     * Initializes diagonal
+     *
+     * @param typeOfExecution
+     */
     public void initializeDiagonal(String typeOfExecution) {
         loadMatrix();
         initThreads(loadValuesOfThreads(), typeOfExecution);
@@ -49,6 +74,9 @@ public class MatrixController {
         matrixService.initializeMainDiagonal();
     }
 
+    /**
+     * Finds sum of elements
+     */
     public void sumOfElements() {
         loadMatrix();
         MatrixOperationsService matrixOperationsService = new MatrixOperationServiceImpl(matrixCrudService);

@@ -1,5 +1,8 @@
 package by.dubrovskaya.thread.entity;
 
+/**
+ * Enumeration class for types of invoking commands
+ */
 public enum CommandType {
     LOAD_MATRIX("load matrix"),
     INITIALIZE_DIAGONAL("initialize diagonal"),
