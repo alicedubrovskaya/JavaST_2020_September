@@ -1,26 +1,27 @@
 package by.dubrovskaya.thread.service.factory;
 
-import by.dubrovskaya.thread.service.MatrixCrudService;
+import by.dubrovskaya.entity.enumeration.TypeCommand;
+import by.dubrovskaya.thread.entity.ThreadExecution;
+import by.dubrovskaya.thread.service.crud.MatrixCrudService;
 import by.dubrovskaya.thread.service.MatrixService;
-import by.dubrovskaya.thread.service.ThreadCrudService;
+import by.dubrovskaya.thread.service.crud.ThreadCrudService;
 import by.dubrovskaya.thread.service.implementation.operation.ExecutorMatrixServiceImpl;
 import by.dubrovskaya.thread.service.implementation.operation.MatrixServiceImpl;
 
 public class MatrixServiceFactory {
-    private final String EXECUTOR = "EXECUTOR";
-    private final String SERVICE = "SERVICE";
-
     /**
      * Returns implementation of Matrix Service depending on transmitted type
      *
-     * @param type
+     * @param execution
+     * @param threadCrudService
+     * @param matrixCrudService
      * @return
      */
-    public MatrixService getMatrixService(String type, ThreadCrudService threadCrudService,
+    public MatrixService getMatrixService(ThreadExecution execution, ThreadCrudService threadCrudService,
                                           MatrixCrudService matrixCrudService) {
-        if (EXECUTOR.equals(type)) {
-            return new ExecutorMatrixServiceImpl(threadCrudService,matrixCrudService);
-        } else if (SERVICE.equals(type)) {
+        if (ThreadExecution.EXECUTOR.equals(execution)) {
+            return new ExecutorMatrixServiceImpl(threadCrudService, matrixCrudService);
+        } else if (ThreadExecution.LOCKER.equals(execution) || ThreadExecution.SEMAPHORE.equals(execution)) {
             return new MatrixServiceImpl(threadCrudService, matrixCrudService);
         }
         return null;

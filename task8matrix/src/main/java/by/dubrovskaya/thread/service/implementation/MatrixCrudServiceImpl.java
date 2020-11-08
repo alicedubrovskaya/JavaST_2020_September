@@ -4,7 +4,7 @@ import by.dubrovskaya.thread.dao.DaoFactory;
 import by.dubrovskaya.thread.dao.MatrixDao;
 import by.dubrovskaya.thread.entity.Matrix;
 import by.dubrovskaya.thread.exception.MatrixNotFoundException;
-import by.dubrovskaya.thread.service.MatrixCrudService;
+import by.dubrovskaya.thread.service.crud.MatrixCrudService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

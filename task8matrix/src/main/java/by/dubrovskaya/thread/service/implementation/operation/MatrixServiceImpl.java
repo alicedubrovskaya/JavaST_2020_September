@@ -2,9 +2,9 @@ package by.dubrovskaya.thread.service.implementation.operation;
 
 import by.dubrovskaya.thread.entity.Matrix;
 import by.dubrovskaya.thread.entity.MatrixThread;
-import by.dubrovskaya.thread.service.MatrixCrudService;
+import by.dubrovskaya.thread.service.crud.MatrixCrudService;
 import by.dubrovskaya.thread.service.MatrixService;
-import by.dubrovskaya.thread.service.ThreadCrudService;
+import by.dubrovskaya.thread.service.crud.ThreadCrudService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -37,12 +37,4 @@ public class MatrixServiceImpl implements MatrixService {
         }
     }
 
-    public boolean initializedDiagonal(Matrix matrix) {
-        for (int i = 0; i < matrix.getSize(); i++) {
-            if (matrix.getElement(i, i) == 0) {
-                return false;
-            }
-        }
-        return true;
-    }
 }

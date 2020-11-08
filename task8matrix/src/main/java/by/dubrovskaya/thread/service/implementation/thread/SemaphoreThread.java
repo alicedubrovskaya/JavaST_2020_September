@@ -6,6 +6,8 @@ import by.dubrovskaya.thread.entity.MatrixThread;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
@@ -13,11 +15,14 @@ public class SemaphoreThread implements Runnable {
     private final int countToFill;
     private Matrix commonMatrix;
     private CommonDiagonal commonDiagonal;
+    private CyclicBarrier barrier;
     Semaphore semaphore;
 
     private final Logger logger = LogManager.getLogger(getClass().getName());
 
-    public SemaphoreThread(Matrix commonMatrix, CommonDiagonal commonDiagonal, Semaphore semaphore, int countToFill) {
+    public SemaphoreThread(CyclicBarrier barrier,Matrix commonMatrix, CommonDiagonal commonDiagonal,
+                           Semaphore semaphore, int countToFill) {
+        this.barrier = barrier;
         this.commonMatrix = commonMatrix;
         this.commonDiagonal = commonDiagonal;
         this.semaphore = semaphore;
@@ -55,8 +60,10 @@ public class SemaphoreThread implements Runnable {
                 semaphore.release();
                 TimeUnit.SECONDS.sleep(1);
             }
+            this.barrier.await();
+            logger.info("Continue to work...");
 
-        } catch (InterruptedException e) {
+        } catch (InterruptedException | BrokenBarrierException e) {
             logger.error(e.getMessage());
             Thread.currentThread().interrupt();
         }

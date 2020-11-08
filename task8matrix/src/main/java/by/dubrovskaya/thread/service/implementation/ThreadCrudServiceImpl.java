@@ -5,7 +5,7 @@ import by.dubrovskaya.thread.dao.ThreadDao;
 import by.dubrovskaya.thread.entity.MatrixThread;
 import by.dubrovskaya.thread.exception.ThreadAlreadyExistsException;
 import by.dubrovskaya.thread.exception.ThreadNotFoundException;
-import by.dubrovskaya.thread.service.ThreadCrudService;
+import by.dubrovskaya.thread.service.crud.ThreadCrudService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

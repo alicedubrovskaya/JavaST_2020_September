@@ -1,27 +1,30 @@
 package by.dubrovskaya.thread.service.implementation.thread;
 
 import by.dubrovskaya.thread.entity.Matrix;
-import by.dubrovskaya.thread.entity.MatrixThread;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class InitializeMatrixThread implements Runnable {
     private Matrix commonMatrix;
+    private final int value;
     private final Logger logger = LogManager.getLogger(getClass().getName());
 
     public InitializeMatrixThread(Matrix matrix) {
         this.commonMatrix = matrix;
+        this.value = 1;
     }
 
     @Override
     public void run() {
-        Thread currentThread = Thread.currentThread();
-        MatrixThread thread = (MatrixThread) currentThread;
-
+        int sum = 0;
+        logger.info("Checking for initialization of all elements at diagonal");
         for (int i = 0; i < commonMatrix.getSize(); i++) {
             if (commonMatrix.getElement(i, i) == 0) {
-                commonMatrix.setElement(i, i, thread.getValue());
+                logger.debug("Initialization of element [{},{}]", i, i);
+                commonMatrix.setElement(i, i, value);
             }
+            sum += commonMatrix.getElement(i, i);
         }
+        logger.debug("Sum of initialized elements {}", sum);
     }
 }

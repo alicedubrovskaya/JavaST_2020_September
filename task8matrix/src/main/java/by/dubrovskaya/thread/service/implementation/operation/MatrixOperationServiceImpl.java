@@ -1,7 +1,7 @@
 package by.dubrovskaya.thread.service.implementation.operation;
 
 import by.dubrovskaya.thread.entity.Matrix;
-import by.dubrovskaya.thread.service.MatrixCrudService;
+import by.dubrovskaya.thread.service.crud.MatrixCrudService;
 import by.dubrovskaya.thread.service.MatrixOperationsService;
 import by.dubrovskaya.thread.service.implementation.thread.ForkThread;
 import org.apache.logging.log4j.LogManager;

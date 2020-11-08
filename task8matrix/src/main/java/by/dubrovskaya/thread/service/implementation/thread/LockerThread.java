@@ -5,6 +5,8 @@ import by.dubrovskaya.thread.entity.MatrixThread;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -12,12 +14,14 @@ public class LockerThread implements Runnable {
     private final int countToFill;
     private Matrix commonMatrix;
     private final ReentrantLock locker;
+    private CyclicBarrier barrier;
     private final Logger logger = LogManager.getLogger(getClass().getName());
 
-    public LockerThread(ReentrantLock locker, Matrix matrix, int countToFill) {
+    public LockerThread(CyclicBarrier barrier, ReentrantLock locker, Matrix matrix, int countToFill) {
         this.locker = locker;
         this.commonMatrix = matrix;
         this.countToFill = countToFill;
+        this.barrier = barrier;
     }
 
     @Override
@@ -48,7 +52,10 @@ public class LockerThread implements Runnable {
                     TimeUnit.SECONDS.sleep(1);
                 }
             }
-        } catch (InterruptedException e) {
+            this.barrier.await();
+            logger.info("Continue to work...");
+
+        } catch (InterruptedException | BrokenBarrierException e) {
             logger.error(e.getMessage());
             Thread.currentThread().interrupt();
         }

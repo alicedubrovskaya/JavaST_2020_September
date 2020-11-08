@@ -1771,3 +1771,157 @@
 2020-11-08 21:01:18.516 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Left sum is 3, right sum is 5, total is 11
 2020-11-08 21:01:18.517 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Sum 11
 2020-11-08 21:01:18.517 [main] INFO  by.dubrovskaya.thread.controller.MatrixController - Sum 11
+2020-11-08 21:32:36.168 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 21:32:36.211 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 21:32:36.222 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 21:32:36.226 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 21:32:36.227 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-08 21:32:36.231 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 21:33:50.770 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 21:33:50.834 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 21:33:50.849 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 21:33:50.850 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 21:33:50.851 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-08 21:33:50.855 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 21:35:00.776 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 21:35:00.833 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 21:35:00.842 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 21:35:00.845 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 21:35:00.846 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-08 21:35:00.850 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 21:35:00.873 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 21:35:00.874 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Adding of thread
+2020-11-08 21:35:00.875 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 21:35:00.876 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Adding of thread
+2020-11-08 21:35:00.879 [main] DEBUG thread.service.implementation.operation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-08 21:35:00.880 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Getting of thread
+2020-11-08 21:35:00.882 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Getting of thread
+2020-11-08 21:35:00.884 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is waiting for access
+2020-11-08 21:35:00.888 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:00.886 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is waiting for access
+2020-11-08 21:35:00.888 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:01.907 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:01.909 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:02.922 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:02.924 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:03.924 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:03.925 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:04.926 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:04.927 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:05.926 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:05.929 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:06.928 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:06.931 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:07.929 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:07.931 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:08.937 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:08.941 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:09.943 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:09.944 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:54.343 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 21:35:54.411 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 21:35:54.419 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 21:35:54.420 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 21:35:54.421 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-08 21:35:54.424 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 21:35:54.444 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 21:35:54.445 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Adding of thread
+2020-11-08 21:35:54.446 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 21:35:54.446 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Adding of thread
+2020-11-08 21:35:54.451 [main] DEBUG thread.service.implementation.operation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-08 21:35:54.451 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Getting of thread
+2020-11-08 21:35:54.457 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Getting of thread
+2020-11-08 21:35:54.473 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is waiting for access
+2020-11-08 21:35:54.478 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:35:54.477 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is waiting for access
+2020-11-08 21:35:54.479 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 set its value, count of filled elements: 1
+2020-11-08 21:35:54.482 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 0, current element index: 1
+2020-11-08 21:35:54.482 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 set its value, count of filled elements: 1
+2020-11-08 21:35:55.481 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 1, current element index: 2
+2020-11-08 21:35:55.482 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 set its value, count of filled elements: 2
+2020-11-08 21:35:55.483 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 1, current element index: 3
+2020-11-08 21:35:55.484 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 set its value, count of filled elements: 2
+2020-11-08 21:35:56.486 [Thread 0] INFO  thread.service.implementation.thread.SemaphoreThread - Continue to work...
+2020-11-08 21:35:56.486 [Thread 1] INFO  thread.service.implementation.thread.SemaphoreThread - Continue to work...
+2020-11-08 21:37:43.422 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 21:37:43.547 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 21:37:43.586 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 21:37:43.587 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 21:37:43.590 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-08 21:37:43.606 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 21:37:43.704 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 21:37:43.704 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Adding of thread
+2020-11-08 21:37:43.706 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 21:37:43.706 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Adding of thread
+2020-11-08 21:37:43.713 [main] DEBUG thread.service.implementation.operation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-08 21:37:43.714 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Getting of thread
+2020-11-08 21:37:43.716 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Getting of thread
+2020-11-08 21:37:43.719 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is waiting for access
+2020-11-08 21:37:43.718 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is waiting for access
+2020-11-08 21:37:43.722 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:37:43.723 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 set its value, count of filled elements: 1
+2020-11-08 21:37:43.725 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 0, current element index: 1
+2020-11-08 21:37:43.726 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 set its value, count of filled elements: 1
+2020-11-08 21:37:44.729 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 1, current element index: 2
+2020-11-08 21:37:44.731 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 set its value, count of filled elements: 2
+2020-11-08 21:37:44.731 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 1, current element index: 3
+2020-11-08 21:37:44.732 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 set its value, count of filled elements: 2
+2020-11-08 21:37:45.734 [Thread 0] INFO  thread.service.implementation.thread.InitializeMatrixThread - Checking for initialization of all elements at diagonal
+2020-11-08 21:37:45.735 [Thread 1] INFO  thread.service.implementation.thread.SemaphoreThread - Continue to work...
+2020-11-08 21:37:45.737 [Thread 0] INFO  thread.service.implementation.thread.SemaphoreThread - Continue to work...
+2020-11-08 21:39:41.308 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 21:39:41.352 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 21:39:41.361 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 21:39:41.362 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 21:39:41.363 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-08 21:39:41.366 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 21:39:41.388 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 21:39:41.388 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Adding of thread
+2020-11-08 21:39:41.390 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 21:39:41.391 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Adding of thread
+2020-11-08 21:39:41.394 [main] DEBUG thread.service.implementation.operation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-08 21:39:41.395 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Getting of thread
+2020-11-08 21:39:41.396 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Getting of thread
+2020-11-08 21:39:41.398 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is waiting for access
+2020-11-08 21:39:41.407 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 0, current element index: 0
+2020-11-08 21:39:41.408 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 set its value, count of filled elements: 1
+2020-11-08 21:39:41.401 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is waiting for access
+2020-11-08 21:39:41.409 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 0, current element index: 1
+2020-11-08 21:39:41.410 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 set its value, count of filled elements: 1
+2020-11-08 21:39:42.413 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 is in progress, count of filled elements: 1, current element index: 2
+2020-11-08 21:39:42.414 [Thread 0] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 0 set its value, count of filled elements: 2
+2020-11-08 21:39:42.416 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 is in progress, count of filled elements: 1, current element index: 3
+2020-11-08 21:39:42.417 [Thread 1] DEBUG thread.service.implementation.thread.SemaphoreThread - Thread 1 set its value, count of filled elements: 2
+2020-11-08 21:39:43.417 [Thread 1] INFO  thread.service.implementation.thread.InitializeMatrixThread - Checking for initialization of all elements at diagonal
+2020-11-08 21:39:43.424 [Thread 1] DEBUG thread.service.implementation.thread.InitializeMatrixThread - Sum of initialized elements 6
+2020-11-08 21:39:43.425 [Thread 0] INFO  thread.service.implementation.thread.SemaphoreThread - Continue to work...
+2020-11-08 21:39:43.425 [Thread 1] INFO  thread.service.implementation.thread.SemaphoreThread - Continue to work...
+2020-11-08 21:40:44.624 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 21:40:44.666 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 21:40:44.674 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 21:40:44.675 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 21:40:44.676 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Threads reading from file with path: task8matrix/data/threads.txt
+2020-11-08 21:40:44.679 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 21:40:44.698 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 21:40:44.698 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Adding of thread
+2020-11-08 21:40:44.700 [main] DEBUG dubrovskaya.thread.dao.implementation.ThreadDaoImpl - Thread added to storage
+2020-11-08 21:40:44.701 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Adding of thread
+2020-11-08 21:40:44.705 [main] DEBUG thread.service.implementation.operation.MatrixServiceImpl - Started initialization of main diagonal
+2020-11-08 21:40:44.706 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Getting of thread
+2020-11-08 21:40:44.706 [main] DEBUG dubrovskaya.thread.service.implementation.ThreadCrudServiceImpl - Getting of thread
+2020-11-08 21:40:44.710 [Thread 0] INFO  thread.service.implementation.thread.LockerThread - Thread 0 started
+2020-11-08 21:40:44.710 [Thread 1] INFO  thread.service.implementation.thread.LockerThread - Thread 1 started
+2020-11-08 21:40:44.713 [Thread 0] DEBUG thread.service.implementation.thread.LockerThread - Thread 0 checks element of diagonal, i=0, filled =0
+2020-11-08 21:40:44.714 [Thread 0] DEBUG thread.service.implementation.thread.LockerThread - Thread 0 sets its value to [0,0], therefore filled =1
+2020-11-08 21:40:44.716 [Thread 1] DEBUG thread.service.implementation.thread.LockerThread - Thread 1 checks element of diagonal, i=0, filled =0
+2020-11-08 21:40:45.724 [Thread 0] DEBUG thread.service.implementation.thread.LockerThread - Thread 0 checks element of diagonal, i=1, filled =1
+2020-11-08 21:40:45.725 [Thread 0] DEBUG thread.service.implementation.thread.LockerThread - Thread 0 sets its value to [1,1], therefore filled =2
+2020-11-08 21:40:45.727 [Thread 1] DEBUG thread.service.implementation.thread.LockerThread - Thread 1 checks element of diagonal, i=1, filled =0
+2020-11-08 21:40:46.728 [Thread 1] DEBUG thread.service.implementation.thread.LockerThread - Thread 1 checks element of diagonal, i=2, filled =0
+2020-11-08 21:40:46.729 [Thread 1] DEBUG thread.service.implementation.thread.LockerThread - Thread 1 sets its value to [2,2], therefore filled =1
+2020-11-08 21:40:47.730 [Thread 1] DEBUG thread.service.implementation.thread.LockerThread - Thread 1 checks element of diagonal, i=3, filled =1
+2020-11-08 21:40:47.731 [Thread 1] DEBUG thread.service.implementation.thread.LockerThread - Thread 1 sets its value to [3,3], therefore filled =2
+2020-11-08 21:40:47.731 [Thread 1] INFO  thread.service.implementation.thread.InitializeMatrixThread - Checking for initialization of all elements at diagonal
+2020-11-08 21:40:47.738 [Thread 1] DEBUG thread.service.implementation.thread.InitializeMatrixThread - Sum of initialized elements 6
+2020-11-08 21:40:47.738 [Thread 1] INFO  thread.service.implementation.thread.LockerThread - Continue to work...
+2020-11-08 21:40:47.738 [Thread 0] INFO  thread.service.implementation.thread.LockerThread - Continue to work...

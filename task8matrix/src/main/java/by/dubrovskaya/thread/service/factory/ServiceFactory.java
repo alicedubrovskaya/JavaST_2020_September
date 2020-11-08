@@ -1,6 +1,9 @@
 package by.dubrovskaya.thread.service.factory;
 
+import by.dubrovskaya.thread.entity.ThreadExecution;
 import by.dubrovskaya.thread.service.*;
+import by.dubrovskaya.thread.service.crud.MatrixCrudService;
+import by.dubrovskaya.thread.service.crud.ThreadCrudService;
 import by.dubrovskaya.thread.service.implementation.*;
 
 public class ServiceFactory {
@@ -43,8 +46,8 @@ public class ServiceFactory {
         return stringService;
     }
 
-    public MatrixService getMatrixService(String type) {
-        return matrixServiceFactory.getMatrixService(type, threadCrudService, matrixCrudService);
+    public MatrixService getMatrixService(ThreadExecution execution) {
+        return matrixServiceFactory.getMatrixService(execution, threadCrudService, matrixCrudService);
     }
 
     public ThreadService getThreadService() {

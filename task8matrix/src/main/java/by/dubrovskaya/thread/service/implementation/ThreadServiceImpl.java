@@ -3,13 +3,15 @@ package by.dubrovskaya.thread.service.implementation;
 import by.dubrovskaya.thread.entity.CommonDiagonal;
 import by.dubrovskaya.thread.entity.MatrixThread;
 import by.dubrovskaya.thread.entity.ThreadExecution;
-import by.dubrovskaya.thread.service.MatrixCrudService;
-import by.dubrovskaya.thread.service.ThreadCrudService;
+import by.dubrovskaya.thread.service.crud.MatrixCrudService;
+import by.dubrovskaya.thread.service.crud.ThreadCrudService;
 import by.dubrovskaya.thread.service.ThreadService;
 import by.dubrovskaya.thread.service.implementation.thread.ExecutorThread;
+import by.dubrovskaya.thread.service.implementation.thread.InitializeMatrixThread;
 import by.dubrovskaya.thread.service.implementation.thread.LockerThread;
 import by.dubrovskaya.thread.service.implementation.thread.SemaphoreThread;
 
+import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -56,9 +58,11 @@ public class ThreadServiceImpl implements ThreadService {
 
         final int M = valuesOfThreads.length;
         final int N = matrixCrudService.get().getSize();
+        final CyclicBarrier barrier = new CyclicBarrier(valuesOfThreads.length,
+                new InitializeMatrixThread(matrixCrudService.get()));
 
         for (int valuesOfThread : valuesOfThreads) {
-            threadCrudService.save(new MatrixThread(new SemaphoreThread(matrixCrudService.get(), commonDiagonal,
+            threadCrudService.save(new MatrixThread(new SemaphoreThread(barrier, matrixCrudService.get(), commonDiagonal,
                     semaphore, (int) Math.ceil((double) N / M)), valuesOfThread));
         }
     }
@@ -68,10 +72,13 @@ public class ThreadServiceImpl implements ThreadService {
 
         final int M = valuesOfThreads.length;
         final int N = matrixCrudService.get().getSize();
+        final CyclicBarrier barrier = new CyclicBarrier(valuesOfThreads.length,
+                new InitializeMatrixThread(matrixCrudService.get()));
+
 
         for (int valueOfThread : valuesOfThreads) {
             threadCrudService.save(new MatrixThread(
-                    new LockerThread(locker, matrixCrudService.get(), (int) Math.ceil((double) N / M)),
+                    new LockerThread(barrier, locker, matrixCrudService.get(), (int) Math.ceil((double) N / M)),
                     valueOfThread));
         }
     }

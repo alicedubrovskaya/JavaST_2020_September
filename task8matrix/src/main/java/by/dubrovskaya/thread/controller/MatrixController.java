@@ -3,6 +3,7 @@ package by.dubrovskaya.thread.controller;
 import by.dubrovskaya.thread.entity.Matrix;
 import by.dubrovskaya.thread.entity.ThreadExecution;
 import by.dubrovskaya.thread.service.*;
+import by.dubrovskaya.thread.service.crud.MatrixCrudService;
 import by.dubrovskaya.thread.service.factory.ServiceFactory;
 import by.dubrovskaya.thread.service.implementation.operation.MatrixOperationServiceImpl;
 import org.apache.logging.log4j.LogManager;
@@ -44,16 +45,7 @@ public class MatrixController {
         initThreads(loadValuesOfThreads(), typeOfExecution);
 
         ThreadExecution execution = ThreadExecution.getEnum(typeOfExecution);
-        switch (execution) {
-            case EXECUTOR:
-                matrixService = ServiceFactory.getINSTANCE().getMatrixService("EXECUTOR");
-                break;
-            case LOCKER:
-            case SEMAPHORE:
-                matrixService = ServiceFactory.getINSTANCE().getMatrixService("SERVICE");
-                break;
-            default:
-        }
+        matrixService = ServiceFactory.getINSTANCE().getMatrixService(execution);
         matrixService.initializeMainDiagonal();
     }
 

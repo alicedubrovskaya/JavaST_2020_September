@@ -1,4 +1,4 @@
-package by.dubrovskaya.thread.service;
+package by.dubrovskaya.thread.service.crud;
 
 import by.dubrovskaya.thread.entity.MatrixThread;
 
