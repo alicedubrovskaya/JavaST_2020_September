@@ -4,6 +4,9 @@ import by.dubrovskaya.thread.entity.Matrix;
 import by.dubrovskaya.thread.entity.ThreadExecution;
 import by.dubrovskaya.thread.service.*;
 import by.dubrovskaya.thread.service.factory.ServiceFactory;
+import by.dubrovskaya.thread.service.implementation.operation.MatrixOperationServiceImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Optional;
 
@@ -12,6 +15,8 @@ public class MatrixController {
     private ThreadService threadService;
     private MatrixCrudService matrixCrudService;
     private MatrixService matrixService;
+
+    private final Logger logger = LogManager.getLogger(getClass().getName());
 
     public MatrixController() {
         ServiceFactory serviceFactory = ServiceFactory.getINSTANCE();
@@ -49,7 +54,13 @@ public class MatrixController {
                 break;
             default:
         }
-
         matrixService.initializeMainDiagonal();
+    }
+
+    public void sumOfElements() {
+        loadMatrix();
+        MatrixOperationsService matrixOperationsService = new MatrixOperationServiceImpl(matrixCrudService);
+        int sum = matrixOperationsService.sumOfDiagonalElements();
+        logger.info("Sum {}", sum);
     }
 }

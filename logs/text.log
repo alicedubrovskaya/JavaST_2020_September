@@ -1540,3 +1540,234 @@
 2020-11-08 19:00:21.868 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - Set its value, count of filled elements: 1
 2020-11-08 19:00:21.869 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - pool-2-thread-1 is in progress, count of filled elements: 1, current element index: 3
 2020-11-08 19:00:21.870 [pool-2-thread-1] DEBUG thread.service.implementation.thread.ExecutorThread - Set its value, count of filled elements: 2
+2020-11-08 20:12:22.213 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 20:12:22.260 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 20:12:22.268 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 20:12:22.269 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 20:12:22.275 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 20:12:22.284 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Starting calculation of sum of elements: [1, 2, 3, 4]
+2020-11-08 20:12:22.294 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1, 2, 3, 4], middle Index: 2
+2020-11-08 20:12:22.301 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1, 2], middle Index: 1
+2020-11-08 20:12:22.301 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [1, 2], middle Index: 1
+2020-11-08 20:12:22.303 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle Index: 0
+2020-11-08 20:12:22.304 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [1], middle Index: 0
+2020-11-08 20:12:22.305 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [], middle Index: 0
+2020-11-08 20:12:22.321 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - List [1], middle Index: 0
+2020-11-08 20:12:22.328 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - List [], middle Index: 0
+2020-11-08 20:12:22.334 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [], middle Index: 0
+2020-11-08 20:13:32.127 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 20:13:32.177 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 20:13:32.185 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 20:13:32.186 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 20:13:32.321 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 20:14:07.947 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Starting calculation of sum of elements: [1, 2, 3, 4]
+2020-11-08 20:14:36.257 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1, 2, 3, 4], middle index: 2
+2020-11-08 20:14:36.265 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [1, 2], middle index: 1
+2020-11-08 20:14:36.266 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1, 2], middle index: 1
+2020-11-08 20:14:36.269 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:14:36.270 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:14:36.271 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [], middle index: 0
+2020-11-08 20:14:36.272 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [], middle index: 0
+2020-11-08 20:15:13.142 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 20:15:13.245 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 20:15:13.281 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 20:15:13.287 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 20:15:13.302 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 20:15:13.314 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Starting calculation of sum of elements: [1, 2, 3, 4]
+2020-11-08 20:15:24.657 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1, 2, 3, 4], middle index: 2
+2020-11-08 20:15:52.143 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [1, 2], middle index: 1
+2020-11-08 20:15:53.742 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - List [1, 2], middle index: 1
+2020-11-08 20:15:53.748 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:15:53.750 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:15:53.757 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [], middle index: 0
+2020-11-08 20:15:58.052 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - List [], middle index: 0
+2020-11-08 20:17:08.996 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:15:58.044 [ForkJoinPool-1-worker-1] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:17:09.008 [ForkJoinPool-1-worker-1] INFO  thread.service.implementation.thread.ForkThread - List [], middle index: 0
+2020-11-08 20:17:08.997 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [], middle index: 0
+2020-11-08 20:17:09.015 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [], middle index: 0
+2020-11-08 20:17:09.015 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [], middle index: 0
+2020-11-08 20:17:26.321 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 20:17:26.383 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 20:17:26.393 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 20:17:26.395 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 20:17:26.404 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 20:17:26.415 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Starting calculation of sum of elements: [1, 2, 3, 4]
+2020-11-08 20:17:26.437 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1, 2, 3, 4], middle index: 2
+2020-11-08 20:17:26.446 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1, 2], middle index: 1
+2020-11-08 20:17:26.459 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:17:26.461 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:17:26.473 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [1, 2], middle index: 1
+2020-11-08 20:17:26.475 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:17:26.478 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:17:26.479 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:17:26.482 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:17:26.482 [ForkJoinPool-1-worker-1] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:17:26.486 [ForkJoinPool-1-worker-1] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:19:19.333 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 20:19:19.393 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 20:19:19.413 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 20:19:19.414 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 20:19:19.427 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 20:19:19.436 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Starting calculation of sum of elements: [1, 2, 3, 4]
+2020-11-08 20:19:19.446 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1, 2, 3, 4], middle index: 2
+2020-11-08 20:19:19.452 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1, 2], middle index: 1
+2020-11-08 20:19:19.454 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:19:19.452 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [1, 2], middle index: 1
+2020-11-08 20:19:19.456 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:19:19.456 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:19:19.456 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:19:19.458 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:19:19.460 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:19:19.460 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:19:19.461 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:19:54.390 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 20:19:54.476 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 20:19:54.485 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 20:19:54.486 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 20:19:54.493 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 20:20:58.150 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 20:20:58.215 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 20:20:58.224 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 20:20:58.225 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 20:20:58.236 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 20:21:34.054 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 20:21:34.115 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 20:21:34.128 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 20:21:34.128 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 20:21:34.136 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 20:21:34.144 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Starting calculation of sum of elements: [1, 2, 3, 4, 1]
+2020-11-08 20:21:34.171 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1, 2, 3, 4, 1], middle index: 2
+2020-11-08 20:21:34.185 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1, 2], middle index: 1
+2020-11-08 20:21:34.185 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - List [1, 2], middle index: 1
+2020-11-08 20:21:34.187 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:21:34.187 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:21:34.188 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:21:34.188 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:21:34.191 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:21:34.191 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:21:34.191 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:21:34.193 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:22:19.489 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 20:22:19.558 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 20:22:19.568 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 20:22:19.568 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 20:22:19.575 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 20:22:19.583 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Starting calculation of sum of elements: [1, 2, 3, 4, 1]
+2020-11-08 20:22:19.602 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1, 2, 3, 4, 1], middle index: 2
+2020-11-08 20:22:19.609 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1, 2], middle index: 1
+2020-11-08 20:22:19.609 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [1, 2], middle index: 1
+2020-11-08 20:22:19.611 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:22:19.612 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:22:19.613 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:22:28.672 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:22:19.611 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:22:28.678 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:22:28.677 [ForkJoinPool-1-worker-1] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:22:34.148 [ForkJoinPool-1-worker-1] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:23:15.346 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 20:23:15.440 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 20:23:15.454 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 20:23:15.455 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 20:23:15.493 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 20:23:15.504 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Starting calculation of sum of elements: [1, 2, 3, 4, 1]
+2020-11-08 20:23:15.536 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1, 2, 3, 4, 1], middle index: 2
+2020-11-08 20:23:15.545 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1, 2], middle index: 1
+2020-11-08 20:23:15.548 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:23:15.549 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:23:15.549 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [1, 2], middle index: 1
+2020-11-08 20:23:22.934 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:23:22.939 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:23:22.942 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:23:23.102 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:24:09.670 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:23:22.942 [ForkJoinPool-1-worker-1] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:24:10.674 [ForkJoinPool-1-worker-1] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:27:51.701 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 20:27:51.788 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 20:27:51.809 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 20:27:51.815 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 20:27:51.832 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 20:27:51.849 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Starting calculation of sum of elements: [1, 2, 3, 4, 1]
+2020-11-08 20:27:51.889 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:27:51.900 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:30:01.535 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 20:30:01.582 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 20:30:01.592 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 20:30:01.594 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 20:30:01.610 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 20:30:01.617 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Starting calculation of sum of elements: [1, 2, 3, 4, 1]
+2020-11-08 20:30:01.628 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:30:01.636 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:30:01.636 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:31:46.495 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 20:31:46.580 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 20:31:46.590 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 20:31:46.591 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 20:31:46.598 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 20:31:46.605 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Starting calculation of sum of elements: [1, 2, 3, 4, 1]
+2020-11-08 20:31:46.631 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:31:56.777 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:31:56.777 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:36:05.243 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 20:36:05.323 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 20:36:05.335 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 20:36:05.354 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 20:36:05.368 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 20:36:05.378 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Starting calculation of sum of elements: [1, 2, 3, 4, 1]
+2020-11-08 20:36:05.397 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:36:05.403 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:36:05.403 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:41:44.327 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 20:41:44.413 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 20:41:44.431 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 20:41:44.431 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 20:41:44.441 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 20:41:44.448 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Starting calculation of sum of elements: [1, 2, 3, 4, 1]
+2020-11-08 20:41:44.469 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:41:51.659 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:41:51.659 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:57:50.620 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 20:57:50.662 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 20:57:50.672 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 20:57:50.673 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 20:57:50.682 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 20:57:50.690 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Starting calculation of sum of elements: [1, 2, 3, 4, 1]
+2020-11-08 20:57:50.709 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:57:50.715 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:59:58.810 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 20:59:58.850 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 20:59:58.859 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 20:59:58.860 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 20:59:58.866 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 20:59:58.873 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Starting calculation of sum of elements: [1, 2, 3, 4, 1]
+2020-11-08 20:59:58.882 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 20:59:58.889 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:59:58.888 [ForkJoinPool-1-worker-5] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 20:59:58.893 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Left sum is 0, right sum is 0, total is 1
+2020-11-08 20:59:58.894 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Sum 1
+2020-11-08 20:59:58.894 [main] INFO  by.dubrovskaya.thread.controller.MatrixController - Sum 1
+2020-11-08 21:01:18.298 [main] DEBUG dubrovskaya.thread.service.implementation.FileServiceImpl - Matrix reading from file with path: task8matrix/data/matrix.txt
+2020-11-08 21:01:18.420 [main] DEBUG dubrovskaya.thread.dao.implementation.FileDaoImpl - Lines from file read
+2020-11-08 21:01:18.430 [main] DEBUG dubrovskaya.thread.service.implementation.MatrixCrudServiceImpl - Adding of matrix
+2020-11-08 21:01:18.431 [main] DEBUG dubrovskaya.thread.dao.implementation.MatrixDaoImpl - Matrix added to storage
+2020-11-08 21:01:18.437 [main] DEBUG thread.service.implementation.operation.MatrixOperationServiceImpl - Started calculation of sum at the main diagonal
+2020-11-08 21:01:18.445 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Starting calculation of sum of elements: [1, 2, 3, 4, 1]
+2020-11-08 21:01:18.472 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1, 2, 3, 4, 1], middle index: 2
+2020-11-08 21:01:18.500 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1, 2], middle index: 1
+2020-11-08 21:01:18.500 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - List [4, 1], middle index: 1
+2020-11-08 21:01:18.502 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - List [1], middle index: 0
+2020-11-08 21:01:18.504 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 21:01:18.503 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - List [4], middle index: 0
+2020-11-08 21:01:18.507 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 21:01:18.508 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 21:01:18.508 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Left sum is 0, right sum is 0, total is 1
+2020-11-08 21:01:18.509 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 21:01:18.509 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 21:01:18.510 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - Left sum is 0, right sum is 0, total is 4
+2020-11-08 21:01:18.510 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Left sum is 1, right sum is 0, total is 3
+2020-11-08 21:01:18.510 [ForkJoinPool-1-worker-1] INFO  thread.service.implementation.thread.ForkThread - Found empty list, sum is 0
+2020-11-08 21:01:18.515 [ForkJoinPool-1-worker-7] INFO  thread.service.implementation.thread.ForkThread - Left sum is 4, right sum is 0, total is 5
+2020-11-08 21:01:18.516 [ForkJoinPool-1-worker-3] INFO  thread.service.implementation.thread.ForkThread - Left sum is 3, right sum is 5, total is 11
+2020-11-08 21:01:18.517 [main] INFO  thread.service.implementation.operation.MatrixOperationServiceImpl - Sum 11
+2020-11-08 21:01:18.517 [main] INFO  by.dubrovskaya.thread.controller.MatrixController - Sum 11

@@ -3,8 +3,8 @@ package by.dubrovskaya.thread.service.factory;
 import by.dubrovskaya.thread.service.MatrixCrudService;
 import by.dubrovskaya.thread.service.MatrixService;
 import by.dubrovskaya.thread.service.ThreadCrudService;
-import by.dubrovskaya.thread.service.implementation.initialization.ExecutorMatrixServiceImpl;
-import by.dubrovskaya.thread.service.implementation.initialization.MatrixServiceImpl;
+import by.dubrovskaya.thread.service.implementation.operation.ExecutorMatrixServiceImpl;
+import by.dubrovskaya.thread.service.implementation.operation.MatrixServiceImpl;
 
 public class MatrixServiceFactory {
     private final String EXECUTOR = "EXECUTOR";

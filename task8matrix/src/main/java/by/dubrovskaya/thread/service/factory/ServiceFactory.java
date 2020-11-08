@@ -2,7 +2,6 @@ package by.dubrovskaya.thread.service.factory;
 
 import by.dubrovskaya.thread.service.*;
 import by.dubrovskaya.thread.service.implementation.*;
-import by.dubrovskaya.thread.service.implementation.initialization.ExecutorMatrixServiceImpl;
 
 public class ServiceFactory {
     private static final ServiceFactory INSTANCE = new ServiceFactory();
