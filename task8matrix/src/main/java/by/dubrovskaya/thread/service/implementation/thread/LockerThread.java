@@ -50,6 +50,7 @@ public class LockerThread implements Runnable {
             }
         } catch (InterruptedException e) {
             logger.error(e.getMessage());
+            Thread.currentThread().interrupt();
         }
     }
 }
