@@ -1,14 +1,16 @@
 package by.training.parser.controller;
 
-import by.training.parser.service.SentenceParser;
-import by.training.parser.service.TextParser;
-
-import java.util.Collections;
+import by.training.parser.service.parser.LexemeParser;
+import by.training.parser.service.parser.SentenceParser;
+import by.training.parser.service.parser.SymbolParser;
+import by.training.parser.service.parser.TextParser;
 
 public class Runner {
     public static void main(String[] args) {
-        SentenceParser sentenceParser = new SentenceParser(null);
+        SymbolParser symbolParser = new SymbolParser(null);
+        LexemeParser lexemeParser = new LexemeParser(symbolParser);
+        SentenceParser sentenceParser = new SentenceParser(lexemeParser);
         TextParser textParser = new TextParser(sentenceParser);
-        textParser.chain(Collections.singletonList("Hello world!"));
+        textParser.parse("Hey-hey. animal - dog! Bye, bye... My opinion: this");
     }
 }

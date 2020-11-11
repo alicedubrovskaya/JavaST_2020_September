@@ -1,9 +1,8 @@
 package by.dubrovskaya.thread.service.factory;
 
-import by.dubrovskaya.entity.enumeration.TypeCommand;
 import by.dubrovskaya.thread.entity.ThreadExecution;
-import by.dubrovskaya.thread.service.crud.MatrixCrudService;
 import by.dubrovskaya.thread.service.MatrixService;
+import by.dubrovskaya.thread.service.crud.MatrixCrudService;
 import by.dubrovskaya.thread.service.crud.ThreadCrudService;
 import by.dubrovskaya.thread.service.implementation.operation.ExecutorMatrixServiceImpl;
 import by.dubrovskaya.thread.service.implementation.operation.MatrixServiceImpl;
