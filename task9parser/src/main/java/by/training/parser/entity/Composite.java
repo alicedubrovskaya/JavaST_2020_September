@@ -1,4 +1,4 @@
-package by.training.parser.service.composite;
+package by.training.parser.entity;
 
 import java.util.ArrayList;
 import java.util.List;

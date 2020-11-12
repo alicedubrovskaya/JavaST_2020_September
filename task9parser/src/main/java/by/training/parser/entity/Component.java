@@ -1,4 +1,4 @@
-package by.training.parser.service.composite;
+package by.training.parser.entity;
 
 public interface Component {
     void add(Component component);

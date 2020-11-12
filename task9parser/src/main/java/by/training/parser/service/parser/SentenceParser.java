@@ -1,18 +1,32 @@
 package by.training.parser.service.parser;
 
-public class SentenceParser extends Parser {
-    private static final String SPLIT_TO_LEXEMES = "\\s";
+import by.training.parser.entity.Component;
+import by.training.parser.entity.ParagraphComposite;
+import by.training.parser.entity.SentenceComposite;
 
-    public SentenceParser(Parser next) {
-        super(next);
-    }
+public class SentenceParser extends Parser {
+    private static final String SPLIT_TO_SENTENCES = "(?<=[\\.\\!\\?\\.{3}\\?!])\\s";
+    private static final String EXTRA_SYMBOLS = "\\t|\n";
+    private static final String EMPTY_LINE = "";
 
     @Override
-    public void parse(String string) {
-        logger.info("Parsing of sentence {}", string);
-        String[] result = string.split(SPLIT_TO_LEXEMES);
-        for (String res: result){
-            chain(res);
+    public void parse(String string, Component component) {
+        logger.info("Parsing to sentences: {}", string);
+
+        String stringWithoutExtraSymbols = string.replaceAll(EXTRA_SYMBOLS, "");
+        String[] result = stringWithoutExtraSymbols.split(SPLIT_TO_SENTENCES);
+
+        if (component instanceof ParagraphComposite) {
+            ParagraphComposite paragraph = (ParagraphComposite) component;
+            for (String res : result) {
+
+                if (!EMPTY_LINE.equals(res)) {
+                    logger.debug("Found sentence: {}", res);
+                    SentenceComposite sentence = new SentenceComposite();
+                    paragraph.add(sentence);
+                    chain(res.trim(), sentence);
+                }
+            }
         }
     }
 }

@@ -1,19 +1,12 @@
 package by.training.parser.service.parser;
 
-public class TextParser extends Parser {
-    private static final String SPLIT_TO_SENTENCES = "(\\.|\\.{3}|!|\\?|\\?!)\\s";
+import by.training.parser.entity.Component;
 
-    public TextParser(Parser next) {
-        super(next);
-    }
+public class TextParser extends Parser {
 
     @Override
-    public void parse(String string) {
-        logger.info("Parsing to sentences");
-
-        String[] result = string.split(SPLIT_TO_SENTENCES);
-        for (String res : result) {
-            chain(res);
-        }
+    public void parse(String string, Component component) {
+        logger.info("Parsing of text");
+        chain(string, component);
     }
 }

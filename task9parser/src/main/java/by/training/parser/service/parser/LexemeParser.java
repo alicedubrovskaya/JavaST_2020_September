@@ -1,31 +1,32 @@
 package by.training.parser.service.parser;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import by.training.parser.entity.Component;
+import by.training.parser.entity.LexemeComposite;
+import by.training.parser.entity.SentenceComposite;
 
 public class LexemeParser extends Parser {
-    private static final String FIND_PUNCTUATION_MARK = ",|:|;|-";
-
-    public LexemeParser(Parser next) {
-        super(next);
-    }
+    private static final String SPLIT_TO_LEXEMES = "(?<=.)+\\s+(?=.)+";
+    private static final String EXTRA_SYMBOLS = "\\t|\n";
+    private static final String EMPTY_LINE = "";
 
     @Override
-    public void parse(String string) {
-        logger.info("Parsing of lexeme: {}", string);
+    public void parse(String string, Component component) {
+        logger.info("Parsing to lexemes: {}", string);
 
-        Pattern pattern = Pattern.compile(FIND_PUNCTUATION_MARK);
-        Matcher match = pattern.matcher(string);
-        if (match.find()) {
-            String punctuationMark = string.substring(match.start(), match.end());
-            String[] words = string.split(punctuationMark);
+        String stringWithoutExtraSymbols = string.replaceAll(EXTRA_SYMBOLS, "");
+        String[] result = stringWithoutExtraSymbols.split(SPLIT_TO_LEXEMES);
 
-            chain(punctuationMark);
-            for (String word : words) {
-                chain(word);
+        if (component instanceof SentenceComposite) {
+            SentenceComposite sentence = (SentenceComposite) component;
+            for (String res : result) {
+
+                if (!EMPTY_LINE.equals(res)) {
+                    logger.debug("Found lexeme: {}", res);
+                    LexemeComposite lexeme = new LexemeComposite();
+                    sentence.add(lexeme);
+                    chain(res.trim(), lexeme);
+                }
             }
-        } else {
-            chain(string);
         }
     }
 }

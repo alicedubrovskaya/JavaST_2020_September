@@ -1,7 +1,11 @@
-package by.training.parser.service.composite;
+package by.training.parser.entity;
 
 public class SymbolLeaf implements Component {
     private char symbol;
+
+    public SymbolLeaf(char symbol) {
+        this.symbol = symbol;
+    }
 
     @Override
     public void operation() {

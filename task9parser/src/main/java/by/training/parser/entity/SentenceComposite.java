@@ -1,4 +1,4 @@
-package by.training.parser.service.composite;
+package by.training.parser.entity;
 
 public class SentenceComposite extends Composite {
 }
