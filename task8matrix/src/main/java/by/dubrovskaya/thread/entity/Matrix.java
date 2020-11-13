@@ -1,5 +1,7 @@
 package by.dubrovskaya.thread.entity;
 
+import by.dubrovskaya.thread.entity.state.State;
+
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -11,30 +13,45 @@ import java.util.Objects;
  * @author Alisa Dubrovskaya
  */
 public class Matrix {
-    private int[][] matrix;
+    private Element[][] matrix;
 
-    public Matrix(int[][] matrix) {
-        this.matrix = matrix;
+    public Matrix(int[][] values) {
+        matrix = new Element[values.length][];
+
+        for (int i = 0; i < values.length; i++) {
+            matrix[i] = new Element[values[i].length];
+            for (int j = 0; j < values[i].length; j++) {
+                matrix[i][j] = new Element(values[i][j]);
+            }
+        }
     }
 
     public int getSize() {
         return matrix.length;
     }
 
-    public int getElement(int i, int j) {
-        return matrix[i][j];
+    public void initializeElementState(int i, int j) {
+        matrix[i][j].initialize();
     }
 
-    public void setElement(int i, int j, int value) {
-        matrix[i][j] = value;
+    public void synchronizeElementState(int i, int j) {
+        matrix[i][j].synchronize();
     }
 
-    public int[] getRow(int i) {
-        return matrix[i];
+    public void setElementCurrentState(State currentElementState, int i, int j) {
+        matrix[i][j].setCurrentElementState(currentElementState);
     }
 
-    public void setRow(int i, int[] array) {
-        matrix[i] = array;
+    public int getElementValue(int i, int j) {
+        return matrix[i][j].getValue();
+    }
+
+    public void setElementValue(int i, int j, int value) {
+        matrix[i][j].setValue(value);
+    }
+
+    public State getElementState(int i, int j) {
+        return matrix[i][j].getCurrentElementState();
     }
 
     @Override

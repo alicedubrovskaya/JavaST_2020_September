@@ -36,7 +36,7 @@ public class MatrixOperationServiceImpl implements MatrixOperationsService {
 
             List<Integer> diagonalElements = new ArrayList<>();
             for (int i = 0; i < matrix.getSize(); i++) {
-                diagonalElements.add(matrix.getElement(i, i));
+                diagonalElements.add(matrix.getElementValue(i, i));
             }
 
             logger.info("Starting calculation of sum of elements: {}", diagonalElements.toString());

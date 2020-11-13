@@ -1,6 +1,8 @@
 package by.dubrovskaya.thread.service.implementation.thread;
 
 import by.dubrovskaya.thread.entity.Matrix;
+import by.dubrovskaya.thread.entity.state.InitializedState;
+import by.dubrovskaya.thread.entity.state.State;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,11 +26,12 @@ public class InitializeMatrixThread implements Runnable {
         int sum = 0;
         logger.info("Checking for initialization of all elements at diagonal");
         for (int i = 0; i < commonMatrix.getSize(); i++) {
-            if (commonMatrix.getElement(i, i) == 0) {
+            if (!commonMatrix.getElementState(i, i).getClass().equals(InitializedState.class)) {
                 logger.debug("Initialization of element [{},{}]", i, i);
-                commonMatrix.setElement(i, i, value);
+                commonMatrix.setElementValue(i, i, value);
+                commonMatrix.initializeElementState(i, i);
             }
-            sum += commonMatrix.getElement(i, i);
+            sum += commonMatrix.getElementValue(i, i);
         }
         logger.debug("Sum of initialized elements {}", sum);
     }

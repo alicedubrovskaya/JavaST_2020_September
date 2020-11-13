@@ -3,6 +3,9 @@ package by.dubrovskaya.thread.service.implementation.thread;
 import by.dubrovskaya.thread.entity.CommonDiagonal;
 import by.dubrovskaya.thread.entity.Matrix;
 import by.dubrovskaya.thread.entity.MatrixThread;
+import by.dubrovskaya.thread.entity.state.CreatedState;
+import by.dubrovskaya.thread.entity.state.InitializedState;
+import by.dubrovskaya.thread.entity.state.State;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -38,21 +41,26 @@ public class SemaphoreThread implements Runnable {
         try {
             while (commonDiagonal.getIndex() < commonDiagonal.getCountOfElements()) {
                 semaphore.acquire();
+                int index = commonDiagonal.getIndex();
+
+                commonMatrix.synchronizeElementState(index, index);
 
                 Thread currentThread = Thread.currentThread();
                 MatrixThread thread = (MatrixThread) currentThread;
 
                 logger.debug("{} is in progress, count of filled elements: {}, " +
-                        "current element index: {}", thread.getName(), countOfFilled, commonDiagonal.getIndex());
-                int index = commonDiagonal.getIndex();
+                                "current element index: {}, state: {}", thread.getName(), countOfFilled, index,
+                        commonMatrix.getElementState(index, index));
 
-                if (commonMatrix.getElement(index, index) == 0) {
-                    commonMatrix.setElement(index, index, thread.getValue());
+
+                if (!commonMatrix.getElementState(index, index).getClass().equals(InitializedState.class)) {
+                    commonMatrix.setElementValue(index, index, thread.getValue());
+                    commonMatrix.initializeElementState(index, index);
                     countOfFilled++;
                     commonDiagonal.incrementIndex();
 
-                    logger.debug("{} set its value, count of filled elements: {}",
-                            thread.getName(), countOfFilled);
+                    logger.debug("{} set its value, count of filled elements: {}, element state: {}",
+                            thread.getName(), countOfFilled, commonMatrix.getElementState(index, index));
                 }
                 semaphore.release();
                 TimeUnit.SECONDS.sleep(2);

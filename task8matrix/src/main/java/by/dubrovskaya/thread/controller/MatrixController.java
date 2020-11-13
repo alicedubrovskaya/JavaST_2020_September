@@ -66,8 +66,8 @@ public class MatrixController {
      * @param typeOfExecution
      */
     public void initializeDiagonal(String typeOfExecution) {
-        loadMatrix();
-        initThreads(loadValuesOfThreads(), typeOfExecution);
+//        loadMatrix();
+//        initThreads(loadValuesOfThreads(), typeOfExecution);
 
         ThreadExecution execution = ThreadExecution.getEnum(typeOfExecution);
         matrixService = ServiceFactory.getINSTANCE().getMatrixService(execution);

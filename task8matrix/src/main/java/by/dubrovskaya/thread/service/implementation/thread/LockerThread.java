@@ -3,6 +3,7 @@ package by.dubrovskaya.thread.service.implementation.thread;
 import by.dubrovskaya.thread.entity.CommonDiagonal;
 import by.dubrovskaya.thread.entity.Matrix;
 import by.dubrovskaya.thread.entity.MatrixThread;
+import by.dubrovskaya.thread.entity.state.InitializedState;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -37,19 +38,22 @@ public class LockerThread implements Runnable {
             while (commonDiagonal.getIndex() < commonDiagonal.getCountOfElements()) {
                 locker.lock();
                 try {
+                    int index = commonDiagonal.getIndex();
+                    commonMatrix.synchronizeElementState(index, index);
+
                     Thread currentThread = Thread.currentThread();
                     MatrixThread thread = (MatrixThread) currentThread;
 
-                    int index = commonDiagonal.getIndex();
                     logger.debug("{} checks element of diagonal, i={}",
                             Thread.currentThread().getName(), index);
 
-                    if (commonMatrix.getElement(index, index) == 0) {
+                    if (!commonMatrix.getElementState(index, index).getClass().equals(InitializedState.class)) {
 
-                        commonMatrix.setElement(index, index, thread.getValue());
+                        commonMatrix.setElementValue(index, index, thread.getValue());
                         commonDiagonal.incrementIndex();
                         logger.debug("{} sets its value to [{},{}]",
                                 Thread.currentThread().getName(), index, index);
+                        commonMatrix.initializeElementState(index, index);
                     }
                 } finally {
                     locker.unlock();
