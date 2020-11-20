@@ -8,8 +8,8 @@ public class SymbolLeaf implements Component {
     }
 
     @Override
-    public void operation() {
-
+    public String recoverText() {
+        return String.valueOf(symbol);
     }
 
     //TODO exceptions

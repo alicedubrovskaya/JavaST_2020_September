@@ -37,7 +37,7 @@ public class WordAndPunctuationParser extends Parser {
                 if (!EMPTY_LINE.equals(res)) {
                     logger.debug("Found word: {}", res);
                     WordComposite word = new WordComposite();
-                    lexeme.add(lexeme);
+                    lexeme.add(word);
                     chain(res.trim(), word);
                 }
             }

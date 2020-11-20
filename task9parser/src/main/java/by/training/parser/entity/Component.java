@@ -7,7 +7,7 @@ public interface Component {
 
     int getCountOfChildren();
 
-    void operation();
+    String recoverText();
 
     void remove(Component component);
 }

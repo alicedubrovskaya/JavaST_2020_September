@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Composite implements Component {
-    private List<Component> components = new ArrayList<>();
+    List<Component> components = new ArrayList<>();
 
     @Override
     public void add(Component component) {
@@ -22,8 +22,9 @@ public abstract class Composite implements Component {
     }
 
     @Override
-    public void operation() {
-
+    public String recoverText() {
+        //TODO
+        return "";
     }
 
     @Override

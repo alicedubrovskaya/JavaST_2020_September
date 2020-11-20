@@ -1,8 +1,9 @@
-package by.training.parser.service;
+package by.training.parser.service.implementation;
 
 import by.training.parser.entity.Component;
 import by.training.parser.entity.Composite;
 import by.training.parser.entity.TextComposite;
+import by.training.parser.service.SortService;
 import by.training.parser.service.comparator.ParagraphComparator;
 
 import java.util.ArrayList;
