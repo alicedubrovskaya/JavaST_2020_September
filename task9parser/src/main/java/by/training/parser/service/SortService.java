@@ -6,4 +6,9 @@ public interface SortService {
     Composite sortParagraphsByCountOfSentences(Composite text);
 
     Composite sortWordsInSentencesByLength(Composite text);
+
+    /**
+     * Descending
+     */
+    Composite sortLexemesByOccurrencesOfSymbolAndAlphabet(Composite text, char symbol);
 }

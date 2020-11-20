@@ -5,36 +5,33 @@ import by.training.parser.entity.Composite;
 import by.training.parser.entity.ParagraphComposite;
 import by.training.parser.entity.TextComposite;
 import by.training.parser.service.SortService;
+import by.training.parser.service.comparator.AlphabetComparator;
+import by.training.parser.service.comparator.LexemeComparator;
 import by.training.parser.service.comparator.ParagraphComparator;
 import by.training.parser.service.comparator.WordComparator;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class SortServiceImpl implements SortService {
 
     @Override
     public Composite sortParagraphsByCountOfSentences(Composite text) {
-        Comparator<Component> comparator = new ParagraphComparator();
-        Composite sortedText = new TextComposite();
 
         List<Component> paragraphs = new ArrayList<>();
+        List<Component> paragraphsToSort = new ArrayList<>();
         for (int i = 0; i < text.getCountOfChildren(); i++) {
             paragraphs.add(text.getChild(i));
+            paragraphsToSort.add(text.getChild(i));
         }
 
-        paragraphs.sort(comparator);
-        paragraphs.forEach(sortedText::add);
+        paragraphs.forEach(text::remove);
+        paragraphsToSort.sort(new ParagraphComparator());
+        paragraphsToSort.forEach(text::add);
 
-        return sortedText;
+        return text;
     }
 
-    /**
-     * Doesnt return new Object
-     * @param text
-     * @return
-     */
     @Override
     public Composite sortWordsInSentencesByLength(Composite text) {
 
@@ -57,5 +54,35 @@ public class SortServiceImpl implements SortService {
             }
         }
         return text;
+    }
+
+    /**
+     * Sorts lexemes in text by number of occurrences of symbol and if its number equals by alphabet
+     * @param text
+     * @param symbol
+     * @return new text composite that consists of one paragraph with sorted lexemes
+     */
+    @Override
+    public Composite sortLexemesByOccurrencesOfSymbolAndAlphabet(Composite text, char symbol) {
+        List<Component> lexemes = new ArrayList<>();
+        Composite resultingParagraph = new ParagraphComposite();
+        Composite resultingText = new TextComposite();
+        resultingText.add(resultingParagraph);
+
+        for (int i = 0; i < text.getCountOfChildren(); i++) {
+            Component paragraph = text.getChild(i);
+            for (int j = 0; j < paragraph.getCountOfChildren(); j++) {
+                Component sentence = paragraph.getChild(j);
+
+                for (int k = 0; k < sentence.getCountOfChildren(); k++) {
+                    Component lexeme = sentence.getChild(k);
+                    lexemes.add(lexeme);
+                }
+            }
+        }
+        lexemes.sort(new LexemeComparator(symbol).reversed().thenComparing(new AlphabetComparator()));
+        lexemes.forEach(resultingParagraph::add);
+
+        return resultingText;
     }
 }

@@ -20,12 +20,12 @@ public class Runner {
         TextParser textParser = new TextParser();
         textParser.setNext(paragraphParser);
         Composite composite = new TextComposite();
-        textParser.chain("My name is Frank... I am   from London.\n How   are you?\tHello...", composite);
+        textParser.chain("My naame is Frank... I am   from London.\n How   are you?\tHello...", composite);
 
 
         SortService sortService = new SortServiceImpl();
         System.out.println(sortService.
-                sortWordsInSentencesByLength(composite)
+                sortLexemesByOccurrencesOfSymbolAndAlphabet(composite, 'a')
                 .recoverText());
 
 //        System.out.println(sortService.sortParagraphsByCountOfSentences(composite).recoverText());
