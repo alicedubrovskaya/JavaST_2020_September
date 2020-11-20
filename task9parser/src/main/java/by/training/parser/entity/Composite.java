@@ -17,6 +17,11 @@ public abstract class Composite implements Component {
     }
 
     @Override
+    public int getCountOfChildren() {
+        return components.size();
+    }
+
+    @Override
     public void operation() {
 
     }

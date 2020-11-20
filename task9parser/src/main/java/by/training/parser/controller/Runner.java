@@ -1,6 +1,9 @@
 package by.training.parser.controller;
 
+import by.training.parser.entity.Composite;
 import by.training.parser.entity.TextComposite;
+import by.training.parser.service.SortService;
+import by.training.parser.service.SortServiceImpl;
 import by.training.parser.service.parser.*;
 
 public class Runner {
@@ -16,6 +19,10 @@ public class Runner {
         paragraphParser.setNext(sentenceParser);
         TextParser textParser = new TextParser();
         textParser.setNext(paragraphParser);
-        textParser.chain("Hello.\n\tMy name is Frank... I am   from London.\n How   are you?", new TextComposite());
+        Composite composite = new TextComposite();
+        textParser.chain("Hello.\n\tMy name is Frank... I am   from London.\n How   are you?", composite);
+
+        SortService sortService = new SortServiceImpl();
+        sortService.sortParagraphsByCountOfSentences(composite);
     }
 }

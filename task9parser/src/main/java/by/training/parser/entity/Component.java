@@ -5,6 +5,8 @@ public interface Component {
 
     Component getChild(int index);
 
+    int getCountOfChildren();
+
     void operation();
 
     void remove(Component component);

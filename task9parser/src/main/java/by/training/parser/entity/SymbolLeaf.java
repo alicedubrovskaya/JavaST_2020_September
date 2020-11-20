@@ -27,4 +27,9 @@ public class SymbolLeaf implements Component {
     public void remove(Component component) {
 
     }
+
+    @Override
+    public int getCountOfChildren() {
+        return 0;
+    }
 }
