@@ -9,6 +9,14 @@ public class LexemeParser extends Parser {
     private static final String EXTRA_SYMBOLS = "\\t|\n";
     private static final String EMPTY_LINE = "";
 
+    public LexemeParser() {
+        super();
+    }
+
+    public LexemeParser(Parser next) {
+        super(next);
+    }
+
     @Override
     public void parse(String string, Component component) {
         logger.info("Parsing to lexemes: {}", string);

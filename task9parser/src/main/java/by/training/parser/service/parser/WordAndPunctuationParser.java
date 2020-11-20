@@ -14,6 +14,14 @@ public class WordAndPunctuationParser extends Parser {
     private static final String SPLIT_TO_WORDS = "(?<=.)+\\s+(?=.)+";
     private static final String EMPTY_LINE = "";
 
+    public WordAndPunctuationParser() {
+        super();
+    }
+
+    public WordAndPunctuationParser(Parser next) {
+        super(next);
+    }
+
     @Override
     public void parse(String string, Component component) {
         Pattern pattern = Pattern.compile(PUNCTUATION_MARK);

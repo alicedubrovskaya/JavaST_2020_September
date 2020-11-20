@@ -9,6 +9,14 @@ public class SentenceParser extends Parser {
     private static final String EXTRA_SYMBOLS = "\\t|\n";
     private static final String EMPTY_LINE = "";
 
+    public SentenceParser() {
+        super();
+    }
+
+    public SentenceParser(Parser next) {
+        super(next);
+    }
+
     @Override
     public void parse(String string, Component component) {
         logger.info("Parsing to sentences: {}", string);

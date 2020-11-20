@@ -11,6 +11,10 @@ public abstract class Parser {
     public Parser() {
     }
 
+    public Parser(Parser next) {
+        this.next = next;
+    }
+
     public abstract void parse(String string, Component component);
 
     public void chain(String string, Component component) {

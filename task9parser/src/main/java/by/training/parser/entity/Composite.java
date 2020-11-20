@@ -22,6 +22,11 @@ public abstract class Composite implements Component {
     }
 
     @Override
+    public List<Component> getChildren() {
+        return components;
+    }
+
+    @Override
     public String recoverText() {
         //TODO
         return "";

@@ -1,5 +1,7 @@
 package by.training.parser.entity;
 
+import java.util.List;
+
 public class SymbolLeaf implements Component {
     private char symbol;
 
@@ -16,6 +18,11 @@ public class SymbolLeaf implements Component {
     @Override
     public void add(Component component) {
 
+    }
+
+    @Override
+    public List<Component> getChildren() {
+        return null;
     }
 
     @Override

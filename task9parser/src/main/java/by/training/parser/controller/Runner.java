@@ -2,6 +2,8 @@ package by.training.parser.controller;
 
 import by.training.parser.entity.Composite;
 import by.training.parser.entity.TextComposite;
+import by.training.parser.service.SortService;
+import by.training.parser.service.implementation.SortServiceImpl;
 import by.training.parser.service.parser.*;
 
 public class Runner {
@@ -18,8 +20,15 @@ public class Runner {
         TextParser textParser = new TextParser();
         textParser.setNext(paragraphParser);
         Composite composite = new TextComposite();
-        textParser.chain("Hello...\n\tMy name is Frank... I am   from London.\n How   are you?", composite);
+        textParser.chain("My name is Frank... I am   from London.\n How   are you?\tHello...", composite);
 
-       System.out.println(composite.recoverText());
+
+        SortService sortService = new SortServiceImpl();
+        System.out.println(sortService.
+                sortWordsInSentencesByLength(composite)
+                .recoverText());
+
+//        System.out.println(sortService.sortParagraphsByCountOfSentences(composite).recoverText());
+
     }
 }

@@ -9,6 +9,14 @@ public class ParagraphParser extends Parser {
     private static final String SPLIT_TO_PARAGRAPHS = "\\s{4}|\\t";
     private static final String EMPTY_LINE = "";
 
+    public ParagraphParser() {
+        super();
+    }
+
+    public ParagraphParser(Parser next) {
+        super(next);
+    }
+
     @Override
     public void parse(String string, Component component) {
         logger.info("Parsing to paragraphs: {}", string);

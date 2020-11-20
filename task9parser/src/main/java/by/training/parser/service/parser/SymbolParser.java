@@ -8,6 +8,14 @@ import java.util.regex.Pattern;
 public class SymbolParser extends Parser {
     private static final String FIND_SYMBOLS = "(?!\\t)(?!\n)(?!\\s).";
 
+    public SymbolParser() {
+        super();
+    }
+
+    public SymbolParser(Parser next) {
+        super(next);
+    }
+
     @Override
     public void parse(String string, Component component) {
         logger.info("Parsing to symbols: {}", string);
