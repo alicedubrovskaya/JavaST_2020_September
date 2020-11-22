@@ -8,6 +8,9 @@ import by.training.parser.entity.WordComposite;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Class that represents parser to words and punctuation
+ */
 public class WordAndPunctuationParser extends Parser {
     private static final WordAndPunctuationParser INSTANCE = new WordAndPunctuationParser();
 

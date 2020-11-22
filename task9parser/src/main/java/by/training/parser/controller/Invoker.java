@@ -1,5 +1,10 @@
 package by.training.parser.controller;
 
+/**
+ * Class is responsible for invocation of command execution
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class Invoker {
     private Command command;
 

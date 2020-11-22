@@ -4,6 +4,9 @@ import by.training.parser.entity.Component;
 import by.training.parser.entity.LexemeComposite;
 import by.training.parser.entity.SentenceComposite;
 
+/**
+ * Class that represents parser to lexemes
+ */
 public class LexemeParser extends Parser {
     private static final LexemeParser INSTANCE = new LexemeParser();
 

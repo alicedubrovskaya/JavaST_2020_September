@@ -15,9 +15,17 @@ import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class is an implementation of interface SortService
+ */
 public class SortServiceImpl implements SortService {
     private final Logger logger = LogManager.getLogger(getClass().getName());
 
+    /**
+     * Sorts paragraphs by count of sentences
+     * @param text
+     * @return changed composite
+     */
     @Override
     public Composite sortParagraphsByCountOfSentences(Composite text) {
         logger.info("Sorting of text paragraphs by count Of sentences");
@@ -36,6 +44,11 @@ public class SortServiceImpl implements SortService {
         return text;
     }
 
+    /**
+     * Sorts words in sentences by length
+     * @param text
+     * @return changed composite
+     */
     @Override
     public Composite sortWordsInSentencesByLength(Composite text) {
         logger.info("Sorting of text words in sentences by length");

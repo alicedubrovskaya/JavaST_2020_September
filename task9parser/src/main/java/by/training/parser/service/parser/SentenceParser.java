@@ -4,6 +4,9 @@ import by.training.parser.entity.Component;
 import by.training.parser.entity.ParagraphComposite;
 import by.training.parser.entity.SentenceComposite;
 
+/**
+ * Class that represents parser to sentences
+ */
 public class SentenceParser extends Parser {
     private static final SentenceParser INSTANCE = new SentenceParser();
 

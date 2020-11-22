@@ -10,6 +10,12 @@ import by.training.parser.service.TextService;
 
 import java.util.Scanner;
 
+
+/**
+ * This interface is responsible for executing requests sent with the command
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class Receiver {
     private Scanner in;
     private FileService fileService;
@@ -50,34 +56,46 @@ public class Receiver {
     }
 
     /**
-     * "My naame is Frank... I am   from London.\n How   are you?\tHello..."
+     * Parsers string
      */
     public void parseString() {
         textService.parse(in.nextLine());
     }
 
     /**
-     * "task9parser/src/main/resources/text.txt"
+     * Loads data to storage
+     * File path example: "task9parser/src/main/resources/text.txt"
      */
     public void loadData() {
         textService.saveText(fileService.read(in.nextLine()));
     }
 
+    /**
+     * Recovers text from string to Composite
+     */
     public void recoverText() {
         System.out.println(textService.recoverText(textService.readText()));
     }
 
+    /**
+     * Sorts paragraphs by count of sentences
+     */
     public void sortParagraphsByCountOfSentences() {
         Composite result = sortService.sortParagraphsByCountOfSentences(textService.readText());
         System.out.println(textService.recoverText(result));
     }
 
+    /**
+     * Sort words in sentences by length
+     */
     public void sortWordsInSentencesByLength() {
         Composite result = sortService.sortWordsInSentencesByLength(textService.readText());
         System.out.println(textService.recoverText(result));
     }
 
-
+    /**
+     * Sort lexemes by occurrences of symbol and alphabet
+     */
     public void sortLexemesByOccurrencesOfSymbolAndAlphabet() {
         Composite result = sortService.sortLexemesByOccurrencesOfSymbolAndAlphabet(
                 textService.readText(), in.nextLine().charAt(0));

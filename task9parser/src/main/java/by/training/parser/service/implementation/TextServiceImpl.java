@@ -9,6 +9,9 @@ import by.training.parser.service.parser.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Class is an implementation of interface TextService
+ */
 public class TextServiceImpl implements TextService {
 
     private TextDao textDao;
@@ -26,21 +29,39 @@ public class TextServiceImpl implements TextService {
         this.textDao = DaoFactory.getINSTANCE().getTextDao();
     }
 
+    /**
+     * Recovers text (collects from composite to string)
+     * @param composite
+     * @return text in string
+     */
     @Override
     public String recoverText(Composite composite) {
         return composite.recoverText();
     }
 
+    /**
+     * Saves text to storage
+     * @param text
+     */
     @Override
     public void saveText(String text) {
         textDao.add(text);
     }
 
+    /**
+     * Reads text from storage
+     * @return
+     */
     @Override
     public Composite readText() {
         return textDao.get();
     }
 
+    /**
+     * Parsers text in string to Composite chain
+     * @param text
+     * @return composite
+     */
     @Override
     public Composite parse(String text) {
         logger.info("Parsing of text");

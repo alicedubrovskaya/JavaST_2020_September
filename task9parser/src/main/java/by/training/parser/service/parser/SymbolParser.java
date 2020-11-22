@@ -5,6 +5,9 @@ import by.training.parser.entity.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Class that represents parser to symbols
+ */
 public class SymbolParser extends Parser {
     private static final SymbolParser INSTANCE = new SymbolParser();
 

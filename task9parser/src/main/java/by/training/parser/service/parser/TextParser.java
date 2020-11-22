@@ -2,6 +2,9 @@ package by.training.parser.service.parser;
 
 import by.training.parser.entity.Component;
 
+/**
+ * Class that represents parser of text
+ */
 public class TextParser extends Parser {
     private static final TextParser INSTANCE = new TextParser();
 

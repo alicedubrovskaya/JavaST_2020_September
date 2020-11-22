@@ -3,6 +3,11 @@ package by.training.parser.controller;
 import by.training.parser.controller.command.*;
 import by.training.parser.entity.CommandType;
 
+/**
+ * Class is responsible for initializing the interface Command with it's implementation
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class Client {
     private Receiver receiver;
 

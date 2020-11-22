@@ -4,6 +4,9 @@ import by.training.parser.entity.Component;
 import by.training.parser.entity.ParagraphComposite;
 import by.training.parser.entity.TextComposite;
 
+/**
+ * Class that represents parser to paragraphs
+ */
 public class ParagraphParser extends Parser {
     private static final ParagraphParser INSTANCE = new ParagraphParser();
 

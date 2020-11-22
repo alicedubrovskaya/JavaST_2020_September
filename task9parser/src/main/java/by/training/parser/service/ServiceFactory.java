@@ -5,6 +5,11 @@ import by.training.parser.service.implementation.LexemeServiceImpl;
 import by.training.parser.service.implementation.SortServiceImpl;
 import by.training.parser.service.implementation.TextServiceImpl;
 
+/**
+ * Class represents service factory. Realized factory pattern
+ *
+ * @author Alisa Dubrovskaya
+ */
 public class ServiceFactory {
     private static final ServiceFactory INSTANCE = new ServiceFactory();
 
