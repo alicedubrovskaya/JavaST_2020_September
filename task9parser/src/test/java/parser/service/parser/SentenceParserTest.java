@@ -8,10 +8,10 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class SentenceParserTest {
-    private SentenceParser sentenceParser = new SentenceParser();
+    private SentenceParser sentenceParser = SentenceParser.getINSTANCE();
 
     @Test(description = "Is testing parsing for sentences", dataProvider = "input_data")
-    public void parse(String text, int expectedCountOfSentences) {
+    public void parseTest(String text, int expectedCountOfSentences) {
         Component component = new ParagraphComposite();
         sentenceParser.parse(text, component);
         int actual = component.getCountOfChildren();

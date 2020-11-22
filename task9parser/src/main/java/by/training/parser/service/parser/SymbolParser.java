@@ -6,14 +6,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SymbolParser extends Parser {
+    private static final SymbolParser INSTANCE = new SymbolParser();
+
     private static final String FIND_SYMBOLS = "(?!\\t)(?!\n)(?!\\s).";
 
-    public SymbolParser() {
+    private SymbolParser() {
         super();
     }
 
-    public SymbolParser(Parser next) {
-        super(next);
+    public static SymbolParser getINSTANCE() {
+        return INSTANCE;
     }
 
     @Override

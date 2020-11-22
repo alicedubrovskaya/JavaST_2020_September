@@ -57,7 +57,7 @@ public class Receiver {
     }
 
     /**
-     * "task9parser/src/main/resources/publication.txt"
+     * "task9parser/src/main/resources/text.txt"
      */
     public void loadData() {
         textService.saveText(fileService.read(in.nextLine()));

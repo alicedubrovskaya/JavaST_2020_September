@@ -8,11 +8,10 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class ParagraphParserTest {
-    //TODO instance
-    private ParagraphParser paragraphParser = new ParagraphParser();
+    private ParagraphParser paragraphParser = ParagraphParser.getINSTANCE();
 
     @Test(description = "Is testing parsing for paragraphs", dataProvider = "input_data")
-    public void parse(String text, int expectedCountOfParagraphs) {
+    public void parseTest(String text, int expectedCountOfParagraphs) {
         Component component = new TextComposite();
         paragraphParser.parse(text, component);
         int actual = component.getCountOfChildren();

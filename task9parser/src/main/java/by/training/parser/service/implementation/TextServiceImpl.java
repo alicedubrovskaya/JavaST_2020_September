@@ -10,8 +10,17 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class TextServiceImpl implements TextService {
+
     private TextDao textDao;
     private final Logger logger = LogManager.getLogger(getClass().getName());
+
+    private final SymbolParser symbolParser = SymbolParser.getINSTANCE();
+    private final WordAndPunctuationParser wordAndPunctuationParser = WordAndPunctuationParser.getINSTANCE();
+    private final LexemeParser lexemeParser = LexemeParser.getINSTANCE();
+    private final SentenceParser sentenceParser = SentenceParser.getINSTANCE();
+    private final ParagraphParser paragraphParser = ParagraphParser.getINSTANCE();
+    private final TextParser textParser = TextParser.getINSTANCE();
+
 
     public TextServiceImpl() {
         this.textDao = DaoFactory.getINSTANCE().getTextDao();
@@ -36,21 +45,14 @@ public class TextServiceImpl implements TextService {
     public Composite parse(String text) {
         logger.info("Parsing of text");
 
-        SymbolParser symbolParser = new SymbolParser();
-        WordAndPunctuationParser wordAndPunctuationParser = new WordAndPunctuationParser();
         wordAndPunctuationParser.setNext(symbolParser);
-        LexemeParser lexemeParser = new LexemeParser();
         lexemeParser.setNext(wordAndPunctuationParser);
-        SentenceParser sentenceParser = new SentenceParser();
         sentenceParser.setNext(lexemeParser);
-        ParagraphParser paragraphParser = new ParagraphParser();
         paragraphParser.setNext(sentenceParser);
-        TextParser textParser = new TextParser();
         textParser.setNext(paragraphParser);
         Composite composite = new TextComposite();
 
         textParser.chain(text, composite);
-
         return composite;
     }
 }

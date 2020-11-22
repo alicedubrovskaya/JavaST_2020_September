@@ -5,6 +5,7 @@ import by.training.parser.entity.ParagraphComposite;
 import by.training.parser.entity.TextComposite;
 
 public class ParagraphParser extends Parser {
+    private static final ParagraphParser INSTANCE = new ParagraphParser();
 
     private static final String SPLIT_TO_PARAGRAPHS = "\\s{4}|\\t";
     private static final String EMPTY_LINE = "";
@@ -13,8 +14,8 @@ public class ParagraphParser extends Parser {
         super();
     }
 
-    public ParagraphParser(Parser next) {
-        super(next);
+    public static ParagraphParser getINSTANCE() {
+        return INSTANCE;
     }
 
     @Override

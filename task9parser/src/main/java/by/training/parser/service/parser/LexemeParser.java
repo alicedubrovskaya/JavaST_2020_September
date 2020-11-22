@@ -5,17 +5,19 @@ import by.training.parser.entity.LexemeComposite;
 import by.training.parser.entity.SentenceComposite;
 
 public class LexemeParser extends Parser {
+    private static final LexemeParser INSTANCE = new LexemeParser();
+
     private static final String SPLIT_TO_LEXEMES = "(?<=.)+\\s+(?=.)+";
     private static final String EXTRA_SYMBOL_PARAGRAPH = "\\t";
-    private static final String EXTRA_SYMBOL= "\n";
+    private static final String EXTRA_SYMBOL = "\n";
     private static final String EMPTY_LINE = "";
 
-    public LexemeParser() {
+    private LexemeParser() {
         super();
     }
 
-    public LexemeParser(Parser next) {
-        super(next);
+    public static LexemeParser getINSTANCE() {
+        return INSTANCE;
     }
 
     @Override

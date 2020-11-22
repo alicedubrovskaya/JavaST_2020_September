@@ -8,10 +8,10 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class LexemeParserTest {
-    private LexemeParser lexemeParser = new LexemeParser();
+    private LexemeParser lexemeParser = LexemeParser.getINSTANCE();
 
     @Test(description = "Is testing parsing for lexemes", dataProvider = "input_data")
-    public void parse(String text, int expectedCountOfLexemes) {
+    public void parseTest(String text, int expectedCountOfLexemes) {
         Component component = new SentenceComposite();
         lexemeParser.parse(text, component);
         int actual = component.getCountOfChildren();

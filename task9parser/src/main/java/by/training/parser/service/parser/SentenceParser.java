@@ -5,18 +5,20 @@ import by.training.parser.entity.ParagraphComposite;
 import by.training.parser.entity.SentenceComposite;
 
 public class SentenceParser extends Parser {
+    private static final SentenceParser INSTANCE = new SentenceParser();
+
     private static final String SPLIT_TO_SENTENCES = "(?<=[\\.\\!\\?\\.{3}\\?!])\\s";
     private static final String EXTRA_SYMBOL_PARAGRAPH = "\\t";
     private static final String EXTRA_SYMBOL= "\n";
 
     private static final String EMPTY_LINE = "";
 
-    public SentenceParser() {
+    private SentenceParser() {
         super();
     }
 
-    public SentenceParser(Parser next) {
-        super(next);
+    public static SentenceParser getINSTANCE() {
+        return INSTANCE;
     }
 
     @Override

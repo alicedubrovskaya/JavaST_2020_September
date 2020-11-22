@@ -8,10 +8,10 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class WordAndPunctuationParserTest {
-    private WordAndPunctuationParser wordAndPunctuationParser = new WordAndPunctuationParser();
+    private WordAndPunctuationParser wordAndPunctuationParser = WordAndPunctuationParser.getINSTANCE();
 
     @Test(description = "Is testing parsing for lexemes", dataProvider = "input_data")
-    public void parse(String text, int expectedCountOfWordsAndPunctuation) {
+    public void parseTest(String text, int expectedCountOfWordsAndPunctuation) {
         Component component = new LexemeComposite();
         wordAndPunctuationParser.parse(text, component);
         int actual = component.getCountOfChildren();

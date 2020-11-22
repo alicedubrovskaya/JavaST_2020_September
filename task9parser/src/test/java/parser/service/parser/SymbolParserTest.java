@@ -8,10 +8,10 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class SymbolParserTest {
-    private SymbolParser symbolParser = new SymbolParser();
+    private SymbolParser symbolParser = SymbolParser.getINSTANCE();
 
     @Test(description = "Is testing parsing for symbols", dataProvider = "input_data")
-    public void parse(String text, int expectedCountOfSymbols) {
+    public void parseTest(String text, int expectedCountOfSymbols) {
         Component component = new PunctuationMarkComposite();
         symbolParser.parse(text, component);
         int actual = component.getCountOfChildren();

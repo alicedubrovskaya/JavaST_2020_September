@@ -3,12 +3,14 @@ package by.training.parser.service.parser;
 import by.training.parser.entity.Component;
 
 public class TextParser extends Parser {
-    public TextParser() {
+    private static final TextParser INSTANCE = new TextParser();
+
+    private TextParser() {
         super();
     }
 
-    public TextParser(Parser next) {
-        super(next);
+    public static TextParser getINSTANCE() {
+        return INSTANCE;
     }
 
     @Override

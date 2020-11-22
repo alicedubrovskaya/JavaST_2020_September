@@ -9,17 +9,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class WordAndPunctuationParser extends Parser {
+    private static final WordAndPunctuationParser INSTANCE = new WordAndPunctuationParser();
+
     private static final String PUNCTUATION_MARK = "\\.{3}|,|\\.|\\?|\\?!";
     private static final String EXTRA_SYMBOLS_FOR_WORDS = "\\t|\n|\\s{2,}|" + PUNCTUATION_MARK;
     private static final String SPLIT_TO_WORDS = "(?<=.)+\\s+(?=.)+";
     private static final String EMPTY_LINE = "";
 
-    public WordAndPunctuationParser() {
+    private WordAndPunctuationParser() {
         super();
     }
 
-    public WordAndPunctuationParser(Parser next) {
-        super(next);
+    public static WordAndPunctuationParser getINSTANCE() {
+        return INSTANCE;
     }
 
     @Override
