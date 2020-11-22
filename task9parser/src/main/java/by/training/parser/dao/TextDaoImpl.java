@@ -12,6 +12,11 @@ public class TextDaoImpl implements TextDao {
     }
 
     @Override
+    public void add(String text) {
+        storage.setStringText(text);
+    }
+
+    @Override
     public Composite get() {
         return storage.getText();
     }
