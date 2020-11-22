@@ -23,6 +23,7 @@ public class FileServiceImpl implements FileService {
      */
     @Override
     public String read(String filePath) {
+        logger.info("Reading from file");
         String absoluteFilePath = new File(filePath).getAbsolutePath();
         StringBuilder result = new StringBuilder();
 

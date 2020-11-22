@@ -6,7 +6,9 @@ import by.training.parser.entity.SentenceComposite;
 
 public class SentenceParser extends Parser {
     private static final String SPLIT_TO_SENTENCES = "(?<=[\\.\\!\\?\\.{3}\\?!])\\s";
-    private static final String EXTRA_SYMBOLS = "\\t|\n";
+    private static final String EXTRA_SYMBOL_PARAGRAPH = "\\t";
+    private static final String EXTRA_SYMBOL= "\n";
+
     private static final String EMPTY_LINE = "";
 
     public SentenceParser() {
@@ -21,7 +23,8 @@ public class SentenceParser extends Parser {
     public void parse(String string, Component component) {
         logger.info("Parsing to sentences: {}", string);
 
-        String stringWithoutExtraSymbols = string.replaceAll(EXTRA_SYMBOLS, "");
+        String stringWithoutExtraSymbols = string.replaceAll(EXTRA_SYMBOL, "");
+        stringWithoutExtraSymbols = stringWithoutExtraSymbols.replaceAll(EXTRA_SYMBOL_PARAGRAPH, " ");
         String[] result = stringWithoutExtraSymbols.split(SPLIT_TO_SENTENCES);
 
         if (component instanceof ParagraphComposite) {

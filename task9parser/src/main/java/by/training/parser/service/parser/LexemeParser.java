@@ -6,7 +6,8 @@ import by.training.parser.entity.SentenceComposite;
 
 public class LexemeParser extends Parser {
     private static final String SPLIT_TO_LEXEMES = "(?<=.)+\\s+(?=.)+";
-    private static final String EXTRA_SYMBOLS = "\\t|\n";
+    private static final String EXTRA_SYMBOL_PARAGRAPH = "\\t";
+    private static final String EXTRA_SYMBOL= "\n";
     private static final String EMPTY_LINE = "";
 
     public LexemeParser() {
@@ -21,7 +22,8 @@ public class LexemeParser extends Parser {
     public void parse(String string, Component component) {
         logger.info("Parsing to lexemes: {}", string);
 
-        String stringWithoutExtraSymbols = string.replaceAll(EXTRA_SYMBOLS, "");
+        String stringWithoutExtraSymbols = string.replaceAll(EXTRA_SYMBOL, "");
+        stringWithoutExtraSymbols = stringWithoutExtraSymbols.replaceAll(EXTRA_SYMBOL_PARAGRAPH, " ");
         String[] result = stringWithoutExtraSymbols.split(SPLIT_TO_LEXEMES);
 
         if (component instanceof SentenceComposite) {

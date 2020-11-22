@@ -9,14 +9,18 @@ import by.training.parser.service.comparator.AlphabetComparator;
 import by.training.parser.service.comparator.LexemeComparator;
 import by.training.parser.service.comparator.ParagraphComparator;
 import by.training.parser.service.comparator.WordComparator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SortServiceImpl implements SortService {
+    private final Logger logger = LogManager.getLogger(getClass().getName());
 
     @Override
     public Composite sortParagraphsByCountOfSentences(Composite text) {
+        logger.info("Sorting of text paragraphs by count Of sentences");
 
         List<Component> paragraphs = new ArrayList<>();
         List<Component> paragraphsToSort = new ArrayList<>();
@@ -34,6 +38,7 @@ public class SortServiceImpl implements SortService {
 
     @Override
     public Composite sortWordsInSentencesByLength(Composite text) {
+        logger.info("Sorting of text words in sentences by length");
 
         for (int i = 0; i < text.getCountOfChildren(); i++) {
             Component paragraph = text.getChild(i);
@@ -64,6 +69,8 @@ public class SortServiceImpl implements SortService {
      */
     @Override
     public Composite sortLexemesByOccurrencesOfSymbolAndAlphabet(Composite text, char symbol) {
+        logger.info("Sorting of text lexemes by occurrences of symbol and alphabet");
+
         List<Component> lexemes = new ArrayList<>();
         Composite resultingParagraph = new ParagraphComposite();
         Composite resultingText = new TextComposite();
