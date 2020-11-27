@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://www.training.by/xmlparser"
-        xmlns:tns="http://www.training.by/xmlparser"
+        targetNamespace="http://training.by/medicine"
+        xmlns:tns="http://training.by/medicine"
         elementFormDefault="qualified">
 
     <!--Medicines-->
@@ -22,7 +22,7 @@
             <element name="name" type="tns:Name"/>
             <element name="pharm" type="tns:Name"/>
             <element name="group" type="tns:Group"/>
-            <element name="analog" type="tns:Name"/>
+            <element name="analog" type="tns:Name" minOccurs="0" maxOccurs="unbounded"/>
             <element name="versions" type="tns:Versions"/>
         </sequence>
     </complexType>
@@ -86,7 +86,7 @@
     <!--Producer-->
     <complexType name="Producer">
         <sequence>
-            <element name="certificate" type="tns:Certificate"/>
+            <element ref="tns:certificate"/>
             <element name="package" type="tns:Package"/>
             <element name="dosage" type="tns:Dosage"/>
         </sequence>
@@ -96,12 +96,26 @@
     <!--Certificate-->
     <complexType name="Certificate">
         <sequence>
-            <element name="date-issue" type="date"/>
-            <element name="date-expiration" type="date"/>
+            <element name="issue_date" type="date"/>
             <element name="organization" type="tns:Name"/>
         </sequence>
         <attribute name="number" type="string" use="required"/>
     </complexType>
+
+    <!--LimitedCertificate-->
+    <complexType name="LimitedCertificate">
+        <complexContent>
+            <extension base="tns:Certificate">
+                <sequence>
+                    <element name="expiration_date" type="date"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <element name="certificate" type="tns:Certificate" abstract="false"/>
+    <element name="limited_certificate" type="tns:LimitedCertificate" substitutionGroup="tns:certificate"/>
+
 
     <!--Package-->
     <complexType name="Package">
@@ -124,6 +138,7 @@
         </restriction>
     </simpleType>
 
+    <!--Dosage-->
     <complexType name="Dosage">
         <sequence>
             <element name="quantity" type="int"/>
@@ -131,7 +146,7 @@
         </sequence>
     </complexType>
 
-    <!--Period-->
+    <!--by.training.entity.enumeration.Period-->
     <simpleType name="Period">
         <restriction base="string">
             <enumeration value="hour"/>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<medicines xmlns="http://www.training.by/xmlparser"
+<medicines xmlns="http://training.by/medicine"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xsi:schemaLocation="http://www.training.by/xmlparser medicines.xsd">
+           xsi:schemaLocation="http://training.by/medicine medicines.xsd">
     <medicine>
         <name>Парацетамол</name>
         <pharm>Ирбитский химфармзавод ОАО</pharm>
@@ -11,11 +11,11 @@
         <versions>
             <version type="tablets">
                 <producer>
-                    <certificate number="ЛСР-009047/08">
-                        <date-issue>2019-03-22</date-issue>
-                        <date-expiration>2020-09-22</date-expiration>
+                    <limited_certificate number="ЛСР-009047/08">
+                        <issue_date>2019-03-22</issue_date>
                         <organization>BelMedicines</organization>
-                    </certificate>
+                        <expiration_date>2020-09-22</expiration_date>
+                    </limited_certificate>
                     <package type="blister-packaging">
                         <quantity>10</quantity>
                         <price>100</price>
