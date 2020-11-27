@@ -11,4 +11,8 @@ public class MedicineList {
     public MedicineList() {
         this.medicines = new ArrayList<>();
     }
+
+    public void addMedicine(Medicine medicine) {
+        medicines.add(medicine);
+    }
 }

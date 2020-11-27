@@ -8,6 +8,7 @@
         <pharm>Ирбитский химфармзавод ОАО</pharm>
         <group>antibiotics</group>
         <analog>Тайленол</analog>
+        <analog>Апап</analog>
         <versions>
             <version type="tablets">
                 <producer>
