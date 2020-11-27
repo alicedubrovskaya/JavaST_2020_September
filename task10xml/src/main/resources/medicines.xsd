@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.training.by/xmlparser"
+        xmlns:tns="http://www.training.by/xmlparser"
+        elementFormDefault="qualified">
+
+    <!--Medicines-->
+    <element name="medicines">
+        <complexType>
+            <sequence>
+                <element name="medicine"
+                         type="tns:Medicine"
+                         minOccurs="1"
+                         maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <!--Medicine-->
+    <complexType name="Medicine">
+        <sequence>
+            <element name="name" type="tns:Name"/>
+            <element name="pharm" type="tns:Name"/>
+            <element name="group" type="tns:Group"/>
+            <element name="analog" type="tns:Name"/>
+            <element name="versions" type="tns:Versions"/>
+        </sequence>
+    </complexType>
+
+    <!--Name-->
+    <simpleType name="Name">
+        <restriction base="string">
+            <pattern value="[A-ZА-Я]([a-zA-Zа-яА-я0-9-]\s?)+"/>
+        </restriction>
+    </simpleType>
+
+
+    <!--Group-->
+    <simpleType name="Group">
+        <restriction base="string">
+            <!--Антибиотики-->
+            <enumeration value="antibiotics"/>
+            <!--Антисептики-->
+            <enumeration value="antiseptics"/>
+            <!--Противовирусные-->
+            <enumeration value="antiviral"/>
+            <!--Антидеперссанты-->
+            <enumeration value="antidepressants"/>
+            <!--Болеутоляющие-->
+            <enumeration value="analgetics"/>
+            <!--Витамины-->
+            <enumeration value="vitamins"/>
+        </restriction>
+    </simpleType>
+
+    <!--Versions-->
+    <complexType name="Versions">
+        <sequence>
+            <element name="version"
+                     type="tns:Version"
+                     minOccurs="1"
+                     maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <!--Version-->
+    <complexType name="Version">
+        <sequence>
+            <element name="producer" type="tns:Producer"/>
+        </sequence>
+        <attribute name="type" type="tns:Consistence" use="required"/>
+    </complexType>
+
+    <!--Consistence-->
+    <simpleType name="Consistence">
+        <restriction base="string">
+            <enumeration value="tablets"/>
+            <enumeration value="capsules"/>
+            <enumeration value="liquid"/>
+            <enumeration value="powder"/>
+            <enumeration value="drops"/>
+            <enumeration value="spray"/>
+        </restriction>
+    </simpleType>
+
+    <!--Producer-->
+    <complexType name="Producer">
+        <sequence>
+            <element name="certificate" type="tns:Certificate"/>
+            <element name="package" type="tns:Package"/>
+            <element name="dosage" type="tns:Dosage"/>
+        </sequence>
+    </complexType>
+
+
+    <!--Certificate-->
+    <complexType name="Certificate">
+        <sequence>
+            <element name="date-issue" type="date"/>
+            <element name="date-expiration" type="date"/>
+            <element name="organization" type="tns:Name"/>
+        </sequence>
+        <attribute name="number" type="string" use="required"/>
+    </complexType>
+
+    <!--Package-->
+    <complexType name="Package">
+        <sequence>
+            <element name="quantity" type="int"/>
+            <element name="price" type="int"/>
+        </sequence>
+        <attribute name="type" type="tns:PackageType" use="required"/>
+    </complexType>
+
+    <!--PackageType-->
+    <simpleType name="PackageType">
+        <restriction base="string">
+            <!--Флакон-->
+            <enumeration value="vial"/>
+            <!--Контурная ячейковая-->
+            <enumeration value="blister-packaging"/>
+            <!--Контурная безъячейковая-->
+            <enumeration value="contoure-celless"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="Dosage">
+        <sequence>
+            <element name="quantity" type="int"/>
+            <element name="period" type="tns:Period"/>
+        </sequence>
+    </complexType>
+
+    <!--Period-->
+    <simpleType name="Period">
+        <restriction base="string">
+            <enumeration value="hour"/>
+            <enumeration value="day"/>
+            <enumeration value="week"/>
+            <enumeration value="month"/>
+            <enumeration value="year"/>
+        </restriction>
+    </simpleType>
+
+</schema>

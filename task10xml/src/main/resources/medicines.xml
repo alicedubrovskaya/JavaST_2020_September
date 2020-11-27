@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<medicines xmlns="http://www.training.by/xmlparser"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.training.by/xmlparser medicines.xsd">
+    <medicine>
+        <name>Парацетамол</name>
+        <pharm>Ирбитский химфармзавод ОАО</pharm>
+        <group>antibiotics</group>
+        <analog>Тайленол</analog>
+        <versions>
+            <version type="tablets">
+                <producer>
+                    <certificate number="ЛСР-009047/08">
+                        <date-issue>2019-03-22</date-issue>
+                        <date-expiration>2020-09-22</date-expiration>
+                        <organization>BelMedicines</organization>
+                    </certificate>
+                    <package type="blister-packaging">
+                        <quantity>10</quantity>
+                        <price>100</price>
+                    </package>
+                    <dosage>
+                        <quantity>3</quantity>
+                        <period>day</period>
+                    </dosage>
+                </producer>
+            </version>
+        </versions>
+    </medicine>
+
+</medicines>
