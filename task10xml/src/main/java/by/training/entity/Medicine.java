@@ -34,7 +34,7 @@ public class Medicine {
         analogs.add(analog);
     }
 
-    public void setVersionList(VersionList versionList) {
-        this.versionList = versionList;
+    public void addToVersionList(Version version) {
+        versionList.add(version);
     }
 }

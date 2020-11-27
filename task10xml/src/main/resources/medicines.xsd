@@ -132,9 +132,9 @@
             <!--Флакон-->
             <enumeration value="vial"/>
             <!--Контурная ячейковая-->
-            <enumeration value="blister-packaging"/>
+            <enumeration value="blister_packaging"/>
             <!--Контурная безъячейковая-->
-            <enumeration value="contoure-celless"/>
+            <enumeration value="contoure_celless"/>
         </restriction>
     </simpleType>
 

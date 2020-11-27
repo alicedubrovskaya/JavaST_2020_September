@@ -17,7 +17,7 @@
                         <organization>BelMedicines</organization>
                         <expiration_date>2020-09-22</expiration_date>
                     </limited_certificate>
-                    <package type="blister-packaging">
+                    <package type="blister_packaging">
                         <quantity>10</quantity>
                         <price>100</price>
                     </package>

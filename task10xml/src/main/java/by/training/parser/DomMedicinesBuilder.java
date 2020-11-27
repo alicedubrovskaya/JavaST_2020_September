@@ -1,7 +1,11 @@
 package by.training.parser;
 
-import by.training.entity.Medicine;
+import by.training.entity.Package;
+import by.training.entity.*;
+import by.training.entity.enumeration.Consistence;
 import by.training.entity.enumeration.Group;
+import by.training.entity.enumeration.PackageType;
+import by.training.entity.enumeration.Period;
 import by.training.entity.list.MedicineList;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -14,8 +18,9 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class DomMedicinesBuilder {
     private MedicineList medicines;
@@ -68,6 +73,14 @@ public class DomMedicinesBuilder {
             medicine.addAnalog(analogNode.getFirstChild().getNodeValue());
         }
 
+        NodeList versionNodes = medicineElement.getElementsByTagName("version");
+        for (int i = 0; i < versionNodes.getLength(); i++) {
+            Element versionNode = (Element) versionNodes.item(i);
+            Version version = parseVersion(versionNode);
+            medicine.addToVersionList(version);
+        }
+
+
         return medicine;
     }
 
@@ -87,5 +100,61 @@ public class DomMedicinesBuilder {
 
     public MedicineList getMedicines() {
         return medicines;
+    }
+
+    public Version parseVersion(Element versionElement) {
+        Version version = new Version();
+        Producer producer = new Producer();
+
+        Element producerElement = getChild(versionElement, "producer");
+        producer.setaPackage(parsePackage(getChild(producerElement, "package")));
+        producer.setDosage(parseDosage(getChild(producerElement, "dosage")));
+
+        Node nodeSimpleCertificate = getChild(producerElement, "certificate");
+        Node nodeLimitedCertificate = getChild(producerElement, "limited_certificate");
+        if (nodeSimpleCertificate != null) {
+            producer.setCertificate(parseCertificate((Element) nodeSimpleCertificate, true));
+        } else {
+            producer.setCertificate(parseCertificate((Element) nodeLimitedCertificate, false));
+        }
+
+        version.setType(Consistence.getEnum(versionElement.getAttribute("type")));
+        version.setProducer(producer);
+
+        return version;
+    }
+
+    public Dosage parseDosage(Element dosageElement) {
+        Dosage dosage = new Dosage();
+        dosage.setQuantity(Integer.parseInt(getChildValue(dosageElement, "quantity")));
+        dosage.setPeriod(Period.getEnum(getChildValue(dosageElement, "period")));
+
+        return dosage;
+    }
+
+    public Package parsePackage(Element packageElement) {
+        Package aPackage = new Package();
+        aPackage.setPrice(Integer.parseInt(getChildValue(packageElement, "price")));
+        aPackage.setQuantity(Integer.parseInt(getChildValue(packageElement, "quantity")));
+        aPackage.setType(PackageType.getEnum(packageElement.getAttribute("type")));
+
+        return aPackage;
+    }
+
+    public Certificate parseCertificate(Element certificateElement, boolean isSimple) {
+        Certificate certificate = new Certificate();
+
+        certificate.setNumber(certificateElement.getAttribute("number"));
+        certificate.setOrganization(getChildValue(certificateElement, "organization"));
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date issueDate = formatter.parse(getChildValue(certificateElement, "issue_date"));
+            certificate.setIssueDate(issueDate);
+        } catch (ParseException e) {
+            System.err.println(e.getMessage());
+        }
+
+        return certificate;
     }
 }

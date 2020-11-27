@@ -10,4 +10,13 @@ public enum PackageType {
     PackageType(final String v) {
         value = v;
     }
+
+    public static PackageType getEnum(String v) {
+        for (PackageType packageType : PackageType.values()) {
+            if (packageType.value.equals(v)) {
+                return packageType;
+            }
+        }
+        throw new IllegalArgumentException(v);
+    }
 }

@@ -13,4 +13,13 @@ public enum Consistence {
     Consistence(final String v) {
         value = v;
     }
+
+    public static Consistence getEnum(String v) {
+        for (Consistence consistence : Consistence.values()) {
+            if (consistence.value.equals(v)) {
+                return consistence;
+            }
+        }
+        throw new IllegalArgumentException(v);
+    }
 }

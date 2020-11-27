@@ -13,4 +13,13 @@ public enum Period {
         value = v;
     }
 
+    public static Period getEnum(String v) {
+        for (Period period : Period.values()) {
+            if (period.value.equals(v)) {
+                return period;
+            }
+        }
+        throw new IllegalArgumentException(v);
+    }
+
 }

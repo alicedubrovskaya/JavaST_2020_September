@@ -11,4 +11,6 @@ public class VersionList {
     public VersionList() {
         this.versions = new ArrayList<>();
     }
+
+    public void add(Version version) {versions.add(version);}
 }
