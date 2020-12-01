@@ -5,6 +5,11 @@ public class Producer {
     private Package aPackage;
     private Dosage dosage;
 
+    public Producer() {
+        aPackage = new Package();
+        dosage = new Dosage();
+    }
+
     public void setCertificate(Certificate certificate) {
         this.certificate = certificate;
     }
@@ -15,5 +20,17 @@ public class Producer {
 
     public void setDosage(Dosage dosage) {
         this.dosage = dosage;
+    }
+
+    public Certificate getCertificate() {
+        return certificate;
+    }
+
+    public Package getaPackage() {
+        return aPackage;
+    }
+
+    public Dosage getDosage() {
+        return dosage;
     }
 }

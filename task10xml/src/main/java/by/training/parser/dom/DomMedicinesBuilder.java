@@ -1,4 +1,4 @@
-package by.training.parser;
+package by.training.parser.dom;
 
 import by.training.entity.Package;
 import by.training.entity.*;
@@ -79,8 +79,6 @@ public class DomMedicinesBuilder {
             Version version = parseVersion(versionNode);
             medicine.addToVersionList(version);
         }
-
-
         return medicine;
     }
 
@@ -126,7 +124,7 @@ public class DomMedicinesBuilder {
 
     public Dosage parseDosage(Element dosageElement) {
         Dosage dosage = new Dosage();
-        dosage.setQuantity(Integer.parseInt(getChildValue(dosageElement, "quantity")));
+        dosage.setCount(Integer.parseInt(getChildValue(dosageElement, "count")));
         dosage.setPeriod(Period.getEnum(getChildValue(dosageElement, "period")));
 
         return dosage;

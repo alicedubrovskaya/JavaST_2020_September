@@ -22,7 +22,7 @@
                         <price>100</price>
                     </package>
                     <dosage>
-                        <quantity>3</quantity>
+                        <count>3</count>
                         <period>day</period>
                     </dosage>
                 </producer>

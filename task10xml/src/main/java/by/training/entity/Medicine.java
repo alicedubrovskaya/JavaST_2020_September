@@ -37,4 +37,9 @@ public class Medicine {
     public void addToVersionList(Version version) {
         versionList.add(version);
     }
+
+
+    public VersionList getVersionList() {
+        return versionList;
+    }
 }

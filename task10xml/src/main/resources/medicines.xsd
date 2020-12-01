@@ -141,7 +141,7 @@
     <!--Dosage-->
     <complexType name="Dosage">
         <sequence>
-            <element name="quantity" type="int"/>
+            <element name="count" type="int"/>
             <element name="period" type="tns:Period"/>
         </sequence>
     </complexType>

@@ -6,11 +6,22 @@ public class Version {
     private Consistence type;
     private Producer producer;
 
+    public Version() {
+    }
+
     public void setType(Consistence type) {
         this.type = type;
     }
 
     public void setProducer(Producer producer) {
         this.producer = producer;
+    }
+
+    public Consistence getType() {
+        return type;
+    }
+
+    public Producer getProducer() {
+        return producer;
     }
 }
