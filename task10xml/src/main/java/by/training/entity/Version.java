@@ -4,6 +4,7 @@ import by.training.entity.enumeration.Consistence;
 
 public class Version {
     private Consistence type;
+    //TODO multiple producers
     private Producer producer;
 
     public Version() {

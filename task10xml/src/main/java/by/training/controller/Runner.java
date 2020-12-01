@@ -2,6 +2,7 @@ package by.training.controller;
 
 import by.training.parser.dom.DomMedicinesBuilder;
 import by.training.parser.sax.MedicinesSAXBuilder;
+import by.training.parser.stax.MedicinesStAXBuilder;
 import org.xml.sax.SAXException;
 
 public class Runner {
@@ -13,8 +14,12 @@ public class Runner {
 //        );
 
 
-        MedicinesSAXBuilder saxBuilder = new MedicinesSAXBuilder();
-        saxBuilder.buildSetMedicines("task10xml/src/main/resources/medicines.xml");
-        System.out.println(saxBuilder.getMedicines());
+//        MedicinesSAXBuilder saxBuilder = new MedicinesSAXBuilder();
+//        saxBuilder.buildSetMedicines("task10xml/src/main/resources/medicines.xml");
+//        System.out.println(saxBuilder.getMedicines());
+
+        MedicinesStAXBuilder staxBuilder = new MedicinesStAXBuilder();
+        staxBuilder.buildSetMedicines("task10xml/src/main/resources/medicines.xml");
+        System.out.println(staxBuilder.getMedicines());
     }
 }
