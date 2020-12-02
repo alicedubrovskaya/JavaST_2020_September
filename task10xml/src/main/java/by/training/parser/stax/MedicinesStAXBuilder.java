@@ -3,6 +3,7 @@ package by.training.parser.stax;
 import by.training.entity.*;
 import by.training.entity.Package;
 import by.training.entity.enumeration.*;
+import by.training.parser.AbstractMedicinesBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,7 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MedicinesStAXBuilder {
+public class MedicinesStAXBuilder extends AbstractMedicinesBuilder {
     private List<Medicine> medicines = new ArrayList<>();
     private XMLInputFactory inputFactory;
     private static final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");

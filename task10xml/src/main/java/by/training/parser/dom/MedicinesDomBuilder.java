@@ -6,7 +6,7 @@ import by.training.entity.enumeration.Consistence;
 import by.training.entity.enumeration.Group;
 import by.training.entity.enumeration.PackageType;
 import by.training.entity.enumeration.Period;
-import by.training.entity.list.MedicineList;
+import by.training.parser.AbstractMedicinesBuilder;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -20,14 +20,16 @@ import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-public class DomMedicinesBuilder {
-    private MedicineList medicines;
+public class MedicinesDomBuilder extends AbstractMedicinesBuilder {
+    private List<Medicine> medicines;
     private DocumentBuilder documentBuilder;
 
-    public DomMedicinesBuilder() {
-        this.medicines = new MedicineList();
+    public MedicinesDomBuilder() {
+        this.medicines = new ArrayList<>();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             documentBuilder = factory.newDocumentBuilder();
@@ -36,21 +38,27 @@ public class DomMedicinesBuilder {
         }
     }
 
-    public void buildSetMedicines(String xmlPath, String xsdPath) throws SAXException {
+    public MedicinesDomBuilder(List<Medicine> medicines){
+        super(medicines);
+    }
+
+
+    @Override
+    public void buildSetMedicines(String fileName) {
 
 //        /* Validation */
 
         Document doc = null;
         try {
-            doc = documentBuilder.parse(new File(xmlPath));
+            doc = documentBuilder.parse(new File(fileName));
 
             Element root = doc.getDocumentElement();
             NodeList medicineList = root.getElementsByTagName("medicine");
 
             for (int i = 0; i < medicineList.getLength(); i++) {
                 Element medicineElement = (Element) medicineList.item(i);
-                Medicine student = buildMedicine(medicineElement);
-                medicines.addMedicine(student);
+                Medicine medicine = buildMedicine(medicineElement);
+                medicines.add(medicine);
             }
         } catch (IOException e) {
             System.err.println("File error or I/O error: " + e);
@@ -94,10 +102,6 @@ public class DomMedicinesBuilder {
         Element child = getChild(parent, childName);
         Node node = child.getFirstChild();
         return node.getNodeValue();
-    }
-
-    public MedicineList getMedicines() {
-        return medicines;
     }
 
     public Version parseVersion(Element versionElement) {
