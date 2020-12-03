@@ -17,6 +17,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -42,11 +43,8 @@ public class MedicinesDomBuilder extends AbstractMedicinesBuilder {
         super(medicines);
     }
 
-
     @Override
     public void buildSetMedicines(String fileName) {
-
-//        /* Validation */
 
         Document doc = null;
         try {

@@ -11,6 +11,14 @@
     <title>Title</title>
 </head>
 <body>
-
+<div align="center">
+    <h1 align="center">Parsing XML document.</h1>
+    <form name="XML WebParser" method="post" action="parsing">
+        <input type="radio" name="parserType" value="dom" checked>dom<br>
+        <input type="radio" name="parserType" value="sax">sax<br>
+        <input type="radio" name="parserType" value="stax">stax<br>
+        <input type="submit" value="Parse"/>
+    </form>
+</div>
 </body>
 </html>

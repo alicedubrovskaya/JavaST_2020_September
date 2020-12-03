@@ -1,8 +1,8 @@
 package by.training.xml.parser.stax;
 
 
-import by.training.xml.entity.*;
 import by.training.xml.entity.Package;
+import by.training.xml.entity.*;
 import by.training.xml.entity.enumeration.*;
 import by.training.xml.parser.AbstractMedicinesBuilder;
 import org.apache.logging.log4j.LogManager;
@@ -16,10 +16,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -30,7 +26,6 @@ public class MedicinesStAXBuilder extends AbstractMedicinesBuilder {
     private XMLInputFactory inputFactory;
     private static final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
     private final Logger logger = LogManager.getLogger(getClass().getName());
-
 
     public MedicinesStAXBuilder() {
         inputFactory = XMLInputFactory.newInstance();

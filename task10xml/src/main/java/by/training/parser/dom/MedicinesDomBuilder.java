@@ -46,8 +46,6 @@ public class MedicinesDomBuilder extends AbstractMedicinesBuilder {
     @Override
     public void buildSetMedicines(String fileName) {
 
-//        /* Validation */
-
         Document doc = null;
         try {
             doc = documentBuilder.parse(new File(fileName));

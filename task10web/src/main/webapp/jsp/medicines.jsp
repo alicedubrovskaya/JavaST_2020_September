@@ -14,7 +14,27 @@
     <title>Medicines list</title>
 </head>
 <body>
-<a href="/Hello">home</a>
+<a href="/parsing">home</a>
+
+<header>
+    <form>
+        <select id="parser_type" name="parser_type" onchange="submit()">
+            <option value="sax" ${parser_type == 'sax' ? 'selected' : ''}>
+                SAX
+                parser
+            </option>
+            <option value="stax" ${parser_type == 'stax' ? 'selected' : ''}>
+                StAX
+                parser
+            </option>
+            <option value="dom" ${parser_type == 'dom' ? 'selected' : ''}>
+                DOM
+                Parser
+            </option>
+        </select>
+    </form>
+</header>
+
 <table border="1">
     <tr>
         <th></th>
