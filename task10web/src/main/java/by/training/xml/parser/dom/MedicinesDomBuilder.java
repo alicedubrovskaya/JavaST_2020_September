@@ -26,7 +26,6 @@ import java.util.Date;
 import java.util.List;
 
 public class MedicinesDomBuilder extends AbstractMedicinesBuilder {
-    private List<Medicine> medicines;
     private DocumentBuilder documentBuilder;
 
     public MedicinesDomBuilder() {
@@ -48,7 +47,8 @@ public class MedicinesDomBuilder extends AbstractMedicinesBuilder {
 
         Document doc = null;
         try {
-            doc = documentBuilder.parse(new File(fileName));
+            FileInputStream inputStream  = new FileInputStream(new File(fileName));
+            doc = documentBuilder.parse(inputStream);
 
             Element root = doc.getDocumentElement();
             NodeList medicineList = root.getElementsByTagName("medicine");
@@ -56,8 +56,9 @@ public class MedicinesDomBuilder extends AbstractMedicinesBuilder {
             for (int i = 0; i < medicineList.getLength(); i++) {
                 Element medicineElement = (Element) medicineList.item(i);
                 Medicine medicine = buildMedicine(medicineElement);
-                medicines.add(medicine);
+                add(medicine);
             }
+
         } catch (IOException e) {
             System.err.println("File error or I/O error: " + e);
         } catch (SAXException e) {

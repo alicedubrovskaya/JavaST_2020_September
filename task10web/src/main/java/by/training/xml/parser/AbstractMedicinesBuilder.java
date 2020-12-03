@@ -21,5 +21,8 @@ public abstract class AbstractMedicinesBuilder {
         return medicines;
     }
 
+    public void add(Medicine medicine){
+        medicines.add(medicine);
+    }
     abstract public void buildSetMedicines(String fileName);
 }

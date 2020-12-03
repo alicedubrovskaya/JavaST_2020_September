@@ -11,7 +11,7 @@ public class Runner {
         Receiver receiver = new Receiver();
         Client client = new Client(receiver);
 
-        Command command = client.initCommand(CommandType.DOM);
+        Command command = client.initCommand(CommandType.SAX);
         Invoker invoker = new Invoker(command);
         invoker.invokeCommand();
     }

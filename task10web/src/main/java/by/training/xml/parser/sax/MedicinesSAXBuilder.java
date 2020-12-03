@@ -9,6 +9,8 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
@@ -35,7 +37,8 @@ public class MedicinesSAXBuilder extends AbstractMedicinesBuilder {
 
     public void buildSetMedicines(String fileName) {
         try {
-            reader.parse(fileName);
+            FileInputStream inputStream  = new FileInputStream(new File(fileName));
+            reader.parse(String.valueOf(inputStream));
         } catch (SAXException e) {
             logger.error("ошибка SAX парсера:{} ",e.getMessage());
         } catch (IOException e) {
