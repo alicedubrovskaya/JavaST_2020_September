@@ -16,22 +16,36 @@
 <body>
 <a href="/Hello">home</a>
 <table border="1">
-<%--    <tr>--%>
-<%--        <th>Name</th>--%>
-<%--        <th>Pharm</th>--%>
-<%--        <th>Group</th>--%>
-<%--        <th>Analogs</th>--%>
-<%--        <th>Dosages</th>--%>
-<%--    </tr>--%>
-<%--    <c:forEach var="medicine" items="${medicines}" varStatus="status">--%>
-<%--        <tr>--%>
-<%--            <td rowspan="2">Name</td>--%>
-<%--            <td>Dosage 1</td>--%>
-<%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td>Dosage 2</td>--%>
-<%--        </tr>--%>
-<%--    </c:forEach>--%>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th colspan="3">Package</th>
+        <th colspan="2">Dosage</th>
+        <th colspan="4">Certificate</th>>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>Pharm</th>
+        <th>Group</th>
+        <th>Analogs</th>
+        <th>Consistence</th>
+        <th>Type</th>
+
+        <th>Quantity</th>
+        <th>Price</th>
+
+        <th>Count</th>
+        <th>Period</th>
+
+        <th>Number</th>
+        <th>Issue date</th>
+        <th>Organization</th>
+        <th>Expiration date</th>
+    </tr>
+
        <c:forEach var="medicine" items="${medicines}" varStatus="status">
         <tr>
             <td rowspan="<c:out value="${ medicine.versionList.getVersionsCount() }"/>">
