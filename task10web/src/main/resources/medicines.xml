@@ -27,6 +27,22 @@
                     </dosage>
                 </producer>
             </version>
+            <version type="capsules">
+                <producer>
+                    <certificate number="ЛСР">
+                        <issue_date>2020-03-22</issue_date>
+                        <organization>BelMed</organization>
+                    </certificate>
+                    <package type="vial">
+                        <quantity>50</quantity>
+                        <price>500</price>
+                    </package>
+                    <dosage>
+                        <count>6</count>
+                        <period>week</period>
+                    </dosage>
+                </producer>
+            </version>
         </versions>
     </medicine>
 

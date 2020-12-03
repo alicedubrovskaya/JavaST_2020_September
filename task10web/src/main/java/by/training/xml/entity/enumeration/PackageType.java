@@ -1,7 +1,7 @@
 package by.training.xml.entity.enumeration;
 
 public enum PackageType {
-    VIAL("value"),
+    VIAL("vial"),
     BLISTER_PACKAGING("blister_packaging"),
     CONTOURE_CELLESS("contoure_celless");
 

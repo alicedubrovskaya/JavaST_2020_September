@@ -14,4 +14,12 @@ public class VersionList {
     }
 
     public void add(Version version) {versions.add(version);}
+
+    public List<Version> getVersions() {
+        return versions;
+    }
+
+    public int getVersionsCount(){
+        return versions.size();
+    }
 }
