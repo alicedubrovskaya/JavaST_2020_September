@@ -46,4 +46,290 @@
         </versions>
     </medicine>
 
+    <medicine>
+        <name>Кардиомагнил</name>
+        <pharm>Такеда ГмбХ</pharm>
+        <group>vitamins</group>
+        <analog>Магнекард</analog>
+        <analog>Полокард</analog>
+        <versions>
+            <version type="tablets">
+                <producer>
+                    <limited_certificate number="ЛСР-009047/20">
+                        <issue_date>2008-03-22</issue_date>
+                        <organization>Acard</organization>
+                        <expiration_date>2021-09-22</expiration_date>
+                    </limited_certificate>
+                    <package type="blister_packaging">
+                        <quantity>2</quantity>
+                        <price>10</price>
+                    </package>
+                    <dosage>
+                        <count>4</count>
+                        <period>day</period>
+                    </dosage>
+                </producer>
+            </version>
+            <version type="capsules">
+                <producer>
+                    <certificate number="ЛСР-001">
+                        <issue_date>2020-03-22</issue_date>
+                        <organization>Acard</organization>
+                    </certificate>
+                    <package type="vial">
+                        <quantity>50</quantity>
+                        <price>500</price>
+                    </package>
+                    <dosage>
+                        <count>6</count>
+                        <period>week</period>
+                    </dosage>
+                </producer>
+            </version>
+        </versions>
+    </medicine>
+
+    <medicine>
+        <name>Кардиомагнил</name>
+        <pharm>Такеда ГмбХ</pharm>
+        <group>vitamins</group>
+        <analog>Магнекард</analog>
+        <analog>Полокард</analog>
+        <versions>
+            <version type="tablets">
+                <producer>
+                    <limited_certificate number="ЛСР-009047/20">
+                        <issue_date>2008-03-22</issue_date>
+                        <organization>Acard</organization>
+                        <expiration_date>2021-09-22</expiration_date>
+                    </limited_certificate>
+                    <package type="blister_packaging">
+                        <quantity>2</quantity>
+                        <price>10</price>
+                    </package>
+                    <dosage>
+                        <count>4</count>
+                        <period>day</period>
+                    </dosage>
+                </producer>
+            </version>
+        </versions>
+    </medicine>
+
+    <medicine>
+        <name>Вильпрафен</name>
+        <pharm>Такеда ГмбХ</pharm>
+        <group>antibiotics</group>
+        <analog>Вильпрафен солютаб</analog>
+        <versions>
+            <version type="tablets">
+                <producer>
+                    <limited_certificate number="ЛСР-009047/20">
+                        <issue_date>2008-03-22</issue_date>
+                        <organization>БЕЛМЕДПРЕПАРАТЫ</organization>
+                        <expiration_date>2021-09-22</expiration_date>
+                    </limited_certificate>
+                    <package type="blister_packaging">
+                        <quantity>2</quantity>
+                        <price>250</price>
+                    </package>
+                    <dosage>
+                        <count>1</count>
+                        <period>week</period>
+                    </dosage>
+                </producer>
+            </version>
+        </versions>
+    </medicine>
+
+    <medicine>
+        <name>Вильпрафенум</name>
+        <pharm>Такеда ГмбХ</pharm>
+        <group>antibiotics</group>
+        <analog>Вильпрафен солютаб</analog>
+        <analog>Супракс солютаб</analog>
+        <versions>
+            <version type="capsules">
+                <producer>
+                    <limited_certificate number="ЛСР-009047/20">
+                        <issue_date>2008-03-22</issue_date>
+                        <organization>БЕЛМЕДПРЕПАРАТЫ</organization>
+                        <expiration_date>2021-09-22</expiration_date>
+                    </limited_certificate>
+                    <package type="contoure_celless">
+                        <quantity>2</quantity>
+                        <price>250</price>
+                    </package>
+                    <dosage>
+                        <count>1</count>
+                        <period>month</period>
+                    </dosage>
+                </producer>
+            </version>
+        </versions>
+    </medicine>
+
+    <medicine>
+        <name>Антиоксикапс</name>
+        <pharm>Акада</pharm>
+        <group>vitamins</group>
+        <analog>Антиоксик</analog>
+        <versions>
+            <version type="tablets">
+                <producer>
+                    <limited_certificate number="ЛСП-047/20">
+                        <issue_date>2009-03-22</issue_date>
+                        <organization>Acardium</organization>
+                        <expiration_date>2021-09-22</expiration_date>
+                    </limited_certificate>
+                    <package type="blister_packaging">
+                        <quantity>2</quantity>
+                        <price>10</price>
+                    </package>
+                    <dosage>
+                        <count>4</count>
+                        <period>day</period>
+                    </dosage>
+                </producer>
+            </version>
+            <version type="capsules">
+                <producer>
+                    <certificate number="ЛСР-002">
+                        <issue_date>2020-03-22</issue_date>
+                        <organization>Acard</organization>
+                    </certificate>
+                    <package type="vial">
+                        <quantity>50</quantity>
+                        <price>500</price>
+                    </package>
+                    <dosage>
+                        <count>6</count>
+                        <period>day</period>
+                    </dosage>
+                </producer>
+            </version>
+        </versions>
+    </medicine>
+
+
+    <medicine>
+        <name>Валериана</name>
+        <pharm>Такеда ГмбХ</pharm>
+        <group>antidepressants</group>
+        <analog>Валериана Форте</analog>
+        <versions>
+            <version type="capsules">
+                <producer>
+                    <limited_certificate number="МПР-009047/20">
+                        <issue_date>2010-03-22</issue_date>
+                        <organization>БЕЛМЕДПРЕПАРАТЫ</organization>
+                        <expiration_date>2021-09-22</expiration_date>
+                    </limited_certificate>
+                    <package type="contoure_celless">
+                        <quantity>2</quantity>
+                        <price>15</price>
+                    </package>
+                    <dosage>
+                        <count>1</count>
+                        <period>month</period>
+                    </dosage>
+                </producer>
+            </version>
+        </versions>
+    </medicine>
+
+    <medicine>
+        <name>Моклобемид</name>
+        <pharm>Такеда ГмбХ</pharm>
+        <group>antidepressants</group>
+        <analog>Бефол</analog>
+        <analog>Селегилин</analog>
+        <versions>
+            <version type="capsules">
+                <producer>
+                    <limited_certificate number="МПР-009047/20">
+                        <issue_date>2010-03-22</issue_date>
+                        <organization>EuropeMedReg</organization>
+                        <expiration_date>2021-09-22</expiration_date>
+                    </limited_certificate>
+                    <package type="contoure_celless">
+                        <quantity>2</quantity>
+                        <price>15</price>
+                    </package>
+                    <dosage>
+                        <count>5</count>
+                        <period>year</period>
+                    </dosage>
+                </producer>
+            </version>
+        </versions>
+    </medicine>
+
+    <medicine>
+        <name>Креон</name>
+        <pharm>Акадиум</pharm>
+        <group>vitamins</group>
+        <analog>Кроцил</analog>
+        <versions>
+            <version type="tablets">
+                <producer>
+                    <limited_certificate number="МН02">
+                        <issue_date>2009-03-22</issue_date>
+                        <organization>БЕЛС</organization>
+                        <expiration_date>2021-09-22</expiration_date>
+                    </limited_certificate>
+                    <package type="blister_packaging">
+                        <quantity>2</quantity>
+                        <price>10</price>
+                    </package>
+                    <dosage>
+                        <count>4</count>
+                        <period>day</period>
+                    </dosage>
+                </producer>
+            </version>
+            <version type="capsules">
+                <producer>
+                    <certificate number="ЛСР-002">
+                        <issue_date>2020-03-22</issue_date>
+                        <organization>Acard</organization>
+                    </certificate>
+                    <package type="vial">
+                        <quantity>50</quantity>
+                        <price>500</price>
+                    </package>
+                    <dosage>
+                        <count>6</count>
+                        <period>year</period>
+                    </dosage>
+                </producer>
+            </version>
+        </versions>
+    </medicine>
+
+    <medicine>
+        <name>Мелоксипол</name>
+        <pharm>Польфарма</pharm>
+        <group>antidepressants</group>
+        <analog>Бефол</analog>
+        <versions>
+            <version type="capsules">
+                <producer>
+                    <limited_certificate number="МПР-009047/20">
+                        <issue_date>2010-03-22</issue_date>
+                        <organization>EuropeMedReg</organization>
+                        <expiration_date>2021-09-22</expiration_date>
+                    </limited_certificate>
+                    <package type="contoure_celless">
+                        <quantity>2</quantity>
+                        <price>15</price>
+                    </package>
+                    <dosage>
+                        <count>5</count>
+                        <period>year</period>
+                    </dosage>
+                </producer>
+            </version>
+        </versions>
+    </medicine>
 </medicines>
