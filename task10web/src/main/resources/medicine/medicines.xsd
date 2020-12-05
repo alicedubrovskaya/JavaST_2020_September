@@ -99,7 +99,7 @@
             <element name="issue_date" type="date"/>
             <element name="organization" type="tns:Name"/>
         </sequence>
-        <attribute name="number" type="string" use="required"/>
+        <attribute name="number" type="ID" use="required"/>
     </complexType>
 
     <!--LimitedCertificate-->
@@ -115,7 +115,6 @@
 
     <element name="certificate" type="tns:Certificate" abstract="false"/>
     <element name="limited_certificate" type="tns:LimitedCertificate" substitutionGroup="tns:certificate"/>
-
 
     <!--Package-->
     <complexType name="Package">

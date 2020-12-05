@@ -1,0 +1,1644 @@
+2020-12-05 20:54:54.652 [main] INFO  training.xml.parser.sax.MedicineHandler - Parsing started
+2020-12-05 20:54:54.670 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINES
+2020-12-05 20:54:54.673 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: MEDICINES
+2020-12-05 20:54:54.674 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 20:54:54.678 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 20:54:54.679 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 20:54:54.679 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 20:54:54.682 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 20:54:54.683 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 20:54:54.684 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 20:54:54.684 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 20:54:54.685 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 20:54:54.689 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 20:54:54.689 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 20:54:54.690 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 20:54:54.690 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 20:54:54.690 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 20:54:54.691 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 20:54:54.691 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 20:54:54.691 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 20:54:54.692 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 20:54:54.692 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 20:54:54.697 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 20:54:54.698 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 20:54:54.705 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 20:54:54.706 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.706 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.707 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 20:54:54.707 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 20:54:54.709 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 20:54:54.709 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 20:54:54.709 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 20:54:54.710 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 20:54:54.710 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 20:54:54.711 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 20:54:54.711 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 20:54:54.712 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 20:54:54.712 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 20:54:54.715 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 20:54:54.715 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 20:54:54.716 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 20:54:54.716 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 20:54:54.717 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 20:54:54.717 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 20:54:54.718 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 20:54:54.718 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 20:54:54.718 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 20:54:54.719 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 20:54:54.719 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 20:54:54.719 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 20:54:54.720 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 20:54:54.720 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 20:54:54.720 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 20:54:54.723 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 20:54:54.724 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 20:54:54.724 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 20:54:54.725 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 20:54:54.725 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 20:54:54.726 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 20:54:54.726 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 20:54:54.727 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 20:54:54.727 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: CERTIFICATE
+2020-12-05 20:54:54.728 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: CERTIFICATE
+2020-12-05 20:54:54.728 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 20:54:54.729 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 20:54:54.729 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 20:54:54.730 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 20:54:54.730 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 20:54:54.730 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 20:54:54.731 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : CERTIFICATE
+2020-12-05 20:54:54.731 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 20:54:54.731 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 20:54:54.737 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 20:54:54.738 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 20:54:54.738 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 20:54:54.739 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 20:54:54.739 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 20:54:54.739 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 20:54:54.740 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 20:54:54.740 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 20:54:54.740 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 20:54:54.741 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 20:54:54.741 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 20:54:54.741 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 20:54:54.742 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 20:54:54.742 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 20:54:54.743 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 20:54:54.743 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 20:54:54.743 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 20:54:54.744 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 20:54:54.744 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 20:54:54.745 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 20:54:54.745 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 20:54:54.745 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 20:54:54.746 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 20:54:54.746 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 20:54:54.746 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 20:54:54.747 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 20:54:54.747 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 20:54:54.747 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 20:54:54.748 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 20:54:54.748 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 20:54:54.749 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 20:54:54.749 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 20:54:54.749 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 20:54:54.750 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 20:54:54.750 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 20:54:54.750 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 20:54:54.751 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 20:54:54.751 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 20:54:54.751 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 20:54:54.752 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 20:54:54.752 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 20:54:54.753 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 20:54:54.753 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.754 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.754 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 20:54:54.754 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 20:54:54.755 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 20:54:54.755 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 20:54:54.755 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 20:54:54.756 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 20:54:54.756 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 20:54:54.756 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 20:54:54.757 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 20:54:54.757 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 20:54:54.757 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 20:54:54.758 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 20:54:54.759 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 20:54:54.759 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 20:54:54.760 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 20:54:54.760 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 20:54:54.760 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 20:54:54.761 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 20:54:54.761 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 20:54:54.761 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 20:54:54.762 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 20:54:54.762 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 20:54:54.762 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 20:54:54.762 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 20:54:54.763 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 20:54:54.763 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 20:54:54.763 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 20:54:54.764 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 20:54:54.764 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 20:54:54.764 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 20:54:54.765 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 20:54:54.765 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 20:54:54.766 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 20:54:54.766 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 20:54:54.766 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: CERTIFICATE
+2020-12-05 20:54:54.767 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: CERTIFICATE
+2020-12-05 20:54:54.767 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 20:54:54.767 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 20:54:54.768 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 20:54:54.768 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 20:54:54.769 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 20:54:54.769 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 20:54:54.769 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : CERTIFICATE
+2020-12-05 20:54:54.769 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 20:54:54.770 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 20:54:54.770 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 20:54:54.771 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 20:54:54.771 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 20:54:54.771 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 20:54:54.771 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 20:54:54.772 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 20:54:54.772 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 20:54:54.772 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 20:54:54.773 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 20:54:54.773 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 20:54:54.773 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 20:54:54.774 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 20:54:54.774 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 20:54:54.774 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 20:54:54.774 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 20:54:54.775 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 20:54:54.775 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 20:54:54.775 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 20:54:54.776 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 20:54:54.776 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 20:54:54.777 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 20:54:54.777 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 20:54:54.777 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 20:54:54.778 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 20:54:54.778 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 20:54:54.778 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 20:54:54.778 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 20:54:54.779 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 20:54:54.779 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 20:54:54.779 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 20:54:54.780 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 20:54:54.780 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 20:54:54.780 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 20:54:54.781 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 20:54:54.783 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 20:54:54.784 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 20:54:54.784 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 20:54:54.784 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 20:54:54.785 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 20:54:54.785 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 20:54:54.785 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 20:54:54.786 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 20:54:54.786 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.786 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.787 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 20:54:54.787 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 20:54:54.787 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 20:54:54.788 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 20:54:54.788 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 20:54:54.788 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 20:54:54.788 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 20:54:54.789 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 20:54:54.789 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 20:54:54.789 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 20:54:54.790 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 20:54:54.790 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 20:54:54.790 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 20:54:54.791 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 20:54:54.791 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 20:54:54.791 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 20:54:54.791 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 20:54:54.792 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 20:54:54.792 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 20:54:54.792 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 20:54:54.793 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 20:54:54.793 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 20:54:54.793 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 20:54:54.794 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 20:54:54.794 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 20:54:54.794 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 20:54:54.795 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 20:54:54.795 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 20:54:54.795 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 20:54:54.796 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 20:54:54.796 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 20:54:54.796 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 20:54:54.796 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 20:54:54.797 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 20:54:54.797 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 20:54:54.798 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 20:54:54.799 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 20:54:54.799 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 20:54:54.799 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 20:54:54.800 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 20:54:54.800 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 20:54:54.800 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 20:54:54.801 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 20:54:54.801 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 20:54:54.802 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 20:54:54.803 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 20:54:54.804 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 20:54:54.804 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 20:54:54.806 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 20:54:54.806 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 20:54:54.806 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 20:54:54.808 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.809 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.809 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 20:54:54.809 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 20:54:54.810 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 20:54:54.810 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 20:54:54.810 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 20:54:54.811 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 20:54:54.811 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 20:54:54.811 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 20:54:54.812 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 20:54:54.812 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 20:54:54.813 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 20:54:54.813 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 20:54:54.816 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 20:54:54.816 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 20:54:54.816 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 20:54:54.817 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 20:54:54.817 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 20:54:54.817 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 20:54:54.818 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 20:54:54.818 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 20:54:54.819 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 20:54:54.820 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 20:54:54.820 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 20:54:54.820 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 20:54:54.824 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 20:54:54.827 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 20:54:54.828 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 20:54:54.828 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 20:54:54.829 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 20:54:54.829 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 20:54:54.830 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 20:54:54.830 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 20:54:54.831 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 20:54:54.831 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 20:54:54.832 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 20:54:54.832 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 20:54:54.833 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 20:54:54.834 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 20:54:54.834 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 20:54:54.835 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 20:54:54.836 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 20:54:54.836 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 20:54:54.837 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 20:54:54.838 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 20:54:54.838 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 20:54:54.838 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 20:54:54.839 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 20:54:54.839 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 20:54:54.839 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 20:54:54.840 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 20:54:54.840 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 20:54:54.840 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 20:54:54.841 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 20:54:54.841 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 20:54:54.841 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.841 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.842 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 20:54:54.842 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 20:54:54.842 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 20:54:54.843 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 20:54:54.843 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 20:54:54.844 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 20:54:54.846 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 20:54:54.847 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 20:54:54.847 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 20:54:54.848 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 20:54:54.848 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 20:54:54.848 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 20:54:54.849 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 20:54:54.849 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 20:54:54.849 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 20:54:54.849 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 20:54:54.850 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 20:54:54.850 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 20:54:54.850 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 20:54:54.850 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 20:54:54.851 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 20:54:54.851 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 20:54:54.851 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 20:54:54.851 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 20:54:54.852 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 20:54:54.852 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 20:54:54.853 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 20:54:54.853 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 20:54:54.854 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 20:54:54.854 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 20:54:54.855 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 20:54:54.855 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 20:54:54.856 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 20:54:54.856 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 20:54:54.861 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 20:54:54.862 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 20:54:54.862 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 20:54:54.862 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 20:54:54.863 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 20:54:54.863 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 20:54:54.863 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 20:54:54.863 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 20:54:54.864 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 20:54:54.864 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 20:54:54.864 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 20:54:54.864 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 20:54:54.865 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 20:54:54.865 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 20:54:54.865 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 20:54:54.866 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 20:54:54.866 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 20:54:54.866 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.866 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.867 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 20:54:54.867 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 20:54:54.867 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 20:54:54.868 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 20:54:54.868 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 20:54:54.868 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 20:54:54.868 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 20:54:54.869 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 20:54:54.869 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 20:54:54.869 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 20:54:54.869 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 20:54:54.870 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 20:54:54.870 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 20:54:54.871 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 20:54:54.871 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 20:54:54.873 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 20:54:54.877 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 20:54:54.878 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 20:54:54.879 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 20:54:54.879 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 20:54:54.880 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 20:54:54.880 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 20:54:54.881 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 20:54:54.881 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 20:54:54.882 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 20:54:54.882 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 20:54:54.892 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 20:54:54.893 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 20:54:54.894 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 20:54:54.894 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 20:54:54.895 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 20:54:54.895 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 20:54:54.895 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 20:54:54.895 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 20:54:54.896 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: CERTIFICATE
+2020-12-05 20:54:54.896 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: CERTIFICATE
+2020-12-05 20:54:54.896 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 20:54:54.896 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 20:54:54.897 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 20:54:54.897 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 20:54:54.897 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 20:54:54.898 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 20:54:54.898 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : CERTIFICATE
+2020-12-05 20:54:54.898 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 20:54:54.899 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 20:54:54.900 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 20:54:54.900 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 20:54:54.901 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 20:54:54.901 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 20:54:54.902 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 20:54:54.903 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 20:54:54.904 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 20:54:54.905 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 20:54:54.905 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 20:54:54.905 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 20:54:54.906 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 20:54:54.906 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 20:54:54.906 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 20:54:54.906 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 20:54:54.906 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 20:54:54.907 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 20:54:54.907 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 20:54:54.907 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 20:54:54.907 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 20:54:54.908 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 20:54:54.908 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 20:54:54.908 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 20:54:54.908 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 20:54:54.909 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 20:54:54.909 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 20:54:54.909 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 20:54:54.909 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 20:54:54.910 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 20:54:54.910 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 20:54:54.910 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 20:54:54.910 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 20:54:54.911 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 20:54:54.911 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 20:54:54.911 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 20:54:54.911 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 20:54:54.912 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 20:54:54.912 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 20:54:54.912 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 20:54:54.913 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 20:54:54.913 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.914 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.914 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 20:54:54.915 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 20:54:54.916 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 20:54:54.917 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 20:54:54.917 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 20:54:54.918 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 20:54:54.918 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 20:54:54.918 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 20:54:54.918 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 20:54:54.919 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 20:54:54.919 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 20:54:54.919 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 20:54:54.919 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 20:54:54.920 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 20:54:54.920 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 20:54:54.921 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 20:54:54.922 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 20:54:54.930 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 20:54:54.931 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 20:54:54.935 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 20:54:54.936 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 20:54:54.936 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 20:54:54.937 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 20:54:54.937 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 20:54:54.938 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 20:54:54.938 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 20:54:54.938 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 20:54:54.940 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 20:54:54.940 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 20:54:54.941 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 20:54:54.941 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 20:54:54.941 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 20:54:54.941 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 20:54:54.942 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 20:54:54.942 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 20:54:54.943 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 20:54:54.944 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 20:54:54.944 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 20:54:54.944 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 20:54:54.945 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 20:54:54.945 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 20:54:54.946 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 20:54:54.946 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 20:54:54.946 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 20:54:54.946 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 20:54:54.947 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 20:54:54.947 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 20:54:54.947 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 20:54:54.948 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 20:54:54.948 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 20:54:54.951 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 20:54:54.951 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 20:54:54.952 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 20:54:54.952 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 20:54:54.952 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.953 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.954 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 20:54:54.954 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 20:54:54.957 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 20:54:54.959 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 20:54:54.960 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 20:54:54.961 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 20:54:54.961 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 20:54:54.961 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 20:54:54.961 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 20:54:54.962 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 20:54:54.962 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 20:54:54.962 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 20:54:54.964 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 20:54:54.967 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 20:54:54.968 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 20:54:54.968 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 20:54:54.968 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 20:54:54.969 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 20:54:54.969 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 20:54:54.970 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 20:54:54.970 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 20:54:54.970 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 20:54:54.970 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 20:54:54.970 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 20:54:54.971 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 20:54:54.971 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 20:54:54.972 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 20:54:54.972 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 20:54:54.972 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 20:54:54.972 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 20:54:54.973 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 20:54:54.973 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 20:54:54.973 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 20:54:54.974 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 20:54:54.974 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 20:54:54.974 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 20:54:54.974 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 20:54:54.974 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 20:54:54.975 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 20:54:54.975 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 20:54:54.975 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 20:54:54.975 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 20:54:54.976 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 20:54:54.976 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 20:54:54.976 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 20:54:54.976 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 20:54:54.976 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 20:54:54.977 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 20:54:54.977 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 20:54:54.977 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 20:54:54.977 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 20:54:54.977 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.977 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 20:54:54.978 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 20:54:54.978 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 20:54:54.978 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 20:54:54.978 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 20:54:54.979 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 20:54:54.979 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 20:54:54.979 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 20:54:54.979 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 20:54:54.980 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 20:54:54.980 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 20:54:54.980 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 20:54:54.980 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 20:54:54.980 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 20:54:54.981 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 20:54:54.981 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 20:54:54.981 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 20:54:54.981 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 20:54:54.981 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 20:54:54.981 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 20:54:54.984 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 20:54:54.985 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 20:54:54.986 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 20:54:54.986 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 20:54:54.987 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 20:54:54.987 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 20:54:54.987 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 20:54:54.988 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 20:54:54.989 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 20:54:54.989 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 20:54:54.989 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 20:54:54.990 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 20:54:54.990 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 20:54:54.990 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 20:54:54.991 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 20:54:54.991 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: CERTIFICATE
+2020-12-05 20:54:54.991 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: CERTIFICATE
+2020-12-05 20:54:54.991 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 20:54:54.991 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 20:54:54.992 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 20:54:54.992 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 20:54:54.992 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 20:54:54.993 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 20:54:54.993 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : CERTIFICATE
+2020-12-05 20:54:54.994 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 20:54:54.994 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 20:54:54.994 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 20:54:54.994 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 20:54:54.994 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 20:54:54.995 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 20:54:54.995 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 20:54:54.995 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 20:54:54.995 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 20:54:54.995 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 20:54:54.996 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 20:54:54.996 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 20:54:54.996 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 20:54:54.996 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 20:54:54.996 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 20:54:54.996 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 20:54:54.997 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 20:54:54.997 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 20:54:54.997 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 20:54:54.997 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 20:54:54.997 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 20:54:54.998 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 20:54:54.998 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 20:54:54.998 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 20:54:54.998 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 20:54:54.998 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 20:54:54.999 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 20:54:54.999 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 20:54:55.000 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 20:54:55.001 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 20:54:55.001 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 20:54:55.001 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 20:54:55.002 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 20:54:55.002 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 20:54:55.003 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 20:54:55.004 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 20:54:55.004 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 20:54:55.005 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 20:54:55.005 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 20:54:55.005 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 20:54:55.005 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 20:54:55.005 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 20:54:55.005 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 20:54:55.006 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 20:54:55.006 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 20:54:55.006 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 20:54:55.006 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 20:54:55.006 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 20:54:55.007 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 20:54:55.007 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 20:54:55.007 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 20:54:55.007 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 20:54:55.007 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 20:54:55.008 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 20:54:55.008 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 20:54:55.008 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 20:54:55.008 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 20:54:55.009 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 20:54:55.009 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 20:54:55.009 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 20:54:55.010 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 20:54:55.010 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 20:54:55.011 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 20:54:55.011 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 20:54:55.012 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 20:54:55.012 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 20:54:55.012 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 20:54:55.012 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 20:54:55.013 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 20:54:55.014 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 20:54:55.014 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 20:54:55.014 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 20:54:55.015 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 20:54:55.016 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 20:54:55.017 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 20:54:55.018 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINES
+2020-12-05 21:28:47.104 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 21:28:47.151 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 21:28:47.152 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 21:28:47.154 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 21:28:47.164 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 21:45:54.650 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 21:45:54.707 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 21:45:54.709 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 21:45:54.710 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 21:45:54.712 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 21:46:43.441 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 21:46:43.462 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 21:46:43.463 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 21:46:43.467 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 21:46:43.469 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 21:50:05.159 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 21:50:05.192 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 21:50:05.193 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 21:50:05.194 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 21:50:05.195 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 21:58:15.324 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 21:58:15.346 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 21:58:15.347 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 21:58:15.348 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 21:58:15.350 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 22:07:02.223 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 22:07:02.243 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 22:07:02.244 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 22:07:02.245 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 22:07:02.246 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 22:07:02.300 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 22:07:02.300 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 22:07:02.301 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 22:07:02.302 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 22:07:02.303 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 22:07:02.335 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 22:07:02.337 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 22:07:02.337 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 22:07:02.338 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 22:07:02.338 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 22:09:11.234 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 22:09:11.303 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 22:09:11.304 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 22:09:11.306 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 22:09:11.309 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 22:09:27.103 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 22:09:27.104 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 22:09:27.104 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 22:09:27.105 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 22:09:27.106 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 22:09:27.151 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 22:09:27.152 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 22:09:27.153 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 22:09:27.153 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 22:09:27.154 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 22:10:03.613 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 22:10:03.672 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 22:10:03.673 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 22:10:03.675 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 22:10:03.678 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 22:12:18.890 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 22:12:18.891 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 22:12:18.892 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 22:12:18.892 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 22:12:18.893 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 22:12:35.676 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 22:12:35.722 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 22:12:35.723 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 22:12:35.724 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 22:12:35.726 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 22:12:35.740 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 22:12:35.741 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 22:12:35.741 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 22:12:35.742 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 22:12:35.743 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 22:14:37.311 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 22:14:37.343 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 22:14:37.345 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 22:14:37.346 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 22:14:37.349 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 22:14:37.372 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 22:14:37.373 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 22:14:37.373 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 22:14:37.374 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 22:14:37.375 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 22:14:37.387 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 22:14:37.395 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 22:14:37.396 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 22:14:37.397 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 22:14:37.398 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 22:16:17.075 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 22:16:17.106 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 22:16:17.107 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 22:16:17.107 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 22:16:17.109 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 22:16:17.131 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 22:16:17.131 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 22:16:17.132 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 22:16:17.135 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 22:16:17.136 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 22:16:17.181 [main] INFO  training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine version
+2020-12-05 22:16:17.181 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine package
+2020-12-05 22:16:17.182 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine dosage
+2020-12-05 22:16:17.183 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Parsing of medicine certificate
+2020-12-05 22:16:17.184 [main] DEBUG training.xml.parser.dom.MedicinesDomBuilder - Adding new medicine to the list
+2020-12-05 22:17:22.284 [main] ERROR training.xml.parser.sax.MedicinesSAXBuilder - ошибка I/О потока: unknown protocol: c
+2020-12-05 22:17:22.327 [main] ERROR training.xml.parser.sax.MedicinesSAXBuilder - ошибка I/О потока: unknown protocol: c
+2020-12-05 22:17:22.338 [main] ERROR training.xml.parser.sax.MedicinesSAXBuilder - ошибка I/О потока: unknown protocol: c
+2020-12-05 22:18:10.411 [main] INFO  training.xml.parser.stax.MedicinesStAXBuilder - Adding of found medicine
+2020-12-05 22:18:10.468 [main] INFO  training.xml.parser.stax.MedicinesStAXBuilder - Adding of found medicine
+2020-12-05 22:18:10.477 [main] INFO  training.xml.parser.stax.MedicinesStAXBuilder - Adding of found medicine
+2020-12-05 22:20:21.321 [main] INFO  training.xml.parser.sax.MedicineHandler - Parsing started
+2020-12-05 22:20:21.345 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINES
+2020-12-05 22:20:21.348 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: MEDICINES
+2020-12-05 22:20:21.349 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 22:20:21.349 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 22:20:21.350 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 22:20:21.351 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 22:20:21.352 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 22:20:21.353 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 22:20:21.353 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 22:20:21.354 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 22:20:21.355 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 22:20:21.355 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 22:20:21.356 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:20:21.357 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:20:21.358 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:20:21.358 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:20:21.359 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:20:21.360 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:20:21.361 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 22:20:21.361 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 22:20:21.362 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 22:20:21.364 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 22:20:21.365 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 22:20:21.366 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 22:20:21.366 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: CERTIFICATE
+2020-12-05 22:20:21.367 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: CERTIFICATE
+2020-12-05 22:20:21.368 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 22:20:21.369 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 22:20:21.370 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 22:20:21.372 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 22:20:21.373 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 22:20:21.376 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 22:20:21.376 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : CERTIFICATE
+2020-12-05 22:20:21.377 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 22:20:21.378 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 22:20:21.379 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 22:20:21.380 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 22:20:21.381 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 22:20:21.382 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 22:20:21.384 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 22:20:21.385 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 22:20:21.386 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 22:20:21.395 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 22:20:21.396 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 22:20:21.396 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 22:20:21.397 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 22:20:21.397 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 22:20:21.398 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 22:20:21.398 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 22:20:21.399 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 22:20:21.400 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 22:20:21.400 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 22:20:21.400 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 22:20:21.401 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 22:20:21.401 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 22:20:21.402 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINES
+2020-12-05 22:20:21.418 [main] INFO  training.xml.parser.sax.MedicineHandler - Parsing started
+2020-12-05 22:20:21.419 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINES
+2020-12-05 22:20:21.419 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: MEDICINES
+2020-12-05 22:20:21.420 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 22:20:21.420 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 22:20:21.420 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 22:20:21.421 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 22:20:21.421 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 22:20:21.422 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 22:20:21.422 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 22:20:21.422 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 22:20:21.423 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 22:20:21.423 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 22:20:21.424 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:20:21.424 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:20:21.424 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:20:21.425 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:20:21.425 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:20:21.425 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:20:21.426 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 22:20:21.426 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 22:20:21.426 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 22:20:21.427 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 22:20:21.427 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 22:20:21.429 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 22:20:21.429 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: CERTIFICATE
+2020-12-05 22:20:21.429 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: CERTIFICATE
+2020-12-05 22:20:21.430 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 22:20:21.430 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 22:20:21.431 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 22:20:21.431 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 22:20:21.431 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 22:20:21.431 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 22:20:21.432 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : CERTIFICATE
+2020-12-05 22:20:21.432 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 22:20:21.432 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 22:20:21.433 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 22:20:21.433 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 22:20:21.433 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 22:20:21.434 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 22:20:21.434 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 22:20:21.434 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 22:20:21.435 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 22:20:21.435 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 22:20:21.436 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 22:20:21.436 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 22:20:21.437 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 22:20:21.437 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 22:20:21.437 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 22:20:21.438 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 22:20:21.438 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 22:20:21.438 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 22:20:21.438 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 22:20:21.439 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 22:20:21.439 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 22:20:21.440 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 22:20:21.440 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINES
+2020-12-05 22:20:21.448 [main] INFO  training.xml.parser.sax.MedicineHandler - Parsing started
+2020-12-05 22:20:21.449 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINES
+2020-12-05 22:20:21.450 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: MEDICINES
+2020-12-05 22:20:21.450 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 22:20:21.450 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 22:20:21.451 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 22:20:21.451 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 22:20:21.451 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 22:20:21.452 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 22:20:21.452 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 22:20:21.452 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 22:20:21.453 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 22:20:21.453 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 22:20:21.454 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:20:21.454 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:20:21.455 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:20:21.455 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:20:21.456 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:20:21.456 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:20:21.456 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 22:20:21.457 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 22:20:21.457 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 22:20:21.457 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 22:20:21.457 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 22:20:21.457 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 22:20:21.458 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: CERTIFICATE
+2020-12-05 22:20:21.458 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: CERTIFICATE
+2020-12-05 22:20:21.458 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 22:20:21.459 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 22:20:21.459 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 22:20:21.460 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 22:20:21.460 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 22:20:21.460 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 22:20:21.461 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : CERTIFICATE
+2020-12-05 22:20:21.462 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 22:20:21.462 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 22:20:21.462 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 22:20:21.463 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 22:20:21.463 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 22:20:21.463 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 22:20:21.464 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 22:20:21.464 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 22:20:21.464 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 22:20:21.465 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 22:20:21.465 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 22:20:21.465 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 22:20:21.466 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 22:20:21.466 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 22:20:21.467 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 22:20:21.467 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 22:20:21.467 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 22:20:21.468 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 22:20:21.468 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 22:20:21.468 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 22:20:21.469 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 22:20:21.469 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 22:20:21.470 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINES
+2020-12-05 22:37:20.414 [main] INFO  training.xml.parser.sax.MedicineHandler - Parsing started
+2020-12-05 22:37:20.440 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINES
+2020-12-05 22:37:20.443 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: MEDICINES
+2020-12-05 22:37:20.443 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 22:37:20.448 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 22:37:20.448 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 22:37:20.449 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 22:37:20.449 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 22:37:20.450 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 22:37:20.450 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 22:37:20.451 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 22:37:20.452 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 22:37:20.455 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 22:37:20.456 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:37:20.456 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:37:20.457 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:37:20.457 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:37:20.458 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:37:20.458 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:37:20.459 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 22:37:20.460 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 22:37:20.460 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 22:37:20.465 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 22:37:20.466 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 22:37:20.474 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 22:37:20.474 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.475 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.476 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 22:37:20.476 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 22:37:20.478 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 22:37:20.478 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 22:37:20.479 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 22:37:20.479 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 22:37:20.480 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 22:37:20.480 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 22:37:20.481 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 22:37:20.482 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 22:37:20.482 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 22:37:20.484 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 22:37:20.485 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 22:37:20.486 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 22:37:20.487 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 22:37:20.487 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 22:37:20.488 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 22:37:20.489 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 22:37:20.489 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 22:37:20.490 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 22:37:20.490 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 22:37:20.491 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 22:37:20.491 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 22:37:20.492 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 22:37:20.492 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 22:37:20.493 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 22:37:20.496 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 22:37:20.497 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 22:37:20.498 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 22:37:20.498 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 22:37:20.499 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 22:37:20.500 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 22:37:20.501 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 22:37:20.504 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 22:37:20.505 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: CERTIFICATE
+2020-12-05 22:37:20.506 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: CERTIFICATE
+2020-12-05 22:37:20.507 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 22:37:20.508 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 22:37:20.508 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 22:37:20.509 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 22:37:20.510 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 22:37:20.510 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 22:37:20.511 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : CERTIFICATE
+2020-12-05 22:37:20.511 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 22:37:20.517 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 22:37:20.518 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 22:37:20.519 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 22:37:20.519 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 22:37:20.520 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 22:37:20.520 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 22:37:20.521 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 22:37:20.521 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 22:37:20.522 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 22:37:20.522 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 22:37:20.523 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 22:37:20.523 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 22:37:20.524 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 22:37:20.525 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 22:37:20.526 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 22:37:20.527 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 22:37:20.527 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 22:37:20.528 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 22:37:20.529 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 22:37:20.529 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 22:37:20.530 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 22:37:20.530 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 22:37:20.531 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 22:37:20.531 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 22:37:20.532 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 22:37:20.532 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 22:37:20.533 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 22:37:20.533 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 22:37:20.534 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 22:37:20.536 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 22:37:20.537 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 22:37:20.537 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:37:20.537 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:37:20.538 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:37:20.538 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:37:20.539 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:37:20.539 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:37:20.540 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 22:37:20.540 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 22:37:20.540 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 22:37:20.541 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 22:37:20.541 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 22:37:20.541 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 22:37:20.542 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.542 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.542 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 22:37:20.543 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 22:37:20.543 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 22:37:20.543 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 22:37:20.544 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 22:37:20.544 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 22:37:20.544 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 22:37:20.545 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 22:37:20.545 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 22:37:20.546 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 22:37:20.546 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 22:37:20.546 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 22:37:20.547 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 22:37:20.548 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 22:37:20.548 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 22:37:20.548 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 22:37:20.548 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 22:37:20.549 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 22:37:20.549 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 22:37:20.549 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 22:37:20.550 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 22:37:20.550 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 22:37:20.550 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 22:37:20.550 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 22:37:20.551 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 22:37:20.551 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 22:37:20.553 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 22:37:20.553 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 22:37:20.554 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 22:37:20.554 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 22:37:20.555 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 22:37:20.555 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 22:37:20.556 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 22:37:20.556 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 22:37:20.557 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: CERTIFICATE
+2020-12-05 22:37:20.557 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: CERTIFICATE
+2020-12-05 22:37:20.557 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 22:37:20.558 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 22:37:20.559 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 22:37:20.559 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 22:37:20.559 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 22:37:20.559 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 22:37:20.560 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : CERTIFICATE
+2020-12-05 22:37:20.560 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 22:37:20.560 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 22:37:20.561 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 22:37:20.561 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 22:37:20.562 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 22:37:20.562 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 22:37:20.562 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 22:37:20.563 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 22:37:20.563 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 22:37:20.563 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 22:37:20.564 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 22:37:20.564 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 22:37:20.564 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 22:37:20.564 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 22:37:20.565 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 22:37:20.565 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 22:37:20.566 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 22:37:20.566 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 22:37:20.566 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 22:37:20.567 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 22:37:20.567 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 22:37:20.567 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 22:37:20.567 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 22:37:20.568 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 22:37:20.568 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 22:37:20.568 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 22:37:20.568 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 22:37:20.569 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 22:37:20.569 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 22:37:20.569 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 22:37:20.569 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 22:37:20.570 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 22:37:20.570 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:37:20.571 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:37:20.571 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:37:20.572 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:37:20.572 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:37:20.572 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:37:20.573 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 22:37:20.573 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 22:37:20.574 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 22:37:20.574 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 22:37:20.575 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 22:37:20.575 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 22:37:20.576 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.576 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.576 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 22:37:20.577 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 22:37:20.578 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 22:37:20.578 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 22:37:20.578 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 22:37:20.579 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 22:37:20.579 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 22:37:20.579 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 22:37:20.579 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 22:37:20.580 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 22:37:20.580 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 22:37:20.580 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 22:37:20.581 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 22:37:20.581 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 22:37:20.581 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 22:37:20.581 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 22:37:20.581 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 22:37:20.582 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 22:37:20.582 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 22:37:20.583 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 22:37:20.583 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 22:37:20.583 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 22:37:20.583 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 22:37:20.584 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 22:37:20.584 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 22:37:20.584 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 22:37:20.584 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 22:37:20.585 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 22:37:20.585 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 22:37:20.585 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 22:37:20.586 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 22:37:20.586 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 22:37:20.586 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 22:37:20.587 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 22:37:20.587 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 22:37:20.588 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 22:37:20.588 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 22:37:20.590 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 22:37:20.590 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 22:37:20.591 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 22:37:20.592 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 22:37:20.592 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 22:37:20.592 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:37:20.593 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:37:20.594 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:37:20.594 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 22:37:20.595 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 22:37:20.595 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 22:37:20.596 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 22:37:20.596 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 22:37:20.596 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 22:37:20.598 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.598 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.599 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 22:37:20.599 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 22:37:20.600 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 22:37:20.602 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 22:37:20.602 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 22:37:20.603 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 22:37:20.603 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 22:37:20.603 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 22:37:20.605 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 22:37:20.605 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 22:37:20.606 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 22:37:20.606 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 22:37:20.607 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 22:37:20.607 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 22:37:20.607 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 22:37:20.608 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 22:37:20.608 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 22:37:20.619 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 22:37:20.619 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 22:37:20.620 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 22:37:20.621 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 22:37:20.622 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 22:37:20.622 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 22:37:20.623 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 22:37:20.623 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 22:37:20.624 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 22:37:20.624 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 22:37:20.624 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 22:37:20.625 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 22:37:20.625 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 22:37:20.626 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 22:37:20.626 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 22:37:20.626 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 22:37:20.626 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 22:37:20.627 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 22:37:20.627 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 22:37:20.627 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 22:37:20.628 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 22:37:20.628 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 22:37:20.628 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 22:37:20.628 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 22:37:20.629 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 22:37:20.629 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:37:20.629 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:37:20.629 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:37:20.630 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:37:20.630 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:37:20.630 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:37:20.630 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 22:37:20.631 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 22:37:20.631 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 22:37:20.631 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 22:37:20.632 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 22:37:20.632 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 22:37:20.632 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.633 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.633 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 22:37:20.633 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 22:37:20.634 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 22:37:20.634 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 22:37:20.639 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 22:37:20.640 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 22:37:20.670 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 22:37:20.677 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 22:37:20.678 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 22:37:20.678 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 22:37:20.679 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 22:37:20.679 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 22:37:20.680 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 22:37:20.680 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 22:37:20.681 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 22:37:20.681 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 22:37:20.681 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 22:37:20.682 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 22:37:20.683 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 22:37:20.684 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 22:37:20.685 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 22:37:20.692 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 22:37:20.693 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 22:37:20.693 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 22:37:20.694 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 22:37:20.695 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 22:37:20.695 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 22:37:20.696 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 22:37:20.696 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 22:37:20.696 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 22:37:20.698 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 22:37:20.698 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 22:37:20.699 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 22:37:20.699 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 22:37:20.700 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 22:37:20.700 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 22:37:20.701 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 22:37:20.701 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 22:37:20.701 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 22:37:20.705 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 22:37:20.706 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 22:37:20.706 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 22:37:20.707 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:37:20.707 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:37:20.707 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:37:20.708 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 22:37:20.708 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 22:37:20.708 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 22:37:20.709 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 22:37:20.709 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 22:37:20.711 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 22:37:20.711 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.712 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.712 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 22:37:20.713 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 22:37:20.713 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 22:37:20.714 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 22:37:20.714 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 22:37:20.715 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 22:37:20.716 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 22:37:20.716 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 22:37:20.717 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 22:37:20.717 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 22:37:20.724 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 22:37:20.725 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 22:37:20.738 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 22:37:20.739 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 22:37:20.742 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 22:37:20.743 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 22:37:20.743 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 22:37:20.744 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 22:37:20.745 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 22:37:20.745 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 22:37:20.746 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 22:37:20.746 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 22:37:20.746 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 22:37:20.747 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 22:37:20.747 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 22:37:20.748 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 22:37:20.748 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 22:37:20.748 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 22:37:20.749 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 22:37:20.749 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 22:37:20.750 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 22:37:20.751 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 22:37:20.751 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 22:37:20.751 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 22:37:20.751 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: CERTIFICATE
+2020-12-05 22:37:20.752 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: CERTIFICATE
+2020-12-05 22:37:20.752 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 22:37:20.757 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 22:37:20.758 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 22:37:20.758 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 22:37:20.758 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 22:37:20.758 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 22:37:20.758 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : CERTIFICATE
+2020-12-05 22:37:20.759 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 22:37:20.759 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 22:37:20.759 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 22:37:20.759 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 22:37:20.759 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 22:37:20.760 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 22:37:20.760 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 22:37:20.760 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 22:37:20.760 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 22:37:20.760 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 22:37:20.761 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 22:37:20.761 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 22:37:20.761 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 22:37:20.761 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 22:37:20.762 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 22:37:20.762 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 22:37:20.763 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 22:37:20.763 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 22:37:20.763 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 22:37:20.763 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 22:37:20.763 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 22:37:20.764 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 22:37:20.764 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 22:37:20.764 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 22:37:20.764 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 22:37:20.764 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 22:37:20.765 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 22:37:20.765 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 22:37:20.765 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 22:37:20.765 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 22:37:20.765 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 22:37:20.766 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 22:37:20.766 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:37:20.766 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:37:20.766 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:37:20.766 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 22:37:20.767 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 22:37:20.767 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 22:37:20.767 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 22:37:20.768 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 22:37:20.768 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 22:37:20.768 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.768 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.768 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 22:37:20.769 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 22:37:20.772 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 22:37:20.773 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 22:37:20.773 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 22:37:20.774 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 22:37:20.774 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 22:37:20.774 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 22:37:20.775 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 22:37:20.776 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 22:37:20.777 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 22:37:20.777 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 22:37:20.777 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 22:37:20.777 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 22:37:20.777 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 22:37:20.778 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 22:37:20.778 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 22:37:20.778 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 22:37:20.778 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 22:37:20.779 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 22:37:20.779 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 22:37:20.779 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 22:37:20.779 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 22:37:20.779 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 22:37:20.779 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 22:37:20.780 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 22:37:20.780 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 22:37:20.781 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 22:37:20.781 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 22:37:20.781 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 22:37:20.781 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 22:37:20.782 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 22:37:20.782 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 22:37:20.782 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 22:37:20.782 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 22:37:20.782 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 22:37:20.783 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 22:37:20.783 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 22:37:20.783 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 22:37:20.783 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 22:37:20.783 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 22:37:20.784 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 22:37:20.784 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:37:20.784 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:37:20.784 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:37:20.785 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:37:20.785 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:37:20.785 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:37:20.785 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 22:37:20.785 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 22:37:20.786 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 22:37:20.786 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 22:37:20.787 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 22:37:20.787 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 22:37:20.787 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.788 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.789 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 22:37:20.790 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 22:37:20.791 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 22:37:20.792 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 22:37:20.793 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 22:37:20.793 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 22:37:20.793 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 22:37:20.794 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 22:37:20.794 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 22:37:20.794 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 22:37:20.794 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 22:37:20.795 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 22:37:20.795 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 22:37:20.795 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 22:37:20.795 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 22:37:20.796 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 22:37:20.796 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 22:37:20.797 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 22:37:20.797 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 22:37:20.797 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 22:37:20.797 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 22:37:20.797 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 22:37:20.798 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 22:37:20.798 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 22:37:20.798 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 22:37:20.799 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 22:37:20.799 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 22:37:20.799 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 22:37:20.800 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 22:37:20.800 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 22:37:20.800 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 22:37:20.800 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 22:37:20.800 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 22:37:20.801 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 22:37:20.801 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 22:37:20.801 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 22:37:20.802 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 22:37:20.802 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 22:37:20.803 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 22:37:20.803 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 22:37:20.803 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 22:37:20.804 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 22:37:20.804 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:37:20.804 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:37:20.805 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:37:20.805 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 22:37:20.805 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 22:37:20.806 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 22:37:20.806 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 22:37:20.806 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 22:37:20.807 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 22:37:20.807 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.807 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.808 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 22:37:20.808 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 22:37:20.808 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 22:37:20.809 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 22:37:20.809 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 22:37:20.809 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 22:37:20.809 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 22:37:20.810 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 22:37:20.810 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 22:37:20.810 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 22:37:20.811 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 22:37:20.811 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 22:37:20.811 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 22:37:20.811 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 22:37:20.812 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 22:37:20.812 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 22:37:20.812 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 22:37:20.812 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 22:37:20.812 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 22:37:20.813 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 22:37:20.813 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 22:37:20.813 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 22:37:20.813 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 22:37:20.814 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 22:37:20.814 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 22:37:20.814 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 22:37:20.815 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 22:37:20.816 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 22:37:20.816 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 22:37:20.817 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 22:37:20.817 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 22:37:20.817 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 22:37:20.817 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 22:37:20.818 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 22:37:20.818 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: CERTIFICATE
+2020-12-05 22:37:20.818 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: CERTIFICATE
+2020-12-05 22:37:20.818 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 22:37:20.818 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 22:37:20.819 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 22:37:20.819 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 22:37:20.819 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 22:37:20.820 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 22:37:20.820 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : CERTIFICATE
+2020-12-05 22:37:20.820 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 22:37:20.820 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 22:37:20.821 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 22:37:20.821 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 22:37:20.821 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 22:37:20.822 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 22:37:20.822 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 22:37:20.822 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 22:37:20.823 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 22:37:20.823 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 22:37:20.823 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 22:37:20.824 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 22:37:20.824 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 22:37:20.824 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 22:37:20.825 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 22:37:20.826 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 22:37:20.826 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 22:37:20.827 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 22:37:20.827 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 22:37:20.827 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 22:37:20.831 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 22:37:20.831 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 22:37:20.831 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: MEDICINE
+2020-12-05 22:37:20.832 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: NAME
+2020-12-05 22:37:20.832 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: NAME
+2020-12-05 22:37:20.832 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : NAME
+2020-12-05 22:37:20.833 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PHARM
+2020-12-05 22:37:20.833 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PHARM
+2020-12-05 22:37:20.833 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PHARM
+2020-12-05 22:37:20.833 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: GROUP
+2020-12-05 22:37:20.834 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: GROUP
+2020-12-05 22:37:20.834 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : GROUP
+2020-12-05 22:37:20.834 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ANALOG
+2020-12-05 22:37:20.834 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ANALOG
+2020-12-05 22:37:20.835 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ANALOG
+2020-12-05 22:37:20.836 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSIONS
+2020-12-05 22:37:20.836 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSIONS
+2020-12-05 22:37:20.837 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: VERSION
+2020-12-05 22:37:20.837 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: VERSION
+2020-12-05 22:37:20.837 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRODUCER
+2020-12-05 22:37:20.838 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRODUCER
+2020-12-05 22:37:20.838 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.838 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: LIMITED_CERTIFICATE
+2020-12-05 22:37:20.839 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ISSUE_DATE
+2020-12-05 22:37:20.839 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ISSUE_DATE
+2020-12-05 22:37:20.839 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ISSUE_DATE
+2020-12-05 22:37:20.840 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: ORGANIZATION
+2020-12-05 22:37:20.840 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: ORGANIZATION
+2020-12-05 22:37:20.840 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : ORGANIZATION
+2020-12-05 22:37:20.841 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: EXPIRATION_DATE
+2020-12-05 22:37:20.841 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: EXPIRATION_DATE
+2020-12-05 22:37:20.841 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : EXPIRATION_DATE
+2020-12-05 22:37:20.842 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : LIMITED_CERTIFICATE
+2020-12-05 22:37:20.842 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PACKAGE
+2020-12-05 22:37:20.842 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PACKAGE
+2020-12-05 22:37:20.843 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: QUANTITY
+2020-12-05 22:37:20.843 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: QUANTITY
+2020-12-05 22:37:20.843 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : QUANTITY
+2020-12-05 22:37:20.852 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PRICE
+2020-12-05 22:37:20.853 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PRICE
+2020-12-05 22:37:20.854 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRICE
+2020-12-05 22:37:20.854 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PACKAGE
+2020-12-05 22:37:20.854 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: DOSAGE
+2020-12-05 22:37:20.855 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: DOSAGE
+2020-12-05 22:37:20.855 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: COUNT
+2020-12-05 22:37:20.855 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: COUNT
+2020-12-05 22:37:20.856 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : COUNT
+2020-12-05 22:37:20.866 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current starting element is: PERIOD
+2020-12-05 22:37:20.866 [main] DEBUG training.xml.parser.sax.MedicineHandler - Current enum: PERIOD
+2020-12-05 22:37:20.866 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PERIOD
+2020-12-05 22:37:20.866 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : DOSAGE
+2020-12-05 22:37:20.867 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : PRODUCER
+2020-12-05 22:37:20.867 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSION
+2020-12-05 22:37:20.867 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : VERSIONS
+2020-12-05 22:37:20.867 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINE
+2020-12-05 22:37:20.868 [main] DEBUG training.xml.parser.sax.MedicineHandler - Ending element : MEDICINES

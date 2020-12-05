@@ -12,7 +12,7 @@
         <versions>
             <version type="tablets">
                 <producer>
-                    <limited_certificate number="ЛСР-009047/08">
+                    <limited_certificate number="id-1">
                         <issue_date>2019-03-22</issue_date>
                         <organization>BelMedicines</organization>
                         <expiration_date>2020-09-22</expiration_date>
@@ -29,7 +29,7 @@
             </version>
             <version type="capsules">
                 <producer>
-                    <certificate number="ЛСР">
+                    <certificate number="id-2">
                         <issue_date>2020-03-22</issue_date>
                         <organization>BelMed</organization>
                     </certificate>
@@ -55,7 +55,7 @@
         <versions>
             <version type="tablets">
                 <producer>
-                    <limited_certificate number="ЛСР-009047/20">
+                    <limited_certificate number="id-3">
                         <issue_date>2008-03-22</issue_date>
                         <organization>Acard</organization>
                         <expiration_date>2021-09-22</expiration_date>
@@ -72,7 +72,7 @@
             </version>
             <version type="capsules">
                 <producer>
-                    <certificate number="ЛСР-001">
+                    <certificate number="id-4">
                         <issue_date>2020-03-22</issue_date>
                         <organization>Acard</organization>
                     </certificate>
@@ -98,7 +98,7 @@
         <versions>
             <version type="tablets">
                 <producer>
-                    <limited_certificate number="ЛСР-009047/20">
+                    <limited_certificate number="id-5">
                         <issue_date>2008-03-22</issue_date>
                         <organization>Acard</organization>
                         <expiration_date>2021-09-22</expiration_date>
@@ -124,7 +124,7 @@
         <versions>
             <version type="tablets">
                 <producer>
-                    <limited_certificate number="ЛСР-009047/20">
+                    <limited_certificate number="id-6">
                         <issue_date>2008-03-22</issue_date>
                         <organization>БЕЛМЕДПРЕПАРАТЫ</organization>
                         <expiration_date>2021-09-22</expiration_date>
@@ -151,7 +151,7 @@
         <versions>
             <version type="capsules">
                 <producer>
-                    <limited_certificate number="ЛСР-009047/20">
+                    <limited_certificate number="id-7">
                         <issue_date>2008-03-22</issue_date>
                         <organization>БЕЛМЕДПРЕПАРАТЫ</organization>
                         <expiration_date>2021-09-22</expiration_date>
@@ -177,7 +177,7 @@
         <versions>
             <version type="tablets">
                 <producer>
-                    <limited_certificate number="ЛСП-047/20">
+                    <limited_certificate number="id-8">
                         <issue_date>2009-03-22</issue_date>
                         <organization>Acardium</organization>
                         <expiration_date>2021-09-22</expiration_date>
@@ -194,7 +194,7 @@
             </version>
             <version type="capsules">
                 <producer>
-                    <certificate number="ЛСР-002">
+                    <certificate number="id-9">
                         <issue_date>2020-03-22</issue_date>
                         <organization>Acard</organization>
                     </certificate>
@@ -220,7 +220,7 @@
         <versions>
             <version type="capsules">
                 <producer>
-                    <limited_certificate number="МПР-009047/20">
+                    <limited_certificate number="id-10">
                         <issue_date>2010-03-22</issue_date>
                         <organization>БЕЛМЕДПРЕПАРАТЫ</organization>
                         <expiration_date>2021-09-22</expiration_date>
@@ -247,7 +247,7 @@
         <versions>
             <version type="capsules">
                 <producer>
-                    <limited_certificate number="МПР-009047/20">
+                    <limited_certificate number="id-11">
                         <issue_date>2010-03-22</issue_date>
                         <organization>EuropeMedReg</organization>
                         <expiration_date>2021-09-22</expiration_date>
@@ -273,7 +273,7 @@
         <versions>
             <version type="tablets">
                 <producer>
-                    <limited_certificate number="МН02">
+                    <limited_certificate number="id-12">
                         <issue_date>2009-03-22</issue_date>
                         <organization>БЕЛС</organization>
                         <expiration_date>2021-09-22</expiration_date>
@@ -290,7 +290,7 @@
             </version>
             <version type="capsules">
                 <producer>
-                    <certificate number="ЛСР-002">
+                    <certificate number="id-13">
                         <issue_date>2020-03-22</issue_date>
                         <organization>Acard</organization>
                     </certificate>
@@ -315,7 +315,7 @@
         <versions>
             <version type="capsules">
                 <producer>
-                    <limited_certificate number="МПР-009047/20">
+                    <limited_certificate number="id-14">
                         <issue_date>2010-03-22</issue_date>
                         <organization>EuropeMedReg</organization>
                         <expiration_date>2021-09-22</expiration_date>
