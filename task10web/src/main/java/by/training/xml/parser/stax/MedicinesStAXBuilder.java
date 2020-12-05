@@ -41,7 +41,7 @@ public class MedicinesStAXBuilder extends AbstractMedicinesBuilder {
         String name;
         try {
 
-            inputStream = new FileInputStream(new File("src/main/resources/medicine/medicines.xml"));
+            inputStream = new FileInputStream(new File(fileName));
             reader = inputFactory.createXMLStreamReader(inputStream);
 
             while (reader.hasNext()) {

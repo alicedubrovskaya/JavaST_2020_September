@@ -1,12 +1,13 @@
-package by.training.xml.controller.command;
+package by.training.xml.controller.console;
 
 
+import by.training.xml.entity.Medicine;
 import by.training.xml.entity.enumeration.CommandType;
 import by.training.xml.parser.AbstractMedicinesBuilder;
 import by.training.xml.parser.MedicineBuilderFactory;
-import by.training.xml.parser.dom.MedicinesDomBuilder;
 
 import java.io.File;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -17,7 +18,8 @@ import java.util.Scanner;
 public class Receiver {
     private Scanner in;
     MedicineBuilderFactory medicineBuilderFactory;
-    private static final String XML_PATH = new File("src/main/resources/medicine/medicines.xml").getAbsolutePath();
+    private static final String PATH="src/main/resources/medicine/medicines.xml";
+    private static final String XML_PATH = new File(PATH).getAbsolutePath();
 
     public Receiver() {
         this.in = new Scanner(System.in);
@@ -47,8 +49,7 @@ public class Receiver {
 
     public void parseWIthSAX() {
         AbstractMedicinesBuilder builder = medicineBuilderFactory.createMedicineBuilder("sax");
-        builder.buildSetMedicines(XML_PATH);
-        builder.getMedicines();
+        builder.buildSetMedicines(PATH);
     }
 
     public void parseWithStAX() {

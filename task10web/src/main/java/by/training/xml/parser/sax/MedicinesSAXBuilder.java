@@ -37,13 +37,13 @@ public class MedicinesSAXBuilder extends AbstractMedicinesBuilder {
 
     public void buildSetMedicines(String fileName) {
         try {
-            FileInputStream inputStream  = new FileInputStream(new File(fileName));
-            reader.parse(String.valueOf(inputStream));
+//            FileInputStream inputStream  = new FileInputStream(new File(fileName));
+            reader.parse(fileName);
+            medicineHandler.getMedicines().forEach(this::add);
         } catch (SAXException e) {
             logger.error("ошибка SAX парсера:{} ",e.getMessage());
         } catch (IOException e) {
             logger.error("ошибка I/О потока: {}", e.getMessage());
         }
-        medicines =  medicineHandler.getMedicines();
     }
 }

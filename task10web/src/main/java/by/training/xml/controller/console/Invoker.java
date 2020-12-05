@@ -1,4 +1,4 @@
-package by.training.xml.controller.command;
+package by.training.xml.controller.console;
 
 /**
  * Class is responsible for invocation of command execution

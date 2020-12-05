@@ -1,9 +1,9 @@
-package by.training.xml.controller.command;
+package by.training.xml.controller.console;
 
 
-import by.training.xml.controller.command.command.ParseDOMCommand;
-import by.training.xml.controller.command.command.ParseSAXCommand;
-import by.training.xml.controller.command.command.ParseStAXCommand;
+import by.training.xml.controller.console.command.ParseDOMCommand;
+import by.training.xml.controller.console.command.ParseSAXCommand;
+import by.training.xml.controller.console.command.ParseStAXCommand;
 import by.training.xml.entity.enumeration.CommandType;
 
 /**

@@ -1,4 +1,4 @@
-package by.training.xml.controller.command;
+package by.training.xml.controller.console;
 
 public interface Command {
     void execute();
