@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<medicines xmlns="http://training.by/medicine"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://training.by/medicine medicines.xsd">
+
+    <medicine>
+        <name>Кардиомагнил</name>
+        <pharm>Такеда ГмбХ</pharm>
+        <group>vitamins</group>
+        <analog>Магнекард</analog>
+        <analog>Полокард</analog>
+        <versions>
+            <version type="tablets">
+                <producer>
+                    <certificate number="ЛСР-009047/20">
+                        <issue_date>2008-03-22</issue_date>
+                        <organization>Acard</organization>
+                    </certificate>
+                    <package type="blister_packaging">
+                        <quantity>2</quantity>
+                        <price>10</price>
+                    </package>
+                    <dosage>
+                        <count>4</count>
+                        <period>day</period>
+                    </dosage>
+                </producer>
+            </version>
+        </versions>
+    </medicine>
+
+</medicines>

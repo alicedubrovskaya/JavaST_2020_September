@@ -7,6 +7,8 @@ import by.training.xml.entity.enumeration.Group;
 import by.training.xml.entity.enumeration.PackageType;
 import by.training.xml.entity.enumeration.Period;
 import by.training.xml.parser.AbstractMedicinesBuilder;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -27,6 +29,7 @@ import java.util.List;
 
 public class MedicinesDomBuilder extends AbstractMedicinesBuilder {
     private DocumentBuilder documentBuilder;
+    private final Logger logger = LogManager.getLogger(getClass().getName());
 
     public MedicinesDomBuilder() {
         this.medicines = new ArrayList<>();
@@ -56,6 +59,7 @@ public class MedicinesDomBuilder extends AbstractMedicinesBuilder {
             for (int i = 0; i < medicineList.getLength(); i++) {
                 Element medicineElement = (Element) medicineList.item(i);
                 Medicine medicine = buildMedicine(medicineElement);
+                logger.debug("Adding new medicine to the list");
                 add(medicine);
             }
 
@@ -104,6 +108,7 @@ public class MedicinesDomBuilder extends AbstractMedicinesBuilder {
     }
 
     public Version parseVersion(Element versionElement) {
+        logger.info("Parsing of medicine version");
         Version version = new Version();
         Producer producer = new Producer();
 
@@ -126,6 +131,7 @@ public class MedicinesDomBuilder extends AbstractMedicinesBuilder {
     }
 
     public Dosage parseDosage(Element dosageElement) {
+        logger.debug("Parsing of medicine dosage");
         Dosage dosage = new Dosage();
         dosage.setCount(Integer.parseInt(getChildValue(dosageElement, "count")));
         dosage.setPeriod(Period.getEnum(getChildValue(dosageElement, "period")));
@@ -134,6 +140,7 @@ public class MedicinesDomBuilder extends AbstractMedicinesBuilder {
     }
 
     public Package parsePackage(Element packageElement) {
+        logger.debug("Parsing of medicine package");
         Package aPackage = new Package();
         aPackage.setPrice(Integer.parseInt(getChildValue(packageElement, "price")));
         aPackage.setQuantity(Integer.parseInt(getChildValue(packageElement, "quantity")));
@@ -143,6 +150,8 @@ public class MedicinesDomBuilder extends AbstractMedicinesBuilder {
     }
 
     public Certificate parseCertificate(Element certificateElement, boolean isSimple) {
+        logger.debug("Parsing of medicine certificate");
+
         Certificate certificate = new Certificate();
 
         certificate.setNumber(certificateElement.getAttribute("number"));

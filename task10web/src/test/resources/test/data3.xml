@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<medicines xmlns="http://training.by/medicine"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://training.by/medicine medicines.xsd">
+
+    <medicine>
+        <name>Вильпрафенум</name>
+        <pharm>Такеда ГмбХ</pharm>
+        <group>antibiotics</group>
+        <analog>Вильпрафен солютаб</analog>
+        <analog>Супракс солютаб</analog>
+        <versions>
+            <version type="capsules">
+                <producer>
+                    <certificate number="ЛСР-009047/20">
+                        <issue_date>2008-03-22</issue_date>
+                        <organization>БЕЛМЕДПРЕПАРАТЫ</organization>
+                    </certificate>
+                    <package type="contoure_celless">
+                        <quantity>2</quantity>
+                        <price>250</price>
+                    </package>
+                    <dosage>
+                        <count>1</count>
+                        <period>month</period>
+                    </dosage>
+                </producer>
+            </version>
+        </versions>
+    </medicine>
+
+</medicines>

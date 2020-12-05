@@ -37,7 +37,6 @@ public class MedicinesSAXBuilder extends AbstractMedicinesBuilder {
 
     public void buildSetMedicines(String fileName) {
         try {
-//            FileInputStream inputStream  = new FileInputStream(new File(fileName));
             reader.parse(fileName);
             medicineHandler.getMedicines().forEach(this::add);
         } catch (SAXException e) {

@@ -1,6 +1,7 @@
 package by.training.xml.entity;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Certificate {
     private String number;
@@ -29,5 +30,19 @@ public class Certificate {
 
     public String getOrganization() {
         return organization;
+    }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Certificate certificate = (Certificate) o;
+        return Objects.equals(number, certificate.number)
+                && Objects.equals(issueDate, certificate.issueDate)
+                && Objects.equals(organization, certificate.organization);
     }
 }

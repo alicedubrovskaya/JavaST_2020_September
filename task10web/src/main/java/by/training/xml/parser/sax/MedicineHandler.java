@@ -46,6 +46,7 @@ public class MedicineHandler extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attrs) {
         MedicineEnum temp = MedicineEnum.valueOf(localName.toUpperCase());
+        logger.debug("Current starting element is: {}", localName.toUpperCase());
         switch (temp) {
             case MEDICINE:
                 currentMedicine = new Medicine();
@@ -80,6 +81,7 @@ public class MedicineHandler extends DefaultHandler {
     public void characters(char[] ch, int start, int length) {
         String s = new String(ch, start, length).trim();
         if (currentEnum != null) {
+            logger.debug("Current enum: {}", currentEnum.toString());
             switch (currentEnum) {
                 case NAME:
                     currentMedicine.setName(s);
@@ -148,6 +150,7 @@ public class MedicineHandler extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         MedicineEnum temp = MedicineEnum.valueOf(localName.toUpperCase());
+        logger.debug("Ending element : {}", temp.toString());
         switch (temp) {
             case MEDICINE:
                 medicines.add(currentMedicine);

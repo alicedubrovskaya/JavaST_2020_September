@@ -50,6 +50,7 @@ public class MedicinesStAXBuilder extends AbstractMedicinesBuilder {
                     name = reader.getLocalName();
                     if (MedicineEnum.valueOf(name.toUpperCase()) == MedicineEnum.MEDICINE) {
                         Medicine medicine = buildMedicine(reader);
+                        logger.info("Adding of found medicine");
                         medicines.add(medicine);
                     }
                 }
