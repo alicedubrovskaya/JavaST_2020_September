@@ -16,6 +16,7 @@
 <body>
 <a href="/parsing">home</a>
 
+<%--
 <header>
     <form>
         <select id="parser_type" name="parser_type" onchange="submit()">
@@ -34,6 +35,7 @@
         </select>
     </form>
 </header>
+--%>
 
 <table border="1">
     <tr>

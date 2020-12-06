@@ -32,6 +32,7 @@ public class Certificate {
         return organization;
     }
 
+    //TODO hashcode, equals
     @Override
     public boolean equals(final Object o) {
         if (this == o) {
